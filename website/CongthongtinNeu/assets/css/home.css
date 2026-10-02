@@ -1,0 +1,357 @@
+/* ==========================================================================
+   TRANG CHỦ
+
+   Bám theo bố cục đo được trên https://alumni.neu.edu.vn/:
+
+     KHỐI TIÊU ĐIỂM  một mảng xanh đặc chiếm hết bề ngang, chia ba cột, mỗi cột
+                     có đầu mục chữ hoa trắng gạch chân và các thẻ trắng bên trong
+     CỘT TIN         ba cột trắng, mỗi cột có tiêu đề nằm trong hộp xanh kèm
+                     thanh gạch chân, rồi danh sách tin ảnh nhỏ bên trái
+     CHÂN DUNG       lưới ảnh chân dung cựu sinh viên tiêu biểu
+     VIỆC LÀM        danh sách gọn
+     SỐ LIỆU         dải xanh
+
+   Mọi thứ vuông góc. Không bo tròn ở đâu cả, vì trang thật không bo tròn.
+   ========================================================================== */
+
+/* ==========================================================================
+   ĐẦU MỤC KIỂU PORTAL
+   Tiêu đề nằm trong hộp nền xanh, phía dưới là một thanh gạch chân kéo hết
+   bề ngang của cột. Đây là dấu hiệu nhận diện rõ nhất của trang thật.
+   ========================================================================== */
+.blockhead {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-6);
+  border-bottom: 3px solid var(--blue);
+  margin-bottom: var(--space-8);
+}
+.blockhead__title {
+  background: var(--blue);
+  color: var(--on-dark-strong);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: var(--space-4) var(--space-8);
+  margin: 0;
+}
+.blockhead__more {
+  margin-left: auto;
+  padding-bottom: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--green);
+  white-space: nowrap;
+}
+.blockhead__more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ==========================================================================
+   KHỐI TIÊU ĐIỂM
+   ========================================================================== */
+.spotlight {
+  background: var(--blue);
+  padding-block: var(--space-9) var(--space-11);
+}
+.spotlight__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-9);
+  align-items: start;
+}
+
+.spotcol { display: grid; gap: var(--space-8); align-content: start; }
+
+.spotcol__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+}
+.spotcol__icon {
+  display: grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  flex: none;
+  border: 2px solid var(--on-dark-strong);
+  color: var(--on-dark-strong);
+  font-size: 12px;
+}
+.spotcol__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--on-dark-strong);
+  margin: 0;
+}
+.spotcol__more {
+  margin-left: auto;
+  font-size: var(--fs-xs);
+  color: var(--on-dark-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.spotcol__more:hover { color: var(--on-dark-strong); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Thẻ dẫn: ảnh lớn, tiêu đề trên nền trắng bên dưới */
+.spotlead {
+  position: relative;
+  background: var(--surface-base);
+  display: grid;
+}
+.spotlead__media { aspect-ratio: 570 / 368; overflow: hidden; background: var(--surface-inset); }
+.spotlead__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease); }
+@media (prefers-reduced-motion: no-preference) {
+  .spotlead:hover .spotlead__media img { transform: scale(1.03); }
+}
+.spotlead__body { padding: var(--space-7) var(--space-8); display: grid; gap: var(--space-4); }
+.spotlead__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin: 0;
+}
+.spotlead__title a::after { content: ''; position: absolute; inset: 0; }
+.spotlead:hover .spotlead__title { color: var(--blue-dark); }
+.spotlead__date { font-size: var(--fs-xs); color: var(--text-tertiary); }
+.spotlead__sum {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: var(--lh-base);
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Thẻ nhỏ trong khối tiêu điểm */
+.spotcard {
+  position: relative;
+  background: var(--surface-base);
+  display: grid;
+}
+.spotcard__media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--surface-inset); }
+.spotcard__media img { width: 100%; height: 100%; object-fit: cover; }
+.spotcard__body { padding: var(--space-6) var(--space-7); display: grid; gap: var(--space-3); }
+.spotcard__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: 0;
+}
+.spotcard__title a::after { content: ''; position: absolute; inset: 0; }
+.spotcard:hover .spotcard__title { color: var(--blue-dark); }
+.spotcard__date { font-size: var(--fs-xs); color: var(--text-tertiary); }
+
+/* Hàng chân dung trong cột Thành công */
+.spotface {
+  position: relative;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+  background: var(--surface-base);
+  padding: var(--space-5);
+}
+.spotface__img { width: 62px; height: 78px; object-fit: cover; background: var(--surface-inset); }
+.spotface__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: 0;
+}
+.spotface__name a::after { content: ''; position: absolute; inset: 0; }
+.spotface:hover .spotface__name { color: var(--blue-dark); }
+.spotface__role { font-size: var(--fs-xs); color: var(--text-tertiary); margin-top: 2px; }
+
+@media (max-width: 1100px) {
+  .spotlight__grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .spotcol--third { grid-column: 1 / -1; }
+  .spotcol--third .spotcol__body { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: var(--space-6); }
+}
+@media (max-width: 760px) {
+  .spotlight__grid { grid-template-columns: minmax(0, 1fr); }
+  .spotcol--third { grid-column: auto; }
+}
+
+.spotcol__body { display: grid; gap: var(--space-6); }
+
+/* ==========================================================================
+   CỘT TIN
+   ========================================================================== */
+.colgrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-11);
+  padding-block: var(--space-12);
+}
+@media (max-width: 980px) { .colgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .colgrid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Hàng tin: ảnh nhỏ bên trái, tiêu đề chữ hoa căn đều bên phải.
+   Căn đều là đặc trưng của trang thật, không phải lựa chọn ngẫu nhiên. */
+.newsrow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--space-7);
+  padding-block: var(--space-7);
+  border-bottom: 1px dotted var(--border-strong);
+  align-items: start;
+}
+.newsrow:last-child { border-bottom: 0; }
+.newsrow__media { width: 96px; height: 68px; overflow: hidden; background: var(--surface-inset); }
+.newsrow__media img { width: 100%; height: 100%; object-fit: cover; }
+.newsrow__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  text-align: justify;
+  color: var(--text-strong);
+  margin: 0;
+}
+.newsrow__title a::after { content: ''; position: absolute; inset: 0; }
+.newsrow:hover .newsrow__title { color: var(--blue-dark); }
+.newsrow__date { margin-top: var(--space-3); font-size: var(--fs-xs); color: var(--text-tertiary); }
+
+/* Hàng video: ảnh nền có nút phát chồng lên */
+.newsrow__media--video { position: relative; }
+.newsrow__media--video::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0; height: 0;
+  border-left: 13px solid var(--on-dark-strong);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+}
+
+/* ==========================================================================
+   CHÂN DUNG CỰU SINH VIÊN TIÊU BIỂU
+   Lưới ảnh dọc, tên và chức danh bên dưới. Đây là mảng giàu hình ảnh nhất
+   của trang thật.
+   ========================================================================== */
+.faces {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-8);
+}
+@media (max-width: 1100px) { .faces { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .faces { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.face { position: relative; display: grid; gap: var(--space-5); }
+.face__media {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--surface-inset);
+  border-bottom: 3px solid var(--blue);
+}
+.face__media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-slow) var(--ease); }
+@media (prefers-reduced-motion: no-preference) {
+  .face:hover .face__media img { transform: scale(1.04); }
+}
+.face__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: 0;
+}
+.face__name a::after { content: ''; position: absolute; inset: 0; }
+.face:hover .face__name { color: var(--blue-dark); }
+.face__role {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   SỐ LIỆU MẠNG LƯỚI
+   Dải xanh, bốn ô. Mọi con số tính từ dữ liệu lúc render.
+   ========================================================================== */
+.statband { background: var(--blue); padding-block: var(--space-11); }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-10);
+}
+.stat { display: grid; gap: var(--space-3); border-left: 3px solid rgba(255, 255, 255, 0.4); padding-left: var(--space-8); }
+.stat__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--on-dark-strong);
+  font-variant-numeric: tabular-nums;
+}
+.stat__label {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  color: var(--on-dark-strong);
+}
+.stat__note { font-size: var(--fs-xs); color: var(--on-dark-muted); line-height: 1.45; }
+
+@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+
+/* ==========================================================================
+   DẢI KÊU GỌI ĐĂNG KÝ
+   ========================================================================== */
+.ctaband {
+  background: var(--surface-raised);
+  border-top: 3px solid var(--blue);
+}
+.ctaband__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-11);
+  padding-block: var(--space-11);
+}
+.ctaband__title {
+  font-size: var(--fs-2xl);
+  text-transform: uppercase;
+  color: var(--text-strong);
+  max-width: 24ch;
+}
+.ctaband__lede { margin-top: var(--space-5); max-width: 62ch; color: var(--text-secondary); line-height: var(--lh-base); }
+
+@media (max-width: 800px) {
+  .ctaband__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-9); }
+}
+
+/* ==========================================================================
+   DẢI ĐỐI TÁC Ở CUỐI TRANG
+   ========================================================================== */
+.partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: var(--space-6);
+}
+.partners a { display: block; border: 1px solid var(--border); background: var(--surface-base); }
+.partners img { width: 100%; height: 72px; object-fit: contain; padding: var(--space-4); }
+.partners a:hover { border-color: var(--blue); }

@@ -1,0 +1,20 @@
+<!--meta {"title":"Blog in 3D: hướng dẫn, công nghệ, dự án","description":"Hướng dẫn chuẩn bị file, chọn công nghệ in 3D, cách tính giá và câu chuyện dự án từ xưởng 3DRoom.","nav":"blog","crumbs":[["Blog","blog.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1>Ghi chép <em>từ xưởng</em></h1>
+        <p class="lead">Kỹ sư 3DRoom viết về những gì học được sau mỗi đơn hàng: chọn công nghệ, chuẩn bị file, giảm chi phí.</p>
+      </div>
+    </section>
+
+    <section class="section-tight" data-filter-scope>
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc bài viết" data-filter>
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="huong-dan" aria-pressed="false">Hướng dẫn</button>
+          <button class="chip" type="button" data-filter-value="cong-nghe" aria-pressed="false">Công nghệ</button>
+          <button class="chip" type="button" data-filter-value="du-an" aria-pressed="false">Dự án</button>
+        </div>
+        {{posts}}
+      </div>
+    </section>

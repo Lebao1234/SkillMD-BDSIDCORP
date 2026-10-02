@@ -1,0 +1,46 @@
+<!--meta {"title":"Công thức màu: phòng thử 8 màu phim","description":"Thử 8 công thức màu của máy Lăng Kính trên ảnh mẫu: Chuẩn, Rực, Dịu, Cổ điển, Hoài niệm, Điện ảnh, Đơn sắc và Bạc. So sánh trước sau, thêm hạt phim.","nav":"gia-lap-mau","image":"assets/img/pho-quan.jpg","crumbs":[["Công thức màu","gia-lap-mau.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1 data-split>Công thức màu, <em>chọn trước khi bấm</em></h1>
+        <p class="lead">Mỗi máy Lăng Kính có sẵn 8 công thức màu mô phỏng các loại phim. Chọn một công thức, ảnh JPEG ra đã có màu, không cần chỉnh trên máy tính.</p>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container">
+        <div class="lab lab-full" data-lab>
+          <div class="lab-stage" data-lab-stage>
+            <img class="lab-before" src="assets/img/pho-quan.jpg" width="1600" height="1066" alt="Ảnh mẫu đang chọn" data-lab-img>
+            <div class="lab-after" data-lab-after><img src="assets/img/pho-quan.jpg" width="1600" height="1066" alt="" data-lab-img2></div>
+            <span class="lab-grain" aria-hidden="true"></span>
+            <input class="lab-range" type="range" min="0" max="100" value="50" aria-label="Vị trí thanh so sánh" data-lab-range>
+            <span class="lab-handle" aria-hidden="true"><i class="ph ph-arrows-left-right"></i></span>
+            <p class="lab-tag lab-tag-l" aria-hidden="true">Gốc</p>
+            <p class="lab-tag lab-tag-r" aria-hidden="true" data-lab-name>Cổ điển</p>
+          </div>
+          <div class="lab-side">
+            <p class="lab-label">Ảnh mẫu</p>
+            <div class="lab-photos" role="group" aria-label="Chọn ảnh mẫu">
+              <button type="button" class="is-on" data-photo="pho-quan.jpg" aria-pressed="true"><img src="assets/img/pho-quan.jpg" width="1600" height="1066" alt="Phố ăn đêm" loading="lazy"></button>
+              <button type="button" data-photo="canh-ruong.jpg" aria-pressed="false"><img src="assets/img/canh-ruong.jpg" width="1600" height="1067" alt="Ruộng bậc thang" loading="lazy"></button>
+              <button type="button" data-photo="chan-dung-1.jpg" aria-pressed="false"><img src="assets/img/chan-dung-1.jpg" width="1067" height="1600" alt="Chân dung" loading="lazy"></button>
+              <button type="button" data-photo="dem-pho.jpg" aria-pressed="false"><img src="assets/img/dem-pho.jpg" width="1600" height="1200" alt="Phố đêm" loading="lazy"></button>
+              <button type="button" data-photo="canh-long-den.jpg" aria-pressed="false"><img src="assets/img/canh-long-den.jpg" width="1600" height="1067" alt="Đèn lồng" loading="lazy"></button>
+              <button type="button" data-photo="pho-tau.jpg" aria-pressed="false"><img src="assets/img/pho-tau.jpg" width="900" height="1600" alt="Đường tàu" loading="lazy"></button>
+            </div>
+            <p class="lab-label">Công thức</p>
+            <div class="recipes" role="group" aria-label="Chọn công thức màu" data-recipes></div>
+            <label class="lab-toggle"><input type="checkbox" data-lab-grain><span>Thêm hạt phim</span></label>
+            <p class="lab-desc" data-lab-desc aria-live="polite"></p>
+          </div>
+        </div>
+        <p class="note">Mô phỏng trên trình duyệt để minh họa. Màu thật trong máy được xử lý trên dữ liệu RAW nên chi tiết và chuyển màu tốt hơn.</p>
+      </div>
+    </section>
+    <section class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">Tám công thức</p>
+        <h2 class="h2" data-split>Chọn theo <em>cảnh bạn chụp</em></h2>
+        <div class="recipe-table" data-recipe-table></div>
+      </div>
+    </section>

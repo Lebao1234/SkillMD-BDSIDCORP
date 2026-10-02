@@ -1,0 +1,16 @@
+{
+  "name": "neu-alumni-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cong thong tin Mang luoi Cuu sinh vien Dai hoc Kinh te Quoc dan (ban demo)",
+  "scripts": {
+    "serve": "python -m http.server 5180",
+    "data": "node tools/build-data.js",
+    "pages": "node tools/build-pages.js",
+    "build": "node tools/build-data.js && node tools/build-pages.js",
+    "test": "node tools/smoke-test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.0"
+  }
+}

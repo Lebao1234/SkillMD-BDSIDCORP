@@ -1,0 +1,52 @@
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="BeatBeat, trang chủ">
+        <svg class="brand-mark" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#ff3300"/><path d="M8 13v6M12 9v14M16 12v8M20 7v18M24 11v10" stroke="#0b0b0c" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span class="brand-text">Beat<b>Beat</b></span>
+      </a>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul class="nav-list">
+          <li class="nav-item has-drop" data-nav-key="tai-nghe">
+            <button class="nav-link" type="button" aria-expanded="false" data-drop-toggle>Tai nghe<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="drop">
+              {{cat-tiles kind="tai-nghe"}}
+              <a class="drop-all" href="tai-nghe.html">Tất cả tai nghe <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </li>
+          <li class="nav-item has-drop" data-nav-key="loa">
+            <button class="nav-link" type="button" aria-expanded="false" data-drop-toggle>Loa<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="drop">
+              {{cat-tiles kind="loa"}}
+              <a class="drop-all" href="loa.html">Tất cả loa <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </li>
+          <li class="nav-item" data-nav-key="khuyen-mai"><a class="nav-link" href="khuyen-mai.html">Khuyến mãi</a></li>
+          <li class="nav-item" data-nav-key="phong-nghe-thu"><a class="nav-link" href="phong-nghe-thu.html">Phòng nghe thử</a></li>
+          <li class="nav-item" data-nav-key="tim"><a class="nav-link" href="tim-san-pham.html">Chọn giúp tôi</a></li>
+          <li class="nav-item" data-nav-key="ho-tro"><a class="nav-link" href="ho-tro.html">Hỗ trợ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn icon-btn-ghost" type="button" data-search-open aria-label="Tìm sản phẩm"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+        <a class="icon-btn icon-btn-ghost has-count" href="so-sanh.html" aria-label="So sánh sản phẩm"><i class="ph ph-columns" aria-hidden="true"></i><span class="count" data-compare-count>0</span></a>
+        <button class="icon-btn icon-btn-ghost has-count" type="button" data-cart-open aria-label="Mở giỏ hàng"><i class="ph ph-bag-simple" aria-hidden="true"></i><span class="count" data-cart-count>0</span></button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span class="sr-only">Mở menu</span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobile-nav" data-nav>
+    <nav class="mobile-links" aria-label="Menu điện thoại">
+      <a href="tai-nghe.html">Tai nghe</a>
+      <a href="loa.html">Loa</a>
+      <a href="khuyen-mai.html">Khuyến mãi</a>
+      <a href="phong-nghe-thu.html">Phòng nghe thử</a>
+      <a href="tim-san-pham.html">Chọn giúp tôi</a>
+      <a href="so-sanh.html">So sánh</a>
+      <a href="ho-tro.html">Hỗ trợ, bảo hành</a>
+      <a href="cua-hang.html">Cửa hàng</a>
+      <a href="bai-viet.html">Hướng dẫn chọn mua</a>
+    </nav>
+    <div class="mobile-foot">
+      <a class="mobile-call" href="tel:{{hotline-tel}}"><i class="ph ph-phone" aria-hidden="true"></i>{{hotline}} · {{hours}}</a>
+    </div>
+  </div>

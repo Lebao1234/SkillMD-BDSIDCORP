@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đóng góp nội dung | Mạng lưới Cựu sinh viên NEU</title>
+<meta name="description" content="Gửi câu chuyện, ảnh kỷ niệm, tư liệu hoặc tin tuyển dụng cho mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân. Ban quản trị duyệt trước khi đăng.">
+<link rel="canonical" href="https://alumni.neu.edu.vn/dong-gop.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Đóng góp nội dung | Mạng lưới Cựu sinh viên NEU">
+<meta property="og:description" content="Gửi câu chuyện, ảnh kỷ niệm, tư liệu hoặc tin tuyển dụng cho mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân. Ban quản trị duyệt trước khi đăng.">
+<meta property="og:url" content="https://alumni.neu.edu.vn/dong-gop.html">
+<meta property="og:image" content="https://picsum.photos/seed/neu-banner-chinh/1200/630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0076c0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="favicon.svg" color="#0076c0">
+
+<script>
+  /* Áp chủ đề trước khi trang vẽ lần đầu, để không chớp sáng rồi mới tối. */
+  try {
+    var t = JSON.parse(localStorage.getItem('neu-alumni:theme') || '"auto"');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/lists.css">
+
+<link rel="stylesheet" href="assets/css/polish.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+<div data-header></div>
+
+<main id="main">
+  <nav class="container crumbs" aria-label="Đường dẫn">
+    <a href="index.html">Trang chủ</a>
+    <span class="crumbs__sep" aria-hidden="true">/</span>
+    <span aria-current="page">Đóng góp nội dung</span>
+  </nav>
+  <div class="pagehead">
+    <div class="container pagehead__inner">
+      <h1 class="pagehead__title">Đóng góp nội dung</h1>
+      <div class="pagehead__rule"></div>
+      <p class="pagehead__lede">Gửi câu chuyện, ảnh, tư liệu hoặc tin tuyển dụng. Ban quản trị duyệt trước khi công bố.</p>
+    </div>
+  </div>
+  <div class="container formwrap">
+    <form data-form novalidate>
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">Bạn muốn gửi gì</legend>
+        <div class="scopes">
+          <label class="choice"><input type="radio" name="loai" value="cauchuyen" checked>
+            <span class="choice__body"><span class="choice__title">Câu chuyện hoặc bài viết</span>
+            <span class="choice__note">Chân dung, hành trình nghề nghiệp, hồi ức về thời đi học.</span></span></label>
+          <label class="choice"><input type="radio" name="loai" value="anh">
+            <span class="choice__body"><span class="choice__title">Ảnh kỷ niệm</span>
+            <span class="choice__note">Ảnh gặp mặt khóa, lễ tốt nghiệp, hoạt động của lớp.</span></span></label>
+          <label class="choice"><input type="radio" name="loai" value="tulieu">
+            <span class="choice__body"><span class="choice__title">Tư liệu và kỷ yếu</span>
+            <span class="choice__note">Bản quét kỷ yếu, sổ tay, ảnh tập thể, giấy tờ lưu niệm.</span></span></label>
+          <label class="choice"><input type="radio" name="loai" value="tuyendung">
+            <span class="choice__body"><span class="choice__title">Tin tuyển dụng</span>
+            <span class="choice__note">Vị trí đang mở tại doanh nghiệp của bạn.</span></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="fieldset" style="margin-top:var(--space-13)">
+        <legend class="fieldset__legend">Nội dung</legend>
+        <div class="field">
+          <label class="field__label" for="tieude">Tiêu đề <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id="tieude" name="tieude" type="text" data-rule="required|min:6">
+        </div>
+        <div class="field">
+          <label class="field__label" for="noidung">Mô tả <span class="req" aria-hidden="true">*</span></label>
+          <textarea class="textarea" id="noidung" name="noidung" data-rule="required|min:30"></textarea>
+          <p class="field__hint">Viết đủ để ban biên tập hiểu nội dung. Tối thiểu 30 ký tự.</p>
+        </div>
+        <div class="field" data-file-field>
+          <label class="field__label" for="tep">Tệp đính kèm</label>
+          <input class="input" id="tep" name="tep" type="file" accept="image/*,.pdf" multiple>
+          <p class="field__hint">Trong bản demo, tệp chỉ được đọc tên và không rời khỏi máy bạn.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="fieldset" style="margin-top:var(--space-13)">
+        <legend class="fieldset__legend">Người gửi</legend>
+        <div class="formrow">
+          <div class="field">
+            <label class="field__label" for="nguoigui">Họ và tên <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="nguoigui" name="nguoigui" type="text" autocomplete="name" data-rule="required|min:3">
+          </div>
+          <div class="field">
+            <label class="field__label" for="emailgui">Email <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="emailgui" name="emailgui" type="email" autocomplete="email" data-rule="required|email">
+          </div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="khoagui">Khóa</label>
+          <input class="input" id="khoagui" name="khoagui" type="text" inputmode="numeric" placeholder="Ví dụ: 52">
+        </div>
+      </fieldset>
+
+      <div class="formnav">
+        <p class="dim" style="font-size:var(--fs-xs);max-width:40ch">Nội dung vào hàng chờ duyệt. Ban quản trị phản hồi qua email trong vài ngày làm việc.</p>
+        <button class="btn btn--primary" type="submit" data-submit>Gửi cho ban quản trị</button>
+      </div>
+    </form>
+
+    <div class="hide" data-done></div>
+  </div>
+</main>
+
+<div data-footer></div>
+
+<script src="assets/data/alumni.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/data/events.js"></script>
+<script src="assets/data/albums.js"></script>
+<script src="assets/data/jobs.js"></script>
+<script src="assets/data/submissions.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/contribute.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!--meta {"title":"Hệ thống trung tâm","description":"5 chi nhánh Phím Đàn tại TP.HCM, mở cửa 9:00-21:00 cả tuần. Chọn chi nhánh gần nhà để học và luyện đàn.","nav":"he-thong","crumbs":[["Hệ thống trung tâm","he-thong-trung-tam.html"]]}-->
+    <section class="section-tight he-top" data-filter-scope data-filter-key="area">
+      <div class="container">
+        {{crumbs}}
+        <div class="filter-select">
+          <div>
+            <h1 class="h-two" style="margin-bottom:8px"><em>Khám phá</em> các chi nhánh gần bạn</h1>
+            <p class="muted">Bắt đầu hành trình âm nhạc với hệ thống học piano linh hoạt lịch học.</p>
+          </div>
+          <div class="field">
+            <label for="area-select">Chọn phường</label>
+            <select id="area-select" data-filter-select>
+              <option value="all">Tất cả phường</option>
+              <option value="xuan-hoa">Phường Xuân Hòa</option>
+              <option value="cau-kieu">Phường Cầu Kiệu</option>
+              <option value="gia-dinh">Phường Gia Định</option>
+              <option value="tan-hung">Phường Tân Hưng</option>
+              <option value="thu-duc">Phường Thủ Đức</option>
+            </select>
+          </div>
+        </div>
+        {{branches}}
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="h-two">Mọi chi nhánh <em>đều có</em></h2>
+        <div class="model-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <article class="model-card"><i class="ph ph-door-open" aria-hidden="true"></i><h3>Phòng luyện đàn</h3><p>Đàn digital 88 phím búa và phòng riêng có đàn acoustic.</p></article>
+          <article class="model-card"><i class="ph ph-user-focus" aria-hidden="true"></i><h3>Huấn luyện viên trực</h3><p>Luôn có huấn luyện viên hỗ trợ trong giờ mở cửa.</p></article>
+          <article class="model-card"><i class="ph ph-motorcycle" aria-hidden="true"></i><h3>Gửi xe miễn phí</h3><p>Chỗ để xe máy có bảo vệ cho học viên.</p></article>
+          <article class="model-card"><i class="ph ph-coffee" aria-hidden="true"></i><h3>Góc chờ</h3><p>Nước uống, wifi và sách âm nhạc cho người đi cùng.</p></article>
+        </div>
+      </div>
+    </section>

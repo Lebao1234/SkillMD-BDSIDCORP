@@ -1,0 +1,87 @@
+<!--meta {"title":"Khóa học tiếng Anh cho trẻ em, học sinh, người đi làm","description":"Các khóa học tại BBE: tiếng Anh thiếu nhi Cambridge, thiếu niên KET PET, luyện thi IELTS, giao tiếp công sở và đào tạo doanh nghiệp.","nav":"khoa-hoc","crumbs":[["Khóa học","khoa-hoc.html"]]}-->
+    <section class="page-hero-plain">
+      <div class="container">
+        {{crumbs}}
+        <h1>Khóa học phù hợp với từng độ tuổi và mục tiêu</h1>
+        <p class="lead">Mọi khóa học đều bắt đầu bằng bài kiểm tra trình độ miễn phí. Bạn được xếp đúng lớp, không phải học lại những gì đã biết.</p>
+      </div>
+    </section>
+
+    <section class="section" data-filter-scope>
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc theo đối tượng" data-filter data-filter-group="category">
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="child" aria-pressed="false">Trẻ em</button>
+          <button class="chip" type="button" data-filter-value="teen" aria-pressed="false">Học sinh</button>
+          <button class="chip" type="button" data-filter-value="adult" aria-pressed="false">Người lớn</button>
+          <button class="chip" type="button" data-filter-value="business" aria-pressed="false">Doanh nghiệp</button>
+        </div>
+        {{courses}}
+        <div class="empty-state" data-empty hidden>
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          <h3>Không có khóa học trong nhóm này</h3>
+          <p>Hãy chọn nhóm khác hoặc để lại thông tin để được tư vấn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="planner" data-planner>
+          <div class="planner-intro">
+            <h2>Chưa biết chọn khóa nào?</h2>
+            <p>Trả lời 2 câu hỏi, BBE gợi ý khóa học phù hợp. Tư vấn viên sẽ xác nhận lại sau bài kiểm tra trình độ.</p>
+          </div>
+          <form class="planner-form" onsubmit="return false">
+            <div>
+              <label for="p-who">Người học là</label>
+              <select id="p-who" name="who">
+                <option value="">Chọn một</option>
+                <option value="child">Con tôi, 6-11 tuổi</option>
+                <option value="teen">Con tôi, 12-17 tuổi</option>
+                <option value="adult">Tôi, sinh viên hoặc người đi làm</option>
+                <option value="corp">Nhân viên trong công ty tôi</option>
+              </select>
+            </div>
+            <div>
+              <label for="p-goal">Mục tiêu chính</label>
+              <select id="p-goal" name="goal">
+                <option value="speak">Giao tiếp tự tin</option>
+                <option value="cert">Thi chứng chỉ, điểm số</option>
+                <option value="abroad">Du học, học bổng</option>
+                <option value="work">Dùng trong công việc</option>
+              </select>
+            </div>
+            <div class="planner-result" data-planner-result aria-live="polite" hidden>
+              <span>Khóa học gợi ý</span>
+              <strong data-p-name></strong>
+              <p data-p-why></p>
+              <a data-p-link href="khoa-hoc.html">Xem chi tiết khóa học</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>So sánh nhanh các khóa học</h2>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th scope="col">Khóa học</th><th scope="col">Đối tượng</th><th scope="col">Thời lượng</th><th scope="col">Sĩ số</th><th scope="col">Học phí</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><a href="khoa-hoc-thieu-nhi.html">Thiếu nhi</a></th><td>6-11 tuổi</td><td>90 phút, 2 buổi/tuần</td><td class="num">8-10 bé</td><td class="num">từ 1.980.000đ/tháng</td></tr>
+              <tr><th scope="row"><a href="khoa-hoc-thieu-nien.html">Thiếu niên</a></th><td>12-17 tuổi</td><td>90 phút, 2 buổi/tuần</td><td class="num">10-12</td><td class="num">từ 2.250.000đ/tháng</td></tr>
+              <tr><th scope="row"><a href="khoa-hoc-ielts.html">IELTS</a></th><td>Từ 15 tuổi</td><td>2 giờ, 3 buổi/tuần</td><td class="num">tối đa 12</td><td class="num">từ 7.900.000đ/chặng</td></tr>
+              <tr><th scope="row"><a href="khoa-hoc-giao-tiep.html">Giao tiếp</a></th><td>Sinh viên, người đi làm</td><td>90 phút, 2 buổi/tuần</td><td class="num">6-10</td><td class="num">từ 2.600.000đ/tháng</td></tr>
+              <tr><th scope="row"><a href="khoa-hoc-doanh-nghiep.html">Doanh nghiệp</a></th><td>Từ 6 nhân sự</td><td>Theo lịch doanh nghiệp</td><td class="num">6-15</td><td>Báo giá riêng</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">Học phí trên là mức tham khảo cho hình thức học tại trung tâm. Xem chi tiết tại trang <a href="hoc-phi.html">Học phí</a>.</p>
+      </div>
+    </section>

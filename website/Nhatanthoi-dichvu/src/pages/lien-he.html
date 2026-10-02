@@ -1,0 +1,24 @@
+<!--meta {"title":"Liên hệ, chỉ đường đến tiệm","description":"Địa chỉ tiệm áo dài Nhã An Thời tại Tân Phú, TP.HCM, giờ mở cửa 9:00-21:00, hotline, Zalo và bản đồ chỉ đường.","nav":"lien-he","crumbs":[["Liên hệ","lien-he.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1>Ghé tiệm <em>thử áo</em></h1>
+        <p class="lead">Tiệm có chỗ gửi xe máy trước cửa, xe hơi đỗ ở bãi cách 50 m. Cuối tuần nên đặt lịch trước để không phải chờ.</p>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <p class="eyebrow-no">Địa chỉ</p>
+          <h2>{{address}}</h2>
+          <ul>
+            <li><i class="ph ph-clock" aria-hidden="true"></i>Mở cửa {{hours}}</li>
+            <li><i class="ph ph-phone" aria-hidden="true"></i><a href="tel:{{hotline-tel}}">{{hotline}}</a></li>
+            <li><i class="ph ph-chat-circle-dots" aria-hidden="true"></i><a href="{{zalo}}" target="_blank" rel="noopener">Zalo {{hotline}}</a></li>
+            <li><i class="ph ph-envelope-simple" aria-hidden="true"></i><a href="mailto:{{email}}">{{email}}</a></li>
+          </ul>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query={{map-q}}" target="_blank" rel="noopener">Mở Google Maps<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+        </div>
+        <iframe class="map-frame" title="Bản đồ đường đến tiệm Nhã An Thời" src="https://www.google.com/maps?q={{map-q}}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>

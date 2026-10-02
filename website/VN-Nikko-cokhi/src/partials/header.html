@@ -1,0 +1,52 @@
+  <header class="site-header" data-header>
+    <div class="topbar">
+      <div class="container topbar-in">
+        <p class="tb-item"><span>MST</span>{{tax}}</p>
+        <p class="tb-item tb-addr">{{address-short}}, xưởng tại Ấp Sáp Mai</p>
+        <p class="tb-item tb-hours">{{hours}}</p>
+        <a class="tb-item" href="mailto:{{email}}">{{email}}</a>
+        <div class="tb-item tb-langs"><!--LANGS--></div>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-in">
+        <a class="brand" href="index.html" aria-label="Công ty TNHH Cơ khí VN - NIKKO, trang chủ">
+          <svg class="brand-mark" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#111316"/><text x="20" y="25.6" text-anchor="middle" font-family="Plus Jakarta Sans, Be Vietnam Pro, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="-.6" fill="#fff">VN</text></svg>
+          <span class="brand-text">VN - NIKKO<small>Cơ khí inox, sắt</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <ul class="nav-list">
+            <li class="nav-item" data-nav-key="gioi-thieu"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
+            <li class="nav-item has-drop" data-nav-key="san-pham">
+              <button class="nav-link" type="button" aria-expanded="false" data-drop-toggle>Sản phẩm<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+              <div class="drop"><div class="drop-in">{{segment-drop}}<a class="drop-all" href="san-pham.html">Tất cả sản phẩm <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div></div>
+            </li>
+            <li class="nav-item" data-nav-key="nang-luc"><a class="nav-link" href="nang-luc.html">Năng lực</a></li>
+            <li class="nav-item" data-nav-key="linh-vuc"><a class="nav-link" href="linh-vuc.html">Lĩnh vực</a></li>
+            <li class="nav-item" data-nav-key="tin-tuc"><a class="nav-link" href="tin-tuc.html">Tin tức</a></li>
+            <li class="nav-item" data-nav-key="lien-he"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <a class="header-phone" href="tel:{{hotline-tel}}"><small>Gọi xưởng</small>{{hotline}}</a>
+        <a class="btn btn-primary btn-sm header-cta" href="bao-gia.html">Báo giá<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span class="sr-only">Mở menu</span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobile-nav" data-nav>
+    <nav class="mobile-links" aria-label="Menu điện thoại">
+      <a href="index.html">Trang chủ</a>
+      <a href="gioi-thieu.html">Giới thiệu</a>
+      <a href="san-pham.html">Sản phẩm</a>
+      <a href="nang-luc.html">Năng lực</a>
+      <a href="linh-vuc.html">Lĩnh vực hoạt động</a>
+      <a href="tin-tuc.html">Tin tức</a>
+      <a href="tuyen-dung.html">Tuyển dụng</a>
+      <a href="lien-he.html">Liên hệ</a>
+    </nav>
+    <div class="mobile-foot">
+      <a class="btn btn-primary btn-lg btn-block" href="bao-gia.html">Gửi yêu cầu báo giá<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      <!--LANGS-MOBILE-->
+      <a class="mobile-call" href="tel:{{hotline-tel}}"><i class="ph ph-phone" aria-hidden="true"></i>{{hotline}}</a>
+    </div>
+  </div>

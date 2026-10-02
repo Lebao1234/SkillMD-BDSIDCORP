@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng ký cựu sinh viên | Mạng lưới Cựu sinh viên NEU</title>
+<meta name="description" content="Tạo hồ sơ cựu sinh viên Đại học Kinh tế Quốc dân, cập nhật thông tin nghề nghiệp và chọn phạm vi công khai cho từng trường thông tin.">
+<link rel="canonical" href="https://alumni.neu.edu.vn/dang-ky.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Đăng ký cựu sinh viên | Mạng lưới Cựu sinh viên NEU">
+<meta property="og:description" content="Tạo hồ sơ cựu sinh viên Đại học Kinh tế Quốc dân, cập nhật thông tin nghề nghiệp và chọn phạm vi công khai cho từng trường thông tin.">
+<meta property="og:url" content="https://alumni.neu.edu.vn/dang-ky.html">
+<meta property="og:image" content="https://picsum.photos/seed/neu-banner-chinh/1200/630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0076c0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="favicon.svg" color="#0076c0">
+
+<script>
+  /* Áp chủ đề trước khi trang vẽ lần đầu, để không chớp sáng rồi mới tối. */
+  try {
+    var t = JSON.parse(localStorage.getItem('neu-alumni:theme') || '"auto"');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/lists.css">
+
+<link rel="stylesheet" href="assets/css/polish.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+<div data-header></div>
+
+<main id="main">
+  <nav class="container crumbs" aria-label="Đường dẫn">
+    <a href="index.html">Trang chủ</a>
+    <span class="crumbs__sep" aria-hidden="true">/</span>
+    <span aria-current="page">Đăng ký cựu sinh viên</span>
+  </nav>
+  <div class="pagehead">
+    <div class="container pagehead__inner">
+      <h1 class="pagehead__title">Đăng ký cựu sinh viên</h1>
+      <div class="pagehead__rule"></div>
+      <p class="pagehead__lede">Ba bước. Bạn quyết định từng thông tin của mình hiện với ai.</p>
+    </div>
+  </div>
+  <div class="container formwrap">
+    <div class="steps" data-steps>
+      <div class="step is-on"><span class="step__name">Thông tin cơ bản</span><span>Họ tên và liên hệ</span></div>
+      <div class="step"><span class="step__name">Học tập và nghề nghiệp</span><span>Khóa, ngành, nơi công tác</span></div>
+      <div class="step"><span class="step__name">Phạm vi công khai</span><span>Ai thấy được gì</span></div>
+    </div>
+
+    <form data-form novalidate>
+      <!-- Bước 1 -->
+      <fieldset class="fieldset" data-step="1">
+        <legend class="fieldset__legend">Thông tin cơ bản</legend>
+        <div class="formrow">
+          <div class="field">
+            <label class="field__label" for="hoten">Họ và tên <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="hoten" name="hoten" type="text" autocomplete="name" data-rule="required|min:3">
+          </div>
+          <div class="field">
+            <label class="field__label" for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" data-rule="required|email">
+            <p class="field__hint">Dùng để xác nhận đăng ký sự kiện và nhận bản tin.</p>
+          </div>
+        </div>
+        <div class="formrow">
+          <div class="field">
+            <label class="field__label" for="dienthoai">Điện thoại</label>
+            <input class="input" id="dienthoai" name="dienthoai" type="tel" autocomplete="tel" data-rule="phone">
+          </div>
+          <div class="field">
+            <label class="field__label" for="thanhpho">Nơi sinh sống</label>
+            <input class="input" id="thanhpho" name="thanhpho" type="text" autocomplete="address-level2">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Bước 2 -->
+      <fieldset class="fieldset hide" data-step="2">
+        <legend class="fieldset__legend">Học tập và nghề nghiệp</legend>
+        <div class="formrow">
+          <div class="field">
+            <label class="field__label" for="khoa">Khóa <span class="req" aria-hidden="true">*</span></label>
+            <select class="select" id="khoa" name="khoa" data-rule="required"><option value="">Chọn khóa</option></select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="lop">Lớp</label>
+            <input class="input" id="lop" name="lop" type="text" placeholder="Ví dụ: KTE 58A">
+          </div>
+        </div>
+        <div class="formrow">
+          <div class="field">
+            <label class="field__label" for="nganh">Ngành đào tạo <span class="req" aria-hidden="true">*</span></label>
+            <select class="select" id="nganh" name="nganh" data-rule="required"><option value="">Chọn ngành</option></select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="namtn">Năm tốt nghiệp</label>
+            <input class="input" id="namtn" name="namtn" type="text" inputmode="numeric" placeholder="2015" data-rule="year">
+          </div>
+        </div>
+        <div class="formrow">
+          <div class="field">
+            <label class="field__label" for="congty">Nơi công tác</label>
+            <input class="input" id="congty" name="congty" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label class="field__label" for="chucdanh">Chức danh</label>
+            <input class="input" id="chucdanh" name="chucdanh" type="text" autocomplete="organization-title">
+          </div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="linhvuc">Lĩnh vực</label>
+          <select class="select" id="linhvuc" name="linhvuc"><option value="">Chọn lĩnh vực</option></select>
+        </div>
+        <label class="choice">
+          <input type="checkbox" name="covan" value="1">
+          <span class="choice__body">
+            <span class="choice__title">Tôi nhận làm cố vấn cho sinh viên và người mới đi làm</span>
+            <span class="choice__note">Hồ sơ của bạn sẽ mang nhãn Cố vấn trong danh bạ. Bạn có thể tắt bất cứ lúc nào.</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <!-- Bước 3 -->
+      <fieldset class="fieldset hide" data-step="3">
+        <legend class="fieldset__legend">Phạm vi công khai</legend>
+        <p class="fieldset__note">Mặc định của hệ thống là dè dặt. Bạn mở rộng tới đâu là quyền của bạn, và đổi lại được bất cứ lúc nào trong mục Tài khoản.</p>
+        <div class="scopes" data-scopes></div>
+        <label class="choice">
+          <input type="checkbox" name="dongy" value="1" data-rule="required">
+          <span class="choice__body">
+            <span class="choice__title">Tôi xác nhận thông tin trên là của tôi và đồng ý cho mạng lưới lưu trữ</span>
+            <span class="choice__note">Bạn có quyền yêu cầu sửa hoặc xóa hồ sơ bất cứ lúc nào bằng cách liên hệ ban quản trị.</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="formnav">
+        <button class="btn btn--quiet" type="button" data-prev disabled>Quay lại</button>
+        <button class="btn btn--primary" type="button" data-next>Tiếp tục</button>
+        <button class="btn btn--primary hide" type="submit" data-submit>Hoàn tất đăng ký</button>
+      </div>
+    </form>
+
+    <div class="hide" data-done></div>
+  </div>
+</main>
+
+<div data-footer></div>
+
+<script src="assets/data/alumni.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/data/events.js"></script>
+<script src="assets/data/albums.js"></script>
+<script src="assets/data/jobs.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/register.js"></script>
+</body>
+</html>

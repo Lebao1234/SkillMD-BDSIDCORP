@@ -1,0 +1,20 @@
+<!--meta {"title":"Blog chăm sóc giày","description":"Kinh nghiệm vệ sinh, bảo quản giày và đồ da, xu hướng giày và tin tức khuyến mại từ K-Lab's.","nav":"blog","crumbs":[["Blog","blog.html"]]}-->
+    <section class="page-dark">
+      <div class="container">
+        {{crumbs}}
+        <h1>Blog</h1>
+        <p class="lead">Kinh nghiệm do kỹ thuật viên K-Lab's viết từ những đôi giày thật đi qua xưởng mỗi ngày.</p>
+      </div>
+    </section>
+    <section class="section" data-filter-scope>
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc bài viết">
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="kinh-nghiem" aria-pressed="false">Chia sẻ kinh nghiệm</button>
+          <button class="chip" type="button" data-filter-value="xu-huong" aria-pressed="false">Xu hướng giày</button>
+          <button class="chip" type="button" data-filter-value="tin-tuc" aria-pressed="false">Tin tức, khuyến mại</button>
+        </div>
+        {{posts}}
+        <div class="empty-state" data-empty hidden><i class="ph-light ph-newspaper" aria-hidden="true"></i><h3>Chưa có bài viết trong mục này</h3></div>
+      </div>
+    </section>

@@ -1,0 +1,43 @@
+<!--meta {"title":"Liên hệ và danh sách cơ sở","description":"4 cơ sở K-Lab's tại Hà Nội và Đà Nẵng, mở cửa 8:00-21:00. Hotline, Zalo, email và form gửi câu hỏi.","nav":"ve","cta":false,"crumbs":[["Liên hệ","lien-he.html"]]}-->
+    <section class="page-dark">
+      <div class="container">
+        {{crumbs}}
+        <h1>Liên hệ</h1>
+        <p class="lead">Mở cửa 8:00-21:00 tất cả các ngày. Gửi ảnh giày qua Zalo để được báo giá sơ bộ trong 15 phút.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container book-card">
+        <div>
+          <h2 class="h2">Danh sách cơ sở</h2>
+          {{branches}}
+        </div>
+        <div class="form-shell">
+        <form data-form novalidate data-endpoint="">
+          <div class="form-body" data-form-body>
+            <h3 class="form-title">Gửi câu hỏi</h3>
+            <div class="field-row">
+              <div class="field"><label for="c-name">Họ và tên</label><input id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err"><small class="error" id="c-name-err" role="alert"></small></div>
+              <div class="field"><label for="c-phone">Số điện thoại</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="c-phone-err"><small class="error" id="c-phone-err" role="alert"></small></div>
+            </div>
+            <div class="field"><label for="c-message">Nội dung</label><textarea id="c-message" name="message" rows="5" maxlength="1000" required aria-describedby="c-message-err"></textarea><small class="error" id="c-message-err" role="alert"></small></div>
+            <p class="form-error" data-form-error role="alert" hidden><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span>Chưa gửi được. Vui lòng thử lại hoặc gọi {{hotline}}.</span></p>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Gửi câu hỏi</button>
+            <p class="note">Hợp tác, đại lý: {{email}}</p>
+          </div>
+          <div class="form-success" data-form-success hidden tabindex="-1">
+            <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+            <h2>Đã gửi câu hỏi</h2>
+            <p>Cảm ơn <strong data-success-name>bạn</strong>. K-Lab's sẽ gọi lại số <strong data-success-phone></strong> sớm nhất.</p>
+            <button class="btn btn-ghost" type="button" data-form-again>Gửi câu hỏi khác</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted">
+      <div class="container">
+        <h2 class="h2">Bản đồ CS1 Phố Huế</h2>
+        <iframe class="map-frame" title="Bản đồ cơ sở Phố Huế" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Ph%E1%BB%91%20Hu%E1%BA%BF%2C%20Hai%20B%C3%A0%20Tr%C6%B0ng%2C%20H%C3%A0%20N%E1%BB%99i&amp;z=16&amp;output=embed"></iframe>
+      </div>
+    </section>

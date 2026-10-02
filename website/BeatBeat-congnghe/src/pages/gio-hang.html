@@ -1,0 +1,56 @@
+<!--meta {"title": "Giỏ hàng và thanh toán", "description": "Xem giỏ hàng, nhập mã giảm giá, chọn cách nhận hàng và thanh toán đơn BeatBeat.", "noindex": true, "crumbs": [["Giỏ hàng", "gio-hang.html"]]}-->
+    <section class="page-head page-head-tight">
+      <div class="container">
+        {{crumbs}}
+        <h1>Giỏ hàng</h1>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container checkout">
+        <div>
+          <p class="ship-meter" data-ship-meter></p>
+          <ul class="cart-list cart-list-lg" data-cart-list></ul>
+          <div class="cart-empty" data-cart-empty>
+            {{wave n="32" class="wave-sm"}}
+            <p>Giỏ hàng đang trống.</p>
+            <div class="row-actions"><a class="btn btn-primary" href="tai-nghe.html">Xem tai nghe<span class="btn-ico"><i class="ph ph-arrow-right" aria-hidden="true"></i></span></a><a class="btn btn-ghost" href="loa.html">Xem loa</a></div>
+          </div>
+        </div>
+        <!-- Gắn API thật: đặt data-endpoint="https://..." trên thẻ form -->
+        <form class="co-form" data-checkout novalidate data-endpoint="">
+          <div data-co-body>
+            <h2>Thông tin nhận hàng</h2>
+            <div class="field"><label for="co-name">Họ và tên</label><input id="co-name" name="name" autocomplete="name" required aria-describedby="co-name-err"><small class="error" id="co-name-err" role="alert"></small></div>
+            <div class="field"><label for="co-phone">Số điện thoại</label><input id="co-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="0912 345 678" aria-describedby="co-phone-err"><small class="error" id="co-phone-err" role="alert"></small></div>
+            <fieldset class="co-opt">
+              <legend>Nhận hàng</legend>
+              <label><input type="radio" name="ship" value="giao" checked data-ship><span><strong>Giao tận nơi</strong><small>2 giờ nội thành, 1 - 3 ngày tỉnh</small></span></label>
+              <label><input type="radio" name="ship" value="cua-hang" data-ship><span><strong>Nhận tại cửa hàng</strong><small>Hà Nội, TP.HCM, Đà Nẵng</small></span></label>
+            </fieldset>
+            <div class="field" data-addr><label for="co-addr">Địa chỉ</label><input id="co-addr" name="address" autocomplete="street-address" aria-describedby="co-addr-err"><small class="error" id="co-addr-err" role="alert"></small></div>
+            <fieldset class="co-opt">
+              <legend>Thanh toán</legend>
+              <label><input type="radio" name="pay" value="cod" checked><span><strong>Khi nhận hàng</strong><small>Mở hộp kiểm tra trước khi trả tiền</small></span></label>
+              <label><input type="radio" name="pay" value="chuyen-khoan"><span><strong>Chuyển khoản, ví</strong><small>Mã QR gửi qua tin nhắn sau khi xác nhận</small></span></label>
+              <label><input type="radio" name="pay" value="tra-gop"><span><strong>Trả góp 0%</strong><small>Thẻ tín dụng, 6 hoặc 12 tháng</small></span></label>
+            </fieldset>
+            <div class="field promo-field"><label for="co-code">Mã giảm giá</label><div class="promo-row"><input id="co-code" name="code" autocomplete="off" placeholder="BEAT200" data-promo-input aria-describedby="co-code-msg"><button class="btn btn-ghost btn-sm" type="button" data-promo-apply>Áp dụng</button></div><small class="promo-msg" id="co-code-msg" data-promo-msg aria-live="polite"></small></div>
+            <div class="co-sum">
+              <p><span>Tạm tính</span><strong data-cart-total>0đ</strong></p>
+              <p data-discount-row hidden><span>Giảm giá</span><strong data-discount>0đ</strong></p>
+              <p><span>Vận chuyển</span><strong data-ship-fee>Miễn phí</strong></p>
+              <p class="co-grand"><span>Tổng cộng</span><strong data-grand>0đ</strong></p>
+            </div>
+            <p class="form-error" data-co-error role="alert" hidden><i class="ph ph-warning-circle" aria-hidden="true"></i><span>Chưa gửi được đơn. Vui lòng thử lại hoặc gọi {{hotline}}.</span></p>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" data-co-submit>Đặt hàng<span class="btn-ico"><i class="ph ph-arrow-right" aria-hidden="true"></i></span></button>
+            <p class="note">Nhân viên gọi xác nhận trong 15 phút. Đơn chỉ được giao sau khi xác nhận.</p>
+          </div>
+          <div class="co-done" data-co-done hidden tabindex="-1">
+            {{wave n="28" class="wave-sm wave-live"}}
+            <h2>Đã nhận đơn <span data-co-code></span></h2>
+            <p>BeatBeat sẽ gọi số <strong data-co-phone></strong> để xác nhận đơn trong 15 phút.</p>
+            <a class="text-link" href="index.html">Về trang chủ <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </form>
+      </div>
+    </section>

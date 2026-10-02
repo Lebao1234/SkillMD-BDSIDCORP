@@ -1,0 +1,128 @@
+<!--meta {"title": "BeatBeat: tai nghe, loa Bluetooth, loa tiệc và loa thanh", "description": "Tai nghe chống ồn, True Wireless, gaming, loa di động IP67, loa tiệc và loa thanh Dolby Atmos. Giao 2 giờ, đổi trả 30 ngày, trả góp 0%.", "preload": "assets/img/hero-tai-nghe.jpg"}-->
+    <section class="hero" data-glow>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>Mới · Aura Max</p>
+          <h1><span class="h-line">Ồn thì tắt.</span><span class="h-line">Bass thì <em>mở</em>.</span></h1>
+          <p class="lead">Tai nghe chụp tai chống ồn 42 dB, pin 60 giờ, nặng 268 gram. Đeo thử trên web bằng phòng nghe thử, hoặc ghé 3 cửa hàng ở Hà Nội, TP.HCM, Đà Nẵng.</p>
+          <div class="row-actions">
+            <a class="btn btn-primary btn-lg" href="aura-max.html">Mua Aura Max · 6.490.000đ<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+            <a class="text-link" href="phong-nghe-thu.html?sp=aura-max"><i class="ph ph-headphones" aria-hidden="true"></i>Nghe thử trên web</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="hero-ring" aria-hidden="true"><span></span><span></span><span></span></div>
+          <img class="hero-img" src="assets/img/hero-tai-nghe.jpg" width="1600" height="2000" alt="Tai nghe chụp tai BeatBeat màu đen trên nền tối" fetchpriority="high">
+          <ul class="hero-specs" aria-label="Thông số chính">
+            <li style="--x:4%;--y:18%"><b>-42 dB</b>chống ồn thích ứng</li>
+            <li style="--x:62%;--y:8%"><b>60 giờ</b>pin, bật chống ồn</li>
+            <li style="--x:58%;--y:78%"><b>40 mm</b>màng sợi carbon</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-wave">{{wave n="96" class="wave-hero"}}</div>
+    </section>
+
+    <section class="section" aria-labelledby="cat-title">
+      <div class="container">
+        <div class="section-head section-head-row"><div><p class="eyebrow">Danh mục</p><h2 id="cat-title">Bảy cách <em>nghe nhạc</em></h2></div><a class="text-link" href="tim-san-pham.html">Chưa biết chọn gì? <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+        {{cat-tiles}}
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="anc-title">
+      <div class="container anc">
+        <div class="anc-text">
+          <p class="eyebrow">Chống ồn chủ động</p>
+          <h2 id="anc-title">Kéo để <em>tắt</em> thành phố</h2>
+          <p class="muted">Micro nghe tiếng ồn, chip phát sóng ngược pha để triệt tiêu, 200 lần mỗi giây. Tiếng xe buýt, điều hòa, động cơ máy bay giảm mạnh nhất.</p>
+          <div class="anc-ctrl">
+            <label for="anc-range" class="anc-label">Mức chống ồn <output data-anc-out>0 dB</output></label>
+            <input id="anc-range" type="range" min="0" max="42" value="0" step="1" data-anc-range>
+            <p class="anc-scale"><span>Tắt</span><span>Văn phòng</span><span>Xe buýt</span><span>Máy bay</span></p>
+          </div>
+          <a class="btn btn-ghost" href="phong-nghe-thu.html">Nghe bằng tai trong phòng nghe thử <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="anc-vis" data-anc-vis aria-hidden="true">
+          <div class="anc-layer anc-noise">{{wave n="72" class="wave-noise"}}</div>
+          <div class="anc-layer anc-music">{{wave n="72" class="wave-music"}}</div>
+          <p class="anc-tag"><span>Tiếng ồn</span><span>Nhạc</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="best-title">
+      <div class="container">
+        <div class="section-head section-head-row"><div><p class="eyebrow">Bán chạy tháng 9</p><h2 id="best-title">Được chọn <em>nhiều nhất</em></h2></div><a class="text-link" href="tai-nghe.html">Xem tất cả {{count}} sản phẩm <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+        {{products slugs="pulse-mini,aura-2,drop-5,pulse-pro"}}
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="moment-title">
+      <div class="container">
+        <div class="section-head section-head-row"><div><p class="eyebrow">Theo khoảnh khắc</p><h2 id="moment-title">Mỗi lúc <em>một kiểu nghe</em></h2></div><div class="rail-ctrl" data-scroll-ctrl="rail-m"><button type="button" class="icon-btn icon-btn-ghost" aria-label="Xem trước"><i class="ph ph-arrow-left" aria-hidden="true"></i></button><button type="button" class="icon-btn icon-btn-ghost" data-dir-next aria-label="Xem tiếp"><i class="ph ph-arrow-right" aria-hidden="true"></i></button></div></div>
+      </div>
+      <div class="rail-wrap">
+        <ul class="moments" id="rail-m" tabindex="0" aria-label="Khoảnh khắc">
+          <li><a href="aura-max.html"><img src="assets/img/ls-pho.jpg" width="1200" height="1500" alt="" loading="lazy"><span class="m-when">7:30 sáng</span><span class="m-title">Đi làm, kẹt xe</span><span class="m-pick">Aura Max · chống ồn 42 dB</span></a></li>
+          <li><a href="run-open.html"><img src="assets/img/ls-chay.jpg" width="1200" height="1680" alt="" loading="lazy"><span class="m-when">5:45 sáng</span><span class="m-title">Chạy bộ bờ sông</span><span class="m-pick">Run Open · vẫn nghe tiếng xe</span></a></li>
+          <li><a href="pulse-pro.html"><img src="assets/img/ls-cua-so.jpg" width="1200" height="1800" alt="" loading="lazy"><span class="m-when">13:00</span><span class="m-title">Tập trung làm việc</span><span class="m-pick">Pulse Pro · 10 giờ mỗi lần sạc</span></a></li>
+          <li><a href="clash-g7.html"><img src="assets/img/ls-game.jpg" width="1600" height="1065" alt="" loading="lazy"><span class="m-when">21:00</span><span class="m-title">Leo rank</span><span class="m-pick">Clash G7 · âm thanh vòm 7.1</span></a></li>
+          <li><a href="party-300.html"><img src="assets/img/ls-tiec.jpg" width="1600" height="1067" alt="" loading="lazy"><span class="m-when">Thứ Bảy</span><span class="m-title">Tiệc sân vườn</span><span class="m-pick">Party 300 · 240 W, đèn theo nhịp</span></a></li>
+          <li><a href="stage-9.html"><img src="assets/img/ls-phong-khach.jpg" width="1600" height="800" alt="" loading="lazy"><span class="m-when">Chủ nhật</span><span class="m-title">Xem phim cả nhà</span><span class="m-pick">Stage 9.1.4 · Dolby Atmos</span></a></li>
+          <li><a href="studio-m1.html"><img src="assets/img/ls-phong-thu.jpg" width="1200" height="1800" alt="" loading="lazy"><span class="m-when">Nửa đêm</span><span class="m-title">Mix bài mới</span><span class="m-pick">Studio M1 · dải tần phẳng</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="bat-title">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Thời lượng pin</p>
+          <h2 id="bat-title">Sạc một lần, <em>nghe cả tuần</em></h2>
+          <p class="muted">Tính cả hộp sạc với tai nghe True Wireless. Đo ở 50% âm lượng, codec AAC, trong phòng thử của BeatBeat.</p>
+        </div>
+        {{battery-chart kind="tai-nghe"}}
+      </div>
+    </section>
+
+    <section class="feature" aria-labelledby="party-title">
+      <div class="container feature-grid">
+        <figure class="feature-media"><img src="assets/img/party-300.jpg" width="1600" height="1067" alt="Loa tiệc BeatBeat Party 300 với vòng đèn nhiều màu" loading="lazy"></figure>
+        <div class="feature-text">
+          <p class="eyebrow">Loa tiệc</p>
+          <h2 id="party-title">Party 300. <em>Đèn chạy theo từng cú kick.</em></h2>
+          <dl class="feature-specs"><div><dt>Công suất</dt><dd>240 W</dd></div><div><dt>Pin</dt><dd>18 giờ</dd></div><div><dt>Micro</dt><dd>2 cổng</dd></div><div><dt>Nặng</dt><dd>15,8 kg</dd></div></dl>
+          <p class="muted">Hai micro karaoke chỉnh vang riêng, cổng guitar, bánh xe kéo như vali. Pin thay rời được cho tiệc thâu đêm.</p>
+          <div class="row-actions"><a class="btn btn-primary" href="party-300.html">Xem Party 300<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a><span class="price-inline"><strong>11.490.000đ</strong><s>12.900.000đ</s></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tools-title">
+      <div class="container">
+        <h2 class="sr-only" id="tools-title">Công cụ chọn mua</h2>
+        <div class="tools">
+          <a class="tool tool-lab" href="phong-nghe-thu.html">
+            <span class="tool-ico"><i class="ph ph-waveform" aria-hidden="true"></i></span>
+            <span class="tool-k">Phòng nghe thử</span>
+            <span class="tool-t">Phát một đoạn beat, chuyển qua từng sản phẩm để nghe bass, trung, cao khác nhau. Bật tiếng ồn đường phố rồi bật chống ồn.</span>
+            <span class="tool-go">Mở phòng nghe thử <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+            {{wave n="40" class="wave-tool"}}
+          </a>
+          <a class="tool tool-find" href="tim-san-pham.html">
+            <span class="tool-ico"><i class="ph ph-compass" aria-hidden="true"></i></span>
+            <span class="tool-k">Chọn giúp tôi</span>
+            <span class="tool-t">Bốn câu hỏi về lúc bạn nghe, ngân sách và điều quan trọng nhất. Ba gợi ý hợp nhất trong 30 giây.</span>
+            <span class="tool-go">Bắt đầu <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="post-title">
+      <div class="container">
+        <div class="section-head section-head-row"><div><p class="eyebrow">Hướng dẫn chọn mua</p><h2 id="post-title">Đọc trước, <em>mua đúng</em></h2></div><a class="text-link" href="bai-viet.html">Tất cả hướng dẫn <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+        {{posts limit="3"}}
+      </div>
+    </section>

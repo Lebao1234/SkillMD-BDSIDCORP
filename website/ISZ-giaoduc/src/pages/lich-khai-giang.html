@@ -1,0 +1,36 @@
+<!--meta {"title": "Lịch khai giảng tháng 10 - 11/2026", "description": "Lịch khai giảng các lớp tiếng Trung HSK, giao tiếp, thiếu nhi, online và thư pháp tại 7 cơ sở ISZ. Lọc theo chương trình, cơ sở và ngày học.", "nav": "lich-khai-giang", "crumbs": [["Lịch khai giảng", "lich-khai-giang.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <p class="eyebrow">Cập nhật mỗi thứ Hai</p>
+        <h1>{{class-count}} lớp <em>sắp khai giảng</em></h1>
+        <p class="lead">Chọn chương trình, cơ sở và ngày học phù hợp. Bấm "Giữ chỗ" để tư vấn viên giữ chỗ cho bạn 3 ngày, chưa cần đóng học phí.</p>
+      </div>
+    </section>
+
+    <section class="section section-flush">
+      <div class="container">
+        <form class="cfilter" data-class-filter aria-label="Lọc lịch khai giảng">
+          <div class="field"><label for="cf-program">Chương trình</label><select id="cf-program" name="program"><option value="">Tất cả chương trình</option>{{program-select}}</select></div>
+          <div class="field"><label for="cf-branch">Nơi học</label><select id="cf-branch" name="branch"><option value="">Tất cả cơ sở</option><option value="online">Online qua Zoom</option>{{branch-select}}</select></div>
+          <fieldset class="field">
+            <legend>Ngày học</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="days" value="" checked><span>Tất cả</span></label>
+              <label class="chip"><input type="radio" name="days" value="246"><span>2 - 4 - 6</span></label>
+              <label class="chip"><input type="radio" name="days" value="357"><span>3 - 5 - 7</span></label>
+              <label class="chip"><input type="radio" name="days" value="cuoi-tuan cn"><span>Cuối tuần</span></label>
+            </div>
+          </fieldset>
+        </form>
+        <p class="cfilter-count" data-class-count aria-live="polite"></p>
+        {{classes}}
+        <div class="empty" data-class-empty hidden>
+          <span class="empty-han zh" lang="zh" aria-hidden="true">等</span>
+          <h2>Chưa có lớp phù hợp</h2>
+          <p>Thử bỏ bớt một điều kiện lọc, hoặc để lại số điện thoại để tư vấn viên báo ngay khi mở lớp mới đúng lịch của bạn.</p>
+          <div class="row-actions"><button class="btn btn-ghost btn-sm" type="button" data-class-reset>Xóa bộ lọc</button><button class="btn btn-primary btn-sm" type="button" data-open-reg data-note="Chờ lớp mới phù hợp lịch của tôi">Báo tôi khi có lớp<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button></div>
+        </div>
+        <p class="fine">Lịch có thể thay đổi nếu lớp chưa đủ 6 học viên. Tư vấn viên sẽ gọi báo trước ngày khai giảng ít nhất 3 ngày. Học phí từng khóa xem ở trang <a href="chuong-trinh.html">chương trình</a>.</p>
+      </div>
+    </section>

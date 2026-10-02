@@ -1,0 +1,69 @@
+<!--meta {"title": "Thực đơn tiệc cưới và bảng giá 2026", "description": "4 thực đơn tiệc cưới Luimiere từ 4.390.000đ đến 7.890.000đ/bàn 10 khách, đã gồm VAT, bia và nước ngọt. Tính dự toán chi phí theo số khách và sảnh.", "nav": "thuc-don", "crumbs": [["Thực đơn", "thuc-don.html"]], "image": "assets/img/bep-truong.jpg"}-->
+    <section class="page-head">
+      <div class="container page-head-grid">
+        <div>
+          {{crumbs}}
+          <p class="eyebrow">Bảng giá 2026</p>
+          <h1>Bốn thực đơn, <em>một giá</em> cho cả bàn</h1>
+          <p class="lead">Giá tính cho bàn tròn 10 khách, đã gồm VAT 8%, phí phục vụ, bia Tiger, nước ngọt và nước suối không giới hạn trong 3 giờ. Không có phụ phí nào xuất hiện thêm vào ngày tiệc.</p>
+        </div>
+        <figure class="bezel page-head-media reveal"><div class="bezel-core"><img src="assets/img/mon-tom.jpg" width="1000" height="1500" alt="Món tôm càng trình bày trong bát gốm tối màu" fetchpriority="high"></div></figure>
+      </div>
+    </section>
+
+    <section class="section pt-0" aria-label="Chi tiết thực đơn">
+      <div class="container">
+        {{menu-tabs}}
+      </div>
+    </section>
+
+    <section class="section" id="du-toan" aria-labelledby="est-title">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">Dự toán chi phí</p><h2 id="est-title">Tiệc của bạn <em>khoảng bao nhiêu</em></h2><p>Con số dưới đây dùng đúng bảng giá và ưu đãi đang áp dụng. Báo giá chính thức có thể thấp hơn nếu bạn đặt sớm hoặc cưới vào tháng 7 âm lịch.</p></div>
+        <form class="estimator" data-estimator onsubmit="return false">
+          <div class="est-inputs">
+            <div class="field">
+              <label for="est-guests">Số khách</label>
+              <div class="finder-range"><input id="est-guests" name="guests" type="range" min="60" max="600" step="10" value="300" data-range-out="est-guests-out"><output id="est-guests-out" for="est-guests">300 khách</output></div>
+            </div>
+            <div class="est-row">
+              <div class="field"><label for="est-menu">Thực đơn</label><select id="est-menu" name="menu">{{menu-options}}</select></div>
+              <div class="field"><label for="est-hall">Sảnh</label><select id="est-hall" name="hall">{{hall-options-est}}</select></div>
+            </div>
+            <div class="field"><label for="est-slot">Khung giờ</label><select id="est-slot" name="slot"><option value="toi">Tối thứ Sáu, thứ Bảy, Chủ nhật</option><option value="trua">Trưa mọi ngày (giảm 6%)</option><option value="thuong">Tối thứ Hai đến thứ Năm (giảm 10%)</option></select></div>
+            <fieldset class="est-addons">
+              <legend>Dịch vụ thêm</legend>
+              <label class="addon"><input type="checkbox" name="addon" value="18000000" data-label="Hoa tươi nâng cấp sân khấu và lối đi"><span>Hoa tươi nâng cấp sân khấu và lối đi</span><small>18.000.000đ</small></label>
+              <label class="addon"><input type="checkbox" name="addon" value="12000000" data-label="Ban nhạc acoustic 4 người"><span>Ban nhạc acoustic 4 người</span><small>12.000.000đ</small></label>
+              <label class="addon"><input type="checkbox" name="addon" value="16000000" data-label="Chụp ảnh và quay phóng sự"><span>Chụp ảnh và quay phóng sự cưới</span><small>16.000.000đ</small></label>
+              <label class="addon"><input type="checkbox" name="addon" value="4500000" data-label="Khói lạnh, pháo kim tuyến"><span>Khói lạnh, pháo kim tuyến lúc rước dâu</span><small>4.500.000đ</small></label>
+              <label class="addon"><input type="checkbox" name="addon" value="180000" data-per-table data-label="Đổi sang bia Heineken"><span>Đổi sang bia Heineken</span><small>180.000đ/bàn</small></label>
+            </fieldset>
+          </div>
+          <div class="est-out">
+            <div class="bezel"><div class="bezel-core" aria-live="polite">
+              <p class="est-total-label">Tổng chi phí ước tính</p>
+              <p class="est-total" data-est-total>0đ</p>
+              <p class="est-per" data-est-per></p>
+              <p class="est-warn" data-est-warn hidden></p>
+              <ul class="est-lines" data-est-lines></ul>
+              <button class="btn btn-primary btn-block" type="button" data-open-book data-est-send>Gửi dự toán cho tư vấn viên<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+              <p class="est-note">Đã gồm VAT. Chưa gồm ưu đãi đặt sớm và ưu đãi theo mùa ở trang <a class="text-link" href="uu-dai.html">Ưu đãi</a>.</p>
+            </div></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="notes-title">
+      <div class="container">
+        <div class="section-head reveal"><h2 id="notes-title">Những điều <em>nên biết</em></h2></div>
+        <div class="feature-rows">
+          <div class="feature-row reveal"><span class="fr-no">01</span><i class="ph ph-leaf" aria-hidden="true"></i><h3>Bàn chay cùng giá</h3><p>Mỗi thực đơn có bản chay đủ số món, cùng giá với bàn mặn. Báo số bàn chay trước 3 ngày.</p></div>
+          <div class="feature-row reveal"><span class="fr-no">02</span><i class="ph ph-baby" aria-hidden="true"></i><h3>Trẻ em dưới 6 tuổi</h3><p>Không tính suất. Chúng tôi chuẩn bị ghế cao và phần cháo, súp riêng khi gia đình báo trước.</p></div>
+          <div class="feature-row reveal"><span class="fr-no">03</span><i class="ph ph-arrows-left-right" aria-hidden="true"></i><h3>Đổi món trong thực đơn</h3><p>Đổi tối đa 2 món sang món cùng nhóm giá mà không tính thêm. Món đắt hơn tính phần chênh lệch.</p></div>
+          <div class="feature-row reveal"><span class="fr-no">04</span><i class="ph ph-wine" aria-hidden="true"></i><h3>Mang rượu riêng</h3><p>Gia đình được mang rượu vang, rượu mạnh riêng, không tính phí mở chai. Bia và nước ngọt dùng của nhà hàng.</p></div>
+          <div class="feature-row reveal"><span class="fr-no">05</span><i class="ph ph-fork-knife" aria-hidden="true"></i><h3>Nếm thử miễn phí</h3><p>Sau khi đặt cọc, gia đình được một buổi nếm thử cho 4 người với thực đơn đã chọn.</p></div>
+        </div>
+      </div>
+    </section>

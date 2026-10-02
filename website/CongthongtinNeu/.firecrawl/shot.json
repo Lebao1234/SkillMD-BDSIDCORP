@@ -1,0 +1,29 @@
+{
+  "screenshot": "https://storage.googleapis.com/firecrawl-scrape-media/screenshot-fadee10b-e3ba-4098-988b-9bf12b78ccd6.png?GoogleAccessId=scrape-bucket-accessor%40firecrawl.iam.gserviceaccount.com&Expires=1790244239&Signature=Sq%2Fe6itVMiQlTjZX6TiC3T9%2BwTaTa1NdBaBxm4CqFk2qJmRTE2cT5SK4AVhB2v6%2Bf6dGADYMIeA12L5rkersCV9nw4Evp1kTAHdZ52kSrAG1PER8dhrrp79Dj2JLY00g4s91bfmfYou8WKmBKuTKT25G8EWbGkXkNiyjIYCnWe6FKNmbQ0PcHTpbDFcxuQXyfOcP1GOxEoArEVOX6N408drsOaItZC9cEF6Xp7lUg%2BhWKley6NC1lS7Uv761h%2FEQRQk8eh1e7uAONnOi%2FOe8BU0Qf83DhVWZOURQWcPk%2FcmGkHZimBCO0HwJkApk1ttBNpK8leRCTdw8h77UYypZhw%3D%3D",
+  "metadata": {
+    "DC.Publisher": "http://alumni.neu.edu.vn",
+    "DC.Description": "Mạng Lưới Cựu Sinh Viên Đại Học Kinh Tế Quốc Dân",
+    "DC.Title": "Mạng Lưới Cựu Sinh Viên Đại Học Kinh Tế Quốc Dân",
+    "DC.Language": "vie",
+    "viewport": "width=device-width, initial-scale=1",
+    "title": "\n\tMạng Lưới Cựu Sinh Viên Đại Học Kinh Tế Quốc Dân\n",
+    "DC.Creator": "Mạng Lưới Cựu Sinh Viên Đại Học Kinh Tế Quốc Dân",
+    "DC.Identifier": "http://alumni.neu.edu.vn",
+    "language": "vi",
+    "DC.Subject": "Mạng Lưới Cựu Sinh Viên Đại Học Kinh Tế Quốc Dân",
+    "keywords": "neuedu,mang luoi cuu sinh vien dai hoc kinh te quoc dan",
+    "description": "Mạng Lưới Cựu Sinh Viên Đại Học Kinh Tế Quốc Dân",
+    "DC.Date": "2024-01-11T10-07-00",
+    "scrapeId": "01a0aed2-76cd-7539-887a-9afe9817bae2",
+    "sourceURL": "https://alumni.neu.edu.vn/",
+    "url": "https://alumni.neu.edu.vn/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=utf-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "cacheState": "miss",
+    "indexId": "ee51430f-6543-4fce-ab05-7c572f9eae10",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  }
+}

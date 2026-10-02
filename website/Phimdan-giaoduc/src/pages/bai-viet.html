@@ -1,0 +1,25 @@
+<!--meta {"title":"Blog và sự kiện","description":"Bí quyết học piano, tin tức và sự kiện tại Phím Đàn: mini concert, chi nhánh mới, chương trình trải nghiệm.","nav":"bai-viet","crumbs":[["Blog và sự kiện","bai-viet.html"]]}-->
+    <section class="page-plain">
+      <div class="container">
+        {{crumbs}}
+        <h1>Blog và <em>sự kiện</em></h1>
+        <p class="lead">Mẹo luyện tập do huấn luyện viên viết, tin tức chi nhánh và các sự kiện âm nhạc cho học viên.</p>
+      </div>
+    </section>
+
+    <section class="section-tight" data-filter-scope>
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc bài viết" data-filter>
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="bi-quyet" aria-pressed="false">Bí quyết học piano</button>
+          <button class="chip" type="button" data-filter-value="tin-tuc" aria-pressed="false">Tin tức</button>
+          <button class="chip" type="button" data-filter-value="su-kien" aria-pressed="false">Sự kiện</button>
+        </div>
+        {{posts}}
+        <div class="empty-state" data-empty hidden>
+          <i class="ph ph-newspaper" aria-hidden="true"></i>
+          <h3>Chưa có bài viết trong mục này</h3>
+          <p class="muted">Bài mới được đăng mỗi tuần.</p>
+        </div>
+      </div>
+    </section>

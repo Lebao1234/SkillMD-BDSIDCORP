@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Album | Kho kỷ niệm NEU Alumni</title>
+<meta name="description" content="Album ảnh và tư liệu thuộc kho kỷ niệm của mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân.">
+<link rel="canonical" href="https://alumni.neu.edu.vn/album.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Album | Kho kỷ niệm NEU Alumni">
+<meta property="og:description" content="Album ảnh và tư liệu thuộc kho kỷ niệm của mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân.">
+<meta property="og:url" content="https://alumni.neu.edu.vn/album.html">
+<meta property="og:image" content="https://picsum.photos/seed/neu-banner-chinh/1200/630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0076c0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="favicon.svg" color="#0076c0">
+
+<script>
+  /* Áp chủ đề trước khi trang vẽ lần đầu, để không chớp sáng rồi mới tối. */
+  try {
+    var t = JSON.parse(localStorage.getItem('neu-alumni:theme') || '"auto"');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/lists.css">
+
+<link rel="stylesheet" href="assets/css/polish.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+<div data-header></div>
+
+<main id="main">
+  <div class="container" data-album>
+    <div class="section--tight"><div class="skeleton" style="height:40px;max-width:420px"></div></div>
+    <div class="photos">
+      <div class="skeleton photo"></div><div class="skeleton photo"></div>
+      <div class="skeleton photo"></div><div class="skeleton photo"></div>
+    </div>
+  </div>
+
+  <div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="Xem ảnh lớn">
+    <button class="iconbtn lightbox__close" type="button" data-lb-close aria-label="Đóng"><i class="ph-light ph-x" aria-hidden="true"></i></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Ảnh trước"><i class="ph-light ph-caret-left" aria-hidden="true"></i></button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Ảnh sau"><i class="ph-light ph-caret-right" aria-hidden="true"></i></button>
+    <div>
+      <img class="lightbox__img" data-lb-img src="" alt="">
+      <p class="lightbox__cap" data-lb-cap></p>
+    </div>
+  </div>
+</main>
+
+<div data-footer></div>
+
+<script src="assets/data/alumni.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/data/events.js"></script>
+<script src="assets/data/albums.js"></script>
+<script src="assets/data/jobs.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/album.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!--meta {"title":"Lịch khai giảng tháng 10/2026","description":"Lịch khai giảng các lớp tiếng Anh thiếu nhi, thiếu niên, IELTS và giao tiếp tại cơ sở Cầu Giấy, Hai Bà Trưng và online.","nav":"phuong-phap","crumbs":[["Lịch khai giảng","lich-khai-giang.html"]]}-->
+    <section class="page-hero-plain">
+      <div class="container">
+        {{crumbs}}
+        <h1>Lịch khai giảng tháng 10/2026</h1>
+        <p class="lead">Chọn lớp bạn quan tâm, BBE sẽ giữ chỗ trong 48 giờ trong lúc chờ bạn đến kiểm tra trình độ.</p>
+      </div>
+    </section>
+
+    <section class="section schedule" data-filter-scope>
+      <div class="container">
+        <div class="filter-bar">
+          <div>
+            <span class="filter-label" id="lb-cat">Khóa học</span>
+            <div class="filter" role="group" aria-labelledby="lb-cat" data-filter data-filter-group="category">
+              <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+              <button class="chip" type="button" data-filter-value="kids" aria-pressed="false">Thiếu nhi</button>
+              <button class="chip" type="button" data-filter-value="teens" aria-pressed="false">Thiếu niên</button>
+              <button class="chip" type="button" data-filter-value="ielts" aria-pressed="false">IELTS</button>
+              <button class="chip" type="button" data-filter-value="work" aria-pressed="false">Người đi làm</button>
+            </div>
+          </div>
+          <div>
+            <span class="filter-label" id="lb-branch">Cơ sở</span>
+            <div class="filter" role="group" aria-labelledby="lb-branch" data-filter data-filter-group="branch">
+              <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+              <button class="chip" type="button" data-filter-value="cg" aria-pressed="false">Cầu Giấy</button>
+              <button class="chip" type="button" data-filter-value="hbt" aria-pressed="false">Hai Bà Trưng</button>
+              <button class="chip" type="button" data-filter-value="online" aria-pressed="false">Online</button>
+            </div>
+          </div>
+        </div>
+
+        {{schedule}}
+
+        <div class="empty-state" data-empty hidden>
+          <i class="ph ph-calendar-x" aria-hidden="true"></i>
+          <h3>Chưa có lớp phù hợp với lựa chọn này</h3>
+          <p>Để lại số điện thoại, BBE sẽ báo ngay khi mở lớp mới ở cơ sở bạn chọn.</p>
+          <a class="text-link" href="#dang-ky">Đến form đăng ký <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <p class="note">Lịch có thể thay đổi nếu lớp chưa đủ 5 học viên. Tư vấn viên sẽ báo trước ít nhất 3 ngày.</p>
+      </div>
+    </section>

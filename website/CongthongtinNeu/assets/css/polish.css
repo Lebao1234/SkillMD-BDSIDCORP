@@ -1,0 +1,369 @@
+/* ==========================================================================
+   LỚP TINH CHỈNH
+
+   Giữ nguyên khung xương đã bám theo trang gốc: khối xanh đặc, góc vuông, chữ
+   hoa condensed, mật độ dày. Lớp này chỉ làm phần thủ công mà một trang portal
+   dựng vội thường bỏ qua: nhịp dọc, phản hồi khi trỏ, tương phản của ảnh, và
+   những chi tiết nhỏ khiến trang đọc ra có người chăm chút.
+
+   Nạp sau cùng, nên mọi thứ ở đây đều là bản đè có chủ đích.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. NHỊP DỌC
+
+   Trang gốc dồn các khối sát nhau tới mức khó tách mắt. Nới khoảng giữa các
+   khối lớn, giữ chặt khoảng bên trong mỗi khối. Mật độ không đổi, chỉ là mắt
+   có chỗ nghỉ giữa hai mảng nội dung.
+   -------------------------------------------------------------------------- */
+.colgrid { padding-block: var(--space-14) var(--space-12); }
+.blockhead { margin-bottom: var(--space-9); }
+
+/* Một đường mảnh khép lại mỗi khối lớn, thay cho việc để chúng trôi vào nhau */
+.colgrid > section + section { position: relative; }
+@media (min-width: 981px) {
+  .colgrid > section + section::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--space-11) / -2);
+    top: 0;
+    bottom: var(--space-4);
+    width: 1px;
+    background: var(--border);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. ĐẦU MỤC
+
+   Thêm một vệt sáng mảnh trên nền xanh để hộp tiêu đề có cạnh, thay vì là một
+   hình chữ nhật phẳng dán lên trang.
+   -------------------------------------------------------------------------- */
+.blockhead__title {
+  position: relative;
+  padding-right: var(--space-10);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.28);
+}
+
+/* Đuôi vát nhẹ ở mép phải, gợi lại kiểu tab của portal mà không cần ảnh */
+.blockhead__title::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: calc(var(--space-4) * -1);
+  width: var(--space-4);
+  background: var(--blue);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.blockhead__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  transition: gap var(--dur-instant) var(--ease);
+}
+.blockhead__more::after {
+  content: '';
+  width: 5px; height: 5px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.blockhead__more:hover { gap: var(--space-4); }
+
+/* --------------------------------------------------------------------------
+   3. KHỐI TIÊU ĐIỂM
+
+   Thẻ dẫn của cột đầu tiên đổi sang kiểu chữ đè lên ảnh. Đây là thay đổi thị
+   giác lớn nhất của lớp này: nó cho khối xanh một điểm neo rõ ràng thay vì ba
+   cột thẻ trắng ngang nhau.
+   -------------------------------------------------------------------------- */
+.spotlight { padding-block: var(--space-10) var(--space-13); }
+
+.spotlead { position: relative; background: transparent; }
+.spotlead__media { position: relative; aspect-ratio: 16 / 10; }
+.spotlead__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(3, 32, 52, 0.94) 0%,
+    rgba(3, 32, 52, 0.72) 32%,
+    rgba(3, 32, 52, 0.12) 62%,
+    rgba(3, 32, 52, 0) 100%);
+  pointer-events: none;
+}
+.spotlead__body {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  padding: var(--space-9) var(--space-9) var(--space-8);
+  gap: var(--space-3);
+}
+.spotlead__title { color: var(--on-dark-strong); font-size: var(--fs-2xl); }
+.spotlead:hover .spotlead__title { color: var(--on-dark-strong); text-decoration: underline; text-underline-offset: 4px; }
+.spotlead__date { color: var(--on-dark-accent); font-weight: var(--fw-medium); }
+.spotlead__sum { color: var(--on-dark); -webkit-line-clamp: 2; line-clamp: 2; }
+
+@media (max-width: 760px) {
+  .spotlead__body { position: static; background: var(--surface-base); }
+  .spotlead__media::after { display: none; }
+  .spotlead__title { color: var(--text-strong); }
+  .spotlead__date { color: var(--text-tertiary); }
+  .spotlead__sum { color: var(--text-secondary); }
+}
+
+/* Thẻ nhỏ: viền trái xanh lớn dần khi trỏ, thay cho việc chỉ đổi màu chữ */
+.spotcard,
+.spotface {
+  border-left: 3px solid transparent;
+  transition: border-color var(--dur-instant) var(--ease), transform var(--dur-instant) var(--ease);
+}
+.spotcard:hover,
+.spotface:hover,
+.spotcard:focus-within,
+.spotface:focus-within { border-left-color: var(--blue-light); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .spotcard:hover, .spotface:hover { transform: translateX(2px); }
+}
+
+/* Ảnh trong khối xanh cần một viền mảnh, nếu không ảnh sáng sẽ chảy vào nền.
+   Dùng outline chứ không dùng inset box-shadow: bóng trong bị chính thẻ img đè
+   lên, vì ảnh là nội dung con, còn outline thì vẽ trên nội dung. */
+.spotcard__media, .spotlead__media {
+  outline: 1px solid rgba(255, 255, 255, 0.18);
+  outline-offset: -1px;
+}
+
+/* --------------------------------------------------------------------------
+   4. HÀNG TIN
+
+   Bỏ nét đứt, dùng nét liền mảnh. Thêm một thanh xanh trượt ra khi trỏ, để
+   hàng đang chỉ tới được nhận ra mà không cần đổi nền.
+   -------------------------------------------------------------------------- */
+.newsrow {
+  border-bottom: 1px solid var(--border);
+  padding-inline: var(--space-4);
+  margin-inline: calc(var(--space-4) * -1);
+  transition: background var(--dur-instant) var(--ease);
+}
+.newsrow::before {
+  content: '';
+  position: absolute;
+  left: 0; top: var(--space-6); bottom: var(--space-6);
+  width: 3px;
+  background: var(--blue);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform var(--dur-fast) var(--ease);
+}
+.newsrow:hover::before,
+.newsrow:focus-within::before { transform: scaleY(1); }
+.newsrow:hover { background: var(--blue-wash); }
+
+.newsrow__media { outline: 1px solid rgba(0, 0, 0, 0.08); outline-offset: -1px; }
+.newsrow__media img { transition: transform var(--dur-slow) var(--ease); }
+@media (prefers-reduced-motion: no-preference) {
+  .newsrow:hover .newsrow__media img { transform: scale(1.06); }
+}
+
+/* Ngày tháng thành một nhãn nhỏ có hình, thay vì chữ xám trôi nổi */
+.newsrow__date,
+.spotcard__date {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.01em;
+}
+.newsrow__date::before,
+.spotcard__date::before {
+  content: '';
+  width: 3px; height: 3px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. NHÃN MỚI
+
+   Đỏ thương hiệu mới chỉ xuất hiện ở nút đăng ký. Dùng thêm cho nhãn đánh dấu
+   nội dung vừa đăng, để bảng màu có ba màu thật sự làm việc chứ không phải hai.
+   -------------------------------------------------------------------------- */
+.badge-new {
+  display: inline-block;
+  margin-left: var(--space-3);
+  padding: 1px var(--space-3);
+  background: var(--red);
+  color: var(--on-dark-strong);
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   6. LƯỚI CHÂN DUNG
+
+   Ảnh chân dung đến từ nhiều nguồn nên độ sáng lệch nhau. Một lớp phủ nhẹ ở
+   chân ảnh kéo chúng về cùng một tông, và thanh xanh dày lên khi trỏ.
+   -------------------------------------------------------------------------- */
+.face__media {
+  position: relative;
+  border-bottom-width: 4px;
+  transition: border-bottom-color var(--dur-fast) var(--ease);
+}
+.face__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 32, 52, 0.28), rgba(3, 32, 52, 0) 45%);
+  pointer-events: none;
+}
+.face:hover .face__media { border-bottom-color: var(--red); }
+.face__name { font-size: var(--fs-base); }
+.face__role { color: var(--text-secondary); }
+
+/* --------------------------------------------------------------------------
+   7. DẢI SỐ LIỆU
+
+   Bốn ô chỉ khác nhau bằng một vạch trái mảnh thì đọc ra như một bảng. Cho
+   chữ số kích thước thật và một vạch dày hơn.
+   -------------------------------------------------------------------------- */
+.statband { padding-block: var(--space-13); }
+.stat {
+  border-left-width: 4px;
+  border-left-color: rgba(255, 255, 255, 0.55);
+  padding-left: var(--space-9);
+  gap: var(--space-4);
+}
+.stat__num { font-size: var(--fs-5xl); letter-spacing: -0.02em; }
+.stat__label { font-size: var(--fs-base); letter-spacing: var(--tracking-wide); }
+
+/* --------------------------------------------------------------------------
+   8. DẢI LĨNH VỰC
+
+   Trang gốc có một dải banner chuyên mục ở cuối. Dùng đúng ảnh đó, đặt trên
+   lưới đều, và cho viền xanh khi trỏ.
+   -------------------------------------------------------------------------- */
+.partners { gap: var(--space-4); }
+.partners a {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--border);
+  transition: border-color var(--dur-instant) var(--ease), transform var(--dur-instant) var(--ease);
+}
+.partners img {
+  height: 84px;
+  object-fit: cover;
+  padding: 0;
+  transition: transform var(--dur-slow) var(--ease);
+}
+.partners a:hover { border-color: var(--blue); }
+@media (prefers-reduced-motion: no-preference) {
+  .partners a:hover img { transform: scale(1.05); }
+}
+
+/* --------------------------------------------------------------------------
+   9. DẢI KÊU GỌI
+
+   Nền xám nhạt đọc ra như một khối bị bỏ quên. Đổi sang nền trắng có khung
+   xanh, để nó là một lời mời chứ không phải một vùng trống.
+   -------------------------------------------------------------------------- */
+.ctaband {
+  background: var(--surface-base);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.ctaband__inner {
+  padding-block: var(--space-12);
+  padding-inline: var(--space-11);
+  border-left: 6px solid var(--blue);
+  background: var(--blue-wash);
+}
+.ctaband__title { letter-spacing: var(--tracking-wide); }
+
+@media (max-width: 800px) {
+  .ctaband__inner { padding-inline: var(--space-9); }
+}
+
+/* --------------------------------------------------------------------------
+   10. THANH ĐIỀU HƯỚNG
+
+   Mục đang mở cần một dấu hiệu rõ hơn nền sẫm: thêm một vạch trắng dưới chân.
+   -------------------------------------------------------------------------- */
+.nav__link { position: relative; }
+.nav__link[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: var(--space-6); right: var(--space-6); bottom: 0;
+  height: 3px;
+  background: var(--on-dark-strong);
+}
+.nav__sub { border-top-width: 3px; }
+.nav__sub a { border-left: 3px solid transparent; }
+.nav__sub a:hover { border-left-color: var(--blue); }
+
+/* Băng tiêu đề: thêm một chấm vuông dẫn mắt vào dòng chữ */
+.ribbon__inner { display: flex; align-items: center; gap: var(--space-6); }
+.ribbon__inner::before {
+  content: '';
+  width: 8px; height: 8px;
+  flex: none;
+  background: var(--on-dark-strong);
+}
+
+/* --------------------------------------------------------------------------
+   11. CHÂN TRANG
+   -------------------------------------------------------------------------- */
+.footer__h { border-bottom-width: 3px; }
+.footer__list a {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-instant) var(--ease), color var(--dur-instant) var(--ease);
+}
+.footer__list a:hover { text-decoration: none; border-bottom-color: currentColor; }
+.footer__mark { box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18); }
+
+/* --------------------------------------------------------------------------
+   12. THẺ VÀ DANH SÁCH Ở CÁC TRANG TRONG
+
+   Cùng ngôn ngữ với trang chủ: viền trái xanh khi trỏ, ảnh phóng nhẹ.
+   -------------------------------------------------------------------------- */
+.card { border-top: 3px solid transparent; }
+.card:hover { border-top-color: var(--blue); }
+
+.pcard { border-left: 3px solid transparent; }
+.pcard:hover { border-left-color: var(--blue); }
+
+.jobrow { border-left: 4px solid transparent; }
+.jobrow:hover { border-left-color: var(--blue); background: var(--blue-wash); }
+
+
+.albumcard__media { position: relative; }
+.albumcard__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 32, 52, 0.42), rgba(3, 32, 52, 0) 48%);
+  pointer-events: none;
+}
+
+/* Đầu trang nội dung: thêm vạch trắng dưới tiêu đề cho cùng ngôn ngữ với
+   hộp tiêu đề khối ở trang chủ. */
+.pagehead__title {
+  display: inline-block;
+  padding-bottom: var(--space-3);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   13. CHỌN CHỮ
+   Vùng bôi đen dùng màu thương hiệu thay vì xanh mặc định của trình duyệt.
+   -------------------------------------------------------------------------- */
+::selection { background: var(--blue); color: var(--on-dark-strong); }

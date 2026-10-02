@@ -1,0 +1,20 @@
+<!--meta {"title":"So sánh máy ảnh, ống kính","description":"So sánh thông số tối đa 3 máy ảnh hoặc ống kính Lăng Kính cạnh nhau: cảm biến, chống rung, quay phim, kính ngắm, trọng lượng, pin và giá.","nav":"may-anh","crumbs":[["So sánh","so-sanh.html"]]}-->
+    <section class="page-head page-head-tight">
+      <div class="container">
+        {{crumbs}}
+        <h1 data-split>So sánh <em>cạnh nhau</em></h1>
+        <p class="lead">Chọn tối đa 3 sản phẩm cùng loại. Dòng khác nhau được tô sáng để bạn thấy ngay điểm khác biệt.</p>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container">
+        <div class="cmp" data-cmp>
+          <div class="cmp-kind" role="group" aria-label="Loại sản phẩm">
+            <button class="chip is-active" type="button" data-cmp-kind="camera" aria-pressed="true">Máy ảnh</button>
+            <button class="chip" type="button" data-cmp-kind="lens" aria-pressed="false">Ống kính</button>
+          </div>
+          <div class="table-wrap"><table class="cmp-table" data-cmp-table></table></div>
+          <label class="lab-toggle"><input type="checkbox" data-cmp-diff><span>Chỉ hiện dòng khác nhau</span></label>
+        </div>
+      </div>
+    </section>

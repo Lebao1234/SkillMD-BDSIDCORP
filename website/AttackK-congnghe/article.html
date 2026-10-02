@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="art.title">Bai viet | HADAL</title>
+<meta name="description" data-i18n-content="art.desc" content="Bai viet ky thuat tu doi ngu HADAL.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <article>
+    <section class="pagehead">
+      <div class="wrap wrap--narrow pagehead__inner">
+        <nav aria-label="Duong dan">
+          <ol class="crumbs">
+            <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Bai viet</a></li>
+            <li><span aria-current="page" data-art-crumb>Chu de</span></li>
+          </ol>
+        </nav>
+        <h1 class="pagehead__title" data-art-title style="font-size:var(--fs-5xl)" data-i18n="g.loading">Dang tai</h1>
+        <p class="lede" data-art-excerpt></p>
+        <div class="post-meta" data-art-meta></div>
+      </div>
+    </section>
+
+    <div class="wrap wrap--narrow" style="padding-block:var(--space-8)">
+      <div class="article__hero">
+        <img data-art-cover alt="" width="1200" height="514" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+
+    <section class="section section--flush-top section--tight">
+      <div class="wrap articlelayout">
+        <aside class="toc" data-art-toc data-i18n-aria-label="bl.toc" aria-label="Muc luc bai viet"></aside>
+        <div class="prose" data-art-body></div>
+      </div>
+    </section>
+  </article>
+
+  <section class="section section--tight" aria-labelledby="art-prod-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="art-prod-h" style="font-size:var(--fs-3xl)" data-i18n="bl.relatedProducts">San pham lien quan</h2>
+        </div>
+      </div>
+      <div class="grid-products grid-products--4" data-art-products></div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="art-more-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="art-more-h" style="font-size:var(--fs-3xl)" data-i18n="bl.readNext">Doc tiep</h2>
+        </div>
+        <a class="link" href="blog.html"><span data-i18n="bl.allArticles">Tat ca bai viet</span> <i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="post-list" data-art-more></div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/blog.js"></script>
+</body>
+</html>

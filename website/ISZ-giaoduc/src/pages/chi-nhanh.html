@@ -1,0 +1,31 @@
+<!--meta {"title": "7 cơ sở Hoa ngữ ISZ tại TP. Hồ Chí Minh", "description": "Địa chỉ, giờ mở cửa và số phòng học của 7 cơ sở ISZ: Bến Thành, Xuân Hòa, Chợ Lớn, Tân Sơn Hòa, Gia Định, Phú Mỹ Hưng, Thủ Đức.", "nav": "chi-nhanh", "crumbs": [["Cơ sở", "chi-nhanh.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <p class="eyebrow">{{branch-count}} cơ sở và lớp online</p>
+        <h1>Học ở cơ sở <em>gần bạn nhất</em></h1>
+        <p class="lead">Mọi cơ sở dùng chung giáo trình, lịch thi thử và ứng dụng ISZ. Chuyển cơ sở giữa khóa không mất phí, chỉ cần báo trước 1 tuần.</p>
+      </div>
+    </section>
+
+    <section class="section section-flush" data-filter-scope data-filter-key="area">
+      <div class="container">
+        <div class="filter-chips" role="group" aria-label="Lọc theo khu vực">
+          <button type="button" class="fchip is-active" aria-pressed="true" data-filter-value="all">Tất cả</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="trung-tam">Trung tâm</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="tay">Phía Tây</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="bac">Phía Bắc</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="nam">Phía Nam</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="dong">Phía Đông</button>
+        </div>
+        {{branches}}
+        <article class="online-card">
+          <span class="online-han zh" lang="zh" aria-hidden="true">网</span>
+          <div>
+            <h2>Không có cơ sở gần nhà?</h2>
+            <p>Lớp online qua Zoom tối đa 8 người, cùng giáo trình và giáo viên với lớp tại cơ sở. Có lớp 6:00 sáng và 21:30 tối cho người đi làm ca.</p>
+          </div>
+          <a class="btn btn-ghost" href="tieng-trung-online.html">Xem lớp online <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+      </div>
+    </section>

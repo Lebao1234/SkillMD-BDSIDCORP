@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="dl.title">Tai driver, firmware va sach huong dan | HADAL</title>
+<meta name="description" data-i18n-content="dl.desc" content="Tai phan mem cau hinh, firmware va sach huong dan cho chuot, ban phim va tai nghe HADAL. Co ca web driver khong can cai dat.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><a href="support.html" data-i18n="nav.support">Ho tro</a></li>
+          <li><span aria-current="page" data-i18n="ft.driver">Tai ve</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-i18n="dl.h1">Driver va tai lieu</h1>
+      <p class="lede" data-i18n="dl.intro">Phan mem cau hinh, firmware va sach huong dan.</p>
+    </div>
+  </section>
+
+  <section id="web-driver" class="section section--tight">
+    <div class="wrap">
+      <div class="giveaway reveal">
+        <div class="giveaway__media">
+          <img src="https://attackshark.com/cdn/shop/files/X11ULTRA_1.png?v=1777367958&width=1200"
+               data-i18n-alt="dl.web.alt" alt="Chuot X11 Ultra va dock nhan tin hieu" width="1200" height="900" loading="lazy" decoding="async">
+        </div>
+        <div class="giveaway__body">
+          <p class="eyebrow" data-i18n="dl.web.eyebrow">Khong can cai dat</p>
+          <h2 class="giveaway__title" data-i18n="dl.web.title">Web driver</h2>
+          <p class="muted" data-i18n="dl.web.text">Cam thiet bi vao va mo trinh duyet.</p>
+          <div class="giveaway__perks">
+            <p class="giveaway__perk"><i class="ph-light ph-check" aria-hidden="true"></i><span data-i18n="dl.web.p1">Chay tren Chrome va Edge phien ban moi</span></p>
+            <p class="giveaway__perk"><i class="ph-light ph-check" aria-hidden="true"></i><span data-i18n="dl.web.p2">Cau hinh luu trong thiet bi</span></p>
+            <p class="giveaway__perk"><i class="ph-light ph-check" aria-hidden="true"></i><span data-i18n="dl.web.p3">Khong can quyen quan tri may</span></p>
+          </div>
+          <div class="row row--wrap">
+            <a class="btn btn--primary" href="https://controlhub.top/AttackShark/" target="_blank" rel="noopener" data-i18n="dl.web.open">Mo web driver</a>
+            <a class="btn btn--secondary" href="#library" data-i18n="dl.web.installers">Xem ban cai dat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="library" class="section section--tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" data-i18n="dl.lib.title">Thu vien tai ve</h2>
+          <p class="muted" data-i18n="dl.lib.text">Loc theo ten model hoac nhom.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar__left grow">
+          <div class="field grow" style="max-width:420px">
+            <label class="visually-hidden" for="dl-search" data-i18n="dl.search">Tim theo ten model</label>
+            <input class="input" id="dl-search" type="search" data-i18n-placeholder="dl.searchPlaceholder" placeholder="Vi du: X11, R98, L80" autocomplete="off" data-dl-search>
+          </div>
+        </div>
+        <div class="row">
+          <label class="text-sm dim" for="dl-group" data-i18n="dl.group">Nhom</label>
+          <select class="select" id="dl-group" data-dl-group style="min-height:38px;padding-block:var(--space-2)">
+            <option value="all" data-i18n="dl.groupAll">Tat ca</option>
+            <option value="mouse" data-i18n="dl.groupMice">Chuot</option>
+            <option value="keyboard" data-i18n="dl.groupKb">Ban phim</option>
+            <option value="headset" data-i18n="dl.groupHeadset">Tai nghe</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="resultcount" style="margin-block-end:var(--space-6)" data-dl-count aria-live="polite"></p>
+      <div class="dlgrid" data-dl-grid></div>
+    </div>
+  </section>
+
+  <section id="manuals" class="section section--tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" style="font-size:var(--fs-3xl)" data-i18n="dl.before.title">Truoc khi cai dat</h2>
+        </div>
+      </div>
+      <div class="storyblocks">
+        <article class="storyblock reveal">
+          <p class="storyblock__num">01</p>
+          <h3 class="storyblock__title" data-i18n="dl.before1.title">Go phan mem cu</h3>
+          <p class="storyblock__text" data-i18n="dl.before1.text">Go ban driver cu truoc roi khoi dong lai.</p>
+        </article>
+        <article class="storyblock reveal">
+          <p class="storyblock__num">02</p>
+          <h3 class="storyblock__title" data-i18n="dl.before2.title">Cam truc tiep khi cap nhat firmware</h3>
+          <p class="storyblock__text" data-i18n="dl.before2.text">Dung cap di kem, cam thang vao may.</p>
+        </article>
+        <article class="storyblock reveal">
+          <p class="storyblock__num">03</p>
+          <h3 class="storyblock__title" data-i18n="dl.before3.title">Luu cau hinh truoc khi nang cap</h3>
+          <p class="storyblock__text" data-i18n="dl.before3.text">Xuat cau hinh ra tep truoc khi cap nhat.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script>
+/* ---------------------------------------------------------------------------
+   DOWNLOAD LIBRARY
+   Entries are derived from the catalog so the list stays in step with the
+   products actually on sale. Only device categories get software.
+   ------------------------------------------------------------------------ */
+(function () {
+  'use strict';
+  var Catalog = window.Catalog;
+  var UI = window.UI;
+  var esc = Catalog.esc;
+
+  var DEVICES = Catalog.all.filter(function (p) {
+    return ['mouse', 'keyboard', 'headset'].indexOf(p.group) !== -1;
+  });
+
+  /* One entry per model family rather than per colourway. */
+  var seen = {};
+  var MODELS = [];
+  DEVICES.forEach(function (p) {
+    var key = p.shortTitle.split(' ').slice(0, 2).join(' ').toUpperCase();
+    if (seen[key]) return;
+    seen[key] = true;
+    MODELS.push({ key: key, p: p });
+  });
+  MODELS.sort(function (a, b) { return a.key.localeCompare(b.key); });
+
+  var q = '';
+  var group = 'all';
+
+  function render() {
+    var list = MODELS.filter(function (m) {
+      if (group !== 'all' && m.p.group !== group) return false;
+      if (q && m.key.toLowerCase().indexOf(q) === -1 && m.p.shortTitle.toLowerCase().indexOf(q) === -1) return false;
+      return true;
+    });
+
+    document.querySelector('[data-dl-count]').textContent = window.I18N.t('dl.count', { n: list.length });
+    var grid = document.querySelector('[data-dl-grid]');
+
+    if (!list.length) {
+      grid.innerHTML = '<div class="empty" style="grid-column:1/-1">' +
+        '<span class="empty__icon"><i class="ph-light ph-file-dashed" aria-hidden="true"></i></span>' +
+        '<h3 class="empty__title">' + esc(window.I18N.t('dl.empty.title')) + '</h3>' +
+        '<p class="empty__text">' + esc(window.I18N.t('dl.empty.text')) + '</p>' +
+        '<a class="btn btn--secondary" href="support.html#contact">' + esc(window.I18N.t('dl.empty.cta')) + '</a></div>';
+      return;
+    }
+
+    var slugOf = function (s) { return s.replace(/[^A-Za-z0-9]/g, ''); };
+
+    grid.innerHTML = list.map(function (m) {
+      var slug = slugOf(m.key);
+      return '<article class="dlcard reveal">' +
+        '<div class="row" style="gap:var(--space-4)">' +
+          '<span class="litem__media" style="width:52px"><img src="' + esc(m.p.images[0]) + '" alt="" loading="lazy" width="52" height="52"></span>' +
+          '<div><p class="dlcard__name">' + esc(m.key) + '</p>' +
+          '<p class="text-sm dim">' + esc(Catalog.categoryLabel(m.p)) + '</p></div>' +
+        '</div>' +
+        '<div class="dlcard__links">' +
+          '<a class="dllink" href="https://download.attackshark.pro/ATTACKSHARK/' + esc(slug) + '/" target="_blank" rel="noopener">' +
+            '<i class="ph-light ph-download-simple" aria-hidden="true"></i>' + esc(window.I18N.t('dl.software')) + '</a>' +
+          '<a class="dllink" href="https://download.attackshark.pro/ATTACKSHARK/' + esc(slug) + '/" target="_blank" rel="noopener">' +
+            '<i class="ph-light ph-file-pdf" aria-hidden="true"></i>' + esc(window.I18N.t('dl.manual')) + '</a>' +
+          '<a class="dllink" href="https://controlhub.top/AttackShark/" target="_blank" rel="noopener">' +
+            '<i class="ph-light ph-globe" aria-hidden="true"></i>' + esc(window.I18N.t('dl.webdriver')) + '</a>' +
+          '<a class="dllink" href="product.html?handle=' + esc(m.p.handle) + '">' +
+            '<i class="ph-light ph-info" aria-hidden="true"></i>' + esc(window.I18N.t('dl.productPage')) + '</a>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+
+    UI.observeReveal(grid);
+  }
+
+  var debounce = null;
+  document.querySelector('[data-dl-search]').addEventListener('input', function (e) {
+    var v = e.target.value.trim().toLowerCase();
+    clearTimeout(debounce);
+    debounce = setTimeout(function () { q = v; render(); }, 150);
+  });
+
+  document.querySelector('[data-dl-group]').addEventListener('change', function (e) {
+    group = e.target.value;
+    render();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

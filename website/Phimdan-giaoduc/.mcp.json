@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "epodsystem": {
+            "type": "http",
+            "url": "https://mcp.epodsystem.com/mcp",
+            "headers": {
+                "Authorization": "Bearer {crmk_11691d9b8920a843c64c8109cb4c0cb4342d60381a41c82e96147c75a8c1ce94}"
+            }
+        }
+    }
+}

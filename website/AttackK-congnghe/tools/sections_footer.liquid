@@ -1,0 +1,110 @@
+<footer class="be-footer">
+  <div class="be-wrap be-footer-inner">
+    <div class="be-footer__grid">
+
+      <div class="be-footer__brandcol">
+        <a class="be-brand" href="/" aria-label="{{ shop.name }} — trang chủ">
+          {%- assign logo_src = shop.logo_url -%}
+          {%- if logo_src != blank -%}
+            <img class="be-logo" src="{{ logo_src }}" alt="{{ shop.name | escape }}">
+          {%- else -%}
+            <svg class="mark" width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+              <path d="M10.6 3h10.8L29 10.6v10.8L21.4 29H10.6L3 21.4V10.6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M10.5 12.6h11M12.6 17h6.8M15.2 21.4h1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+        <p class="be-footer__blurb">{{ section.settings.blurb }}</p>
+        <div class="be-social">
+          {% if section.settings.url_youtube != blank %}
+            <a href="{{ section.settings.url_youtube }}" aria-label="YouTube" rel="noopener" target="_blank">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.9-.5-5.7a3 3 0 0 0-2.1-2.1C18.6 3.7 12 3.7 12 3.7s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.3C1 8.1 1 12 1 12s0 3.9.5 5.7a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM9.8 15.5v-7l6.2 3.5z"/></svg>
+            </a>
+          {% endif %}
+          {% if section.settings.url_instagram != blank %}
+            <a href="{{ section.settings.url_instagram }}" aria-label="Instagram" rel="noopener" target="_blank">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          {% endif %}
+          {% if section.settings.url_facebook != blank %}
+            <a href="{{ section.settings.url_facebook }}" aria-label="Facebook" rel="noopener" target="_blank">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+            </a>
+          {% endif %}
+          {% if section.settings.url_tiktok != blank %}
+            <a href="{{ section.settings.url_tiktok }}" aria-label="TikTok" rel="noopener" target="_blank">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.3a2.7 2.7 0 1 1-2.2-2.7v-3a5.7 5.7 0 1 0 5.2 5.7V9.1a6.9 6.9 0 0 0 4 1.3v-3a4 4 0 0 1-4-3.9z"/></svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div>
+        <h3>{{ section.settings.title_shop }}</h3>
+        <nav class="be-fnav" aria-label="{{ section.settings.title_shop }}">
+          {% for link in linklists[section.settings.menu_shop].links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+
+      <div>
+        <h3>{{ section.settings.title_help }}</h3>
+        <nav class="be-fnav" aria-label="{{ section.settings.title_help }}">
+          {% for link in linklists[section.settings.menu_help].links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+
+      <div>
+        <h3>{{ section.settings.title_about }}</h3>
+        <nav class="be-fnav" aria-label="{{ section.settings.title_about }}">
+          {% for link in linklists[section.settings.menu_about].links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="be-footer__bar">
+      <p class="be-copy">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.rights }}</p>
+      <div class="be-footer__legal">
+        <span>{{ section.settings.contact_line }}</span>
+      </div>
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Footer",
+  "category": "footer",
+  "settings": [
+    {"type":"textarea","id":"blurb","label":"Giới thiệu ngắn","default":"Thiết bị nhập liệu cho người chơi đo trước khi tin. Chuột siêu nhẹ, bàn phím từ tính và phụ kiện dựng cho độ chính xác lặp lại."},
+    {"type":"text","id":"title_shop","label":"Tiêu đề cột 1","default":"Mua sắm"},
+    {"type":"linklist","id":"menu_shop","label":"Menu cột 1","default":"footer-shop"},
+    {"type":"text","id":"title_help","label":"Tiêu đề cột 2","default":"Hỗ trợ"},
+    {"type":"linklist","id":"menu_help","label":"Menu cột 2","default":"footer-help"},
+    {"type":"text","id":"title_about","label":"Tiêu đề cột 3","default":"Thương hiệu"},
+    {"type":"linklist","id":"menu_about","label":"Menu cột 3","default":"footer-about"},
+    {"type":"text","id":"rights","label":"Dòng bản quyền","default":"Bảo lưu mọi quyền."},
+    {"type":"text","id":"contact_line","label":"Dòng liên hệ","default":"support@hadal.gg"},
+    {"type":"text","id":"url_youtube","label":"YouTube URL"},
+    {"type":"text","id":"url_instagram","label":"Instagram URL"},
+    {"type":"text","id":"url_facebook","label":"Facebook URL"},
+    {"type":"text","id":"url_tiktok","label":"TikTok URL"},
+    {"type":"header","label":"Style"},
+    {"type":"checkbox","id":"visible","label":"Visible","default":true},
+    {"type":"color","id":"bg_color","label":"Background color"},
+    {"type":"color","id":"text_color","label":"Text color"},
+    {"type":"color","id":"heading_color","label":"Heading color"},
+    {"type":"text","id":"padding_top","label":"Padding top (CSS)"},
+    {"type":"text","id":"padding_bottom","label":"Padding bottom (CSS)"},
+    {"type":"color","id":"border_color","label":"Border color"},
+    {"type":"range","id":"border_width","label":"Border width","min":0,"max":8,"step":1,"unit":"px","default":0},
+    {"type":"range","id":"border_radius","label":"Border radius","min":0,"max":48,"step":1,"unit":"px","default":0}
+  ]
+}
+{% endschema %}

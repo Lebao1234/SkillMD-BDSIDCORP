@@ -1,0 +1,36 @@
+<!--meta {"title": "Sảnh tiệc cưới: 4 sảnh từ 6 đến 60 bàn", "description": "So sánh 4 sảnh tiệc của Luimiere: Étoile 60 bàn, Soleil 40 bàn, Lune 28 bàn, Aube 14 bàn. Chọn sảnh theo số khách, diện tích và giờ tổ chức.", "nav": "sanh-tiec", "crumbs": [["Sảnh tiệc", "sanh-tiec.html"]]}-->
+    <section class="page-head">
+      <div class="container page-head-grid">
+        <div>
+          {{crumbs}}
+          <p class="eyebrow">{{hall-count}} sảnh, một bếp</p>
+          <h1>Chọn sảnh theo <em>số khách</em> của bạn</h1>
+          <p class="lead">Mỗi sảnh có sức chứa, ánh sáng và không khí khác nhau. Kéo thanh bên dưới để xem sảnh nào vừa với danh sách khách mời của gia đình.</p>
+        </div>
+        <div class="page-head-side">
+          <dl class="numbers numbers-mini">
+            <div><dt>Bàn ở sảnh lớn nhất</dt><dd>60</dd></div>
+            <div><dt>Bàn ở sảnh nhỏ nhất</dt><dd>6</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container">
+        <div class="guest-filter" data-guest-filter>
+          <label for="gf-range">Bạn mời khoảng</label>
+          <div class="finder-range"><input id="gf-range" type="range" min="60" max="700" step="10" value="300" data-range-out="gf-out"><output id="gf-out" for="gf-range">300 khách</output></div>
+          <p class="guest-filter-msg" data-guest-msg aria-live="polite">Kéo thanh để đánh dấu sảnh phù hợp.</p>
+        </div>
+        {{hall-grid}}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cmp-title">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">So sánh nhanh</p><h2 id="cmp-title">Bốn sảnh <em>cạnh nhau</em></h2><p>Số bàn tính theo bàn tròn 10 khách. Tiệc trưa và ngày thường nhận từ khoảng 60% số bàn tối thiểu.</p></div>
+        <div class="reveal">{{hall-compare}}</div>
+        <p class="table-note">Cần ghép hai sảnh cho tiệc trên 600 khách? Soleil và Lune nằm cùng tầng 2 và có thể mở vách ngăn thành một sảnh 68 bàn.</p>
+      </div>
+    </section>

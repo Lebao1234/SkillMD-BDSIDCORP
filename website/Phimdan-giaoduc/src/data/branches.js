@@ -1,0 +1,8 @@
+/* Chi nhánh (dữ liệu mẫu). area dùng cho bộ lọc trên trang hệ thống trung tâm. */
+module.exports = [
+  { name: "Nguyễn Đình Chiểu", area: "xuan-hoa", areaName: "Phường Xuân Hòa", address: "214 Nguyễn Đình Chiểu, Phường Xuân Hòa, TP.HCM", pianos: 14, hours: "9:00-21:00, cả tuần", image: "phong-nang.jpg", imageAlt: "Phòng đàn lớn có đàn grand piano, nắng chiếu qua cửa sổ", mapQuery: "Nguyễn Đình Chiểu, Xuân Hòa, Hồ Chí Minh" },
+  { name: "Phan Xích Long", area: "cau-kieu", areaName: "Phường Cầu Kiệu", address: "96 Phan Xích Long, Phường Cầu Kiệu, TP.HCM", pianos: 12, hours: "9:00-21:00, cả tuần", image: "phong-luyen-dan.jpg", imageAlt: "Phòng học sáng với đàn grand piano đặt cạnh cửa sổ", mapQuery: "Phan Xích Long, Cầu Kiệu, Hồ Chí Minh" },
+  { name: "Phan Đăng Lưu", area: "gia-dinh", areaName: "Phường Gia Định", address: "158 Phan Đăng Lưu, Phường Gia Định, TP.HCM", pianos: 10, hours: "9:00-21:00, cả tuần", image: "phong-dem.jpg", imageAlt: "Đàn upright gỗ dưới ánh đèn trong phòng luyện tập", mapQuery: "Phan Đăng Lưu, Gia Định, Hồ Chí Minh" },
+  { name: "Nguyễn Thị Thập", area: "tan-hung", areaName: "Phường Tân Hưng", address: "411 Nguyễn Thị Thập, Phường Tân Hưng, TP.HCM", pianos: 16, hours: "9:00-21:00, cả tuần", image: "phong-cua-so.jpg", imageAlt: "Đàn grand piano mở nắp cạnh rèm cửa", mapQuery: "Nguyễn Thị Thập, Tân Hưng, Hồ Chí Minh" },
+  { name: "Võ Văn Ngân", area: "thu-duc", areaName: "Phường Thủ Đức", address: "73 Võ Văn Ngân, Phường Thủ Đức, TP.HCM", pianos: 9, hours: "8:00-20:00, cả tuần", note: "Chi nhánh chuyên cho trẻ từ 5-15 tuổi", image: "thieu-nhi-3.jpg", imageAlt: "Bé gái tập đàn trên cây đàn piano cổ", mapQuery: "Võ Văn Ngân, Thủ Đức, Hồ Chí Minh" },
+];

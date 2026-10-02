@@ -1,0 +1,60 @@
+  <!-- Nút nổi: Đăng ký trải nghiệm + Chat ngay -->
+  <div class="float-actions" aria-label="Liên hệ nhanh">
+    <button class="float-btn float-primary" type="button" data-open-register><i class="ph ph-piano-keys" aria-hidden="true"></i><span>Đăng ký trải nghiệm</span></button>
+    <a class="float-btn" href="{{zalo}}" target="_blank" rel="noopener"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i><span>Chat ngay</span></a>
+  </div>
+
+  <!-- Popup đăng ký. Gắn API thật: đặt data-endpoint="https://..." trên thẻ form -->
+  <dialog class="modal" id="register-modal" aria-labelledby="modal-title" data-modal>
+    <div class="modal-inner">
+      <button class="modal-close" type="button" data-close-modal aria-label="Đóng"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <div class="modal-side" aria-hidden="true">
+        <img src="assets/img/ln-thu-gian.jpg" width="900" height="1100" alt="" loading="lazy">
+      </div>
+      <form class="modal-form" data-form novalidate data-endpoint="">
+        <div class="form-body" data-form-body>
+          <h2 id="modal-title">Trải nghiệm miễn phí<br><em>ngay hôm nay</em></h2>
+          <p class="muted">21 ngày học thử, không đặt cọc. Tư vấn viên gọi lại trong 30 phút (9:00-21:00).</p>
+          <div class="field">
+            <label for="m-name">Họ và tên</label>
+            <input id="m-name" name="name" type="text" autocomplete="name" required aria-describedby="m-name-err" placeholder="Nguyễn Văn An">
+            <small class="error" id="m-name-err" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="m-phone">Số điện thoại</label>
+            <input id="m-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="m-phone-err" placeholder="0912 345 678">
+            <small class="error" id="m-phone-err" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="m-branch">Chi nhánh</label>
+            <select id="m-branch" name="branch" required aria-describedby="m-branch-err">{{branch-options}}</select>
+            <small class="error" id="m-branch-err" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="m-need">Nhu cầu</label>
+            <select id="m-need" name="need">
+              <option>Đăng ký 21 ngày trải nghiệm piano</option>
+              <option>Tư vấn khóa học piano</option>
+              <option>Piano cho con (5-15 tuổi)</option>
+              <option>Đặt phòng luyện đàn</option>
+              <option>Hỗ trợ học viên</option>
+              <option>Hợp tác, tuyển dụng</option>
+            </select>
+          </div>
+          <div class="field field-check">
+            <input id="m-agree" name="agree" type="checkbox" required aria-describedby="m-agree-err">
+            <label for="m-agree">Tôi đồng ý với <a href="chinh-sach.html" target="_blank">Điều khoản và Chính sách</a> của Phím Đàn</label>
+            <small class="error" id="m-agree-err" role="alert"></small>
+          </div>
+          <p class="form-error" data-form-error role="alert" hidden><i class="ph ph-warning-circle" aria-hidden="true"></i><span>Chưa gửi được. Vui lòng thử lại hoặc gọi {{hotline}}.</span></p>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Đăng ký ngay<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+        </div>
+        <div class="form-success" data-form-success hidden tabindex="-1">
+          <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+          <h2>Đăng ký thành công</h2>
+          <p>Cảm ơn <strong data-success-name>bạn</strong>. Phím Đàn sẽ gọi đến số <strong data-success-phone></strong> trong 30 phút tới.</p>
+          <button class="btn btn-dark" type="button" data-close-modal>Đóng</button>
+        </div>
+      </form>
+    </div>
+  </dialog>

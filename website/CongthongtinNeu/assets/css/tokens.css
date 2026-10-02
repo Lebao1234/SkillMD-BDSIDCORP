@@ -1,0 +1,259 @@
+/* ==========================================================================
+   CỔNG THÔNG TIN CỰU SINH VIÊN NEU - DESIGN TOKENS
+
+   Nguồn: trích trực tiếp từ https://alumni.neu.edu.vn/ ngày 17/09/2026
+   (xem .firecrawl/), đối chiếu với .claude/skills/design-system/SKILL.md.
+
+   Trang thật là một portal thể chế Việt Nam cổ điển chạy trên nền tảng VNPT:
+   khối xanh đặc lớn, góc vuông hoàn toàn, chữ hoa condensed, dày đặc thông tin.
+   Bộ token này bám theo đó chứ không theo một diễn giải hiện đại hóa.
+
+   File component không được viết mã màu thô. Có hex trong component là lỗi.
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* ------------------------------------------------------------------
+     HỌ CHỮ
+     Trang thật dùng Roboto Condensed cho tiêu đề và nhãn, Roboto cho thân bài.
+     Cả hai đều có subset vietnamese nên dấu thanh lấy từ chính file font.
+     ------------------------------------------------------------------ */
+  --font-display: 'Roboto Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'Roboto', 'Segoe UI', system-ui, sans-serif;
+
+  /* ------------------------------------------------------------------
+     THANG CHỮ
+     Trang thật đặt gần như mọi thứ ở 16px và nhỏ hơn. Đây là portal tin tức,
+     không phải trang giới thiệu, nên chữ không phình to.
+     ------------------------------------------------------------------ */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 14px;
+  --fs-base: 15px;
+  --fs-lg: 16px;
+  --fs-xl: 18px;
+  --fs-2xl: 20px;
+  --fs-3xl: 24px;
+  --fs-4xl: 28px;
+  --fs-5xl: clamp(26px, 2.6vw, 34px);
+
+  --fw-base: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --lh-base: 1.5;
+  --lh-tight: 1.2;
+  --lh-snug: 1.3;
+  --lh-relaxed: 1.65;
+  --tracking-wide: 0.02em;
+
+  /* ------------------------------------------------------------------
+     KHOẢNG CÁCH - baseUnit = 4 theo đo đạc trang thật
+     ------------------------------------------------------------------ */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 10px;
+  --space-6: 12px;
+  --space-7: 14px;
+  --space-8: 16px;
+  --space-9: 20px;
+  --space-10: 24px;
+  --space-11: 30px;
+  --space-12: 36px;
+  --space-13: 44px;
+  --space-14: 56px;
+  --space-15: 72px;
+  --space-16: 96px;
+
+  --section-y: var(--space-12);
+  --section-y-tight: var(--space-10);
+  --container: 1350px;
+  --gutter: var(--space-8);
+
+  /* ------------------------------------------------------------------
+     BÁN KÍNH
+
+     Đo trên trang thật: 0px, ở mọi thành phần. Nút, thẻ, ảnh, ô nhập đều
+     vuông góc. Đây là điểm khác biệt lớn nhất so với bản dựng đầu tiên, và
+     cũng là thứ khiến bản đó trông như một trang SaaS chứ không như cổng
+     thông tin của một trường đại học.
+
+     SKILL.md ghi radius.xs=50px. Giá trị đó gần như chắc chắn trích trúng một
+     avatar tròn, vì không có thành phần vuông nào trên trang mang bán kính đó.
+     Giữ lại thành --radius-avatar, dùng đúng cho ảnh đại diện.
+     ------------------------------------------------------------------ */
+  --radius: 0;
+  --radius-sm: 0;
+  --radius-pill: 0;
+  --radius-avatar: 50%;
+
+  /* ------------------------------------------------------------------
+     CHUYỂN ĐỘNG
+     ------------------------------------------------------------------ */
+  --dur-instant: 150ms;
+  --dur-fast: 240ms;
+  --dur-slow: 420ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ------------------------------------------------------------------
+     BẢNG MÀU - chế độ sáng
+
+     Ba màu thương hiệu đo được trên trang thật:
+       #0076c0  xanh NEU, dùng làm NỀN của thanh điều hướng và các khối lớn
+       #ff0000  đỏ, dùng cho nút đăng ký thành viên
+       #1b7b57  xanh lá, dùng cho liên kết trong nội dung
+     ------------------------------------------------------------------ */
+  --blue: #0076c0;
+  --blue-dark: #005b94;
+  --blue-light: #2196e3;
+  --blue-wash: #e8f2f9;
+  --blue-line: #b6d9ee;
+
+  /* Đỏ thương hiệu là #ff0000. Với chữ trắng, tỷ lệ tương phản của nó là
+     3.99:1, dưới ngưỡng AA cho chữ thường. Nút dùng bản sẫm hơn để đạt 5.2:1;
+     mắt thường vẫn đọc ra cùng một màu đỏ. Bản gốc giữ cho các dùng phi chữ. */
+  --red: #cc0000;
+  --red-brand: #ff0000;
+  --green: #1b7b57;
+  --green-dark: #146143;
+
+  --accent: var(--blue);
+  --accent-strong: var(--blue-dark);
+  --accent-wash: var(--blue-wash);
+  --accent-line: var(--blue-line);
+  --text-on-accent: #ffffff;
+
+  --text-strong: #0b1215;
+  --text-primary: #444444;
+  --text-secondary: #5f6368;
+  --text-tertiary: #767b80;
+
+  --surface-base: #ffffff;
+  --surface-raised: #f4f6f8;
+  --surface-inset: #e7ebee;
+  --surface-overlay: rgba(11, 18, 21, 0.62);
+
+  --border: #dfe3e6;
+  --border-strong: #c3c9ce;
+
+  --success: #1b7b57;
+  --success-wash: #e7f4ee;
+  --warning: #b3730a;
+  --warning-wash: #fdf3e3;
+  --danger: #cc0000;
+  --danger-wash: #fdecec;
+
+  /* Trang thật gần như không dùng đổ bóng. Giữ ở mức rất nhẹ. */
+  --shadow-1: 0 1px 3px rgba(9, 30, 66, 0.12);
+  --shadow-2: 0 4px 14px rgba(9, 30, 66, 0.16);
+
+  --focus-ring: 0 0 0 2px var(--surface-base), 0 0 0 4px var(--blue);
+
+  /* ------------------------------------------------------------------
+     CHỮ TRÊN NỀN LUÔN TỐI
+
+     Thanh điều hướng, khối tiêu điểm, chân trang và thanh bên CMS có nền đậm
+     ở cả hai chế độ. Nhóm này cố ý KHÔNG đảo theo sáng tối.
+     ------------------------------------------------------------------ */
+  --surface-dark: #044a78;
+  --on-dark-strong: #ffffff;
+  --on-dark: #dbe7f0;
+  --on-dark-muted: #b9cfe0;
+  --on-dark-faint: #93b3ca;
+  --on-dark-accent: #9fd4f5;
+}
+
+/* ------------------------------------------------------------------------
+   CHẾ ĐỘ TỐI
+   Một chủ đề cho cả trang. Xanh NEU sáng lên để đạt tương phản trên nền tối
+   nhưng vẫn đọc ra đúng màu của trường.
+   ------------------------------------------------------------------------ */
+:root[data-theme='dark'] {
+  --blue: #3ea0e0;
+  --blue-dark: #64b6e9;
+  --blue-light: #64b6e9;
+  --blue-wash: #10293a;
+  --blue-line: #1d4b68;
+
+  --red: #ef6b6b;
+  --red-brand: #ef6b6b;
+  --green: #4cc38a;
+  --green-dark: #6fd3a3;
+
+  --accent: var(--blue);
+  --accent-strong: var(--blue-dark);
+  --accent-wash: var(--blue-wash);
+  --accent-line: var(--blue-line);
+  --text-on-accent: #04202f;
+
+  --text-strong: #f2f5f8;
+  --text-primary: #d7dde3;
+  --text-secondary: #a9b3bc;
+  --text-tertiary: #8b959e;
+
+  --surface-base: #0f1419;
+  --surface-raised: #161c23;
+  --surface-inset: #1e262f;
+  --surface-overlay: rgba(4, 8, 11, 0.74);
+
+  --border: #273039;
+  --border-strong: #3a4653;
+
+  --success: #4cc38a;
+  --success-wash: #10281d;
+  --warning: #e0a23c;
+  --warning-wash: #2b2113;
+  --danger: #e5766d;
+  --danger-wash: #2e1614;
+
+  --surface-dark: #0a1620;
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme='dark']) {
+    --blue: #3ea0e0;
+    --blue-dark: #64b6e9;
+    --blue-light: #64b6e9;
+    --blue-wash: #10293a;
+    --blue-line: #1d4b68;
+
+    --red: #ef6b6b;
+    --red-brand: #ef6b6b;
+    --green: #4cc38a;
+    --green-dark: #6fd3a3;
+
+    --accent: var(--blue);
+    --accent-strong: var(--blue-dark);
+    --accent-wash: var(--blue-wash);
+    --accent-line: var(--blue-line);
+    --text-on-accent: #04202f;
+
+    --text-strong: #f2f5f8;
+    --text-primary: #d7dde3;
+    --text-secondary: #a9b3bc;
+    --text-tertiary: #8b959e;
+
+    --surface-base: #0f1419;
+    --surface-raised: #161c23;
+    --surface-inset: #1e262f;
+    --surface-overlay: rgba(4, 8, 11, 0.74);
+
+    --border: #273039;
+    --border-strong: #3a4653;
+
+    --success: #4cc38a;
+    --success-wash: #10281d;
+    --warning: #e0a23c;
+    --warning-wash: #2b2113;
+    --danger: #e5766d;
+    --danger-wash: #2e1614;
+
+    --surface-dark: #0a1620;
+    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.55);
+  }
+}

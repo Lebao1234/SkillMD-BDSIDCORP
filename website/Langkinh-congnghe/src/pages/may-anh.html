@@ -1,0 +1,23 @@
+<!--meta {"title":"Máy ảnh Lăng Kính: dòng Tinh, X, G","description":"Tất cả máy ảnh Lăng Kính: máy ống kính liền dòng Tinh, máy không gương lật APS-C dòng X và máy khổ trung bình dòng G. Lọc theo dòng, loại máy, sắp xếp theo giá.","nav":"may-anh","crumbs":[["Máy ảnh","may-anh.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1 data-split>Máy ảnh, <em>{{count kind="camera"}} thân máy</em></h1>
+        <p class="lead">Ba dòng máy cho ba cách chụp. Chọn tối đa 3 máy để so sánh thông số cạnh nhau.</p>
+      </div>
+    </section>
+    <section class="section-tight" data-filter-scope data-filter-key="series">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter" role="group" aria-label="Lọc theo dòng máy" data-filter>
+            <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+            <button class="chip" type="button" data-filter-value="tinh" aria-pressed="false">Dòng Tinh</button>
+            <button class="chip" type="button" data-filter-value="x" aria-pressed="false">Dòng X</button>
+            <button class="chip" type="button" data-filter-value="g" aria-pressed="false">Dòng G</button>
+          </div>
+          <label class="sort"><span>Sắp xếp</span><select data-sort><option value="default">Nổi bật</option><option value="asc">Giá thấp đến cao</option><option value="desc">Giá cao đến thấp</option></select></label>
+        </div>
+        {{products kind="camera"}}
+        <p class="empty" data-empty hidden>Không có máy trong nhóm này.</p>
+      </div>
+    </section>

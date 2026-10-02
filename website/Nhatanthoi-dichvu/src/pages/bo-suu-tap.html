@@ -1,0 +1,23 @@
+<!--meta {"title":"Bộ sưu tập áo dài cho thuê","description":"Tất cả mẫu áo dài cho thuê tại Nhã An Thời: cưới, bà sui, bê quả, đi tiệc, Việt phục, áo dài nam và phụ kiện. Lọc theo dịp, sắp xếp theo giá.","nav":"bo-suu-tap","crumbs":[["Bộ sưu tập","bo-suu-tap.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1>Cả tủ áo, <em>{{product-count}} mẫu</em></h1>
+        <p class="lead">Lọc theo dịp, sắp xếp theo giá, rồi bỏ những mẫu bạn thích vào túi thử. Khi đến tiệm, áo đã được treo sẵn chờ bạn.</p>
+      </div>
+    </section>
+
+    <section class="section-tight" data-filter-scope data-filter-key="col">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter" role="group" aria-label="Lọc theo dịp" data-filter>
+            <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+            {{collection-chips}}
+          </div>
+          <label class="sort"><span>Sắp xếp</span><select data-sort><option value="default">Mới nhất</option><option value="asc">Giá thấp đến cao</option><option value="desc">Giá cao đến thấp</option></select></label>
+        </div>
+        {{products}}
+        <p class="empty" data-empty hidden>Chưa có mẫu trong nhóm này.</p>
+        <p class="note">Ảnh minh họa. Giá thuê đã gồm giặt hấp, chưa gồm tiền đặt cọc giữ đồ.</p>
+      </div>
+    </section>

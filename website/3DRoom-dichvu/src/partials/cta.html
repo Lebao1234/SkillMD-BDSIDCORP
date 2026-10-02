@@ -1,0 +1,69 @@
+    <!-- ===== Gửi file báo giá (dùng chung cuối mỗi trang). Gắn API thật: đặt data-endpoint="https://..." trên thẻ form ===== -->
+    <section class="section quote" id="gui-file" aria-labelledby="quote-title">
+      <div class="container quote-grid">
+        <div class="quote-info">
+          <p class="mono-label">Báo giá trong 2 giờ làm việc</p>
+          <h2 id="quote-title">Gửi file, <em>nhận giá trong buổi sáng</em></h2>
+          <p class="lead">Kỹ sư kiểm tra file, gợi ý công nghệ và vật liệu tiết kiệm nhất, rồi gửi báo giá kèm thời gian giao qua Zalo hoặc email.</p>
+          <ol class="quote-steps">
+            <li><span>01</span>Tải file STL, OBJ, STEP hoặc ảnh chụp mẫu</li>
+            <li><span>02</span>Kỹ sư phân tích, gọi lại nếu cần làm rõ</li>
+            <li><span>03</span>Chốt giá, đặt cọc 50%, xưởng bắt đầu in</li>
+          </ol>
+          <p class="quote-direct">Cần gấp? Gọi <a href="tel:{{hotline-tel}}">{{hotline}}</a> hoặc nhắn <a href="{{zalo}}" target="_blank" rel="noopener">Zalo</a>.</p>
+        </div>
+
+        <div class="form-shell">
+          <form class="quote-form" data-form novalidate data-endpoint="">
+            <div class="form-body" data-form-body>
+              <div class="dropzone" data-dropzone>
+                <input id="q-file" name="file" type="file" multiple accept=".stl,.obj,.step,.stp,.3mf,.igs,.iges,.jpg,.jpeg,.png,.pdf" data-file-input>
+                <label for="q-file">
+                  <i class="ph ph-cube-transparent" aria-hidden="true"></i>
+                  <strong>Kéo thả file vào đây hoặc bấm để chọn</strong>
+                  <span>STL, OBJ, STEP, 3MF, IGES, ảnh hoặc PDF. Tối đa 50 MB mỗi file.</span>
+                </label>
+                <ul class="file-list" data-file-list aria-live="polite"></ul>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="q-name">Họ và tên</label>
+                  <input id="q-name" name="name" type="text" autocomplete="name" required aria-describedby="q-name-err">
+                  <small class="error" id="q-name-err" role="alert"></small>
+                </div>
+                <div class="field">
+                  <label for="q-phone">Số điện thoại</label>
+                  <input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="q-phone-err">
+                  <small class="error" id="q-phone-err" role="alert"></small>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="q-service">Dịch vụ</label>
+                  <select id="q-service" name="service">{{service-options}}</select>
+                </div>
+                <div class="field">
+                  <label for="q-qty">Số lượng</label>
+                  <input id="q-qty" name="qty" type="number" min="1" value="1" inputmode="numeric">
+                </div>
+              </div>
+              <div class="field">
+                <label for="q-note">Mô tả yêu cầu</label>
+                <textarea id="q-note" name="note" rows="3" maxlength="800" aria-describedby="q-note-help q-note-err" placeholder="Ví dụ: vỏ hộp điện 120 × 80 mm, cần chịu nhiệt 70 độ C, sơn đen mờ"></textarea>
+                <small class="help" id="q-note-help">Nếu chưa có file, hãy mô tả kích thước, vật liệu và công dụng.</small>
+                <small class="error" id="q-note-err" role="alert"></small>
+              </div>
+              <p class="form-error" data-form-error role="alert" hidden><i class="ph ph-warning-circle" aria-hidden="true"></i><span>Chưa gửi được yêu cầu. Vui lòng thử lại hoặc gọi {{hotline}}.</span></p>
+              <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Gửi yêu cầu báo giá<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+              <p class="form-note">File chỉ dùng để báo giá, không chia sẻ cho bên thứ ba. Xem <a href="chinh-sach.html#bao-mat">chính sách bảo mật</a>.</p>
+            </div>
+            <div class="form-success" data-form-success hidden tabindex="-1">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <h3>Đã nhận yêu cầu của <span data-success-name>bạn</span></h3>
+              <p>Kỹ sư 3DRoom sẽ gọi đến số <strong data-success-phone></strong> trong vòng 2 giờ làm việc.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-form-reset>Gửi yêu cầu khác</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>

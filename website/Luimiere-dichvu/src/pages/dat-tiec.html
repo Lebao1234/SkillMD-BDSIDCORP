@@ -1,0 +1,35 @@
+<!--meta {"title": "Liên hệ, đặt lịch xem sảnh", "description": "Đặt lịch xem sảnh, nhận báo giá tiệc cưới tại Luimiere, 168 Nguyễn Văn Trỗi, Phú Nhuận. Hotline 028 3848 6279, tham quan 9:00 - 21:00 mỗi ngày.", "crumbs": [["Liên hệ", "dat-tiec.html"]], "cta": false}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <p class="eyebrow">Liên hệ</p>
+        <h1>Hẹn một buổi <em>xem sảnh</em></h1>
+        <p class="lead">Để lại số điện thoại, tư vấn viên gọi lại trong 30 phút để hẹn giờ. Bạn cũng có thể đến thẳng, sảnh mở cửa cho khách tham quan từ 9:00 đến 21:00.</p>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <ul class="contact-list">
+            <li><i class="ph ph-map-pin" aria-hidden="true"></i><div><strong>Địa chỉ</strong><a href="https://www.google.com/maps/search/?api=1&amp;query={{map-query}}" target="_blank" rel="noopener">{{address}}</a></div></li>
+            <li><i class="ph ph-phone" aria-hidden="true"></i><div><strong>Bàn tiệc</strong><a href="tel:{{hotline-tel}}">{{hotline}}</a></div></li>
+            <li><i class="ph ph-device-mobile" aria-hidden="true"></i><div><strong>Di động, Zalo</strong><a href="tel:{{mobile-tel}}">{{mobile}}</a></div></li>
+            <li><i class="ph ph-envelope-simple" aria-hidden="true"></i><div><strong>Email</strong><a href="mailto:{{email}}">{{email}}</a></div></li>
+            <li><i class="ph ph-clock" aria-hidden="true"></i><div><strong>Giờ tham quan</strong>9:00 - 21:00 mỗi ngày. Tối thứ Năm từ 18:30 có một sảnh được dựng trang trí đầy đủ.</div></li>
+            <li><i class="ph ph-car" aria-hidden="true"></i><div><strong>Gửi xe</strong>Hầm B1 và B2 cho 120 ô tô, miễn phí cho khách dự tiệc và khách tham quan.</div></li>
+          </ul>
+        </div>
+        <div class="bezel form-card reveal"><div class="bezel-core">
+          <h2>Gửi <em>yêu cầu</em></h2>
+          <p class="modal-sub">Chỉ cần tên và số điện thoại. Các ô còn lại giúp chúng tôi chuẩn bị báo giá sát hơn.</p>
+          {{book-form id="p"}}
+        </div></div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Bản đồ">
+      <div class="container">
+        <div class="bezel map-frame"><div class="bezel-core"><iframe title="Bản đồ đường đến Luimiere" src="https://www.google.com/maps?q={{map-query}}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
+      </div>
+    </section>

@@ -1,0 +1,25 @@
+  <div class="float-actions">
+    <a class="float-btn" href="tel:{{hotline-tel}}" aria-label="Gọi {{hotline}}"><i class="ph ph-phone" aria-hidden="true"></i></a>
+    <a class="float-btn" href="{{zalo}}" target="_blank" rel="noopener" aria-label="Nhắn Zalo"><span class="zalo-txt">Zalo</span></a>
+  </div>
+  <dialog class="modal" data-modal aria-labelledby="modal-title">
+    <div class="modal-shell">
+      <div class="modal-side" aria-hidden="true">
+        <div class="tzg tzg-modal"><svg class="tzg-lines" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 50H100M50 0V100M0 0L100 100M100 0L0 100"/></svg><span class="tzg-static zh" lang="zh">试</span></div>
+        <p class="modal-side-py">shì</p>
+        <p class="modal-side-vi">thử</p>
+        <ul class="modal-steps">
+          <li><span>1</span>Tư vấn viên gọi lại trong 20 phút</li>
+          <li><span>2</span>Kiểm tra trình độ 15 phút</li>
+          <li><span>3</span>Học thử 90 phút với lớp thật</li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <button class="modal-close" type="button" data-close-modal aria-label="Đóng"><i class="ph ph-x" aria-hidden="true"></i></button>
+        <p class="eyebrow">Học thử miễn phí</p>
+        <h2 id="modal-title">Đăng ký <em>một buổi học thử</em></h2>
+        <p class="modal-sub">Chỉ cần tên và số điện thoại. Các ô còn lại giúp chúng tôi xếp đúng lớp cho bạn.</p>
+        {{reg-form id="m"}}
+      </div>
+    </div>
+  </dialog>

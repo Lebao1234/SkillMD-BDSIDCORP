@@ -1,0 +1,558 @@
+window.__JOBS = [
+ {
+  "id": "j-001",
+  "slug": "chuyen-vien-phan-tich-tin-dung-doanh-nghiep-1",
+  "tieude": "Chuyên viên phân tích tín dụng doanh nghiệp",
+  "congty": "Ngân hàng TMCP Kim Liên",
+  "linhvuc": "Tài chính và ngân hàng",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "Singapore",
+  "quocgia": "Singapore",
+  "luong": "15 đến 41 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-13",
+  "hanNop": "2026-10-01",
+  "nguoiDangId": "al-0004",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan"
+  ],
+  "quyenloi": [
+   "Xét tăng lương hai lần mỗi năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp"
+  ],
+  "lienhe": "tuyendung@kimlien.example"
+ },
+ {
+  "id": "j-002",
+  "slug": "kiem-toan-vien-cap-2-2",
+  "tieude": "Kiểm toán viên cấp 2",
+  "congty": "Công ty TNHH Kiểm toán Minh Đức",
+  "linhvuc": "Kiểm toán và kế toán",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "Seoul",
+  "quocgia": "Hàn Quốc",
+  "luong": "15 đến 27 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-05",
+  "hanNop": "2026-09-25",
+  "nguoiDangId": "al-0021",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan"
+  ],
+  "quyenloi": [
+   "Ngân sách đào tạo hằng năm",
+   "Xét tăng lương hai lần mỗi năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân"
+  ],
+  "lienhe": "tuyendung@minhduc.example"
+ },
+ {
+  "id": "j-003",
+  "slug": "chuyen-vien-phan-tich-du-lieu-kinh-doanh-3",
+  "tieude": "Chuyên viên phân tích dữ liệu kinh doanh",
+  "congty": "Công ty Tài chính số Sao Khuê",
+  "linhvuc": "Công nghệ",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "Sydney",
+  "quocgia": "Úc",
+  "luong": "15 đến 37 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-14",
+  "hanNop": "2026-10-21",
+  "nguoiDangId": "al-0038",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan"
+  ],
+  "quyenloi": [
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp",
+   "Xét tăng lương hai lần mỗi năm",
+   "Ngân sách đào tạo hằng năm"
+  ],
+  "lienhe": "tuyendung@saokhue.example"
+ },
+ {
+  "id": "j-004",
+  "slug": "truong-nhom-ke-toan-tong-hop-4",
+  "tieude": "Trưởng nhóm kế toán tổng hợp",
+  "congty": "Công ty TNHH Kiểm toán Minh Đức",
+  "linhvuc": "Kiểm toán và kế toán",
+  "capbac": "Trưởng nhóm",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "Tokyo",
+  "quocgia": "Nhật Bản",
+  "luong": "28 đến 52 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-06",
+  "hanNop": "2026-11-11",
+  "nguoiDangId": "al-0055",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Xét tăng lương hai lần mỗi năm",
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp"
+  ],
+  "lienhe": "tuyendung@minhduc.example"
+ },
+ {
+  "id": "j-005",
+  "slug": "quan-ly-quan-he-khach-hang-doanh-nghiep-5",
+  "tieude": "Quản lý quan hệ khách hàng doanh nghiệp",
+  "congty": "Ngân hàng TMCP Kim Liên",
+  "linhvuc": "Tài chính và ngân hàng",
+  "capbac": "Quản lý",
+  "hinhthuc": "Bán thời gian",
+  "thanhpho": "Thanh Hóa",
+  "quocgia": "Việt Nam",
+  "luong": "40 đến 60 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-06",
+  "hanNop": "2026-10-13",
+  "nguoiDangId": "al-0072",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu"
+  ],
+  "quyenloi": [
+   "Xét tăng lương hai lần mỗi năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân"
+  ],
+  "lienhe": "tuyendung@kimlien.example"
+ },
+ {
+  "id": "j-006",
+  "slug": "chuyen-vien-ke-hoach-tai-chinh-6",
+  "tieude": "Chuyên viên kế hoạch tài chính",
+  "congty": "Tổng công ty Sản xuất Nam Sơn",
+  "linhvuc": "Sản xuất",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "London",
+  "quocgia": "Anh",
+  "luong": "15 đến 28 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-31",
+  "hanNop": "2026-11-17",
+  "nguoiDangId": "al-0089",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp"
+  ],
+  "quyenloi": [
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@namson.example"
+ },
+ {
+  "id": "j-007",
+  "slug": "thuc-tap-sinh-phan-tich-dau-tu-7",
+  "tieude": "Thực tập sinh phân tích đầu tư",
+  "congty": "Ngân hàng TMCP Kim Liên",
+  "linhvuc": "Tài chính và ngân hàng",
+  "capbac": "Thực tập",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "Huế",
+  "quocgia": "Việt Nam",
+  "luong": "4 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-25",
+  "hanNop": "2026-11-09",
+  "nguoiDangId": "al-0106",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@kimlien.example"
+ },
+ {
+  "id": "j-008",
+  "slug": "chuyen-vien-marketing-thuong-hieu-8",
+  "tieude": "Chuyên viên marketing thương hiệu",
+  "congty": "Công ty CP Bán lẻ Vạn Xuân",
+  "linhvuc": "Bán lẻ và tiêu dùng",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "Tokyo",
+  "quocgia": "Nhật Bản",
+  "luong": "15 đến 40 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-24",
+  "hanNop": "2026-10-24",
+  "nguoiDangId": "al-0123",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính"
+  ],
+  "quyenloi": [
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp",
+   "Xét tăng lương hai lần mỗi năm",
+   "Ngân sách đào tạo hằng năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân"
+  ],
+  "lienhe": "tuyendung@vanxuan.example"
+ },
+ {
+  "id": "j-009",
+  "slug": "dieu-phoi-vien-chuoi-cung-ung-9",
+  "tieude": "Điều phối viên chuỗi cung ứng",
+  "congty": "Công ty CP Logistics Đại Việt",
+  "linhvuc": "Logistics",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "London",
+  "quocgia": "Anh",
+  "luong": "15 đến 25 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-18",
+  "hanNop": "2026-09-24",
+  "nguoiDangId": "al-0140",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Xét tăng lương hai lần mỗi năm",
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần"
+  ],
+  "lienhe": "tuyendung@daiviet.example"
+ },
+ {
+  "id": "j-010",
+  "slug": "chuyen-vien-tham-dinh-du-an-bat-dong-san-10",
+  "tieude": "Chuyên viên thẩm định dự án bất động sản",
+  "congty": "Công ty CP Bất động sản Thăng Long Land",
+  "linhvuc": "Bất động sản",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "Singapore",
+  "quocgia": "Singapore",
+  "luong": "15 đến 31 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-19",
+  "hanNop": "2026-10-30",
+  "nguoiDangId": "al-0001",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp"
+  ],
+  "quyenloi": [
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Xét tăng lương hai lần mỗi năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân"
+  ],
+  "lienhe": "tuyendung@longland.example"
+ },
+ {
+  "id": "j-011",
+  "slug": "truong-phong-nhan-su-11",
+  "tieude": "Trưởng phòng nhân sự",
+  "congty": "Tổng công ty Sản xuất Nam Sơn",
+  "linhvuc": "Sản xuất",
+  "capbac": "Trưởng phòng",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "London",
+  "quocgia": "Anh",
+  "luong": "40 đến 62 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-13",
+  "hanNop": "2026-10-26",
+  "nguoiDangId": "al-0018",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp"
+  ],
+  "quyenloi": [
+   "Ngân sách đào tạo hằng năm",
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@namson.example"
+ },
+ {
+  "id": "j-012",
+  "slug": "chuyen-vien-tu-van-chien-luoc-12",
+  "tieude": "Chuyên viên tư vấn chiến lược",
+  "congty": "Công ty Tư vấn Quản trị Thái Bình Dương",
+  "linhvuc": "Tư vấn",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Bán thời gian",
+  "thanhpho": "London",
+  "quocgia": "Anh",
+  "luong": "15 đến 27 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-11",
+  "hanNop": "2026-11-20",
+  "nguoiDangId": "al-0035",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính"
+  ],
+  "quyenloi": [
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Ngân sách đào tạo hằng năm"
+  ],
+  "lienhe": "tuyendung@binhduong.example"
+ },
+ {
+  "id": "j-013",
+  "slug": "thuc-tap-sinh-kiem-toan-mua-cao-diem-13",
+  "tieude": "Thực tập sinh kiểm toán mùa cao điểm",
+  "congty": "Công ty TNHH Kiểm toán Minh Đức",
+  "linhvuc": "Kiểm toán và kế toán",
+  "capbac": "Thực tập",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "Đà Nẵng",
+  "quocgia": "Việt Nam",
+  "luong": "4 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-02",
+  "hanNop": "2026-10-17",
+  "nguoiDangId": "al-0052",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Ngân sách đào tạo hằng năm",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@minhduc.example"
+ },
+ {
+  "id": "j-014",
+  "slug": "chuyen-vien-nghien-cuu-chinh-sach-14",
+  "tieude": "Chuyên viên nghiên cứu chính sách",
+  "congty": "Viện Nghiên cứu Chính sách Bắc Hà",
+  "linhvuc": "Khu vực công",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Thực tập",
+  "thanhpho": "Cần Thơ",
+  "quocgia": "Việt Nam",
+  "luong": "15 đến 24 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-03",
+  "hanNop": "2026-09-30",
+  "nguoiDangId": "al-0069",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Ngân sách đào tạo hằng năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp",
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần"
+  ],
+  "lienhe": "tuyendung@bacha.example"
+ },
+ {
+  "id": "j-015",
+  "slug": "giam-doc-tai-chinh-15",
+  "tieude": "Giám đốc tài chính",
+  "congty": "Nền tảng thương mại Chợ Phiên",
+  "linhvuc": "Khởi nghiệp",
+  "capbac": "Giám đốc",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "TP Hồ Chí Minh",
+  "quocgia": "Việt Nam",
+  "luong": "70 đến 84 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-23",
+  "hanNop": "2026-10-27",
+  "nguoiDangId": "al-0086",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Xét tăng lương hai lần mỗi năm",
+   "Ngân sách đào tạo hằng năm"
+  ],
+  "lienhe": "tuyendung@chophien.example"
+ },
+ {
+  "id": "j-016",
+  "slug": "chuyen-vien-van-hanh-san-pham-cho-vay-16",
+  "tieude": "Chuyên viên vận hành sản phẩm cho vay",
+  "congty": "Công ty Tài chính số Sao Khuê",
+  "linhvuc": "Công nghệ",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Hợp đồng dự án",
+  "thanhpho": "Hà Nội",
+  "quocgia": "Việt Nam",
+  "luong": "15 đến 40 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-13",
+  "hanNop": "2026-11-16",
+  "nguoiDangId": "al-0103",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc"
+  ],
+  "quyenloi": [
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@saokhue.example"
+ },
+ {
+  "id": "j-017",
+  "slug": "truong-nhom-noi-dung-so-17",
+  "tieude": "Trưởng nhóm nội dung số",
+  "congty": "Công ty CP Truyền thông Sông Cầu",
+  "linhvuc": "Truyền thông",
+  "capbac": "Trưởng nhóm",
+  "hinhthuc": "Hợp đồng dự án",
+  "thanhpho": "Berlin",
+  "quocgia": "Đức",
+  "luong": "28 đến 45 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-07",
+  "hanNop": "2026-09-27",
+  "nguoiDangId": "al-0120",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan"
+  ],
+  "quyenloi": [
+   "Ngân sách đào tạo hằng năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@songcau.example"
+ },
+ {
+  "id": "j-018",
+  "slug": "chuyen-vien-phat-trien-doi-tac-giao-duc-18",
+  "tieude": "Chuyên viên phát triển đối tác giáo dục",
+  "congty": "Công ty CP Giáo dục Trí Đức",
+  "linhvuc": "Giáo dục",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "Singapore",
+  "quocgia": "Singapore",
+  "luong": "15 đến 32 triệu đồng mỗi tháng",
+  "ngayDang": "2026-08-08",
+  "hanNop": "2026-10-03",
+  "nguoiDangId": "al-0137",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Thành thạo bảng tính và ít nhất một công cụ trực quan hóa dữ liệu",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan"
+  ],
+  "quyenloi": [
+   "Ngân sách đào tạo hằng năm",
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Chế độ làm việc linh hoạt hai ngày mỗi tuần",
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp"
+  ],
+  "lienhe": "tuyendung@triduc.example"
+ },
+ {
+  "id": "j-019",
+  "slug": "chuyen-vien-dinh-phi-bao-hiem-19",
+  "tieude": "Chuyên viên định phí bảo hiểm",
+  "congty": "Ngân hàng TMCP Kim Liên",
+  "linhvuc": "Tài chính và ngân hàng",
+  "capbac": "Chuyên viên",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "Tokyo",
+  "quocgia": "Nhật Bản",
+  "luong": "15 đến 24 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-01",
+  "hanNop": "2026-09-27",
+  "nguoiDangId": "al-0154",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành"
+  ],
+  "quyenloi": [
+   "Bảo hiểm sức khỏe cho nhân viên và người thân",
+   "Xét tăng lương hai lần mỗi năm"
+  ],
+  "lienhe": "tuyendung@kimlien.example"
+ },
+ {
+  "id": "j-020",
+  "slug": "quan-ly-du-an-nang-luong-tai-tao-20",
+  "tieude": "Quản lý dự án năng lượng tái tạo",
+  "congty": "Công ty CP Năng lượng Xanh Phú Yên",
+  "linhvuc": "Năng lượng",
+  "capbac": "Quản lý",
+  "hinhthuc": "Toàn thời gian",
+  "thanhpho": "Hà Nội",
+  "quocgia": "Việt Nam",
+  "luong": "40 đến 65 triệu đồng mỗi tháng",
+  "ngayDang": "2026-09-16",
+  "hanNop": "2026-10-05",
+  "nguoiDangId": "al-0015",
+  "mota": "Vị trí do cựu sinh viên của trường giới thiệu vào mạng lưới. Doanh nghiệp ưu tiên ứng viên tốt nghiệp các ngành kinh tế và quản trị, có khả năng làm việc với số liệu.",
+  "yeucau": [
+   "Ưu tiên ứng viên đã có chứng chỉ nghề nghiệp liên quan",
+   "Tốt nghiệp đại học khối ngành kinh tế, quản trị hoặc tài chính",
+   "Giao tiếp tiếng Anh ở mức đọc hiểu tài liệu chuyên ngành",
+   "Chủ động trong việc theo dõi tiến độ và báo cáo công việc",
+   "Có kinh nghiệm làm việc với báo cáo tài chính doanh nghiệp"
+  ],
+  "quyenloi": [
+   "Hỗ trợ chi phí thi chứng chỉ nghề nghiệp",
+   "Ngân sách đào tạo hằng năm"
+  ],
+  "lienhe": "tuyendung@phuyen.example"
+ }
+];

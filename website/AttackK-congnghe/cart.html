@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="cart.title">Gio hang | HADAL</title>
+<meta name="description" content="Xem lai san pham trong gio hang, dieu chinh so luong, ap dung ma giam gia va tien hanh thanh toan.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><span aria-current="page" data-i18n="cart.title">Gio hang</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-i18n="cart.title">Gio hang</h1>
+      <p class="muted" data-cart-head></p><span class="visually-hidden" data-cart-count>0</span>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+
+      <div class="cartlayout" data-cart-grid hidden>
+        <div class="stack stack-8">
+          <div class="cartpanel">
+            <div class="row row--between" style="padding-block-end:var(--space-6);border-block-end:1px solid var(--border-default)">
+              <p class="opt-group__name" data-i18n="g.products">San pham</p>
+              <button type="button" class="litem__remove" data-cart-clear data-i18n="cart.clearAll">Xoa toan bo gio</button>
+            </div>
+            <div data-cart-lines></div>
+          </div>
+
+          <div class="cartpanel stack stack-6">
+            <div data-coupon></div>
+            <div class="field">
+              <label class="field__label" for="order-note" data-i18n="cart.note.label">Ghi chu cho don hang</label>
+              <textarea class="textarea" id="order-note" data-order-note data-i18n-placeholder="cart.note.placeholder" placeholder="Vi du: giao gio hanh chinh."></textarea>
+              <p class="field__help" data-i18n="cart.note.help">Ghi chu duoc gui kem don hang.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cartaside" data-summary data-i18n-aria-label="cart.summary" aria-label="Tom tat don hang"></aside>
+      </div>
+
+      <div data-cart-empty hidden>
+        <div class="empty">
+          <span class="empty__icon"><i class="ph-light ph-shopping-cart-simple" aria-hidden="true"></i></span>
+          <h2 class="empty__title" data-i18n="cart.empty.title">Gio hang dang trong</h2>
+          <p class="empty__text" data-i18n="cart.empty.text">Chua co san pham nao trong gio.</p>
+          <div class="row" style="gap:var(--space-4)">
+            <a class="btn btn--primary btn--lg" href="collection.html?c=best-selling" data-i18n="cart.empty.best">Xem ban chay</a>
+            <a class="btn btn--secondary btn--lg" href="collection.html?c=new" data-i18n="cart.empty.new">Hang moi ve</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="cross-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="cross-h" style="font-size:var(--fs-3xl)" data-i18n="cart.cross.title">Ghep them cho setup</h2>
+          <p class="muted" data-i18n="cart.cross.text">Phu kien hay duoc mua cung.</p>
+        </div>
+      </div>
+      <div class="grid-products grid-products--4" data-cross></div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

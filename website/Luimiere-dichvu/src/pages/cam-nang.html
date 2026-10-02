@@ -1,0 +1,22 @@
+<!--meta {"title": "Cẩm nang cưới: kinh nghiệm, tin tức, sự kiện", "description": "Kinh nghiệm tổ chức tiệc cưới từ đội điều phối và bếp trưởng Luimiere, tin tức sảnh và lịch sự kiện Wedding Fair.", "nav": "cam-nang", "crumbs": [["Cẩm nang cưới", "cam-nang.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <p class="eyebrow">Cẩm nang cưới</p>
+        <h1>Viết bởi <em>người làm tiệc</em></h1>
+        <p class="lead">Kinh nghiệm từ điều phối viên và bếp trưởng sau hơn 2.140 tiệc cưới, tin tức về sảnh và lịch các buổi Wedding Fair.</p>
+      </div>
+    </section>
+
+    <section class="section pt-0" data-filter-scope>
+      <div class="container">
+        <div class="filter-bar" role="group" aria-label="Lọc bài viết">
+          <button class="filter-chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="filter-chip" type="button" data-filter-value="kinh-nghiem" aria-pressed="false">Kinh nghiệm cưới</button>
+          <button class="filter-chip" type="button" data-filter-value="tin-tuc" aria-pressed="false">Tin tức</button>
+          <button class="filter-chip" type="button" data-filter-value="su-kien" aria-pressed="false">Sự kiện</button>
+        </div>
+        {{posts class="post-grid-feature"}}
+        <p class="empty-state" data-empty hidden>Chưa có bài viết trong mục này.</p>
+      </div>
+    </section>

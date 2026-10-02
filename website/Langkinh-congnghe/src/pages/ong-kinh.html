@@ -1,0 +1,22 @@
+<!--meta {"title":"Ống kính LX và LG","description":"Ống kính ngàm LX cho máy dòng X và ngàm LG cho máy dòng G: một tiêu cự khẩu lớn, zoom tiêu chuẩn, tele và siêu rộng.","nav":"ong-kinh","crumbs":[["Ống kính","ong-kinh.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1 data-split>Ống kính, <em>{{count kind="lens"}} tiêu cự</em></h1>
+        <p class="lead">Ống kính LX dùng cho mọi máy dòng X. Ống kính LG dành cho máy khổ trung bình dòng G.</p>
+      </div>
+    </section>
+    <section class="section-tight" data-filter-scope data-filter-key="type">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter" role="group" aria-label="Lọc theo loại ống kính" data-filter>
+            <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+            <button class="chip" type="button" data-filter-value="Ống một tiêu cự" aria-pressed="false">Một tiêu cự</button>
+            <button class="chip" type="button" data-filter-value="Ống zoom" aria-pressed="false">Zoom</button>
+          </div>
+          <label class="sort"><span>Sắp xếp</span><select data-sort><option value="default">Nổi bật</option><option value="asc">Giá thấp đến cao</option><option value="desc">Giá cao đến thấp</option></select></label>
+        </div>
+        {{products kind="lens"}}
+        <p class="empty" data-empty hidden>Không có ống kính trong nhóm này.</p>
+      </div>
+    </section>

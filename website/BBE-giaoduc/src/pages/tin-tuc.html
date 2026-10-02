@@ -1,0 +1,27 @@
+<!--meta {"title":"Tin tức và bài học tiếng Anh","description":"Mẹo học tiếng Anh cho phụ huynh, học sinh và người đi làm, kinh nghiệm luyện thi IELTS và tin tức sự kiện của BBE.","nav":"tai-nguyen","crumbs":[["Tin tức và bài học","tin-tuc.html"]]}-->
+    <section class="page-hero-plain">
+      <div class="container">
+        {{crumbs}}
+        <h1>Tin tức và bài học</h1>
+        <p class="lead">Mẹo học do giáo viên BBE viết, kinh nghiệm luyện thi và tin tức sự kiện tại trung tâm.</p>
+      </div>
+    </section>
+
+    <section class="section" data-filter-scope>
+      <div class="container">
+        {{post-lead}}
+        <div class="filter" role="group" aria-label="Lọc bài viết theo chủ đề" data-filter data-filter-group="category">
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="parents" aria-pressed="false">Phụ huynh</button>
+          <button class="chip" type="button" data-filter-value="ielts" aria-pressed="false">IELTS</button>
+          <button class="chip" type="button" data-filter-value="work" aria-pressed="false">Giao tiếp</button>
+          <button class="chip" type="button" data-filter-value="events" aria-pressed="false">Sự kiện</button>
+        </div>
+        {{posts skip="1"}}
+        <div class="empty-state" data-empty hidden>
+          <i class="ph ph-newspaper" aria-hidden="true"></i>
+          <h3>Chưa có bài viết khác trong chủ đề này</h3>
+          <p>Bài viết mới được đăng mỗi tuần. Hãy xem các chủ đề khác trong lúc chờ.</p>
+        </div>
+      </div>
+    </section>

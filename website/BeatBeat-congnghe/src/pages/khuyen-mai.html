@@ -1,0 +1,31 @@
+<!--meta {"title": "Khuyến mãi tháng 10: giảm đến 11%, mã giảm thêm", "description": "Sản phẩm đang giảm giá, mã giảm thêm cho đơn hàng và đếm ngược đến ngày Sale 10.10 của BeatBeat.", "nav": "khuyen-mai", "crumbs": [["Khuyến mãi", "khuyen-mai.html"]]}-->
+    <section class="page-head promo-head">
+      <div class="container promo-grid">
+        <div>
+          {{crumbs}}
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span>Sale 10.10</p>
+          <h1>Mười ngày, <em>mười mã giảm</em></h1>
+          <p class="lead">Từ 0:00 ngày 10/10/2026, mỗi sáng mở một mã giảm mới. Đăng ký nhận tin để nhận mã sớm hơn 1 giờ.</p>
+        </div>
+        <div class="countdown" data-countdown="2026-10-10T00:00:00+07:00" aria-label="Đếm ngược đến Sale 10.10">
+          <p><b data-cd="d">00</b><span>ngày</span></p><p><b data-cd="h">00</b><span>giờ</span></p><p><b data-cd="m">00</b><span>phút</span></p><p><b data-cd="s">00</b><span>giây</span></p>
+          <p class="cd-done" data-cd-done hidden>Sale 10.10 đang diễn ra</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container">
+        <ul class="codes">
+          <li><p class="code-v">-200K</p><p>Đơn từ 2.000.000đ</p><button class="code" type="button" data-copy="BEAT200"><span>BEAT200</span><i class="ph ph-copy" aria-hidden="true"></i></button><p class="muted">Đến 31/10/2026</p></li>
+          <li><p class="code-v">-10%</p><p>Mua 2 sản phẩm bất kỳ, tối đa 800.000đ</p><button class="code" type="button" data-copy="COMBO10"><span>COMBO10</span><i class="ph ph-copy" aria-hidden="true"></i></button><p class="muted">Đến 31/10/2026</p></li>
+          <li><p class="code-v">-15%</p><p>Sinh viên, xác nhận bằng thẻ sinh viên tại cửa hàng</p><button class="code" type="button" data-copy="SV15"><span>SV15</span><i class="ph ph-copy" aria-hidden="true"></i></button><p class="muted">Không áp dụng cùng mã khác</p></li>
+          <li><p class="code-v">1 đổi 1</p><p>Thu cũ đổi mới: tai nghe cũ bất kỳ hãng, trợ giá đến 1.000.000đ</p><a class="code" href="cua-hang.html"><span>Tại cửa hàng</span><i class="ph ph-arrow-right" aria-hidden="true"></i></a><p class="muted">Mang tai nghe cũ đến 3 cửa hàng</p></li>
+        </ul>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Đang giảm giá</p><h2>Giá tốt <em>tuần này</em></h2></div>
+        {{products sale="1"}}
+      </div>
+    </section>

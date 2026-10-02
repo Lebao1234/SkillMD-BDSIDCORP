@@ -1,0 +1,60 @@
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Hoa ngữ ISZ, trang chủ">
+        <svg class="brand-mark" viewBox="0 0 40 40" width="36" height="36" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="10" fill="#d2232a"/><rect x="5" y="5" width="30" height="30" rx="6" fill="none" stroke="#fff" stroke-width="1.1" opacity=".75"/><text x="20" y="27.6" text-anchor="middle" font-family="'Noto Serif SC', serif" font-weight="700" font-size="20" fill="#fff">汉</text></svg>
+        <span class="brand-text">ISZ<small>Hoa ngữ chuẩn HSK</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul class="nav-list">
+          <li class="nav-item has-drop" data-nav-key="chuong-trinh">
+            <button class="nav-link" type="button" aria-expanded="false" data-drop-toggle>Chương trình<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="drop">
+              <div class="drop-grid">{{program-drop}}</div>
+              <a class="drop-all" href="chuong-trinh.html">So sánh 6 chương trình <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </li>
+          <li class="nav-item" data-nav-key="lich-khai-giang"><a class="nav-link" href="lich-khai-giang.html">Lịch khai giảng</a></li>
+          <li class="nav-item" data-nav-key="du-hoc"><a class="nav-link" href="du-hoc-trung-quoc.html">Du học</a></li>
+          <li class="nav-item" data-nav-key="thu-vien"><a class="nav-link" href="thu-vien.html">Thư viện</a></li>
+          <li class="nav-item" data-nav-key="chi-nhanh"><a class="nav-link" href="chi-nhanh.html">Cơ sở</a></li>
+          <li class="nav-item has-drop drop-sm" data-nav-key="ve-isz">
+            <button class="nav-link" type="button" aria-expanded="false" data-drop-toggle>Về ISZ<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="drop">
+              <a href="ve-isz.html"><span><strong>Câu chuyện ISZ</strong><small>Phương pháp, giáo viên, cam kết</small></span></a>
+              <a href="cam-nhan-hoc-vien.html"><span><strong>Cảm nhận học viên</strong><small>Điểm thi và câu chuyện thật</small></span></a>
+              <a href="bai-viet.html"><span><strong>Bài viết</strong><small>Tin HSK, kinh nghiệm học, du học</small></span></a>
+              <a href="cau-hoi-thuong-gap.html"><span><strong>Hỏi đáp</strong><small>Học phí, bảo lưu, học bù</small></span></a>
+              <a href="tuyen-dung.html"><span><strong>Tuyển dụng</strong><small>Giáo viên, tư vấn viên</small></span></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="header-test" href="kiem-tra-trinh-do.html"><i class="ph ph-exam" aria-hidden="true"></i>Kiểm tra trình độ</a>
+        <button class="btn btn-primary btn-sm header-cta" type="button" data-open-reg>Học thử miễn phí<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span class="sr-only">Mở menu</span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobile-nav" data-nav>
+    <nav class="mobile-links" aria-label="Menu điện thoại">
+      <details class="m-group"><summary>Chương trình<i class="ph ph-caret-down" aria-hidden="true"></i></summary>
+        <div class="m-drop">
+          {{program-drop}}
+          <a class="drop-all" href="chuong-trinh.html">So sánh 6 chương trình <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </details>
+      <a href="lich-khai-giang.html">Lịch khai giảng</a>
+      <a href="kiem-tra-trinh-do.html">Kiểm tra trình độ</a>
+      <a href="du-hoc-trung-quoc.html">Du học</a>
+      <a href="thu-vien.html">Thư viện</a>
+      <a href="chi-nhanh.html">Cơ sở</a>
+      <a href="ve-isz.html">Về ISZ</a>
+      <a href="cam-nhan-hoc-vien.html">Cảm nhận học viên</a>
+      <a href="bai-viet.html">Bài viết</a>
+    </nav>
+    <div class="mobile-foot">
+      <button class="btn btn-primary btn-lg btn-block" type="button" data-open-reg>Học thử miễn phí<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+      <a class="mobile-call" href="tel:{{hotline-tel}}"><i class="ph ph-phone" aria-hidden="true"></i>{{hotline}}</a>
+    </div>
+  </div>

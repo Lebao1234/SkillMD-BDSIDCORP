@@ -1,0 +1,93 @@
+<!--meta {"title":"Bảng giá in 3D theo gram và công cụ ước tính","description":"Giá in 3D FDM từ 700đ/gram, SLA từ 3.500đ/gram, SLS từ 2.600đ/gram. Công cụ ước tính giá theo công nghệ, vật liệu, khối lượng và số lượng.","nav":"bang-gia","crumbs":[["Bảng giá","bang-gia.html"]]}-->
+    <!-- Toàn bộ đơn giá là dữ liệu mẫu, chỉnh trong src/data/materials.js -->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1>Bảng giá in 3D, <em>tính theo gram</em></h1>
+        <p class="lead">Giá được tính theo khối lượng thực của chi tiết sau khi gỡ đỡ. Đơn giá dưới đây là giá tham khảo, chưa gồm VAT và công hoàn thiện.</p>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container est-wrap">
+        <div class="est-copy">
+          <p class="mono-label">Ước tính nhanh</p>
+          <h2 class="h2">Mẫu của bạn <em>khoảng bao nhiêu?</em></h2>
+          <p class="muted">Chưa biết khối lượng? Phần mềm slicer (Cura, PrusaSlicer, Bambu Studio) hiển thị số gram khi bạn nạp file. Hoặc gửi file để kỹ sư tính giúp.</p>
+          <ul class="check-list">
+            <li><i class="ph ph-check" aria-hidden="true"></i>Đơn trên 10 kg nhựa FDM: 550.000-650.000đ/kg</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Từ 20 chi tiết giống nhau: giảm 10-25%</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Đơn gấp dưới 24 giờ: phụ phí 30%</li>
+          </ul>
+        </div>
+        <div class="form-shell">
+          <form class="estimator" data-estimator onsubmit="return false">
+            <div class="field-row">
+              <div class="field"><label for="e-tech">Công nghệ</label><select id="e-tech" data-e-tech><option value="FDM">FDM</option><option value="SLA">SLA</option><option value="SLS">SLS</option><option value="SLM">SLM (kim loại)</option></select></div>
+              <div class="field"><label for="e-mat">Vật liệu</label><select id="e-mat" data-e-mat></select></div>
+            </div>
+            <div class="field">
+              <label for="e-gram">Khối lượng mỗi chi tiết <output data-e-gram-out>120 g</output></label>
+              <input id="e-gram" type="range" min="5" max="3000" step="5" value="120" data-e-gram>
+              <p class="range-hint"><span>5 g, cỡ móc khóa</span><span>3 kg, cỡ mũ bảo hiểm</span></p>
+            </div>
+            <div class="field est-qty"><label for="e-qty">Số lượng</label><input id="e-qty" type="number" min="1" max="5000" value="1" inputmode="numeric" data-e-qty></div>
+            <div class="est-result" aria-live="polite">
+              <p class="mono-label">Ước tính</p>
+              <p class="est-price" data-e-out>84.000-96.000đ</p>
+              <p class="est-note" data-e-note>PLA · 700-800đ/gram</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      {{materials-json}}
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="h2">Đơn giá <em>theo vật liệu</em></h2>
+          <p class="sec-sub">Chưa gồm VAT. In kim loại SLM báo giá theo từng file vì phụ thuộc thời gian máy và gia công tinh.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th scope="col">Loại in</th><th scope="col">Công nghệ</th><th scope="col">Đơn vị</th><th scope="col">Đơn giá tham khảo</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Mẫu khổ lớn trên 10 kg</th><td>FDM</td><td>kg</td><td class="num">550.000-650.000đ</td></tr>
+              <tr><th scope="row">Chi tiết nhỏ, linh kiện PLA</th><td>FDM</td><td>gram</td><td class="num">700-800đ</td></tr>
+              <tr><th scope="row">Nhựa kỹ thuật PETG, ABS</th><td>FDM</td><td>gram</td><td class="num">900-1.200đ</td></tr>
+              <tr><th scope="row">Nhựa dẻo TPU</th><td>FDM</td><td>gram</td><td class="num">1.100-1.300đ</td></tr>
+              <tr><th scope="row">Nylon sợi carbon PA-CF</th><td>FDM</td><td>gram</td><td class="num">1.800-2.400đ</td></tr>
+              <tr><th scope="row">Mô hình siêu nét</th><td>SLA</td><td>gram</td><td class="num">3.500-4.000đ</td></tr>
+              <tr><th scope="row">Resin Tough, resin trong</th><td>SLA</td><td>gram</td><td class="num">4.200-5.200đ</td></tr>
+              <tr><th scope="row">Nylon PA12</th><td>SLS</td><td>gram</td><td class="num">2.600-3.200đ</td></tr>
+              <tr><th scope="row">Thép, nhôm, titan</th><td>SLM</td><td>chi tiết</td><td>Báo giá theo file</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Giá cập nhật tháng 09/2026. Scan 3D từ 800.000đ/vật thể, thiết kế 3D từ 500.000đ/mẫu, hoàn thiện từ 150.000đ/chi tiết.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="sec-head"><h2 class="h2">Ba yếu tố <em>làm giá thay đổi</em></h2></div>
+        <ol class="factors">
+          <li class="reveal"><span>01</span><h3>Công nghệ</h3><p>SLA và SLS dùng laser, vật liệu đắt hơn và cần thêm công đoạn rửa, sấy, phun cát. FDM rẻ nhất trên mỗi gram.</p></li>
+          <li class="reveal"><span>02</span><h3>Vật liệu</h3><p>PLA, PETG có giá cạnh tranh. Nhựa kỹ thuật chịu nhiệt, sợi carbon hoặc resin chuyên dụng đắt gấp 2-6 lần.</p></li>
+          <li class="reveal"><span>03</span><h3>Kích thước và độ phức tạp</h3><p>Chi tiết lớn chiếm máy nhiều giờ. Nhiều phần nhô ra cần nhiều cấu trúc đỡ và công gỡ.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container faq-split">
+        <div class="faq-side"><h2 class="h2">Hỏi đáp <em>về giá</em></h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Vì sao SLA đắt hơn FDM?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="faq-answer"><p>Resin và bể chứa đắt hơn sợi nhựa, chi tiết còn phải rửa cồn và sấy UV. Bù lại bề mặt gần như không cần chà nhám.</p></div></details>
+          <details class="faq-item"><summary>Đặt số lượng lớn có được giảm giá không?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="faq-answer"><p>Có. Từ 20 chi tiết giống nhau giảm 10-25% vì xưởng xếp khay tối ưu và giảm thời gian chuẩn bị trên mỗi chi tiết.</p></div></details>
+          <details class="faq-item"><summary>Công hoàn thiện tính thế nào?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="faq-answer"><p>Giá in đã gồm gỡ đỡ cơ bản. Chà nhám, bả, sơn và lắp ráp tính riêng theo diện tích và số màu, từ 150.000đ/chi tiết.</p></div></details>
+          <details class="faq-item"><summary>Có tối ưu file để giảm giá không?<i class="ph ph-plus" aria-hidden="true"></i></summary><div class="faq-answer"><p>Có, miễn phí. Kỹ sư gợi ý làm rỗng mô hình, giảm độ đặc hoặc đổi hướng in. Đọc thêm <a href="gia-in-3d-tinh-the-nao.html">5 cách giảm chi phí in 3D</a>.</p></div></details>
+        </div>
+      </div>
+    </section>

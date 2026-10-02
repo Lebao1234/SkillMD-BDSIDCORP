@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="wl.title">Danh sach yeu thich | HADAL</title>
+<meta name="description" data-i18n-content="wl.desc" content="Nhung san pham HADAL ban da luu lai de xem sau hoac mua khi co hang.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><span aria-current="page" data-i18n="pdp.wish">Yeu thich</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-i18n="wl.h1">Danh sach yeu thich</h1>
+      <div class="row row--between row--wrap" data-wish-actions hidden>
+        <p class="muted" data-wish-saved></p>
+        <div class="row" style="gap:var(--space-4)">
+          <button type="button" class="btn btn--primary btn--sm" data-wish-addall></button>
+          <button type="button" class="btn btn--secondary btn--sm" data-wish-clear data-i18n="wl.clear">Xoa danh sach</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="grid-products grid-products--4" data-wish-grid></div>
+
+      <div data-wish-empty hidden>
+        <div class="empty">
+          <span class="empty__icon"><i class="ph-light ph-heart" aria-hidden="true"></i></span>
+          <h2 class="empty__title" data-i18n="wl.empty.title">Chua luu san pham nao</h2>
+          <p class="empty__text" data-i18n="wl.empty.text">Bam bieu tuong trai tim de luu lai.</p>
+          <div class="row" style="gap:var(--space-4)">
+            <a class="btn btn--primary btn--lg" href="collection.html?c=mouse" data-i18n="wl.browseMice">Duyet chuot</a>
+            <a class="btn btn--secondary btn--lg" href="collection.html?c=keyboard" data-i18n="wl.browseKb">Duyet ban phim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="wish-sug-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="wish-sug-h" style="font-size:var(--fs-3xl)" data-i18n="wl.suggest">Co the ban cung thich</h2>
+        </div>
+      </div>
+      <div class="grid-products grid-products--4" data-wish-suggest></div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/wishlist.js"></script>
+</body>
+</html>

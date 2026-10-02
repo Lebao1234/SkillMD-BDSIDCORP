@@ -1,0 +1,85 @@
+<header class="be-header">
+  <div class="be-wrap">
+    <a class="be-brand" href="/" aria-label="{{ shop.name }} — trang chủ">
+      {%- assign logo_src = section.settings.logo | default: shop.logo_url -%}
+      {%- if logo_src != blank -%}
+        <img class="be-logo" src="{{ logo_src }}" alt="{{ shop.name | escape }}"{% if section.settings.logo_width %} style="width:{{ section.settings.logo_width }}px;"{% endif %}>
+      {%- else -%}
+        {%- comment -%}
+          An octagonal aperture with three strata descending toward the floor of
+          a trench: the brand mark for HADAL, the deepest ocean zone.
+        {%- endcomment -%}
+        <svg class="mark" width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+          <path d="M10.6 3h10.8L29 10.6v10.8L21.4 29H10.6L3 21.4V10.6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M10.5 12.6h11M12.6 17h6.8M15.2 21.4h1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>{{ section.settings.logo_text | default: shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="be-nav" aria-label="Điều hướng chính">
+      {% for link in linklists[section.settings.menu].links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="be-actions">
+      {% if section.settings.show_search %}
+      <div class="be-qs" data-quicksearch>
+        <button type="button" class="be-ico" aria-label="{{ section.settings.search_label | default: 'Tìm kiếm' }}" data-quicksearch-toggle>
+          {% render 'icon', name: 'search', size: 18 %}
+        </button>
+        <div class="be-qs__panel" data-quicksearch-panel hidden>
+          <form method="GET" action="/search" class="be-qs__form" role="search">
+            <input type="search" name="q" value="{{ request.query.q }}" placeholder="{{ section.settings.search_placeholder | default: 'Tìm chuột, bàn phím, phụ kiện' }}" autocomplete="off" data-quicksearch-input>
+            <button type="button" class="be-qs__close" data-quicksearch-close aria-label="Đóng tìm kiếm">&#10005;</button>
+          </form>
+          <div class="be-qs__results" data-quicksearch-results>
+            <div class="quicksearch__hint">{{ section.settings.search_hint | default: 'Nhập ít nhất 2 ký tự.' }}</div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <a class="be-ico" href="/account" aria-label="{{ section.settings.account_label | default: 'Tài khoản' }}">
+        {% render 'icon', name: 'user', size: 18 %}
+      </a>
+
+      <a class="be-ico be-cart" href="/cart" data-cart-toggle aria-label="{{ section.settings.cart_label | default: 'Giỏ hàng' }}">
+        {% render 'icon', name: 'shopping-bag', size: 18 %}
+        <span data-cart-count class="be-cart__count"{% if cart.item_count == 0 or cart.item_count == blank %} hidden{% endif %}>{{ cart.item_count | default: 0 }}</span>
+      </a>
+
+      <button type="button" class="be-burger" data-drawer-open aria-label="{{ section.settings.menu_label | default: 'Mở menu' }}">&#9776;</button>
+    </div>
+  </div>
+</header>
+{% schema %}
+{
+  "name": "Header",
+  "category": "header",
+  "settings": [
+    {"type":"linklist","id":"menu","label":"Menu điều hướng","default":"main-menu"},
+    {"type":"image","id":"logo","label":"Logo (ghi đè)"},
+    {"type":"range","id":"logo_width","label":"Chiều rộng logo","min":80,"max":260,"step":4,"unit":"px","default":140},
+    {"type":"text","id":"logo_text","label":"Chữ thay logo","default":"HADAL"},
+    {"type":"checkbox","id":"show_search","label":"Hiện tìm kiếm","default":true},
+    {"type":"text","id":"search_label","label":"Nhãn nút tìm kiếm","default":"Tìm kiếm"},
+    {"type":"text","id":"search_placeholder","label":"Gợi ý ô tìm kiếm","default":"Tìm chuột, bàn phím, phụ kiện"},
+    {"type":"text","id":"search_hint","label":"Nhắc khi chưa nhập đủ","default":"Nhập ít nhất 2 ký tự."},
+    {"type":"text","id":"account_label","label":"Nhãn tài khoản","default":"Tài khoản"},
+    {"type":"text","id":"cart_label","label":"Nhãn giỏ hàng","default":"Giỏ hàng"},
+    {"type":"text","id":"menu_label","label":"Nhãn nút menu","default":"Mở menu"},
+    {"type":"header","label":"Style"},
+    {"type":"checkbox","id":"visible","label":"Visible","default":true},
+    {"type":"color","id":"bg_color","label":"Background color"},
+    {"type":"color","id":"text_color","label":"Text color"},
+    {"type":"color","id":"heading_color","label":"Heading color"},
+    {"type":"text","id":"padding_top","label":"Padding top (CSS)"},
+    {"type":"text","id":"padding_bottom","label":"Padding bottom (CSS)"},
+    {"type":"color","id":"border_color","label":"Border color"},
+    {"type":"range","id":"border_width","label":"Border width","min":0,"max":8,"step":1,"unit":"px","default":0},
+    {"type":"range","id":"border_radius","label":"Border radius","min":0,"max":48,"step":1,"unit":"px","default":0}
+  ]
+}
+{% endschema %}

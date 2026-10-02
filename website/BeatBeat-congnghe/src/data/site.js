@@ -1,0 +1,20 @@
+module.exports = {
+  name: "BeatBeat",
+  shortName: "BeatBeat",
+  url: "https://beatbeat.vn",
+  hotline: "1900 6368",
+  hotlineTel: "19006368",
+  email: "hotro@beatbeat.vn",
+  hours: "8:30 - 21:30 mỗi ngày",
+  zalo: "https://zalo.me/",
+  facebook: "https://facebook.com/",
+  instagram: "https://instagram.com/",
+  youtube: "https://youtube.com/",
+  tiktok: "https://tiktok.com/",
+  legal: "Công ty TNHH Âm thanh BeatBeat Việt Nam. MST 0318 227 614.",
+  stores: [
+    { name: "BeatBeat Lê Lợi", city: "TP. Hồ Chí Minh", address: "92 Lê Lợi, Phường Bến Thành, TP. Hồ Chí Minh", hours: "9:00 - 22:00", phone: "028 3822 6368", note: "Phòng nghe thử cách âm, có loa tiệc và loa thanh chạy thử.", img: "ls-tuong-loa.jpg" },
+    { name: "BeatBeat Tràng Tiền", city: "Hà Nội", address: "36 Tràng Tiền, Phường Hoàn Kiếm, Hà Nội", hours: "9:00 - 22:00", phone: "024 3936 6368", note: "Khu thử tai nghe gaming với PC và máy chơi game.", img: "ls-game-toi.jpg" },
+    { name: "BeatBeat Bạch Đằng", city: "Đà Nẵng", address: "118 Bạch Đằng, Phường Hải Châu, Đà Nẵng", hours: "9:00 - 21:30", phone: "0236 356 6368", note: "Nhận bảo hành, vệ sinh tai nghe miễn phí trong 30 phút.", img: "ls-phong-thu.jpg" },
+  ],
+};

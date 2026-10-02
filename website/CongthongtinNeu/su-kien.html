@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sự kiện | Mạng lưới Cựu sinh viên NEU</title>
+<meta name="description" content="Lịch sự kiện của mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân: gặp mặt truyền thống, tọa đàm nghề nghiệp, ngày hội việc làm và hoạt động thiện nguyện.">
+<link rel="canonical" href="https://alumni.neu.edu.vn/su-kien.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sự kiện | Mạng lưới Cựu sinh viên NEU">
+<meta property="og:description" content="Lịch sự kiện của mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân: gặp mặt truyền thống, tọa đàm nghề nghiệp, ngày hội việc làm và hoạt động thiện nguyện.">
+<meta property="og:url" content="https://alumni.neu.edu.vn/su-kien.html">
+<meta property="og:image" content="https://picsum.photos/seed/neu-banner-chinh/1200/630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0076c0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="favicon.svg" color="#0076c0">
+
+<script>
+  /* Áp chủ đề trước khi trang vẽ lần đầu, để không chớp sáng rồi mới tối. */
+  try {
+    var t = JSON.parse(localStorage.getItem('neu-alumni:theme') || '"auto"');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/lists.css">
+
+<link rel="stylesheet" href="assets/css/polish.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+<div data-header></div>
+
+<main id="main">
+  <nav class="container crumbs" aria-label="Đường dẫn">
+    <a href="index.html">Trang chủ</a>
+    <span class="crumbs__sep" aria-hidden="true">/</span>
+    <span aria-current="page">Sự kiện</span>
+  </nav>
+  <div class="pagehead">
+    <div class="container pagehead__inner">
+      <h1 class="pagehead__title">Sự kiện</h1>
+      <div class="pagehead__rule"></div>
+      <p class="pagehead__lede">Gặp mặt, tọa đàm, ngày hội việc làm và hoạt động thiện nguyện của mạng lưới.</p>
+    </div>
+  </div>
+  <section class="container section--tight">
+    <div class="tabs" role="tablist" aria-label="Trạng thái sự kiện" data-when-tabs>
+      <button class="tab" role="tab" aria-selected="true" data-when="sap">Sắp diễn ra</button>
+      <button class="tab" role="tab" aria-selected="false" data-when="qua">Đã diễn ra</button>
+      <button class="tab" role="tab" aria-selected="false" data-when="cua-toi">Tôi đã đăng ký</button>
+    </div>
+
+    <div class="results__bar">
+      <p class="results__count" data-count aria-live="polite">Đang tải</p>
+      <div class="results__tools">
+        <label class="sr-only" for="city">Địa điểm</label>
+        <select class="select" id="city" data-city><option value="">Mọi địa điểm</option></select>
+      </div>
+    </div>
+
+    <div class="rail" style="grid-auto-flow:row;grid-auto-columns:auto;overflow:visible" data-list></div>
+  </section>
+</main>
+
+<div data-footer></div>
+
+<script src="assets/data/alumni.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/data/events.js"></script>
+<script src="assets/data/albums.js"></script>
+<script src="assets/data/jobs.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/eventlist.js"></script>
+</body>
+</html>

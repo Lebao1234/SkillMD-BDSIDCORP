@@ -1,0 +1,142 @@
+<!--meta {"title": "Luimiere | Nhà hàng tiệc cưới 4 sảnh tại Phú Nhuận", "description": "Nhà hàng tiệc cưới Luimiere: 4 sảnh từ 6 đến 60 bàn, thực đơn từ 4.390.000đ/bàn, mỗi tối mỗi sảnh chỉ nhận một tiệc. Đặt lịch xem sảnh miễn phí.", "preload": "assets/img/hero-sanh-den-chum.jpg"}-->
+    <section class="hero" data-glow>
+      <img class="hero-img" src="assets/img/hero-sanh-den-chum.jpg" width="2000" height="1473" alt="Sảnh tiệc Luimiere với dãy đèn chùm pha lê và sàn đá phản chiếu ánh đèn" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Nhà hàng tiệc cưới · Phú Nhuận</p>
+          <h1>Tiệc cưới dưới <em>ánh đèn</em> dành riêng cho hai bạn</h1>
+          <p class="lead">Bốn sảnh từ 6 đến 60 bàn. Mỗi tối, mỗi sảnh chỉ nhận một tiệc, nên giờ làm lễ, món ăn và đội phục vụ không phải chia cho gia đình nào khác.</p>
+          <div class="row-actions">
+            <button class="btn btn-primary btn-lg" type="button" data-open-book>Đặt lịch xem sảnh<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+            <a class="text-link" href="sanh-tiec.html">Xem {{hall-count}} sảnh tiệc <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <form class="finder" action="sanh-tiec.html" method="get" aria-label="Tìm sảnh theo số khách">
+          <div class="finder-shell">
+            <div class="finder-field">
+              <label for="finder-guests">Bạn mời khoảng</label>
+              <div class="finder-range"><input id="finder-guests" name="khach" type="range" min="60" max="600" step="10" value="300" data-range-out="finder-out"><output id="finder-out" for="finder-guests">300 khách</output></div>
+            </div>
+            <div class="finder-field">
+              <label for="finder-date">Ngày dự kiến</label>
+              <input id="finder-date" name="ngay" type="date">
+            </div>
+            <button class="btn btn-primary" type="submit">Tìm sảnh phù hợp<span class="btn-ico"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span></button>
+          </div>
+        </form>
+      </div>
+      <dl class="hero-proof container">
+        <div><dt>Tiệc cưới từ 2014</dt><dd>2.140+</dd></div>
+        <div><dt>Sảnh lớn nhất</dt><dd>60 bàn</dd></div>
+        <div><dt>Món trong thực đơn</dt><dd>86</dd></div>
+      </dl>
+    </section>
+
+    <section class="section manifesto" aria-label="Về Luimiere">
+      <div class="container">
+        <p class="manifesto-text reveal">Chúng tôi đặt tên nhà hàng theo <em>ánh sáng</em>, vì một tiệc cưới đẹp bắt đầu từ việc <span class="inline-img"><img src="assets/img/den-chum.jpg" width="1000" height="1333" alt="" loading="lazy"></span> chiếu đèn đúng lúc cô dâu bước vào, món ăn <span class="inline-img"><img src="assets/img/mon-tom.jpg" width="1000" height="1500" alt="" loading="lazy"></span> ra bàn khi còn nóng, và cả hai họ đều <span class="inline-img"><img src="assets/img/nang-ly.jpg" width="1600" height="1067" alt="" loading="lazy"></span> thấy mình được chăm sóc.</p>
+        <div class="manifesto-foot reveal">
+          <p>12 năm, hơn 2.140 tiệc cưới. Một đội điều phối đi cùng bạn từ buổi xem sảnh đến lúc tiễn vị khách cuối cùng.</p>
+          <a class="text-link" href="gioi-thieu.html">Câu chuyện Luimiere <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="halls-title">
+      <div class="container">
+        <div class="section-head section-head-row reveal">
+          <div><p class="eyebrow">Sảnh tiệc</p><h2 id="halls-title">Bốn sảnh, <em>bốn thứ ánh sáng</em></h2></div>
+          <p>Từ bữa tiệc thân mật 60 khách ở Aube đến tiệc 600 khách dưới 184 bóng pha lê ở Étoile.</p>
+        </div>
+        {{hall-stack}}
+      </div>
+    </section>
+
+    <section class="section evening" aria-labelledby="evening-title">
+      <div class="container evening-grid" data-steps>
+        <div class="evening-media" aria-hidden="true">
+          <div class="bezel"><div class="bezel-core">
+            <img src="assets/img/co-dau-buoc-vao.jpg" width="1000" height="1498" alt="" loading="lazy" class="is-on">
+            <img src="assets/img/le-thanh-hon-doc.jpg" width="1000" height="1500" alt="" loading="lazy">
+            <img src="assets/img/mon-tom.jpg" width="1000" height="1500" alt="" loading="lazy">
+            <img src="assets/img/dieu-nhay-le.jpg" width="1000" height="1510" alt="" loading="lazy">
+          </div></div>
+          <p class="evening-clock" data-clock>17:00</p>
+        </div>
+        <div class="evening-copy">
+          <p class="eyebrow">Một buổi tối tại Luimiere</p>
+          <h2 id="evening-title">Bốn tiếng, <em>một người điều phối</em></h2>
+          <ol class="steps">
+            <li class="step is-on" data-time="17:00"><p class="step-time">17:00</p><h3>Đón khách</h3><p>Cô dâu chú rể đứng ở khu đón khách, có bàn gallery và quầy ký tên. Nhân viên trông thùng quà suốt giờ đón.</p></li>
+            <li class="step" data-time="18:00"><p class="step-time">18:00</p><h3>Làm lễ trên sân khấu</h3><p>Rước dâu trên lối đi hoa, lễ thành hôn, cắt bánh, rót tháp ly. Đèn sảnh được chỉnh theo từng phần của kịch bản.</p></li>
+            <li class="step" data-time="18:30"><p class="step-time">18:30</p><h3>Khai tiệc</h3><p>Món ra cùng lúc cho mọi bàn trong khoảng 6 phút. Bàn chay và bàn trẻ em được phục vụ riêng theo sơ đồ.</p></li>
+            <li class="step" data-time="20:30"><p class="step-time">20:30</p><h3>Chào bàn, tiễn khách</h3><p>Điều phối viên đi cùng cô dâu chú rể nhắc tên khách, rồi bàn giao quà và biên bản cho gia đình.</p></li>
+          </ol>
+          <a class="text-link" href="dich-vu-cuoi.html">Những gì đã có trong giá tiệc <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="menu-title">
+      <div class="container menu-home">
+        <div class="menu-home-copy reveal">
+          <p class="eyebrow">Thực đơn</p>
+          <h2 id="menu-title">Bếp riêng, <em>món nóng</em> đến bàn cuối sảnh</h2>
+          <p>Bếp trưởng Lâm Quốc Bảo và 34 đầu bếp nấu cho tối đa hai tiệc mỗi buổi. Bốn thực đơn cho bàn 10 khách, đã gồm VAT, bia và nước ngọt.</p>
+          {{menu-rail}}
+          <a class="text-link" href="thuc-don.html">Xem đủ 4 thực đơn và tính chi phí <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="menu-home-card reveal">
+          <div class="bezel menu-bezel"><div class="bezel-core">{{menu-card key="anh-trang"}}</div></div>
+          <figure class="menu-photo"><img src="assets/img/bep-truong.jpg" width="1000" height="1500" alt="Đầu bếp trình bày món ăn bằng nhíp" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="incl-title">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">Đã có trong giá tiệc</p><h2 id="incl-title">Không phải <em>trả thêm</em> cho những thứ này</h2></div>
+        <div class="bento">
+          <article class="bento-a bezel reveal"><div class="bezel-core"><img src="assets/img/thap-ly.jpg" width="1000" height="1500" alt="" loading="lazy"><div class="bento-body"><h3>Tháp ly và rượu champagne</h3><p>Tháp 5 tầng, 1 chai champagne cho nghi thức và 1 chai vang cho mỗi bàn chủ hôn.</p></div></div></article>
+          <article class="bento-b bezel reveal"><div class="bezel-core"><img src="assets/img/backdrop-nen.jpg" width="1000" height="1500" alt="" loading="lazy"><div class="bento-body"><h3>Sân khấu và lối đi hoa</h3><p>Chọn 1 trong 6 chủ đề trang trí, hoa lụa cao cấp kèm hoa tươi điểm.</p></div></div></article>
+          <article class="bento-c bezel reveal"><div class="bezel-core bento-text"><i class="ph ph-microphone-stage" aria-hidden="true"></i><h3>MC, âm thanh, ánh sáng</h3><p>MC song ngữ Việt Anh, kịch bản làm cùng gia đình, kỹ thuật viên trực suốt tiệc.</p></div></article>
+          <article class="bento-d bezel reveal"><div class="bezel-core"><img src="assets/img/banh-cuoi.jpg" width="1000" height="1503" alt="" loading="lazy"><div class="bento-body"><h3>Bánh cưới 3 tầng</h3><p>Tầng trên cùng là bánh thật để cô dâu chú rể mang về.</p></div></div></article>
+          <article class="bento-e bezel reveal"><div class="bezel-core bento-text"><i class="ph ph-door-open" aria-hidden="true"></i><h3>Phòng cô dâu và phòng chờ hai họ</h3><p>Mở từ 14:00, có gương trang điểm, nước uống và nhân viên riêng.</p></div></article>
+          <article class="bento-f bezel reveal"><div class="bezel-core"><img src="assets/img/set-ban.jpg" width="1000" height="1500" alt="" loading="lazy"><div class="bento-body"><h3>Bàn gallery, bàn ký tên</h3><p>Khung ảnh cưới, sổ ký tên và thùng quà có khóa.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="dates-title">
+      <div class="container">
+        <div class="section-head section-head-row reveal">
+          <div><p class="eyebrow">Lịch sảnh</p><h2 id="dates-title">Ngày cưới đẹp <em>còn trống</em></h2></div>
+          <div class="head-side">
+            <p>Tình trạng tiệc tối ở các ngày cuối tuần được nhiều gia đình chọn. Cập nhật mỗi thứ Hai, gọi để xác nhận trước khi quyết định.</p>
+            <div class="scroll-ctrl" data-scroll-ctrl="date-rail"><button type="button" aria-label="Ngày trước"><i class="ph ph-arrow-left" aria-hidden="true"></i></button><button type="button" data-dir-next aria-label="Ngày sau"><i class="ph ph-arrow-right" aria-hidden="true"></i></button></div>
+          </div>
+        </div>
+        {{date-rail}}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="stories-title">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">Các cặp đôi kể lại</p><h2 id="stories-title">Điều họ <em>nhớ nhất</em></h2></div>
+        <div class="stories">
+          <figure class="story story-photo reveal"><img src="assets/img/cap-doi-den-chum.jpg" width="1600" height="1067" alt="Cô dâu chú rể đứng dưới đèn chùm pha lê" loading="lazy"><figcaption>Minh Thư và Quốc Huy, sảnh Étoile, 12/2025</figcaption></figure>
+          <blockquote class="story reveal"><p>"Chị Duyên điều phối nhớ tên gần hết họ hàng bên nội. Lúc chào bàn chị đứng sau nhắc nhỏ từng người, nhờ vậy tụi mình không bị quên ai."</p><footer><strong>Minh Thư</strong><span>Sảnh Étoile, 46 bàn</span></footer></blockquote>
+          <blockquote class="story reveal"><p>"Mẹ mình kỹ chuyện ăn uống nhất nhà. Sau tiệc mẹ chỉ khen món cá hấp và bảo lần đầu ăn cỗ cưới mà lẩu còn nóng."</p><footer><strong>Hoàng Nam</strong><span>Sảnh Soleil, tiệc trưa 32 bàn</span></footer></blockquote>
+          <blockquote class="story story-wide reveal"><p>"Tụi mình làm lễ ăn hỏi và tiệc thân mật cùng một ngày ở Aube. Buổi sáng bàn thờ gia tiên, buổi chiều đã thành tiệc 12 bàn với quầy cocktail ngoài sân hiên."</p><footer><strong>Khánh Linh và Việt Hoàng</strong><span>Sảnh Aube, 12 bàn</span></footer></blockquote>
+          <figure class="story story-photo story-tall reveal"><img src="assets/img/le-vu-quy.jpg" width="1000" height="1500" alt="Cô dâu mặc áo dài trắng trong lễ vu quy" loading="lazy"><figcaption>Lễ vu quy tại sảnh Aube</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="posts-title">
+      <div class="container">
+        <div class="section-head section-head-row reveal"><div><p class="eyebrow">Cẩm nang cưới</p><h2 id="posts-title">Viết bởi <em>người làm tiệc</em></h2></div><a class="text-link" href="cam-nang.html">Tất cả bài viết <i class="ph ph-arrow-right" aria-hidden="true"></i></a></div>
+        {{posts limit="3"}}
+      </div>
+    </section>

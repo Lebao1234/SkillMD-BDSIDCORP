@@ -1,0 +1,24 @@
+<!--meta {"title": "Bài viết: tin HSK, kinh nghiệm học, du học, văn hóa", "description": "Lịch thi HSK, cách học chữ Hán, ngữ pháp hay nhầm, học bổng du học Trung Quốc và văn hóa Trung Hoa, viết bởi giáo viên ISZ.", "nav": "thu-vien", "crumbs": [["Bài viết", "bai-viet.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <p class="eyebrow">Viết bởi giáo viên ISZ</p>
+        <h1>Đọc <em>trước giờ học</em></h1>
+        <p class="lead">Lịch thi và thay đổi của HSK, mẹo nhớ chữ Hán, những điểm ngữ pháp người Việt hay nhầm, và chuyện văn hóa đằng sau mỗi từ.</p>
+      </div>
+    </section>
+
+    <section class="section section-flush" data-filter-scope>
+      <div class="container">
+        <div class="filter-chips" role="group" aria-label="Lọc theo chuyên mục">
+          <button type="button" class="fchip is-active" aria-pressed="true" data-filter-value="all">Tất cả</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="tin-hsk">Tin HSK</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="kinh-nghiem">Kinh nghiệm học</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="ngu-phap">Từ vựng, ngữ pháp</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="du-hoc">Du học</button>
+          <button type="button" class="fchip" aria-pressed="false" data-filter-value="van-hoa">Văn hóa</button>
+        </div>
+        {{posts class="post-grid-feature"}}
+        <p class="empty-inline" data-empty hidden>Chưa có bài trong chuyên mục này.</p>
+      </div>
+    </section>

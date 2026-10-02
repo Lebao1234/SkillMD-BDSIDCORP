@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Khu vuc quan tri va trang ca nhan khong can lap chi muc.
+Disallow: /admin.html
+Disallow: /tai-khoan.html
+Disallow: /ho-so.html
+Disallow: /tim-kiem.html
+
+Sitemap: https://alumni.neu.edu.vn/sitemap.xml

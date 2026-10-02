@@ -1,0 +1,34 @@
+<!--meta {"title": "Hỗ trợ, tra cứu bảo hành", "description": "Tra cứu bảo hành bằng số serial, hỏi đáp về giao hàng, đổi trả, kết nối Bluetooth và liên hệ BeatBeat.", "nav": "ho-tro", "crumbs": [["Hỗ trợ", "ho-tro.html"]]}-->
+    <section class="page-head">
+      <div class="container page-head-row">
+        <div>
+          {{crumbs}}
+          <p class="eyebrow">{{hotline}} · {{hours}}</p>
+          <h1>Chúng tôi <em>nghe bạn</em></h1>
+          <p class="lead">Tra cứu bảo hành, xem câu hỏi thường gặp hoặc gọi, nhắn Zalo. Trung bình 38 giây có người bắt máy.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container support">
+        <form class="warranty" data-warranty novalidate>
+          <h2>Tra cứu bảo hành</h2>
+          <p class="muted">Số serial in dưới đáy hộp, trong ứng dụng BeatBeat, hoặc trên thân loa. Gồm 2 chữ cái và 8 chữ số, ví dụ BB26091234.</p>
+          <div class="field"><label for="w-serial">Số serial</label><input id="w-serial" name="serial" autocomplete="off" placeholder="BB26091234" aria-describedby="w-err" data-w-serial><small class="error" id="w-err" role="alert"></small></div>
+          <button class="btn btn-primary" type="submit">Tra cứu<span class="btn-ico"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span></button>
+          <div class="w-result" data-w-result hidden aria-live="polite"></div>
+        </form>
+        <ul class="channels">
+          <li><i class="ph ph-phone" aria-hidden="true"></i><div><h3>Tổng đài</h3><p><a href="tel:{{hotline-tel}}">{{hotline}}</a>, {{hours}}</p></div></li>
+          <li><i class="ph ph-chat-circle-dots" aria-hidden="true"></i><div><h3>Zalo</h3><p><a href="{{zalo}}" target="_blank" rel="noopener">Nhắn Zalo BeatBeat</a>, gửi được ảnh, video lỗi</p></div></li>
+          <li><i class="ph ph-envelope-simple" aria-hidden="true"></i><div><h3>Email</h3><p><a href="mailto:{{email}}">{{email}}</a>, trả lời trong 4 giờ làm việc</p></div></li>
+          <li><i class="ph ph-storefront" aria-hidden="true"></i><div><h3>Cửa hàng</h3><p><a href="cua-hang.html">3 cửa hàng</a> nhận bảo hành, vệ sinh tai nghe miễn phí</p></div></li>
+        </ul>
+      </div>
+    </section>
+    <section class="section section-line" id="hoi-dap">
+      <div class="container split">
+        <div><p class="eyebrow">Hỏi đáp</p><h2>Câu hỏi <em>hay gặp</em></h2><p class="muted">Xem đầy đủ quy định ở <a href="chinh-sach.html">chính sách đổi trả, bảo hành</a>.</p></div>
+        {{faq items="[['Tai nghe không kết nối được Bluetooth, làm sao?','Đặt hai tai nghe vào hộp, giữ nút trên hộp 10 giây đến khi đèn nháy trắng để đặt lại. Trên điện thoại, xóa BeatBeat khỏi danh sách Bluetooth rồi ghép lại.'],['Đổi trả 30 ngày có điều kiện gì?','Sản phẩm còn đủ phụ kiện, không trầy vỡ, kèm hóa đơn hoặc mã đơn. Đã mở hộp, đã dùng vẫn được đổi trả. Nút tai được thay mới trước khi bán lại.'],['Giao hàng mất bao lâu?','Nội thành Hà Nội, TP.HCM, Đà Nẵng: 2 giờ nếu đặt trước 19:00. Các tỉnh khác: 1 đến 3 ngày. Miễn phí cho đơn từ 500.000đ.'],['Mất một bên tai nghe có mua lẻ được không?','Có. Tai lẻ và hộp sạc lẻ của Pulse Pro, Pulse Mini, Run Open bán tại cửa hàng, giá từ 390.000đ.'],['Cập nhật phần mềm tai nghe thế nào?','Mở ứng dụng BeatBeat khi tai nghe đang kết nối. Ứng dụng tự báo khi có bản mới, cập nhật mất khoảng 5 phút.']]"}}
+      </div>
+    </section>

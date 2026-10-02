@@ -1,0 +1,121 @@
+<style>
+[data-section-name="hadal-cta"] .hx{border:1px solid var(--line-2);border-radius:var(--radius-lg);background:var(--cream);padding:52px 44px;text-align:center;position:relative;overflow:hidden;}
+[data-section-name="hadal-cta"] .hx::before{content:"";position:absolute;inset:auto -20% -70% -20%;height:70%;background:radial-gradient(closest-side,var(--accent),transparent);opacity:.18;pointer-events:none;}
+[data-section-name="hadal-cta"] .hx__title{position:relative;font-family:var(--font-display);font-size:clamp(26px,3.6vw,40px);letter-spacing:-.028em;margin:0 0 14px;color:var(--ink);}
+[data-section-name="hadal-cta"] .hx__sub{position:relative;color:var(--ink-2);font-size:16px;line-height:1.65;max-width:56ch;margin:0 auto 26px;}
+[data-section-name="hadal-cta"] .hx__note{position:relative;color:var(--mute);font-size:13px;margin:18px 0 0;}
+</style>
+<section class="py-section">
+  <div class="be-wrap">
+    <div class="hx" data-anim>
+      <h2 class="hx__title">{{ section.settings.heading }}</h2>
+      <p class="hx__sub">{{ section.settings.sub }}</p>
+      <a class="be-btn" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label }}</a>
+      <p class="hx__note">{{ section.settings.note }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "category": "promo",
+  "name": "HADAL kêu gọi",
+  "presets": [
+    {
+      "name": "HADAL kêu gọi"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Tiêu đề",
+      "default": "Chưa chắc nên chọn gì?"
+    },
+    {
+      "type": "textarea",
+      "id": "sub",
+      "label": "Mô tả",
+      "default": "Gửi cỡ tay, kiểu cầm và tựa game bạn chơi. Chúng tôi trả lời trong 24 giờ làm việc với một gợi ý cụ thể, không phải danh sách bán hàng."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Nhãn nút",
+      "default": "Liên hệ tư vấn"
+    },
+    {
+      "type": "text",
+      "id": "cta_url",
+      "label": "Link nút",
+      "default": "/pages/lien-he"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Ghi chú",
+      "default": "Bảo hành 24 tháng. Miễn phí vận chuyển cho đơn từ 1.500.000đ."
+    },
+    {
+      "type": "header",
+      "label": "Style"
+    },
+    {
+      "type": "checkbox",
+      "id": "visible",
+      "label": "Visible",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "text",
+      "id": "padding_top",
+      "label": "Padding top (CSS)"
+    },
+    {
+      "type": "text",
+      "id": "padding_bottom",
+      "label": "Padding bottom (CSS)"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "default": 0,
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "default": 0,
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "unit": "px"
+    }
+  ]
+}
+{% endschema %}

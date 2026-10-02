@@ -1,0 +1,963 @@
+/* ============================================================================
+   PLATFORM SURFACES, DRESSED IN THE HADAL SYSTEM
+
+   The home page is assembled from HADAL sections and already speaks the design
+   system. Collection, product, blog, article, search, cart and the collection
+   index are rendered by the platform base sections, which emit their own class
+   names and were therefore still wearing the platform default skin: pill
+   buttons, borderless product cards, centred billboard heads.
+
+   Everything below restyles those class names with HADAL tokens. It changes no
+   markup and adds no behaviour, so faceting, variant picking, add to cart,
+   wishlist, quick view and pagination keep working exactly as the platform
+   ships them. Where an inline style has to be beaten, !important is used and
+   the reason is stated.
+   ========================================================================= */
+
+/* ---------------------------------------------------------------------------
+   PAGE SHELLS
+   ------------------------------------------------------------------------ */
+.container,
+.container-narrow,
+.container-text {
+  max-width: var(--page-max);
+  padding-inline: var(--page-gutter);
+}
+
+.container-narrow { max-width: 880px; }
+.container-text { max-width: 760px; }
+
+.py-section { padding-block: var(--section-y); }
+
+/* Blog, search, cart and collection index heads. HADAL sets a page title on the
+   page ground against a rule, never centred over open space. */
+.page-head {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding: var(--space-10) var(--page-gutter) var(--space-8);
+  text-align: start;
+  border-block-end: 1px solid var(--border-default);
+}
+
+.page-head .eyebrow { display: block; }
+
+.breadcrumb {
+  max-width: var(--page-max);
+  padding: var(--space-6) var(--page-gutter);
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+}
+
+.breadcrumb a { color: var(--text-tertiary); }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { color: var(--border-strong); opacity: 1; }
+.breadcrumb > span:last-child { color: var(--text-primary); }
+
+/* Every collection now carries a real photograph, which the platform paints
+   behind a 10%-to-50% scrim: far too light for white type over a bright
+   packshot. HADAL's media band scrim replaces it, laid over the image rather
+   than instead of it. */
+.collection-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 340px;
+  padding-block: var(--space-12);
+  padding-inline: var(--page-gutter);
+  background-color: #0c0c10;
+  background-size: cover;
+  background-position: center;
+}
+
+.collection-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.55));
+}
+
+.collection-hero__inner {
+  position: relative;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  text-align: start;
+}
+
+.collection-hero .display-xl {
+  font-size: var(--fs-6xl);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+}
+
+/* The lede is centred by an inline margin: 24px auto 0. */
+.collection-hero .lede { margin-inline: 0 !important; }
+
+/* ---------------------------------------------------------------------------
+   TYPE SCALE
+   The platform display classes are a serif display ramp. HADAL sets headings in
+   the primary family, uppercase, on a tight display tracking.
+   ------------------------------------------------------------------------ */
+.display-xl,
+.display-l,
+.display-m,
+.display-s {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-display);
+}
+
+.display-xl { font-size: var(--fs-6xl); line-height: 1.02; }
+.display-l  { font-size: var(--fs-5xl); line-height: 1.06; }
+.display-m  { font-size: var(--fs-4xl); line-height: 1.1; }
+.display-s  { font-size: var(--fs-3xl); line-height: 1.15; }
+
+/* The platform uses .italic for a second line accent in page heads. HADAL has
+   no italic display face, so that emphasis is carried by the accent colour
+   instead. The selector is element-qualified because Tailwind's own .italic
+   utility ships in a sheet that loads after this one. */
+h1 .italic,
+h2 .italic,
+h3 .italic,
+.page-head .italic {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* .eyebrow and .lede are already defined in the HADAL sheet, which loads after
+   the platform's; redefining them here would restyle the HADAL sections too. */
+
+.link-underline {
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+
+.link-underline:hover { color: var(--accent); }
+.link-underline::after { background: currentColor; }
+
+.kbd-arrow { transition: transform var(--dur-fast) var(--ease); }
+
+/* ---------------------------------------------------------------------------
+   BUTTONS
+   .btn itself is already HADAL's, loaded after the platform sheet. Only the
+   platform-only variants need a home in the system.
+   ------------------------------------------------------------------------ */
+.btn--ink {
+  background: var(--accent-solid);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn--ink:hover { background: var(--accent-hover); color: var(--text-on-accent); }
+.btn--ink:active { background: var(--accent-press); }
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.btn--outline:hover {
+  background: var(--accent-wash);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------------
+   PRODUCT CARD
+   The platform card is a bare image over loose text. HADAL's .pcard is a framed
+   surface with hover tools, so the platform classes are mapped onto it one
+   for one.
+   ------------------------------------------------------------------------ */
+/* .grid-products in the reference: an auto-filling track, not a fixed four. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  gap: var(--space-7);
+  max-width: none;
+  padding: 0 0 var(--space-12);
+  margin: 0;
+}
+
+.product-card {
+  position: relative;
+  gap: 0;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+
+.product-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+}
+
+.product-media {
+  aspect-ratio: 1 / 1;
+  background: var(--surface-raised-2);
+  border-radius: 0;
+}
+
+/* Catalog shots are packshots on white, so they are contained with air around
+   them rather than cropped to fill. */
+.product-media img {
+  object-fit: contain;
+  padding: var(--space-6);
+}
+
+.product-card:hover .product-media img { transform: scale(1.04); }
+
+/* The badge rail is a positioning wrapper, not a badge. Without this it
+   inherits HADAL's .badge pill and renders as an empty chip on every card that
+   has no flag to show. */
+.product-media .badge {
+  inset-block-start: var(--space-4);
+  inset-inline-start: var(--space-4);
+  gap: var(--space-2);
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  color: inherit;
+  pointer-events: none;
+}
+
+.product-media .badge:empty { display: none; }
+
+.product-media .wish {
+  inset-block-start: var(--space-4);
+  inset-inline-end: var(--space-4);
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-overlay);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.product-media .wish:hover { color: var(--accent); border-color: var(--border-accent); }
+
+.product-media .wish.on {
+  background: var(--accent-wash-strong);
+  border-color: var(--border-accent);
+  color: var(--accent);
+}
+
+.product-quick {
+  inset-inline: var(--space-4);
+  inset-block-end: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--text-primary);
+  color: var(--surface-base);
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+}
+
+.product-quick:hover { box-shadow: var(--shadow-2); }
+
+.product-meta {
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.product-meta .cat {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  /* The platform --mute lands at 2.3:1 on the card ground. */
+  color: var(--text-tertiary);
+}
+
+.product-meta .name {
+  font-family: var(--font-primary);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+}
+
+.product-card:hover .product-meta .name { color: var(--accent); }
+
+.product-meta .price {
+  gap: var(--space-3);
+  margin-block-start: auto;
+  padding-block-start: var(--space-3);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.product-meta .price .now {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.product-meta .price .sale { font-size: var(--fs-xl); font-weight: var(--fw-bold); color: var(--danger); }
+.product-meta .price .old { font-size: var(--fs-sm); color: var(--text-tertiary); }
+
+@media (max-width: 560px) { .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); } }
+
+/* ---------------------------------------------------------------------------
+   COLLECTION LAYOUT AND FILTERS
+   The reference lays the listing out as .shoplayout: a 268px sticky .filters
+   rail of .fgroup blocks beside the product grid. The platform emits the same
+   shape under .collection-layout / .facets / .facets__group, so the reference
+   measurements are applied to those names.
+   ------------------------------------------------------------------------ */
+.collection-layout {
+  grid-template-columns: 268px minmax(0, 1fr);
+  gap: var(--space-10);
+  padding-block: var(--space-9);
+  align-items: start;
+}
+
+.facets {
+  top: calc(var(--header-h) + var(--space-6));
+  max-height: calc(100dvh - var(--header-h) - var(--space-10));
+  overscroll-behavior: contain;
+  padding-inline-end: var(--space-3);
+  gap: var(--space-2);
+}
+
+.facets::-webkit-scrollbar { width: 5px; }
+.facets::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
+
+.facets__form { gap: 0; }
+
+/* .fgroup */
+.facets__group {
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+  border-block-end: 1px solid var(--border-default);
+}
+
+/* .fgroup__btn */
+.facets__group .eyebrow {
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* .fgroup__list */
+.facets__values {
+  gap: var(--space-3);
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.facets__values::-webkit-scrollbar { width: 4px; }
+.facets__values::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
+
+.facets__values label {
+  gap: var(--space-3);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+}
+
+.facets__values label:hover { color: var(--text-primary); }
+
+.facets__values input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--accent-solid);
+}
+
+.facets__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
+
+/* .pricerange */
+.facets__range { gap: var(--space-3); }
+
+.facets__group select,
+.facets__range input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  min-height: 40px;
+  background: var(--surface-inset);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+}
+
+.facets__group select:focus-visible,
+.facets__range input:focus-visible { border-color: var(--accent); outline: none; }
+
+.facets__chips { border-block-end-color: var(--border-default); }
+
+/* The reference collapses to one column at 1024 and moves filtering into a
+   drawer. The platform has no drawer, so the rail stacks above the grid
+   instead of disappearing. */
+@media (max-width: 1024px) {
+  .collection-layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+  .facets { max-height: none; padding-inline-end: 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   PRODUCT DETAIL
+   The reference page is .pdp: a 1.12/0.88 split with .gallery on the left
+   (an 82px thumbnail column beside a square stage that contains rather than
+   crops) and .buybox on the right. The platform emits exactly that structure
+   under product-detail__*, so the reference geometry is applied to it.
+   ------------------------------------------------------------------------ */
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: var(--space-11);
+  align-items: start;
+  padding-block: var(--space-9);
+}
+
+/* .gallery — thumbs are first in the reference but second in the platform's
+   markup, so both children are placed explicitly. */
+.product-detail__gallery {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+/* .gallery__thumbs */
+.product-detail__thumbs {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: var(--space-3);
+  max-height: 620px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding-inline-end: 3px;
+}
+
+.product-detail__thumbs::-webkit-scrollbar { width: 4px; }
+.product-detail__thumbs::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
+
+/* .gthumb */
+.product-detail__thumb {
+  flex: 0 0 auto;
+  width: 78px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-raised-2);
+  opacity: 0.6;
+  transition: border-color var(--dur-instant) var(--ease), opacity var(--dur-instant) var(--ease);
+}
+
+.product-detail__thumb img { object-fit: contain; padding: var(--space-2); }
+.product-detail__thumb:hover { opacity: 1; }
+
+.product-detail__thumb.is-on {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* .gallery__stage */
+.product-detail__main {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised-2);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.product-detail__main img {
+  object-fit: contain;
+  padding: var(--space-9);
+  transition: transform var(--dur-normal) var(--ease);
+}
+
+/* .gallery__badge */
+.product-detail__badges {
+  inset-block-start: var(--space-5);
+  inset-inline-start: var(--space-5);
+  gap: var(--space-2);
+}
+
+/* .buybox */
+.product-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  top: calc(var(--header-h) + var(--space-6));
+}
+
+.product-detail__info > * { margin: 0; }
+
+/* .buybox__title */
+.product-detail__title {
+  font-size: var(--fs-4xl);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.04;
+}
+
+/* .buybox__pricerow */
+.product-detail__price {
+  gap: var(--space-5);
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--border-default);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.product-detail__price .display-s {
+  font-family: var(--font-mono);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+}
+
+.product-detail__price--sale { color: var(--danger); }
+.product-detail__price--old { color: var(--text-tertiary); font-size: var(--fs-md); }
+
+/* .buybox__sub */
+.product-detail__lede {
+  color: var(--text-secondary);
+  font-size: var(--fs-lg);
+  line-height: 1.55;
+}
+
+.product-detail__group .eyebrow { color: var(--text-secondary); }
+
+/* Variant swatches */
+.variant-pick { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+.variant-pick button {
+  padding: var(--space-3) var(--space-5);
+  min-height: 42px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  transition: all var(--dur-instant) var(--ease);
+}
+
+.variant-pick button:hover { border-color: var(--border-strong); color: var(--text-primary); }
+
+.variant-pick button.on,
+.variant-pick button[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-wash);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* Quantity stepper */
+.qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  overflow: hidden;
+}
+
+.qty button {
+  width: 42px;
+  height: 46px;
+  color: var(--text-secondary);
+  font-size: var(--fs-lg);
+  transition: color var(--dur-instant) var(--ease), background-color var(--dur-instant) var(--ease);
+}
+
+.qty button:hover { color: var(--accent); background: var(--accent-wash); }
+
+.qty input,
+.qty .v {
+  width: 48px;
+  height: 46px;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-lg);
+  color: var(--text-primary);
+}
+
+/* .buybox__actionrow */
+.product-detail__buy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+/* Not flex-basis: the platform turns this row into a column at mobile with
+   flex-direction: column !important, where a 240px basis becomes the button's
+   height. */
+.product-detail__add { flex: 1 1 auto; min-width: 240px; }
+
+.product-detail__wish {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+}
+
+.product-detail__wish:hover { color: var(--accent); border-color: var(--border-accent); }
+.product-detail__wish.on { color: var(--accent); border-color: var(--border-accent); background: var(--accent-wash-strong); }
+
+.express-checkout__or {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  color: var(--text-tertiary);
+}
+
+/* .buybox__assur — a panel in the reference, not a bare divided row. */
+.product-detail__trust {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: none;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  margin: 0;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+}
+
+/* .assur-row */
+.product-detail__trust > div { display: flex; align-items: flex-start; gap: var(--space-4); }
+.product-detail__trust svg { flex: 0 0 auto; margin-block-start: 2px; }
+.product-detail__trust .t { font-size: var(--fs-md); font-weight: var(--fw-medium); color: var(--text-primary); }
+.product-detail__trust .s { font-size: var(--fs-sm); color: var(--text-tertiary); }
+
+/* Accordions */
+.product-detail__accordions { border-block-start: 1px solid var(--border-default); }
+
+.product-detail__accordions details,
+.acc { border-block-end: 1px solid var(--border-default); }
+
+.product-detail__accordions summary {
+  padding-block: var(--space-6);
+  font-family: var(--font-primary);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.product-detail__accordions summary:hover { color: var(--accent); }
+
+/* Reviews — the reference sets each entry as a .review divided by a rule, with
+   a mono rating and a star-coloured distribution bar. */
+#reviews .reviews__rating { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+#reviews .reviews__meta { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--text-tertiary); }
+#reviews .reviews__bar { border-block-end: 1px solid var(--border-default); padding-block-end: var(--space-6); }
+
+#reviews .reviews__list figure {
+  border-block-start: 1px solid var(--border-default);
+  padding-block-start: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+#reviews .reviews__write-btn,
+.reviews__write-btn {
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-family: var(--font-primary);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.reviews__write-btn:hover { border-color: var(--accent); color: var(--accent); }
+.reviews__write-note { font-size: var(--fs-sm); color: var(--text-tertiary); }
+
+#reviews .reviews__write-panel,
+.reviews__write-panel {
+  padding: var(--space-7);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+#reviews .reviews__flash--ok { background: var(--accent-wash); color: var(--accent); border-radius: var(--radius); }
+
+/* The PDP spec section now emits the reference's own .specs / .spec-group /
+   .spec-row markup, so it is styled by components.css directly and needs no
+   override here. */
+
+/* Lightbox */
+.pdp-lightbox { background: var(--surface-scrim); }
+.pdp-lightbox__counter { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--on-media-dim); }
+
+.pdp-lightbox__close,
+.pdp-lightbox__nav {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-overlay);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1100px) {
+  .product-detail { grid-template-columns: minmax(0, 1fr); gap: var(--space-9); }
+  .product-detail__info { position: static; }
+}
+
+/* The reference lays the thumbs out as a scrolling row below the stage on a
+   phone; the platform already forces that with !important, so only the sizes
+   the reference calls for are restated. */
+@media (max-width: 640px) {
+  .product-detail__gallery { grid-template-columns: minmax(0, 1fr); }
+  .product-detail__main { grid-column: 1; grid-row: 1; }
+  .product-detail__thumbs { grid-column: 1; grid-row: 2; max-height: none; }
+  .product-detail__thumb { width: 64px !important; }
+  .product-detail__title { font-size: var(--fs-3xl); }
+}
+
+/* ---------------------------------------------------------------------------
+   BLOG AND ARTICLE
+   ------------------------------------------------------------------------ */
+.media-tall {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised-2);
+  overflow: hidden;
+}
+
+.main-blog article:hover .media-tall { border-color: var(--border-strong); }
+
+.main-blog h2 a:hover,
+.main-blog h3 a:hover { color: var(--accent); }
+
+/* pages.css owns .prose (the reading column). Only the elements a CMS article
+   can emit that it does not cover are added here. */
+.prose h3 {
+  font-family: var(--font-primary);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+}
+
+.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.prose ul,
+.prose ol { padding-inline-start: var(--space-7); }
+.prose li { margin-block-end: var(--space-3); }
+
+.prose blockquote {
+  padding-inline-start: var(--space-6);
+  border-inline-start: 2px solid var(--accent);
+  color: var(--text-primary);
+  font-size: var(--fs-xl);
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------------------
+   CART
+   ------------------------------------------------------------------------ */
+.cart-empty {
+  margin-block: var(--space-10);
+  padding-block: var(--space-13);
+  padding-inline: var(--space-8);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+.cart-empty__icon {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius);
+  background: var(--accent-wash);
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------------
+   FORM FIELDS ON PLATFORM PAGES
+   ------------------------------------------------------------------------ */
+.checkout-row input,
+.checkout-row textarea,
+.field input,
+.field textarea,
+.field select {
+  padding: var(--space-4) var(--space-5);
+  min-height: 46px;
+  background: var(--surface-inset);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+}
+
+.field label {
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+/* ---------------------------------------------------------------------------
+   MEDIA BANDS
+   The collection head is forced to a dark ground above, and the platform paints
+   its type with --cream, which now tracks the page ground and therefore goes
+   dark in dark mode. These bands are always dark, so their type is pinned to
+   the on-media ramp in both themes.
+   ------------------------------------------------------------------------ */
+.collection-hero__inner,
+.collection-hero .display-xl { color: var(--on-media) !important; }
+
+.collection-hero .eyebrow { color: var(--on-media-accent, var(--on-media-dim)) !important; }
+.collection-hero .lede { color: var(--on-media-dim) !important; }
+
+/* ---------------------------------------------------------------------------
+   INHERITED COLOUR FROM THE PLATFORM SHEET
+   base.css sets .footer { background: var(--ink); color: var(--cream) } for its
+   own dark footer. HADAL's .footer rule repaints the background but never
+   declared a colour, so any footer element that does not set its own — the
+   newsletter title is the only one — inherited --cream and disappeared once
+   --cream started tracking the page ground.
+   ------------------------------------------------------------------------ */
+.footer { color: var(--text-primary); }
+
+/* ---------------------------------------------------------------------------
+   CATALOG FLAGS
+   The platform flags a card with .chip inside the .badge rail. The reference
+   uses .badge--sale / .badge--new pills, so the chips are given the same
+   treatment rather than the platform's own pill.
+   ------------------------------------------------------------------------ */
+.product-media .chip {
+  padding: 4px var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.product-media .chip--sale { background: var(--danger-wash); color: var(--danger); }
+.product-media .chip--new { background: var(--accent-wash-strong); color: var(--accent); }
+.product-media .chip--ink { background: var(--text-primary); color: var(--surface-base); }
+
+/* ---------------------------------------------------------------------------
+   CARD HOVER WITH A SINGLE PHOTO
+   components.css cross-fades .pcard__img--main out to .pcard__img--alt on
+   hover. In a Liquid product loop this storefront exposes only one image
+   (product.images.size is 1 and custom_attributes are not passed through), so
+   the sections can never render an --alt and the hover faded the only photo
+   out to the grey media ground. The two rules below keep the photo up whenever
+   no second one exists; they mirror the fix in components.css, which the
+   deployed base sheet predates.
+   ------------------------------------------------------------------------ */
+.pcard:hover .pcard__img--main:only-child { opacity: 1; }
+.pcard__media:not(:has(.pcard__img--alt)):hover .pcard__img--main { opacity: 1; }
+
+/* ---------------------------------------------------------------------------
+   PRESS MARKS, FLATTENED TO ONE TONE
+
+   pages.css keyed its light treatment to :root[data-theme='light'], but this
+   storefront never stamps data-theme — it follows prefers-color-scheme — so the
+   DARK filter (brightness 2.4) was running on a light page and washing every
+   mark out to pale grey.
+
+   The artwork itself is transparent-backed in every file but KitGuru, so
+   grayscale alone is enough; no blend mode is needed, and adding one only
+   painted a grey rectangle where the transparency should have been.
+
+   Two of the ten marks (Gagadget, Trend Hunter) are white artwork on a black
+   box rather than dark artwork on transparency. Inverting those flips the box
+   to white — invisible on the page ground — and the artwork to black, so all
+   ten land on the same tone. The section tags them .marquee__item--invert.
+   ------------------------------------------------------------------------ */
+.marquee__item img,
+:root[data-theme='light'] .marquee__item img {
+  filter: grayscale(1);
+  opacity: 0.62;
+}
+
+/* !important is deliberate: a probe confirmed the class matches and the
+   declaration works, but the base .marquee__item img filter kept winning in
+   the minified sheet even at equal and higher specificity. This is the one
+   declaration that has to land for the two boxed marks to match the rest. */
+.marquee__item.marquee__item--invert img,
+:root[data-theme='light'] .marquee__item.marquee__item--invert img { filter: grayscale(1) invert(1) !important; }
+
+.marquee__item:hover img,
+:root[data-theme='light'] .marquee__item:hover img { opacity: 1; filter: none; }
+
+/* On a dark ground the polarity flips: the dark artwork is the one to invert. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .marquee__item img { filter: grayscale(1) invert(1); }
+  :root:not([data-theme='light']) .marquee__item.marquee__item--invert img { filter: grayscale(1); }
+  :root:not([data-theme='light']) .marquee__item:hover img { filter: none; }
+}
+
+:root[data-theme='dark'] .marquee__item img { filter: grayscale(1) invert(1); }
+:root[data-theme='dark'] .marquee__item.marquee__item--invert img { filter: grayscale(1); }
+:root[data-theme='dark'] .marquee__item:hover img { filter: none; }
+
+/* The marquee duplicates its ten marks so the scroll loops without a seam.
+   With reduced motion the track does not scroll, so the copy is twenty images
+   of dead weight — and it is the reason the strip runs the connection pool dry
+   on a slow link. Hidden when the animation is off. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__item[aria-hidden='true'] { display: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   Last word on the two boxed press marks. Placed at the very end of the sheet
+   because that is the only position a probe showed the declaration surviving
+   the platform's CSS pipeline intact.
+   ------------------------------------------------------------------------ */
+.marquee__item--invert img { filter: grayscale(1) invert(1) !important; }

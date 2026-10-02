@@ -1,0 +1,19 @@
+<!--meta {"title": "Sản phẩm inox, sắt gia công theo đơn", "description": "Sản phẩm inox, sắt VN - NIKKO nhận gia công: chậu rửa, bàn bếp inox, lan can, cầu thang, cổng sắt, khung bàn ghế, bảng dụng cụ 5S, tủ locker, kệ kho, khung máy, chi tiết cắt laser. Lọc theo nhóm và vật liệu.", "nav": "san-pham", "crumbs": [["Sản phẩm", "san-pham.html"]], "image": "bep-inox.jpg", "preload": "assets/img/bep-inox.jpg"}-->
+    <section class="page-hero">
+      <img class="page-hero-bg" src="assets/img/bep-inox.jpg" width="1450" height="872" alt="" fetchpriority="high">
+      <div class="container page-hero-in">
+        {{crumbs}}
+        <p class="eyebrow">Sản phẩm</p>
+        <h1>Sản phẩm inox, sắt <em>làm theo đơn.</em></h1>
+        <p class="lead">Dưới đây là {{product-count}} nhóm sản phẩm xưởng thường làm, chia theo sáu mảng. Sản phẩm không có trong danh sách, hãy gửi bản vẽ hoặc ảnh mẫu để xưởng báo giá.</p>
+      </div>
+    </section>
+    <section class="section-tight" data-filter-scope>
+      <div class="container">
+        {{product-filters}}
+        <p class="fcount" data-fcount aria-live="polite"></p>
+        {{products}}
+        <div class="empty" data-empty hidden><p>Chưa có sản phẩm khớp bộ lọc. Gửi bản vẽ hoặc ảnh mẫu, xưởng vẫn có thể làm.</p><a class="btn btn-ghost btn-sm" href="bao-gia.html">Gửi yêu cầu</a></div>
+        <p class="fine">Ảnh minh họa cho bản demo. Thay bằng ảnh sản phẩm thật của xưởng.</p>
+      </div>
+    </section>

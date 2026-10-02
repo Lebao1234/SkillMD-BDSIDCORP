@@ -1,0 +1,33 @@
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Lăng Kính, trang chủ">
+        <svg class="brand-mark" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true" focusable="false"><path class="bm-tri" d="M20 5 36 33H4z"/><path class="bm-ray" d="M0 22.5 14.2 19"/><path class="bm-out r1" d="M25.5 18.5 40 14"/><path class="bm-out r2" d="M26.3 20.5 40 20"/><path class="bm-out r3" d="M27 22.6 40 26"/></svg>
+        <span class="brand-text">LĂNG KÍNH</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính" data-nav>
+        <ul class="nav-list">
+          <li class="nav-item has-drop" data-nav-key="may-anh">
+            <button class="nav-link" type="button" aria-expanded="false" aria-controls="drop-cam" data-drop-toggle>Máy ảnh<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="drop" id="drop-cam">
+              <a class="drop-row" href="may-anh.html?dong=tinh"><span class="drop-code">T</span><span><strong>Dòng Tinh</strong><small>Ống kính liền, nhỏ gọn mang theo mỗi ngày</small></span></a>
+              <a class="drop-row" href="may-anh.html?dong=x"><span class="drop-code">X</span><span><strong>Dòng X</strong><small>APS-C, đổi ống kính, từ phổ thông đến chuyên nghiệp</small></span></a>
+              <a class="drop-row" href="may-anh.html?dong=g"><span class="drop-code">G</span><span><strong>Dòng G</strong><small>Khổ trung bình 102MP cho thời trang, phong cảnh</small></span></a>
+              <a class="drop-all" href="may-anh.html">Tất cả {{count kind="camera"}} máy ảnh <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </li>
+          <li class="nav-item" data-nav-key="ong-kinh"><a class="nav-link" href="ong-kinh.html">Ống kính</a></li>
+          <li class="nav-item" data-nav-key="gia-lap-mau"><a class="nav-link" href="gia-lap-mau.html">Công thức màu</a></li>
+          <li class="nav-item" data-nav-key="cau-chuyen"><a class="nav-link" href="cau-chuyen.html">Câu chuyện</a></li>
+          <li class="nav-item" data-nav-key="cua-hang"><a class="nav-link" href="cua-hang.html">Cửa hàng</a></li>
+          <li class="nav-item" data-nav-key="ho-tro"><a class="nav-link" href="ho-tro.html">Hỗ trợ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="hdr-btn" href="so-sanh.html" aria-label="So sánh sản phẩm"><i class="ph ph-columns" aria-hidden="true"></i><span class="hdr-count" data-compare-count>0</span></a>
+        <button class="hdr-btn" type="button" data-cart-open aria-label="Mở giỏ hàng"><i class="ph ph-bag-simple" aria-hidden="true"></i><span class="hdr-count" data-cart-count>0</span></button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle><span class="sr-only">Mở menu</span></button>
+      </div>
+    </div>
+  </header>

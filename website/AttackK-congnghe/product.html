@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="pdp.title">Chi tiet san pham | HADAL</title>
+<meta name="description" data-i18n-content="pdp.desc" content="Thong so ky thuat, phien ban mau, danh gia nguoi dung va tai lieu tai ve cho san pham HADAL.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <div class="wrap" style="padding-block-start:var(--space-7)">
+    <nav aria-label="Duong dan">
+      <ol class="crumbs">
+        <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+        <li><a href="collection.html?c=shop-all" data-i18n="g.catalog">Danh muc</a></li>
+        <li><a data-crumb-cat href="#">Nhom san pham</a></li>
+        <li><span aria-current="page" data-crumb-name>San pham</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="wrap pdp" data-pdp>
+
+    <!-- GALLERY -->
+    <div class="gallery" data-gallery tabindex="0" data-i18n-aria-label="pdp.gallery" aria-label="Thu vien anh san pham">
+      <div class="gallery__thumbs" data-gallery-thumbs></div>
+      <div class="gallery__stage" data-stage>
+        <img alt="" width="900" height="900" fetchpriority="high" decoding="async">
+        <div class="gallery__arrows">
+          <button type="button" class="icon-btn" data-gal-prev data-i18n-aria-label="pdp.prevImage" aria-label="Anh truoc"><i class="ph-light ph-caret-left" aria-hidden="true"></i></button>
+          <button type="button" class="icon-btn" data-gal-next data-i18n-aria-label="pdp.nextImage" aria-label="Anh ke tiep"><i class="ph-light ph-caret-right" aria-hidden="true"></i></button>
+        </div>
+        <p class="gallery__zoomhint"><i class="ph-light ph-magnifying-glass-plus" aria-hidden="true"></i><span data-i18n="pdp.zoomHint">Bam de phong to</span></p>
+      </div>
+    </div>
+
+    <!-- BUY BOX -->
+    <div class="buybox">
+      <div class="buybox__head">
+        <p class="pcard__cat" data-cat></p>
+        <h1 class="buybox__title" data-title data-i18n="g.loading">Dang tai</h1>
+        <div class="rating" data-rating></div>
+        <p class="buybox__sub" data-sub></p>
+      </div>
+
+      <div class="buybox__pricerow" data-price></div>
+
+      <div class="buybox__bullets" data-bullets></div>
+
+      <div data-variants></div>
+
+      <div class="buybox__actions">
+        <div class="buybox__actionrow">
+          <div class="qty">
+            <button type="button" class="qty__btn" data-qty-minus data-i18n-aria-label="g.decrease" aria-label="Giam so luong"><i class="ph-light ph-minus" aria-hidden="true"></i></button>
+            <input class="qty__input" type="number" value="1" min="1" max="99" data-i18n-aria-label="g.quantity" aria-label="So luong" data-qty-main>
+            <button type="button" class="qty__btn" data-qty-plus data-i18n-aria-label="g.increase" aria-label="Tang so luong"><i class="ph-light ph-plus" aria-hidden="true"></i></button>
+          </div>
+          <button type="button" class="btn btn--primary btn--lg" data-add data-i18n="g.addToCart">Them vao gio</button>
+        </div>
+        <button type="button" class="btn btn--contrast btn--lg btn--block" data-buynow data-i18n="g.buyNow">Mua ngay</button>
+        <div class="row" style="gap:var(--space-4)">
+          <button type="button" class="btn btn--secondary btn--sm grow" data-pdp-wish aria-pressed="false">
+            <i class="ph-light ph-heart" aria-hidden="true"></i><span data-i18n="pdp.wish">Yeu thich</span>
+          </button>
+          <button type="button" class="btn btn--secondary btn--sm grow" data-pdp-compare aria-pressed="false">
+            <i class="ph-light ph-scales" aria-hidden="true"></i><span data-i18n="pdp.compare">So sanh</span>
+          </button>
+          <button type="button" class="btn btn--secondary btn--sm grow" data-share>
+            <i class="ph-light ph-share-network" aria-hidden="true"></i><span data-i18n="pdp.share">Chia se</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="text-sm dim">
+        <i class="ph-light ph-fire" aria-hidden="true"></i>
+        <span class="mono" data-sold>0</span> <span data-i18n="pdp.soldLine">chiec da ban. SKU:</span> <span class="mono" data-sku></span>
+      </p>
+
+      <!-- FREQUENTLY BOUGHT TOGETHER -->
+      <div class="buybox__assur" data-pdp-block>
+        <p class="opt-group__name" data-i18n="pdp.fbt">Thuong duoc mua cung</p>
+        <div class="fbt" data-fbt></div>
+        <div class="totals" data-fbt-total></div>
+        <button type="button" class="btn btn--primary btn--block" data-fbt-add data-i18n="g.addToCart">Them vao gio</button>
+      </div>
+
+      <!-- ASSURANCES -->
+      <div class="buybox__assur">
+        <p class="assur-row"><i class="ph-light ph-truck" aria-hidden="true"></i>
+          <span><strong data-i18n="pdp.assur1">Mien phi van chuyen tieu chuan</strong> <span data-i18n="pdp.assur1t">cho don tu 59 USD.</span></span></p>
+        <p class="assur-row"><i class="ph-light ph-arrow-u-up-left" aria-hidden="true"></i>
+          <span><strong data-i18n="pdp.assur2">Doi tra 15 ngay</strong> <span data-i18n="pdp.assur2t">khong can ly do.</span></span></p>
+        <p class="assur-row"><i class="ph-light ph-shield-check" aria-hidden="true"></i>
+          <span><strong data-i18n="pdp.assur3">Bao hanh 12 thang</strong> <span data-i18n="pdp.assur3t">cho loi ky thuat.</span></span></p>
+        <p class="assur-row"><i class="ph-light ph-credit-card" aria-hidden="true"></i>
+          <span><strong data-i18n="pdp.assur4">Thanh toan an toan</strong> <span data-i18n="pdp.assur4t">qua Visa, Mastercard, PayPal.</span></span></p>
+      </div>
+
+      <!-- DOWNLOADS -->
+      <div class="buybox__assur">
+        <p class="opt-group__name" data-i18n="pdp.downloads">Tai ve va driver</p>
+        <div class="dlcard__links" data-downloads></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURE STORY -->
+  <section class="section" data-pdp-section aria-labelledby="story-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <p class="eyebrow"><span data-story-count>0</span> <span data-i18n="pdp.story.eyebrow">diem ky thuat</span></p>
+          <h2 class="section-head__title" id="story-h" data-i18n="pdp.story.title">Ben trong san pham</h2>
+        </div>
+      </div>
+      <div class="storyblocks" data-story></div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS -->
+  <section class="section section--tight" data-pdp-section aria-labelledby="spec-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="spec-h" data-i18n="pdp.spec.title">Thong so ky thuat</h2>
+          <p class="muted" data-i18n="pdp.spec.text">Nhom theo cum thay vi mot bang dai.</p>
+        </div>
+      </div>
+      <div class="specs" data-specs></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section section--tight" id="reviews" data-pdp-section aria-labelledby="rev-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="rev-h" data-i18n="pdp.reviews.title">Danh gia tu nguoi dung</h2>
+        </div>
+      </div>
+      <div class="reviews">
+        <aside class="reviewsum" data-review-summary></aside>
+        <div class="reviewlist" data-review-list></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section section--tight" data-pdp-section aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="rel-h" style="font-size:var(--fs-3xl)" data-i18n="pdp.related">Cung nhom san pham</h2>
+        </div>
+      </div>
+      <div class="grid-products grid-products--4" data-related></div>
+    </div>
+  </section>
+
+  <!-- RECENTLY VIEWED -->
+  <section class="section section--tight" data-pdp-section aria-labelledby="pv-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="pv-h" style="font-size:var(--fs-3xl)" data-i18n="pdp.viewed">Ban vua xem</h2>
+        </div>
+      </div>
+      <div class="rail" data-viewed-rail></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- STICKY PURCHASE BAR -->
+<div class="stickybuy" data-stickybuy>
+  <div class="wrap stickybuy__inner">
+    <span class="stickybuy__media"><img data-sticky-img alt="" width="48" height="48"></span>
+    <div class="stickybuy__info">
+      <p class="stickybuy__name" data-sticky-name></p>
+      <span data-sticky-price></span>
+    </div>
+    <div class="stickybuy__actions">
+      <a class="btn btn--secondary" href="cart.html" data-i18n="pdp.cart">Gio hang</a>
+      <button type="button" class="btn btn--primary" data-sticky-add data-i18n="g.addToCart">Them vao gio</button>
+    </div>
+  </div>
+</div>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!--meta {"title": "Liên hệ, chỉ đường đến xưởng", "description": "Liên hệ Công ty TNHH Cơ khí VN - NIKKO tại Đường số 2, Ấp Sáp Mai, Xã Võng La, Huyện Đông Anh, Hà Nội. Mã số thuế 0109788075.", "nav": "lien-he", "crumbs": [["Liên hệ", "lien-he.html"]], "preload": "assets/img/nha-may-thep.jpg"}-->
+    <section class="page-hero">
+      <img class="page-hero-bg" src="assets/img/nha-may-thep.jpg" width="1600" height="1067" alt="" fetchpriority="high">
+      <div class="container page-hero-in">
+        {{crumbs}}
+        <p class="eyebrow">Liên hệ</p>
+        <h1>Đến xưởng <em>xem tận nơi</em></h1>
+        <p class="lead">Khách hàng được hẹn tham quan dây chuyền và xem mẫu sản phẩm. Gọi trước để kỹ sư sắp xếp đón tiếp.</p>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container contact">
+        <div class="contact-card">
+          {{company}}
+          <div class="row-actions contact-act">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query={{map-query}}" target="_blank" rel="noopener">Chỉ đường Google Maps<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></a>
+            <a class="btn btn-ghost" href="tel:{{hotline-tel}}"><i class="ph ph-phone" aria-hidden="true"></i>{{hotline}}</a>
+          </div>
+        </div>
+        <div class="map-card" aria-hidden="true">
+          <svg viewBox="0 0 600 420" class="map-svg">
+            <defs><pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#d9dde2" stroke-width="1"/></pattern></defs>
+            <rect width="600" height="420" fill="url(#g)"/>
+            <path d="M0 300 C120 270 220 330 330 290 S520 240 600 260" fill="none" stroke="#b9c0c8" stroke-width="16"/>
+            <path d="M260 0 L300 420" fill="none" stroke="#c9ced5" stroke-width="10"/>
+            <path d="M0 120 L600 170" fill="none" stroke="#c9ced5" stroke-width="6"/>
+            <text x="20" y="282" font-family="Manrope" font-size="12" fill="#5f6670">Trục đường chính</text>
+            <text x="310" y="40" font-family="Manrope" font-size="12" fill="#5f6670">Đường số 2</text>
+            <circle cx="292" cy="160" r="36" fill="none" stroke="#de252c" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle cx="292" cy="160" r="8" fill="#de252c"/>
+            <text x="336" y="152" font-family="Manrope" font-size="20" font-weight="800" fill="#1b2a3a">VN - NIKKO</text>
+            <text x="336" y="174" font-family="Manrope" font-size="12" fill="#5f6670">Ấp Sáp Mai, Võng La</text>
+          </svg>
+          <p class="map-note">Sơ đồ minh họa, không theo tỷ lệ. Dùng nút Chỉ đường để mở bản đồ thật.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section section-steel">
+      <div class="container rfq-wrap">
+        <div class="rfq-card"><div class="rfq-head"><h2 class="rfq-h">Gửi yêu cầu</h2><p>Chỉ bắt buộc tên và số điện thoại</p></div>{{rfq-form id="c"}}</div>
+        <aside class="rfq-side">
+          <p class="eyebrow">Giờ làm việc</p>
+          <p>{{hours}}</p>
+          <p class="muted">Yêu cầu gửi ngoài giờ được xử lý vào sáng ngày làm việc kế tiếp.</p>
+        </aside>
+      </div>
+    </section>

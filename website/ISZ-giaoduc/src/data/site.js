@@ -1,0 +1,16 @@
+module.exports = {
+  name: "Hoa ngữ ISZ",
+  shortName: "Hoa ngữ ISZ",
+  url: "https://isz.edu.vn",
+  hotline: "028 7109 2468",
+  hotlineTel: "02871092468",
+  mobile: "0938 246 818",
+  mobileTel: "0938246818",
+  email: "tuvan@isz.edu.vn",
+  hours: "Thứ Hai đến Thứ Bảy 8:00 - 21:00, Chủ nhật 8:00 - 17:00",
+  zalo: "https://zalo.me/0938246818",
+  facebook: "https://facebook.com/",
+  youtube: "https://youtube.com/",
+  tiktok: "https://tiktok.com/",
+  legal: "Công ty Cổ phần Giáo dục ISZ. MST 0317 904 526.",
+};

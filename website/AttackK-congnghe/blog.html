@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="bl.title">Bai viet va kien thuc | HADAL</title>
+<meta name="description" data-i18n-content="bl.desc" content="Huong dan chon thiet bi, cach chinh rapid trigger, do luong polling rate va cac phep thu chung toi tu chay.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><span aria-current="page" data-i18n="nav.blog">Bai viet</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-i18n="bl.h1">Bai viet va kien thuc</h1>
+      <p class="muted" data-i18n="bl.intro">Huong dan chon do va cac phep do.</p>
+      <div class="activefilters" data-blog-topics style="margin-block-start:var(--space-4)"></div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap editorial">
+      <div data-blog-lead></div>
+      <div class="post-list" data-blog-list></div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="giveaway reveal">
+        <div class="giveaway__media">
+          <img src="https://attackshark.com/cdn/shop/files/06_13d08781-1abb-49e0-b2f9-bf6a453c016c.jpg?v=1752039873&width=1200"
+               data-i18n-alt="bl.cta.alt" alt="Ban phim tu tinh voi den nen RGB" width="1200" height="900" loading="lazy" decoding="async">
+        </div>
+        <div class="giveaway__body">
+          <h2 class="giveaway__title" data-i18n="bl.cta.title">Co cau hoi ky thuat</h2>
+          <p class="muted" data-i18n="bl.cta.text">Doi ngu ho tro tra loi cac cau hoi ky thuat.</p>
+          <div class="giveaway__perks">
+            <p class="giveaway__perk"><i class="ph-light ph-check" aria-hidden="true"></i><span data-i18n="bl.cta.p1">Huong dan cai dat driver</span></p>
+            <p class="giveaway__perk"><i class="ph-light ph-check" aria-hidden="true"></i><span data-i18n="bl.cta.p2">Chia se cau hinh actuation</span></p>
+            <p class="giveaway__perk"><i class="ph-light ph-check" aria-hidden="true"></i><span data-i18n="bl.cta.p3">Bao loi va theo doi bao hanh</span></p>
+          </div>
+          <div class="row row--wrap">
+            <a class="btn btn--primary" href="https://discord.com/invite/wJrgv72YMh" target="_blank" rel="noopener" data-i18n="bl.cta.discord">Vao Discord</a>
+            <a class="btn btn--secondary" href="support.html#contact" data-i18n="bl.cta.email">Gui email ho tro</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/blog.js"></script>
+</body>
+</html>

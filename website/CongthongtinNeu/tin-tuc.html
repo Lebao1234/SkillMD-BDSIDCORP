@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tin tức | Mạng lưới Cựu sinh viên NEU</title>
+<meta name="description" content="Tin hoạt động của khoa, sự kiện, thành tựu cựu sinh viên, học bổng và hợp tác doanh nghiệp trong mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân.">
+<link rel="canonical" href="https://alumni.neu.edu.vn/tin-tuc.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tin tức | Mạng lưới Cựu sinh viên NEU">
+<meta property="og:description" content="Tin hoạt động của khoa, sự kiện, thành tựu cựu sinh viên, học bổng và hợp tác doanh nghiệp trong mạng lưới cựu sinh viên Đại học Kinh tế Quốc dân.">
+<meta property="og:url" content="https://alumni.neu.edu.vn/tin-tuc.html">
+<meta property="og:image" content="https://picsum.photos/seed/neu-banner-chinh/1200/630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0076c0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="favicon.svg" color="#0076c0">
+
+<script>
+  /* Áp chủ đề trước khi trang vẽ lần đầu, để không chớp sáng rồi mới tối. */
+  try {
+    var t = JSON.parse(localStorage.getItem('neu-alumni:theme') || '"auto"');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/lists.css">
+
+<link rel="stylesheet" href="assets/css/polish.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+<div data-header></div>
+
+<main id="main">
+  <nav class="container crumbs" aria-label="Đường dẫn">
+    <a href="index.html">Trang chủ</a>
+    <span class="crumbs__sep" aria-hidden="true">/</span>
+    <span aria-current="page">Tin tức</span>
+  </nav>
+  <div class="pagehead">
+    <div class="container pagehead__inner">
+      <h1 class="pagehead__title">Tin tức</h1>
+      <div class="pagehead__rule"></div>
+      <p class="pagehead__lede">Hoạt động của khoa, sự kiện của mạng lưới, thành tựu của cựu sinh viên và các chương trình học bổng.</p>
+    </div>
+  </div>
+  <div class="container shell" data-shell>
+    <aside class="filters" aria-label="Lọc tin tức">
+      <div class="fgroup">
+        <h2 class="fgroup__title">Tìm trong tin</h2>
+        <div class="searchbox">
+          <i class="ph-light ph-magnifying-glass searchbox__icon" aria-hidden="true"></i>
+          <label class="sr-only" for="q">Từ khóa</label>
+          <input class="input" id="q" type="search" autocomplete="off" placeholder="Tiêu đề hoặc nội dung" data-q>
+        </div>
+      </div>
+      <div class="fgroup">
+        <h2 class="fgroup__title">Danh mục</h2>
+        <div class="fgroup__list" data-facet="danhmuc"></div>
+      </div>
+      <div class="fgroup">
+        <h2 class="fgroup__title">Thẻ</h2>
+        <div class="fgroup__chips" data-facet-chips="the"></div>
+      </div>
+      <button class="btn btn--quiet btn--sm" type="button" data-clear>Bỏ hết bộ lọc</button>
+    </aside>
+
+    <div>
+      <div class="results__bar">
+        <p class="results__count" data-count aria-live="polite">Đang tải</p>
+        <div class="results__tools">
+          <label class="sr-only" for="sort">Sắp xếp</label>
+          <select class="select" id="sort" data-sort>
+            <option value="moi">Mới nhất trước</option>
+            <option value="cu">Cũ nhất trước</option>
+            <option value="az">Theo tên A tới Z</option>
+          </select>
+          <button class="btn btn--ghost btn--sm hide-desktop" type="button" data-toggle-filters>Bộ lọc</button>
+        </div>
+      </div>
+      <div class="results__active" data-active></div>
+      <div class="grid-cards" data-list></div>
+      <nav class="pager" data-pager aria-label="Phân trang"></nav>
+    </div>
+  </div>
+</main>
+
+<div data-footer></div>
+
+<script src="assets/data/alumni.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/data/events.js"></script>
+<script src="assets/data/albums.js"></script>
+<script src="assets/data/jobs.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/listing.js"></script>
+<script src="assets/js/news.js"></script>
+</body>
+</html>

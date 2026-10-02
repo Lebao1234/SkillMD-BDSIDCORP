@@ -1,0 +1,17 @@
+<!--meta {"title": "So sánh tai nghe, loa", "description": "So sánh thông số tối đa 3 tai nghe hoặc 3 loa BeatBeat, tô sáng các dòng khác nhau.", "nav": "so-sanh", "noindex": true, "crumbs": [["So sánh", "so-sanh.html"]]}-->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1>So sánh</h1>
+        <p class="lead">Chọn tối đa 3 sản phẩm cùng loại. Bật "Chỉ hiện điểm khác" để thấy nhanh chỗ khác biệt.</p>
+      </div>
+    </section>
+    <section class="section-tight">
+      <div class="container" data-cmp>
+        <div class="cmp-bar">
+          <div class="fchips" role="group" aria-label="Loại sản phẩm"><button type="button" class="fchip" data-cmp-kind="tai-nghe">Tai nghe</button><button type="button" class="fchip" data-cmp-kind="loa">Loa</button></div>
+          <label class="switch"><input type="checkbox" data-cmp-diff><span class="switch-ui" aria-hidden="true"></span><span>Chỉ hiện điểm khác</span></label>
+        </div>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Bảng so sánh"><table class="cmp-table" data-cmp-table></table></div>
+      </div>
+    </section>

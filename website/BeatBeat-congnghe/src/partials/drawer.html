@@ -1,0 +1,35 @@
+  <div class="drawer" data-drawer hidden>
+    <div class="drawer-scrim" data-cart-close></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer-head"><h2 id="drawer-title">Giỏ hàng</h2><button class="icon-btn icon-btn-ghost" type="button" data-cart-close aria-label="Đóng giỏ hàng"><i class="ph ph-x" aria-hidden="true"></i></button></div>
+      <p class="ship-meter" data-ship-meter></p>
+      <ul class="cart-list" data-cart-list></ul>
+      <div class="cart-empty" data-cart-empty>
+        {{wave n="28" class="wave-sm"}}
+        <p>Giỏ hàng đang trống.</p>
+        <div class="row-actions"><a class="btn btn-ghost btn-sm" href="tai-nghe.html">Xem tai nghe</a><a class="btn btn-ghost btn-sm" href="loa.html">Xem loa</a></div>
+      </div>
+      <div class="drawer-foot" data-cart-foot hidden>
+        <p class="drawer-total"><span>Tạm tính</span><strong data-cart-total>0đ</strong></p>
+        <p class="muted" data-cart-installment></p>
+        <a class="btn btn-primary btn-lg btn-block" href="gio-hang.html">Thanh toán<span class="btn-ico"><i class="ph ph-arrow-right" aria-hidden="true"></i></span></a>
+      </div>
+    </aside>
+  </div>
+  <div class="search" data-search hidden>
+    <div class="search-scrim" data-search-close></div>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Tìm sản phẩm">
+      <div class="search-row"><i class="ph ph-magnifying-glass" aria-hidden="true"></i><label class="sr-only" for="search-q">Tìm sản phẩm</label><input id="search-q" type="search" placeholder="Tìm: chống ồn, loa tiệc, pulse..." autocomplete="off" data-search-q><button class="icon-btn icon-btn-ghost" type="button" data-search-close aria-label="Đóng tìm kiếm"><i class="ph ph-x" aria-hidden="true"></i></button></div>
+      <ul class="search-list" data-search-list></ul>
+      <p class="search-empty muted" data-search-empty hidden>Không có sản phẩm phù hợp. Thử "tai nghe", "loa", "IP67".</p>
+    </div>
+  </div>
+  <div class="cmp-tray" data-compare-tray hidden>
+    <div class="container cmp-tray-in">
+      <ul data-compare-list></ul>
+      <p data-compare-text>0/3 sản phẩm</p>
+      <button class="btn btn-ghost btn-sm" type="button" data-compare-clear>Bỏ hết</button>
+      <a class="btn btn-primary btn-sm" href="so-sanh.html">So sánh ngay<span class="btn-ico"><i class="ph ph-arrow-right" aria-hidden="true"></i></span></a>
+    </div>
+  </div>
+  <p class="toast" data-toast role="status" aria-live="polite"></p>

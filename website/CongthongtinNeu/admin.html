@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quản trị nội dung | Mạng lưới Cựu sinh viên NEU</title>
+<meta name="description" content="Khu vực quản trị nội dung của cổng thông tin cựu sinh viên Đại học Kinh tế Quốc dân.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0076c0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="favicon.svg" color="#0076c0">
+
+<script>
+  try {
+    var t = JSON.parse(localStorage.getItem('neu-alumni:theme') || '"auto"');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/lists.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+<link rel="stylesheet" href="assets/css/polish.css">
+</head>
+
+<body>
+<a class="skip-link" href="#work">Bỏ qua tới nội dung chính</a>
+
+<!-- Chưa đăng nhập thì chỉ thấy màn này. -->
+<div class="container" data-gate hidden style="max-width:560px;padding-block:var(--space-15)"></div>
+
+<div class="admin" data-admin hidden>
+
+  <aside class="aside" data-aside>
+    <a class="brand brand--onDark brand--sm aside__brand" href="index.html" aria-label="Về trang công khai">
+      <span class="brand__mark" aria-hidden="true">NEU</span>
+      <span class="brand__text">
+        <span class="brand__name">Quản trị nội dung</span>
+        <span class="brand__sub">NEU Alumni</span>
+      </span>
+    </a>
+
+    <nav class="aside__nav" aria-label="Khu vực quản trị">
+      <span class="aside__group">Nội dung</span>
+      <button class="aside__link is-on" type="button" data-panel="tongquan"><i class="ph-light ph-squares-four" aria-hidden="true"></i> Tổng quan</button>
+      <button class="aside__link" type="button" data-panel="baiviet"><i class="ph-light ph-newspaper" aria-hidden="true"></i> Bài viết</button>
+      <button class="aside__link" type="button" data-panel="sukien"><i class="ph-light ph-calendar-blank" aria-hidden="true"></i> Sự kiện</button>
+      <button class="aside__link" type="button" data-panel="album"><i class="ph-light ph-images-square" aria-hidden="true"></i> Album</button>
+      <button class="aside__link" type="button" data-panel="vieclam"><i class="ph-light ph-briefcase" aria-hidden="true"></i> Tuyển dụng</button>
+      <button class="aside__link" type="button" data-panel="duyet"><i class="ph-light ph-tray" aria-hidden="true"></i> Chờ duyệt <span class="aside__badge" data-badge-duyet>0</span></button>
+
+      <span class="aside__group">Con người</span>
+      <button class="aside__link" type="button" data-panel="alumni"><i class="ph-light ph-users-three" aria-hidden="true"></i> Cựu sinh viên</button>
+      <button class="aside__link" type="button" data-panel="nguoidung" data-admin-only><i class="ph-light ph-user-gear" aria-hidden="true"></i> Người dùng</button>
+      <button class="aside__link" type="button" data-panel="phanquyen" data-admin-only><i class="ph-light ph-lock-key" aria-hidden="true"></i> Phân quyền</button>
+
+      <span class="aside__group">Hệ thống</span>
+      <button class="aside__link" type="button" data-panel="saoluu" data-admin-only><i class="ph-light ph-database" aria-hidden="true"></i> Sao lưu</button>
+      <a class="aside__link" href="index.html"><i class="ph-light ph-arrow-square-out" aria-hidden="true"></i> Xem trang công khai</a>
+    </nav>
+
+    <div class="aside__foot">
+      <div class="aside__me" data-me></div>
+      <button class="btn btn--quiet btn--sm btn--block" type="button" data-signout style="color:#b9c3cd">Đăng xuất</button>
+    </div>
+  </aside>
+
+  <div class="work" id="work">
+    <div class="work__bar">
+      <button class="burger admin__burger" type="button" data-open-aside aria-expanded="false" aria-label="Mở menu quản trị"><span></span></button>
+      <h1 class="work__title" data-title>Tổng quan</h1>
+      <div class="work__tools">
+        <button class="iconbtn" type="button" data-toggle-theme aria-label="Đổi chế độ sáng tối"><i class="ph-light ph-circle-half" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div class="work__body" data-work></div>
+  </div>
+
+</div>
+
+<div class="scrim" data-scrim></div>
+
+<!-- Hộp thoại soạn thảo, dùng chung cho mọi loại bản ghi. -->
+<div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__head">
+    <h2 class="modal__title" id="modal-title" data-modal-title>Sửa bản ghi</h2>
+    <button class="iconbtn" type="button" data-modal-close aria-label="Đóng"><i class="ph-light ph-x" aria-hidden="true"></i></button>
+  </div>
+  <form class="modal__body" data-modal-body novalidate></form>
+  <div class="modal__foot">
+    <button class="btn btn--quiet" type="button" data-modal-close>Hủy</button>
+    <button class="btn btn--primary" type="button" data-modal-save>Lưu thay đổi</button>
+  </div>
+</div>
+
+<script src="assets/data/alumni.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/data/events.js"></script>
+<script src="assets/data/albums.js"></script>
+<script src="assets/data/jobs.js"></script>
+<script src="assets/data/users.js"></script>
+<script src="assets/data/submissions.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

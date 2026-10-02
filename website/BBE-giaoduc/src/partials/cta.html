@@ -1,0 +1,73 @@
+    <!-- ===== Form đăng ký học thử (dùng chung cuối mỗi trang) ===== -->
+    <section class="section register" id="dang-ky">
+      <div class="container register-grid">
+        <div class="register-info">
+          <h2>Học thử 45 phút, <em>không mất phí</em></h2>
+          <p>Tư vấn viên gọi lại trong vòng 2 giờ làm việc để hẹn lịch kiểm tra trình độ.</p>
+          <ul class="contact-list">
+            <li><i class="ph ph-list-checks" aria-hidden="true"></i><div><strong>Kiểm tra trình độ miễn phí</strong><span>Bài test 4 kỹ năng, có kết quả ngay trong buổi</span></div></li>
+            <li><i class="ph ph-chalkboard-teacher" aria-hidden="true"></i><div><strong>Học thử 45 phút</strong><span>Học cùng giáo viên tại lớp đúng trình độ</span></div></li>
+            <li><i class="ph ph-path" aria-hidden="true"></i><div><strong>Nhận lộ trình riêng</strong><span>Thời gian học và học phí dự kiến cho mục tiêu của bạn</span></div></li>
+            <li><i class="ph ph-phone" aria-hidden="true"></i><div><strong>Hotline</strong><a href="tel:{{hotline-tel}}">{{hotline}}</a></div></li>
+          </ul>
+        </div>
+
+        <!-- Gắn API thật: đặt data-endpoint="https://..." để form gửi JSON đến máy chủ -->
+        <div class="form-shell">
+        <form class="register-form" data-form novalidate data-endpoint="">
+          <div class="form-body" data-form-body>
+            <div class="field">
+              <label for="f-name">Họ và tên</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-help f-name-err">
+              <small class="help" id="f-name-help">Tên phụ huynh hoặc học viên.</small>
+              <small class="error" id="f-name-err" role="alert"></small>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-phone">Số điện thoại</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="f-phone-err">
+                <small class="error" id="f-phone-err" role="alert"></small>
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span class="optional">(không bắt buộc)</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="f-email-err">
+                <small class="error" id="f-email-err" role="alert"></small>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-course">Khóa học quan tâm</label>
+                <select id="f-course" name="course" required aria-describedby="f-course-err">{{course-options}}</select>
+                <small class="error" id="f-course-err" role="alert"></small>
+              </div>
+              <div class="field">
+                <label for="f-branch">Cơ sở gần bạn</label>
+                <select id="f-branch" name="branch">
+                  <option>Cầu Giấy</option>
+                  <option>Hai Bà Trưng</option>
+                  <option>Học online</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-note">Ghi chú <span class="optional">(không bắt buộc)</span></label>
+              <textarea id="f-note" name="note" rows="3" maxlength="500" aria-describedby="f-note-help"></textarea>
+              <small class="help" id="f-note-help">Ví dụ: tuổi của con, lớp muốn học, khung giờ tiện gọi điện.</small>
+            </div>
+            <p class="form-error" data-form-error role="alert" hidden>
+              <i class="ph ph-warning-circle" aria-hidden="true"></i>
+              <span>Chưa gửi được đăng ký. Vui lòng thử lại hoặc gọi hotline {{hotline}}.</span>
+            </p>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Đăng ký học thử<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+            <p class="form-note">Thông tin chỉ dùng để BBE liên hệ tư vấn. Xem <a href="chinh-sach-bao-mat.html">chính sách bảo mật</a>.</p>
+          </div>
+          <div class="form-success" data-form-success hidden tabindex="-1">
+            <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+            <h3>Đã nhận đăng ký của <span data-success-name>bạn</span></h3>
+            <p>Tư vấn viên BBE sẽ gọi đến số <strong data-success-phone></strong> trong vòng 2 giờ làm việc.</p>
+            <button class="btn btn-outline btn-sm" type="button" data-form-reset>Gửi đăng ký khác</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </section>

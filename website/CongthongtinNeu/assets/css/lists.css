@@ -1,0 +1,320 @@
+/* ==========================================================================
+   THẺ SỰ KIỆN, DANH SÁCH VIỆC LÀM, CÂU CHUYỆN NỔI BẬT
+
+   Ba họ component này từng nằm trong pages.css và bị cắt nhầm khi tách bố cục
+   trang chủ ra file riêng. Dựng lại ở đây, theo đúng ngôn ngữ portal của phần
+   còn lại: góc vuông, khối xanh đặc, chữ hoa condensed, viền trái khi trỏ.
+
+   Bộ kiểm thử giờ có một phép kiểm quét mọi class dùng trong HTML và JS rồi
+   đối chiếu với CSS, nên một file bị cắt mất như lần này sẽ bị bắt ngay chứ
+   không phải đợi nhìn bằng mắt.
+   ========================================================================== */
+
+/* ==========================================================================
+   DẤU HIỆU DOANH NGHIỆP
+   Chữ cái đầu trong một ô vuông, thay cho logo bịa.
+   ========================================================================== */
+.orgmark {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  flex: none;
+  background: var(--blue-wash);
+  color: var(--blue-dark);
+  border: 1px solid var(--blue-line);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  letter-spacing: 0.01em;
+}
+.orgmark--sm { width: 34px; height: 34px; font-size: var(--fs-sm); }
+.orgmark--lg { width: 56px; height: 56px; font-size: var(--fs-xl); }
+
+/* ==========================================================================
+   RAIL
+
+   Trên trang chủ đây là một hàng cuộn ngang. Trên trang Sự kiện nó bị ghi đè
+   thành danh sách dọc bằng thuộc tính nội tuyến, nên các khai báo dưới đây
+   đều phải chịu được cả hai chế độ.
+   ========================================================================== */
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 1fr);
+  gap: var(--space-8);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-6);
+}
+.rail > * { scroll-snap-align: start; }
+
+@media (min-width: 1000px) {
+  .rail { grid-auto-columns: minmax(0, 1fr); overflow-x: visible; }
+}
+
+/* ==========================================================================
+   THẺ SỰ KIỆN
+
+   Khối ngày tháng nền xanh bên trái, đúng như bản gốc. Đây là thành phần dễ
+   nhận ra nhất của một lịch sự kiện, nên nó phải là thứ đọc được đầu tiên.
+   ========================================================================== */
+.evcard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: var(--space-8);
+  padding: var(--space-8);
+  background: var(--surface-base);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  align-items: start;
+  transition: background var(--dur-instant) var(--ease),
+              border-color var(--dur-instant) var(--ease);
+}
+.evcard:hover { background: var(--blue-wash); border-color: var(--blue-line); border-left-color: var(--blue-dark); }
+.evcard:has(a:focus-visible) { border-color: var(--blue); }
+
+.evcard__date {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1px;
+  width: 62px; height: 62px;
+  background: var(--blue);
+  color: var(--on-dark-strong);
+  font-family: var(--font-display);
+  line-height: 1;
+}
+.evcard__day {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.evcard__mon {
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.evcard__body { display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
+.evcard__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: 0;
+}
+.evcard__title a::after { content: ''; position: absolute; inset: 0; }
+.evcard:hover .evcard__title { color: var(--blue-dark); }
+.evcard__where {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.evcard__where::before {
+  content: '';
+  width: 3px; height: 3px;
+  flex: none;
+  background: var(--text-tertiary);
+}
+.evcard__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+}
+.evcard__seats {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+}
+
+@media (max-width: 480px) {
+  .evcard { grid-template-columns: 48px minmax(0, 1fr); gap: var(--space-6); }
+  .evcard__date { width: 48px; height: 48px; }
+  .evcard__day { font-size: var(--fs-xl); }
+}
+
+/* ==========================================================================
+   DANH SÁCH VIỆC LÀM
+   ========================================================================== */
+.joblist { display: grid; gap: var(--space-11); }
+
+.jobgroup { display: grid; gap: 0; }
+.jobgroup__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-5) var(--space-8);
+  background: var(--surface-raised);
+  border-left: 4px solid var(--blue);
+}
+.jobgroup__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-strong);
+  margin: 0;
+}
+.jobgroup__count {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Hàng việc làm: dấu hiệu doanh nghiệp, nội dung, rồi lương và hạn nộp căn phải */
+.jobrow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-7) var(--space-8);
+  border: 1px solid var(--border);
+  border-top: 0;
+  background: var(--surface-base);
+  transition: background var(--dur-instant) var(--ease);
+}
+.jobgroup .jobrow:first-of-type { border-top: 1px solid var(--border); }
+.jobrow:hover { background: var(--blue-wash); }
+
+.jobrow__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--text-strong);
+  margin: 0;
+}
+.jobrow__title a::after { content: ''; position: absolute; inset: 0; }
+.jobrow:hover .jobrow__title { color: var(--blue-dark); }
+
+.jobrow__sub {
+  margin-top: var(--space-2);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+}
+
+.jobrow__side {
+  text-align: right;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-strong);
+}
+.jobrow__side .dim {
+  display: block;
+  margin-top: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-base);
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 760px) {
+  .jobrow {
+    grid-template-columns: 42px minmax(0, 1fr);
+    row-gap: var(--space-5);
+  }
+  .jobrow__side {
+    grid-column: 2;
+    text-align: left;
+    white-space: normal;
+    padding-top: var(--space-5);
+    border-top: 1px dashed var(--border);
+  }
+  .jobrow__side .dim { display: inline; margin-left: var(--space-5); }
+}
+
+/* ==========================================================================
+   CÂU CHUYỆN NỔI BẬT
+   Dùng ở đầu trang Câu chuyện Alumni: chân dung bên trái, trích dẫn bên phải.
+   ========================================================================== */
+.storyfeature {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: var(--space-12);
+  align-items: start;
+  padding: var(--space-11);
+  background: var(--surface-raised);
+  border-left: 6px solid var(--blue);
+}
+.storyfeature__media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--surface-inset);
+  border-bottom: 4px solid var(--blue);
+}
+.storyfeature__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.storyfeature__quote {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+  color: var(--text-strong);
+  margin: 0;
+  padding-left: var(--space-9);
+  border-left: 3px solid var(--blue);
+  max-width: 34ch;
+}
+.storyfeature__who {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  margin-top: var(--space-10);
+}
+.storyfeature__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-strong);
+}
+.storyfeature__role { font-size: var(--fs-md); color: var(--text-secondary); }
+.storyfeature__body {
+  margin-top: var(--space-9);
+  color: var(--text-primary);
+  line-height: var(--lh-relaxed);
+  max-width: 62ch;
+}
+.storyfeature__more { margin-top: var(--space-10); display: flex; flex-wrap: wrap; gap: var(--space-6); }
+
+@media (max-width: 860px) {
+  .storyfeature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-10);
+    padding: var(--space-9);
+  }
+  .storyfeature__media { aspect-ratio: 16 / 9; }
+  .storyfeature__quote { font-size: var(--fs-2xl); max-width: none; }
+}
+
+/* ==========================================================================
+   TIÊU ĐỀ HỘP THOẠI
+   ========================================================================== */
+.modal__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--text-strong);
+  margin: 0;
+}

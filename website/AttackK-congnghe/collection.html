@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="coll.title">Danh muc san pham | HADAL</title>
+<meta name="description" data-i18n-content="coll.desc" content="Loc chuot choi game, ban phim co va ban phim tu tinh HADAL theo trong luong, cam bien, polling rate, loai ket noi va khoang gia.">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead pagehead--media">
+    <img data-col-cover alt="" width="1600" height="500" decoding="async">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><a href="collection.html?c=shop-all" data-i18n="g.catalog">Danh muc</a></li>
+          <li><span aria-current="page" data-col-crumb>Danh muc</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-col-title>Danh muc</h1>
+      <p class="muted" data-col-blurb></p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap shoplayout">
+
+      <!-- Desktop filter rail -->
+      <aside class="filters" data-filters data-i18n-aria-label="f.filtersFor" aria-label="Bo loc san pham"></aside>
+
+      <div>
+        <div class="toolbar">
+          <div class="toolbar__left">
+            <button type="button" class="btn btn--secondary btn--sm filterbtn-mobile" data-open-layer='[data-drawer="filters"]'>
+              <i class="ph-light ph-funnel" aria-hidden="true"></i><span data-i18n="f.title">Bo loc</span>
+            </button>
+            <p class="resultcount" data-resultcount aria-live="polite" data-i18n="g.loading">Dang tai</p>
+          </div>
+          <div class="toolbar__left">
+            <div class="viewtoggle" role="group" data-i18n-aria-label="coll.viewMode" aria-label="Kieu hien thi">
+              <button type="button" data-view="grid" aria-pressed="true" data-i18n-aria-label="coll.grid" aria-label="Hien thi dang luoi"><i class="ph-light ph-squares-four" aria-hidden="true"></i></button>
+              <button type="button" data-view="list" aria-pressed="false" data-i18n-aria-label="coll.list" aria-label="Hien thi dang danh sach"><i class="ph-light ph-rows" aria-hidden="true"></i></button>
+            </div>
+            <div class="row">
+              <label class="text-sm dim" for="sort-desktop" data-i18n="g.sortBy">Sap xep</label>
+              <select class="select" id="sort-desktop" data-sort style="min-height:38px;padding-block:var(--space-2)"></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="activefilters" data-activefilters></div>
+
+        <div class="grid-products" data-grid></div>
+
+        <div class="stack stack-7" style="margin-block-start:var(--space-10);align-items:center" data-loadmore-wrap hidden>
+          <button type="button" class="btn btn--secondary btn--lg" data-loadmore>
+            </button>
+        </div>
+
+        <nav class="pager" style="margin-block-start:var(--space-9)" data-pager data-i18n-aria-label="g.pageOf" aria-label="Phan trang"></nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="viewed-h" data-viewed>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="viewed-h" style="font-size:var(--fs-3xl)" data-i18n="coll.viewed">Ban vua xem</h2>
+        </div>
+      </div>
+      <div class="rail" data-viewed-rail></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Mobile filter drawer. Shares the same markup as the desktop rail. -->
+<aside class="drawer drawer--left" data-drawer="filters" role="dialog" aria-modal="true" data-i18n-aria-label="f.filtersFor" aria-label="Bo loc san pham">
+  <div class="drawer__head">
+    <p class="drawer__title" data-i18n="f.title">Bo loc</p>
+    <button type="button" class="icon-btn" data-close-drawer data-i18n-aria-label="g.close" aria-label="Dong bo loc"><i class="ph-light ph-x" aria-hidden="true"></i></button>
+  </div>
+  <div class="drawer__body" data-filters-mobile></div>
+  <div class="drawer__foot">
+    <div class="row">
+      <label class="text-sm dim" for="sort-mobile" data-i18n="g.sortBy">Sap xep</label>
+      <select class="select" id="sort-mobile" data-sort></select>
+    </div>
+    <button type="button" class="btn btn--primary btn--block" data-close-drawer data-i18n="f.viewResults">Xem ket qua</button>
+  </div>
+</aside>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/collection.js"></script>
+</body>
+</html>

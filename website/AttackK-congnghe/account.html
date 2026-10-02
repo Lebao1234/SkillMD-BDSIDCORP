@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="ac.title">Tai khoan | HADAL</title>
+<meta name="description" data-i18n-content="ac.desc" content="Dang nhap hoac tao tai khoan de theo doi don hang, luu dia chi va quan ly danh sach yeu thich.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><span aria-current="page" data-i18n="m.account">Tai khoan</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-i18n="ac.h1">Tai khoan</h1>
+      <p class="muted" data-i18n="ac.note">Ban dung ky thuat khong co may chu xac thuc.</p>
+    </div>
+  </section>
+
+  <section class="wrap authlayout">
+
+    <div class="authcard">
+      <h2 class="authcard__title" data-i18n="ac.signIn">Dang nhap</h2>
+      <form data-auth="login" novalidate>
+        <div class="stack stack-6">
+          <div class="field">
+            <label class="field__label" for="li-email"><span data-i18n="co.email">Email</span> <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="li-email" type="email" autocomplete="email" data-rule="email" required>
+            <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="li-pass"><span data-i18n="ac.password">Mat khau</span> <span class="req" aria-hidden="true">*</span></label>
+            <div class="row" style="gap:var(--space-3)">
+              <input class="input grow" id="li-pass" type="password" autocomplete="current-password" data-rule="password" required>
+              <button type="button" class="icon-btn icon-btn--bordered" data-pw-toggle="li-pass" data-i18n-aria-label="ac.showPassword" aria-label="Hien mat khau"><i class="ph-light ph-eye" aria-hidden="true"></i></button>
+            </div>
+            <p class="field__help" data-i18n="ac.passwordHelp">Toi thieu 8 ky tu.</p>
+            <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <div class="row row--between row--wrap">
+            <label class="check"><input type="checkbox"><span data-i18n="ac.remember">Ghi nho dang nhap</span></label>
+            <a class="text-sm" href="#" style="text-decoration:underline;text-underline-offset:3px" data-i18n="ac.forgot">Quen mat khau</a>
+          </div>
+          <button class="btn btn--primary btn--lg btn--block" type="submit" data-i18n="ac.signIn">Dang nhap</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="authcard" id="register">
+      <h2 class="authcard__title" data-i18n="ac.register">Tao tai khoan</h2>
+      <form data-auth="register" novalidate>
+        <div class="stack stack-6">
+          <div class="field">
+            <label class="field__label" for="rg-name"><span data-i18n="co.name">Ho va ten</span> <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="rg-name" type="text" autocomplete="name" data-rule="name" required>
+            <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="rg-email"><span data-i18n="co.email">Email</span> <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="rg-email" type="email" autocomplete="email" data-rule="email" required>
+            <p class="field__help" data-i18n="co.emailHelp">Dung de gui xac nhan don hang.</p>
+            <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="rg-pass"><span data-i18n="ac.password">Mat khau</span> <span class="req" aria-hidden="true">*</span></label>
+            <div class="row" style="gap:var(--space-3)">
+              <input class="input grow" id="rg-pass" type="password" autocomplete="new-password" data-rule="password" required>
+              <button type="button" class="icon-btn icon-btn--bordered" data-pw-toggle="rg-pass" data-i18n-aria-label="ac.showPassword" aria-label="Hien mat khau"><i class="ph-light ph-eye" aria-hidden="true"></i></button>
+            </div>
+            <p class="field__help" data-i18n="ac.passwordHelp2">Toi thieu 8 ky tu.</p>
+            <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+          </div>
+          <label class="check"><input type="checkbox"><span data-i18n="ac.optIn">Nhan email ve san pham moi.</span></label>
+          <button class="btn btn--contrast btn--lg btn--block" type="submit" data-i18n="ac.register">Tao tai khoan</button>
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+  <section id="orders" class="section section--tight" aria-labelledby="ord-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="ord-h" data-i18n="ac.orders">Don hang cua toi</h2>
+          <p class="muted" data-i18n="ac.ordersText">Cac don dat duoc luu trong trinh duyet.</p>
+        </div>
+      </div>
+      <div class="stack stack-7" data-orders></div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="acc-wish-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="acc-wish-h" style="font-size:var(--fs-3xl)" data-i18n="ac.saved">Da luu</h2>
+        </div>
+        <a class="link" href="wishlist.html"><span data-i18n="g.viewAll">Xem tat ca</span> <i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="grid-products grid-products--4" data-acc-wish></div>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="acc-viewed-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="section-head__title" id="acc-viewed-h" style="font-size:var(--fs-3xl)" data-i18n="ac.recentlyViewed">Da xem gan day</h2>
+        </div>
+      </div>
+      <div class="grid-products grid-products--4" data-acc-viewed></div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/account.js"></script>
+</body>
+</html>

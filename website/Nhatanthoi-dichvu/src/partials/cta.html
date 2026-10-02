@@ -1,0 +1,76 @@
+    <!-- ===== Đặt lịch thử áo (dùng chung cuối mỗi trang). Gắn API thật: đặt data-endpoint="https://..." trên thẻ form ===== -->
+    <section class="section booking" id="dat-lich" aria-labelledby="bk-title">
+      <div class="container booking-grid">
+        <div class="booking-info">
+          <h2 id="bk-title">Hẹn một buổi <em>thử áo</em></h2>
+          <p class="lead">Thử bao nhiêu mẫu cũng được, không mất phí. Tiệm giữ sẵn những mẫu bạn đã chọn trong túi thử và hẹn giờ để không phải chờ.</p>
+          <ol class="bk-steps">
+            <li><span>Thử</span>Tại tiệm, 30-60 phút</li>
+            <li><span>Giữ</span>Cọc 30% để giữ áo đúng ngày</li>
+            <li><span>Nhận</span>Trước ngày mặc 1 ngày</li>
+            <li><span>Trả</span>Sau ngày mặc 1 ngày, không cần giặt</li>
+          </ol>
+          <p class="bk-direct"><i class="ph ph-map-pin" aria-hidden="true"></i>{{address}}</p>
+        </div>
+
+        <div class="form-shell">
+          <form class="bk-form" data-form novalidate data-endpoint="">
+            <div class="form-body" data-form-body>
+              <div class="bag-panel" id="tui-thu" data-bag-panel>
+                <p class="bag-title"><i class="ph ph-coat-hanger" aria-hidden="true"></i>Túi thử đồ <span data-bag-count>0</span></p>
+                <ul class="bag-list" data-bag-list></ul>
+                <p class="bag-empty" data-bag-empty>Chưa có mẫu nào. Bấm <strong>Thêm vào túi thử</strong> ở mẫu áo bạn thích, hoặc cứ đặt lịch, tiệm sẽ gợi ý giúp.</p>
+                <input type="hidden" name="items" data-bag-field>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="b-name">Họ và tên</label>
+                  <input id="b-name" name="name" type="text" autocomplete="name" required aria-describedby="b-name-err">
+                  <small class="error" id="b-name-err" role="alert"></small>
+                </div>
+                <div class="field">
+                  <label for="b-phone">Số điện thoại</label>
+                  <input id="b-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="b-phone-err">
+                  <small class="error" id="b-phone-err" role="alert"></small>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="b-occ">Dịp mặc</label>
+                  <select id="b-occ" name="occasion">{{occasion-options}}</select>
+                </div>
+                <div class="field">
+                  <label for="b-people">Số người</label>
+                  <input id="b-people" name="people" type="number" min="1" max="40" value="1" inputmode="numeric">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="b-try">Ngày muốn đến thử</label>
+                  <input id="b-try" name="tryDate" type="date" required aria-describedby="b-try-err" data-date-min>
+                  <small class="error" id="b-try-err" role="alert"></small>
+                </div>
+                <div class="field">
+                  <label for="b-event">Ngày mặc <span class="optional">(nếu đã biết)</span></label>
+                  <input id="b-event" name="eventDate" type="date" aria-describedby="b-event-err" data-date-min>
+                  <small class="error" id="b-event-err" role="alert"></small>
+                </div>
+              </div>
+              <div class="field">
+                <label for="b-note">Ghi chú <span class="optional">(không bắt buộc)</span></label>
+                <textarea id="b-note" name="note" rows="3" maxlength="600" placeholder="Ví dụ: mẹ cao 1m55, nặng 62kg, muốn áo tím than tay dài"></textarea>
+              </div>
+              <p class="form-error" data-form-error role="alert" hidden><i class="ph ph-warning-circle" aria-hidden="true"></i><span>Chưa gửi được lịch hẹn. Vui lòng thử lại hoặc gọi {{hotline}}.</span></p>
+              <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Gửi lịch hẹn thử áo<span class="btn-ico"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span></button>
+              <p class="form-note">Tiệm gọi xác nhận trong 30 phút (9:00-21:00). Xem <a href="quy-dinh.html">quy định thuê áo</a>.</p>
+            </div>
+            <div class="form-success" data-form-success hidden tabindex="-1">
+              <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+              <h3>Đã nhận lịch hẹn của <span data-success-name>bạn</span></h3>
+              <p>Tiệm sẽ gọi đến số <strong data-success-phone></strong> để xác nhận giờ thử và giữ sẵn các mẫu bạn chọn.</p>
+              <button class="btn btn-ghost btn-sm" type="button" data-form-reset>Đặt lịch khác</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>

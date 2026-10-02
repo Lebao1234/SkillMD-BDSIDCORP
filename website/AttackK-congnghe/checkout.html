@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="co.title">Thanh toan | HADAL</title>
+<meta name="description" data-i18n-content="co.desc" content="Hoan tat don hang: thong tin nhan hang, phuong thuc van chuyen va thanh toan.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem('as.theme'));
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="g.skip">Bo qua, di thang toi noi dung</a>
+<div data-site-header></div>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap pagehead__inner">
+      <nav aria-label="Duong dan">
+        <ol class="crumbs">
+          <li><a href="index.html" data-i18n="g.home">Trang chu</a></li>
+          <li><a href="cart.html" data-i18n="cart.title">Gio hang</a></li>
+          <li><span aria-current="page" data-i18n="co.step3">Thanh toan</span></li>
+        </ol>
+      </nav>
+      <h1 class="pagehead__title" data-i18n="co.h1">Thanh toan</h1>
+      <p class="muted" data-i18n="co.note">Ban dung ky thuat, khong co giao dich nao duoc thuc hien.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+
+      <div data-empty-cart hidden>
+        <div class="empty">
+          <span class="empty__icon"><i class="ph-light ph-shopping-cart-simple" aria-hidden="true"></i></span>
+          <h2 class="empty__title" data-i18n="co.blocked.title">Khong the thanh toan</h2>
+          <p class="empty__text" data-i18n="co.blocked.text">Gio hang dang trong.</p>
+          <a class="btn btn--primary btn--lg" href="collection.html?c=shop-all" data-i18n="co.blocked.cta">Bat dau mua sam</a>
+        </div>
+      </div>
+
+      <div data-checkout-root>
+        <div class="steps" data-steps></div>
+
+        <div class="checkout">
+          <form novalidate>
+
+            <!-- STEP 1 -->
+            <div data-step-panel="contact" class="stack stack-8">
+              <div class="stack stack-6">
+                <h2 class="authcard__title" style="font-size:var(--fs-2xl)" data-i18n="co.contact">Thong tin lien he</h2>
+                <div class="formgrid">
+                  <div class="field field--full">
+                    <label class="field__label" for="ck-email"><span data-i18n="co.email">Email</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="ck-email" type="email" autocomplete="email" data-field="email" data-rule="email" required>
+                    <p class="field__help" data-i18n="co.emailHelp">Chung toi gui xac nhan don hang toi dia chi nay.</p>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ck-phone"><span data-i18n="co.phone">So dien thoai</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="ck-phone" type="tel" autocomplete="tel" data-field="phone" data-rule="phone" required>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ck-name"><span data-i18n="co.name">Ho va ten</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="ck-name" type="text" autocomplete="name" data-field="name" data-rule="required" required>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack stack-6">
+                <h2 class="authcard__title" style="font-size:var(--fs-2xl)" data-i18n="co.address">Dia chi nhan hang</h2>
+                <div class="formgrid">
+                  <div class="field field--full">
+                    <label class="field__label" for="ck-address"><span data-i18n="co.street">Dia chi</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="ck-address" type="text" autocomplete="street-address" data-field="address" data-rule="required" required>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field field--full">
+                    <label class="field__label" for="ck-address2" data-i18n="co.street2">Toa nha, can ho hoac ghi chu</label>
+                    <input class="input" id="ck-address2" type="text" autocomplete="address-line2" data-field="address2">
+                    <p class="field__help" data-i18n="g.optional">Khong bat buoc.</p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ck-city"><span data-i18n="co.city">Tinh hoac thanh pho</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="ck-city" type="text" autocomplete="address-level2" data-field="city" data-rule="required" required>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ck-zip"><span data-i18n="co.zip">Ma buu chinh</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="ck-zip" type="text" inputmode="numeric" autocomplete="postal-code" data-field="zip" data-rule="zip" required>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field field--full">
+                    <label class="field__label" for="ck-country"><span data-i18n="co.country">Quoc gia</span> <span class="req" aria-hidden="true">*</span></label>
+                    <select class="select" id="ck-country" autocomplete="country-name" data-field="country" data-rule="required">
+                      <option>Viet Nam</option>
+                      <option>United States</option>
+                      <option>United Kingdom</option>
+                      <option>Germany</option>
+                      <option>France</option>
+                      <option>Japan</option>
+                      <option>Korea</option>
+                      <option>Australia</option>
+                      <option>Canada</option>
+                      <option>Singapore</option>
+                    </select>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                </div>
+                <label class="check"><input type="checkbox" data-field="saveAddress"><span data-i18n="co.saveAddress">Luu dia chi nay cho lan mua sau</span></label>
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div data-step-panel="shipping" class="stack stack-8" hidden>
+              <div class="stack stack-6">
+                <h2 class="authcard__title" style="font-size:var(--fs-2xl)" data-i18n="co.step2">Phuong thuc van chuyen</h2>
+                <div class="paymethods" data-ship-options role="radiogroup" data-i18n-aria-label="co.shipChoose" aria-label="Chon phuong thuc van chuyen"></div>
+              </div>
+              <div class="surface surface--pad stack stack-4">
+                <p class="assur-row"><i class="ph-light ph-package" aria-hidden="true"></i>
+                  <span data-i18n="co.shipInfo1">Don hang duoc dong goi trong 24 gio lam viec.</span></p>
+                <p class="assur-row"><i class="ph-light ph-globe-hemisphere-east" aria-hidden="true"></i>
+                  <span data-i18n="co.shipInfo2">Hang duoc giao tu kho gan nhat.</span></p>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div data-step-panel="payment" class="stack stack-8" hidden>
+              <div class="stack stack-6">
+                <h2 class="authcard__title" style="font-size:var(--fs-2xl)" data-i18n="co.payChoose">Phuong thuc thanh toan</h2>
+                <div class="paymethods" data-pay-options role="radiogroup" data-i18n-aria-label="co.payChoose" aria-label="Chon phuong thuc thanh toan"></div>
+
+                <div class="formgrid" data-card-fields>
+                  <div class="field field--full">
+                    <label class="field__label" for="ck-card"><span data-i18n="co.cardNumber">So the</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input mono" id="ck-card" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" data-field="cardNumber" data-rule="card">
+                    <p class="field__help" data-i18n="co.cardHelp">Day la bieu mau minh hoa.</p>
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ck-exp"><span data-i18n="co.cardExpiry">Han dung</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input mono" id="ck-exp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="08/29" data-field="cardExpiry" data-rule="expiry">
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ck-cvc"><span data-i18n="co.cardCvc">Ma bao mat</span> <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input mono" id="ck-cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123" data-field="cardCvc" data-rule="cvc">
+                    <p class="field__error" data-error><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span></span></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="surface surface--pad stack stack-4">
+                <p class="assur-row"><i class="ph-light ph-lock-key" aria-hidden="true"></i>
+                  <span data-i18n="co.secure">Trang nay khong gui du lieu di dau.</span></p>
+              </div>
+
+              <label class="check"><input type="checkbox" data-field="terms"><span data-i18n="co.terms">Toi dong y voi dieu khoan su dung.</span></label>
+            </div>
+
+            <div class="row" style="gap:var(--space-4);margin-block-start:var(--space-9)">
+              <button type="button" class="btn btn--secondary btn--lg" data-back hidden>
+                <i class="ph-light ph-arrow-left" aria-hidden="true"></i><span data-i18n="g.back">Quay lai</span>
+              </button>
+              <button type="button" class="btn btn--primary btn--lg grow" data-next data-i18n="g.continue">Tiep tuc</button>
+            </div>
+          </form>
+
+          <aside class="cartaside" data-order-summary data-i18n-aria-label="co.orderSummary" aria-label="Tom tat don hang"></aside>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="assets/data/products.js"></script>
+<script src="assets/data/reviews.js"></script>
+<script src="assets/data/posts.js"></script>
+<script src="assets/js/brand.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/i18n-content.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>

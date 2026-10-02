@@ -1,0 +1,66 @@
+  <!-- Nút nổi: gọi và Zalo (giống morino) -->
+  <div class="float-actions" aria-label="Liên hệ nhanh">
+    <a class="float-btn" href="tel:{{hotline-tel}}" aria-label="Gọi {{hotline}}"><i class="ph-fill ph-phone" aria-hidden="true"></i><span>Gọi ngay</span></a>
+    <a class="float-btn float-zalo" href="{{zalo}}" target="_blank" rel="noopener" aria-label="Nhắn Zalo"><i class="ph-fill ph-chat-circle-dots" aria-hidden="true"></i><span>Zalo</span></a>
+    <button class="float-btn float-primary" type="button" data-open-booking><i class="ph-light ph-calendar-plus" aria-hidden="true"></i><span>Đặt lịch</span></button>
+  </div>
+
+  <!-- Popup đặt lịch. Gắn API thật: đặt data-endpoint="https://..." trên thẻ form -->
+  <dialog class="modal" id="booking-modal" aria-labelledby="bk-title" data-modal>
+    <div class="modal-inner">
+      <button class="modal-close" type="button" data-close-modal aria-label="Đóng"><i class="ph-light ph-x" aria-hidden="true"></i></button>
+      <form data-form novalidate data-endpoint="">
+        <div class="form-body" data-form-body>
+          <h2 id="bk-title">Đặt lịch dịch vụ</h2>
+          <p class="muted">K-Lab's gọi xác nhận trong 15 phút (8:00-21:00). Không cần đặt cọc.</p>
+          <div class="field-row">
+            <div class="field">
+              <label for="b-name">Họ và tên</label>
+              <input id="b-name" name="name" type="text" autocomplete="name" required aria-describedby="b-name-err">
+              <small class="error" id="b-name-err" role="alert"></small>
+            </div>
+            <div class="field">
+              <label for="b-phone">Số điện thoại</label>
+              <input id="b-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="b-phone-err">
+              <small class="error" id="b-phone-err" role="alert"></small>
+            </div>
+          </div>
+          <div class="field">
+            <label for="b-service">Dịch vụ</label>
+            <select id="b-service" name="service" required aria-describedby="b-service-err">{{service-options}}</select>
+            <small class="error" id="b-service-err" role="alert"></small>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="b-branch">Cơ sở hoặc hình thức</label>
+              <select id="b-branch" name="branch" required aria-describedby="b-branch-err" data-branch-select>{{branch-options}}</select>
+              <small class="error" id="b-branch-err" role="alert"></small>
+            </div>
+            <div class="field">
+              <label for="b-qty">Số lượng</label>
+              <select id="b-qty" name="qty">
+                <option>1 đôi/món</option><option>2 đôi/món</option><option>3-5 đôi/món</option><option>Trên 5 đôi/món</option>
+              </select>
+            </div>
+          </div>
+          <div class="field" data-address-field hidden>
+            <label for="b-address">Địa chỉ nhận giày</label>
+            <input id="b-address" name="address" type="text" autocomplete="street-address" aria-describedby="b-address-err" placeholder="Số nhà, đường, phường">
+            <small class="error" id="b-address-err" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="b-note">Ghi chú <span class="optional">(không bắt buộc)</span></label>
+            <textarea id="b-note" name="note" rows="2" maxlength="400" placeholder="Ví dụ: 2 đôi giày trắng bị ố đế"></textarea>
+          </div>
+          <p class="form-error" data-form-error role="alert" hidden><i class="ph-light ph-warning-circle" aria-hidden="true"></i><span>Chưa gửi được. Vui lòng thử lại hoặc gọi {{hotline}}.</span></p>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" data-submit>Gửi yêu cầu<span class="btn-ico"><i class="ph-light ph-arrow-up-right" aria-hidden="true"></i></span></button>
+        </div>
+        <div class="form-success" data-form-success hidden tabindex="-1">
+          <i class="ph-fill ph-check-circle" aria-hidden="true"></i>
+          <h2>Đã nhận yêu cầu</h2>
+          <p>Cảm ơn <strong data-success-name>bạn</strong>. K-Lab's sẽ gọi số <strong data-success-phone></strong> trong 15 phút để xác nhận lịch.</p>
+          <button class="btn btn-dark" type="button" data-close-modal>Đóng</button>
+        </div>
+      </form>
+    </div>
+  </dialog>

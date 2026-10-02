@@ -1,0 +1,38 @@
+<!--meta {"title":"Thư viện ảnh trước và sau","description":"Ảnh trước và sau khi vệ sinh, repaint, sửa chữa giày và spa túi xách tại K-Lab's.","nav":"ve","crumbs":[["Thư viện trước và sau","thu-vien.html"]]}-->
+    <!-- TOÀN BỘ ẢNH TRÊN TRANG LÀ ẢNH MINH HỌA từ Unsplash, không phải cùng một món đồ.
+         Thay bằng ảnh trước/sau thật của cửa hàng (chụp cùng góc, cùng ánh sáng) trước khi đưa lên mạng. -->
+    <section class="page-dark">
+      <div class="container">
+        {{crumbs}}
+        <h1>Trước và <span class="red">sau</span></h1>
+        <p class="lead">Mỗi đơn hàng đều được chụp ảnh trước và sau xử lý, gửi cho khách qua Zalo. Ảnh trên trang hiện là ảnh minh họa.</p>
+      </div>
+    </section>
+    <section class="section" data-filter-scope>
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc theo dịch vụ">
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="ve-sinh" aria-pressed="false">Vệ sinh</button>
+          <button class="chip" type="button" data-filter-value="phuc-hoi" aria-pressed="false">Phục hồi, sửa chữa</button>
+          <button class="chip" type="button" data-filter-value="do-hieu" aria-pressed="false">Đồ hiệu</button>
+        </div>
+        <div class="gallery" data-filter-target>
+          <article class="gallery-item reveal" data-category="ve-sinh">
+            <div class="ba"><figure><img src="assets/img/truoc-giay-ban.jpg" width="1400" height="1000" alt="Giày da trắng bám bẩn" loading="lazy"><figcaption>Trước</figcaption></figure><figure><img src="assets/img/sau-giay-sach.jpg" width="1400" height="1000" alt="Giày da trắng sạch" loading="lazy"><figcaption>Sau</figcaption></figure></div>
+            <div><h3>Giày da trắng bám bẩn</h3><p>Vệ sinh da trơn + tẩy ố thân</p></div>
+          </article>
+          <article class="gallery-item reveal" data-category="ve-sinh">
+            <figure class="gallery-single"><img src="assets/img/ve-sinh-bo-dung-cu.jpg" width="1400" height="933" alt="Giày trắng sạch cạnh bàn chải và dung dịch" loading="lazy"></figure>
+            <div><h3>Vệ sinh giày vải sáng màu</h3><p>Ảnh minh họa dịch vụ</p></div>
+          </article>
+          <article class="gallery-item reveal" data-category="phuc-hoi">
+            <figure class="gallery-single"><img src="assets/img/custom-ve.jpg" width="1200" height="800" alt="Giày cổ cao vẽ tay họa tiết" loading="lazy"></figure>
+            <div><h3>Custom vẽ tay</h3><p>Ảnh minh họa dịch vụ</p></div>
+          </article>
+          <article class="gallery-item reveal" data-category="do-hieu">
+            <figure class="gallery-single"><img src="assets/img/tui-tote.jpg" width="900" height="1150" alt="Túi tote da nâu" loading="lazy"></figure>
+            <div><h3>Spa túi da</h3><p>Ảnh minh họa dịch vụ</p></div>
+          </article>
+        </div>
+      </div>
+    </section>

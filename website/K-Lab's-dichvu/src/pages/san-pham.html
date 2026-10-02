@@ -1,0 +1,28 @@
+<!--meta {"title":"Sản phẩm chăm sóc giày","description":"Dung dịch vệ sinh, bàn chải, xịt nano chống nước, sáp dưỡng da và giữ form giày K-Lab's Care. Đặt mua qua Zalo hoặc tại cơ sở.","nav":"san-pham","crumbs":[["Sản phẩm","san-pham.html"]]}-->
+    <!-- Sản phẩm và giá là dữ liệu mẫu, sửa trong src/data/products.js -->
+    <section class="page-dark">
+      <div class="container">
+        {{crumbs}}
+        <h1>Sản phẩm chăm sóc giày</h1>
+        <p class="lead">Chính những sản phẩm kỹ thuật viên K-Lab's dùng hằng ngày, đóng gói cho bạn tự chăm sóc tại nhà. Giao hàng COD toàn quốc.</p>
+      </div>
+    </section>
+    <section class="section" data-filter-scope>
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc sản phẩm">
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="ve-sinh" aria-pressed="false">Vệ sinh giày</button>
+          <button class="chip" type="button" data-filter-value="bao-ve" aria-pressed="false">Chống nước, bảo quản</button>
+          <button class="chip" type="button" data-filter-value="da" aria-pressed="false">Chăm sóc đồ da</button>
+        </div>
+        {{products}}
+        <div class="empty-state" data-empty hidden><i class="ph-light ph-package" aria-hidden="true"></i><h3>Chưa có sản phẩm trong mục này</h3></div>
+      </div>
+    </section>
+    <section class="section section-muted">
+      <div class="container feature-grid">
+        <div class="feature"><i class="ph-light ph-truck" aria-hidden="true"></i><h3>Giao COD toàn quốc</h3><p>Kiểm tra hàng trước khi thanh toán.</p></div>
+        <div class="feature"><i class="ph-light ph-arrows-counter-clockwise" aria-hidden="true"></i><h3>Đổi trả 30 ngày</h3><p>Sản phẩm lỗi đổi mới, chưa mở nắp được hoàn tiền.</p></div>
+        <div class="feature"><i class="ph-light ph-chat-circle-text" aria-hidden="true"></i><h3>Hướng dẫn sử dụng</h3><p>Kỹ thuật viên hướng dẫn qua video call nếu bạn cần.</p></div>
+      </div>
+    </section>

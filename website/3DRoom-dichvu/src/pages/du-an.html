@@ -1,0 +1,22 @@
+<!--meta {"title":"Dự án in 3D tiêu biểu","description":"Các dự án in 3D của 3DRoom cho cơ khí, kiến trúc, phát triển sản phẩm và quà tặng doanh nghiệp, kèm công nghệ, vật liệu và thời gian thực hiện.","nav":"du-an","crumbs":[["Dự án","du-an.html"]]}-->
+    <!-- Dự án là dữ liệu mẫu, thay trong src/data/projects.js -->
+    <section class="page-head">
+      <div class="container">
+        {{crumbs}}
+        <h1>Những thứ đã <em>rời khỏi bàn in</em></h1>
+        <p class="lead">Mỗi dự án ghi rõ công nghệ, vật liệu và thời gian thực hiện để bạn ước lượng cho dự án của mình.</p>
+      </div>
+    </section>
+
+    <section class="section-tight" data-filter-scope data-filter-key="industry">
+      <div class="container">
+        <div class="filter" role="group" aria-label="Lọc theo ngành" data-filter>
+          <button class="chip is-active" type="button" data-filter-value="all" aria-pressed="true">Tất cả</button>
+          <button class="chip" type="button" data-filter-value="co-khi" aria-pressed="false">Cơ khí</button>
+          <button class="chip" type="button" data-filter-value="kien-truc" aria-pressed="false">Kiến trúc</button>
+          <button class="chip" type="button" data-filter-value="san-pham" aria-pressed="false">Phát triển sản phẩm</button>
+          <button class="chip" type="button" data-filter-value="qua-tang" aria-pressed="false">Quà tặng</button>
+        </div>
+        {{projects}}
+      </div>
+    </section>
