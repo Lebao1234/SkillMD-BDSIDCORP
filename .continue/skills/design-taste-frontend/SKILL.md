@@ -206,9 +206,13 @@ LLMs default to clichés. Override these defaults proactively. Each rule has a c
   * **Palette-rotation rule:** if the previous premium-consumer project you generated used the beige+brass family, this one MUST use a different family. Do not ship the same warm-craft palette twice in a row.
   * **Override:** the beige+brass+espresso palette is acceptable ONLY when the brand brief explicitly names those colors, or when the brand identity is genuinely vintage / artisan / warm-craft AND you can articulate why this specific palette fits this specific brand. Default-reaching for it because "this is a cookware brief" is banned.
 
-### 4.3 Layout Diversification
-* **ANTI-CENTER BIAS:** Centered Hero / H1 sections are avoided when `DESIGN_VARIANCE > 4`. Force "Split Screen" (50/50), "Left-aligned content / right-aligned asset", "Asymmetric white-space", or scroll-pinned structures.
-* **Override:** centered hero is OK for editorial / manifesto / launch-announcement briefs where the message itself is the design.
+### 4.3 Layout & Hero Diversification (Rotation Mandate)
+* **HERO ARCHETYPE ROTATION (Mandatory):** Never default to the 2-column Asymmetric Split Hero (Left text / Right image collage) for every project. Rotate and alternate among 5 distinct Hero Archetypes based on industry fit:
+  1. **Full-width Carousel / Image Slider Hero:** Best for Fashion, rental apparel, lookbooks, photography studios, luxury real estate, hospitality/resorts, retail. Uses 2–4 slides with smooth cross-fade, full-bleed imagery, elegant typography overlay with soft vignette gradient, and minimal progress-line / arrow navigation (no bulky dots).
+  2. **Centered Cinematic / Immersive Backdrop Hero:** Best for EdTech, SaaS, flagship products, creative platforms. Massive centered typography over atmospheric media/video background with subtle gradient scrim.
+  3. **Bento Grid Hero:** Best for modern software, dev tools, fintech. Core headline tile flanked by 2-3 auxiliary feature cards (e.g. mini chart, preview snippet, live stat badge).
+  4. **Editorial Manifesto / Minimalist Hero:** Best for high-end consulting, legal, architecture, luxury branding. Stark typography with immense whitespace, poetic restraint, and zero distracting clutter.
+  5. **Asymmetric Split Hero:** Best for industrial engineering, manufacturing, specialized B2B services where text directly balances against a single focused technical photo or schematic.
 
 ### 4.4 Materiality, Shadows, Cards
 * Use cards ONLY when elevation communicates real hierarchy. Otherwise group with `border-t`, `divide-y`, or negative space.

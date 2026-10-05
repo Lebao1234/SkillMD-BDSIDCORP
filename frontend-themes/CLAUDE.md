@@ -78,8 +78,22 @@ Mono: Geist Mono | JetBrains Mono | IBM Plex Mono
 
 ---
 
-## LAYOUT RULES
-- ANTI-CENTER: `DESIGN_VARIANCE > 4` → dùng Split Screen, Left-aligned, Asymmetric
+## LAYOUT & HERO DIVERSIFICATION (LUÂN PHIÊN BỐ CỤC HERO)
+- **KHÔNG lặp lại kiểu 2 cột (Left text / Right collage) cho mọi website.** Bắt buộc luân phiên áp dụng 5 Archetypes Hero phù hợp với từng ngành:
+  1. **Archetype 1 - Full-width Carousel / Image Slider Hero:**
+     - *Phù hợp nhất:* Thời trang, cho thuê đồ (như áo dài, váy cưới), studio nhiếp ảnh, bất động sản, resort/khách sạn, showroom ô tô/xe máy, e-commerce bán lẻ.
+     - *Đặc điểm:* Tràn viền (Full-width), 2–4 slide chuyển động mượt mà (smooth cross-fade hoặc drag), ảnh lớn tỉ lệ 16:9 hoặc 21:9, typography đè lên ảnh kèm lớp phủ gradient vignette mềm, thanh điều hướng dạng progress bar hoặc mũi tên tối giản (KHÔNG dùng chấm tròn to thô).
+  2. **Archetype 2 - Centered Immersive / Cinematic Hero (Đè nền điện ảnh):**
+     - *Phù hợp nhất:* Công nghệ, SaaS, giải pháp giáo dục EdTech, sự kiện, phim ảnh.
+     - *Đặc điểm:* Tiêu đề căn giữa uy lực (max 2 dòng), subtext cô đọng, nút CTA pill nổi bật, nền là ảnh hoặc video chất lượng cao với lớp phủ tối dần (cinematic overlay).
+  3. **Archetype 3 - Bento Grid Hero (Bố cục Bento đa chức năng mở đầu):**
+     - *Phù hợp nhất:* Công nghệ phần mềm, startup, app tiện ích, agency số.
+     - *Đặc điểm:* Khối chính chứa tiêu đề + CTA, bao quanh bởi 2-3 ô bento phụ hiển thị tính năng độc đáo, video demo nhỏ, hoặc con số ấn tượng.
+  4. **Archetype 4 - Editorial Manifesto / Minimalist Hero:**
+     - *Phù hợp nhất:* Doanh nghiệp tư vấn cấp cao, luật, kiến trúc, tài chính.
+     - *Đặc điểm:* Tiêu đề cực lớn mang tính tuyên ngôn (Manifesto), typography sắc sảo, bố cục thoáng đãng giàu khoảng trắng.
+  5. **Archetype 5 - Asymmetric Split Hero (2 cột bất đối xứng):**
+     - *Phù hợp nhất:* Giới thiệu dịch vụ kỹ thuật, cơ khí, y tế khi cần đặt text song song với 1 hình ảnh minh họa duy nhất.
 - Grid > Flexbox math (KHÔNG `calc(33% - 1rem)`)
 - Max-width: `max-w-[1400px] mx-auto` hoặc `max-w-7xl`
 - Hero top padding: max `pt-24` (6rem)

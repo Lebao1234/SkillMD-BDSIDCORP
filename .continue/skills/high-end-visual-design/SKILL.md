@@ -34,6 +34,10 @@ Before writing code, silently "roll the dice" and select ONE combination from th
    - **Mobile Collapse:** Remove all rotations and negative-margin overlaps below `768px`. Stack vertically with standard spacing. Overlapping elements cause touch-target conflicts on mobile.
 3. **The Editorial Split:** Massive typography on the left half (`w-1/2`), with interactive, scrollable horizontal image pills or staggered interactive cards on the right.
    - **Mobile Collapse:** Converts to a full-width vertical stack (`w-full`). Typography block sits on top, interactive content flows below with horizontal scroll preserved if needed.
+4. **The Full-Width Cinematic Carousel Hero:** Full-bleed interactive image/lookbook slider (2-4 slides). Ideal for fashion, apparel rental, photography, real estate, hospitality. Typographic headlines float over cinematic photography with a dark bottom/edge vignette scrim. Navigation uses sleek progress indicators or slender SVG arrow rings, never chunky dots.
+   - **Mobile Collapse:** Keeps the carousel swiping intact, scales typography to `text-3xl md:text-5xl`, ensures touch gestures (drag/swipe) feel native.
+5. **The Immersive Backdrop Hero:** Massive centered or left-bottom anchored typography set directly against a fullscreen background visual (photography or subtle video loop). Features a high-contrast floating pill CTA.
+   - **Mobile Collapse:** Converts background to subtle top-anchored framing with content flowing naturally below.
 
 **Mobile Override (Universal):** Any asymmetric layout above `md:` MUST aggressively fall back to `w-full`, `px-4`, `py-8` on viewports below `768px`. Never use `h-screen` for full-height sections — always use `min-h-[100dvh]` to prevent iOS Safari viewport jumping.
 
