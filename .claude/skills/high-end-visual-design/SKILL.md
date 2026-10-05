@@ -68,7 +68,11 @@ Never use default transitions. All motion must simulate real-world mass and spri
 - **The Modal Expansion:** The menu should open as a massive, screen-filling overlay with a heavy glass effect (`backdrop-blur-3xl bg-black/80` or `bg-white/80`). 
 - **Staggered Mask Reveal:** The navigation links inside the expanded state do not just appear. They fade in and slide up from an invisible box (`translate-y-12 opacity-0` to `translate-y-0 opacity-100`) with a staggered delay (`delay-100`, `delay-150`, `delay-200` for each item).
 
-### B. Magnetic Button Hover Physics
+### B. Footer Geometries & Terminal Anchors
+- **Footer Geometry 1 - Floating Inset Rounded Card (Bo tròn):** Footer sits as a standalone floating island inside the page frame (`mx-4 md:mx-8 mb-6 md:mb-8`), with deep corner radii (`rounded-3xl` or `rounded-[2.5rem]`), dramatic contrasting substrate (`bg-neutral-950 text-white`), housing integrated rounded CTA modules and pill social chips. Perfect for modern SaaS, consumer tech, lifestyle, creative agencies.
+- **Footer Geometry 2 - Full-Width Straight Edge (Không bo tròn - Cạnh sắc nét):** Spans 100% viewport width with zero bottom margin (`w-full`, `rounded-none`, `m-0`), separated by a razor-sharp 1px top border (`border-t border-black/10 dark:border-white/10`). Built on rigid Swiss architectural grids with exhaustive legal/business credentials and comprehensive directory columns. Perfect for manufacturing, industrial engineering, financial institutions, enterprise legal, large e-commerce catalogs.
+
+### C. Magnetic Button Hover Physics
 - Use the `group` utility. On hover, do not just change the background color.
 - Scale the entire button down slightly (`active:scale-[0.98]`) to simulate physical pressing.
 - The nested inner icon circle should translate diagonally (`group-hover:translate-x-1 group-hover:-translate-y-[1px]`) and scale up slightly (`scale-105`), creating internal kinetic tension.

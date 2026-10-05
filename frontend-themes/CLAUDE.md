@@ -113,6 +113,14 @@ Mono: Geist Mono | JetBrains Mono | IBM Plex Mono
   - *Đặc điểm:* Thanh navbar phẳng chạy suốt toàn bộ chiều ngang màn hình (`w-full`, `rounded-none`, `top-0`, sticky hoặc fixed), góc cạnh vuông vắn sắc nét (`border-b border-neutral-200 dark:border-neutral-800`), nội dung bên trong được căn theo khung lưới chuẩn (`max-w-7xl mx-auto px-6` hoặc `1400px`).
   - *Phù hợp nhất:* Công nghiệp, Cơ khí, Bán lẻ / E-commerce quy mô lớn, Doanh nghiệp truyền thống, Tập đoàn tài chính, Tạp chí thời trang cao cấp (Editorial Luxury), Kiến trúc & Xây dựng.
 
+### FOOTER GEOMETRY (LUÂN PHIÊN SONG SONG GIỮA BO TRÒN VÀ KHÔNG BO TRÒN)
+- **Kiểu A - Footer Bo Tròn (Floating / Inset Rounded Card Footer):**
+  - *Đặc điểm:* Footer đóng vai trò như một "chiếc card lớn độc lập" đặt lọt bên trong trang (`mx-4 md:mx-8 mb-6 md:mb-8`, có khoảng hở margin ở đáy), các góc trên hoặc cả 4 góc được bo cong lớn (`rounded-3xl` hoặc `rounded-[2.5rem]`), nền tương phản sang trọng (`bg-neutral-900 text-white` hoặc nền sáng ấm `bg-[#F7F6F2]`), tích hợp khối CTA lớn bo tròn trước khi chia các cột liên kết.
+  - *Phù hợp nhất:* SaaS, Startup công nghệ, Consumer Apps, Thời trang / Lifestyle trẻ trung, Studio sáng tạo, Portfolio cá nhân.
+- **Kiểu B - Footer Không Bo Tròn (Full-width Edge-to-Edge Straight Footer):**
+  - *Đặc điểm:* Trải dài 100% bề ngang màn hình (`w-full`, `rounded-none`, chạm sát mép đáy màn hình `m-0`), phân định với thân trang bằng đường kẻ phân cách sắc nét 1px (`border-t border-neutral-200 dark:border-neutral-800`), layout chia cột nghiêm ngặt (Swiss Grid chuẩn 3-4 cột: Thông tin pháp nhân/địa chỉ, Danh mục liên kết, Hỗ trợ & Chính sách, Bản quyền toàn phần).
+  - *Phù hợp nhất:* Doanh nghiệp sản xuất, Cơ khí công nghiệp, Tập đoàn tài chính, Ngân hàng, Bệnh viện / Y tế, Đại siêu thị / E-commerce quy mô lớn, Cổng thông tin giáo dục / Viện nghiên cứu.
+
 ### CHẾ ĐỘ 1: Trang Giới thiệu Doanh nghiệp / Dịch vụ / Portfolio (FLAT CLEAN NAV - KHÔNG DÙNG DROPDOWN)
 - **Bản chất:** Các trang giới thiệu, tư vấn, dịch vụ thường chỉ có vài trang con. Không dùng dropdown để giấu link.
 - **Cấu trúc:** Thanh điều hướng phẳng 1 dòng duy nhất trên desktop (chiều cao 64–72px, max 80px).
