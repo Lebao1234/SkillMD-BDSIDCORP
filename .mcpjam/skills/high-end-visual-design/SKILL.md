@@ -16,6 +16,7 @@ If your generated code includes ANY of the following, the design instantly fails
 - **Banned Icons:** Standard thick-stroked Lucide, FontAwesome, or Material Icons. Use only ultra-light, precise lines (e.g., Phosphor Light, Remix Line).
 - **Banned Borders & Shadows:** Generic 1px solid gray borders. Harsh, dark drop shadows (`shadow-md`, `rgba(0,0,0,0.3)`). 
 - **Banned Layouts:** Edge-to-edge sticky navbars glued to the top. Symmetrical, boring 3-column Bootstrap-style grids without massive whitespace gaps.
+- **Banned Dropdown Monograms:** Single-letter square badges (`[T]`, `[X]`, `[G]`) inside dropdown lists. Use real product photography thumbnails or clean Flat Nav.
 - **Banned Motion:** Standard `linear` or `ease-in-out` transitions. Instant state changes without interpolation.
 
 ## 3. THE CREATIVE VARIANCE ENGINE
@@ -54,7 +55,9 @@ Never place a premium card, image, or container flatly on the background. They m
 ## 5. MOTION CHOREOGRAPHY (FLUID DYNAMICS)
 Never use default transitions. All motion must simulate real-world mass and spring physics. Use custom cubic-beziers (e.g., `transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]`).
 
-### A. The "Fluid Island" Nav & Hamburger Reveal
+### A. The "Fluid Island" Nav & Dual-Mode Strategy
+- **Mode 1 - Corporate / Agency / Services (Flat Clean Nav):** Single-line, zero dropdowns. Clean typographic links (Home, Services, Work, About, Contact) directly on the bar with a trailing pill CTA. Eliminates artificial navigation friction.
+- **Mode 2 - E-Commerce / Store (80% Viewport Width Mega-Dropdown):** Expands to ~80vw (`width: min(85vw, 1200px)`). 3-4 column grid: Category links column (left), 2-column Visual Product Grid with real photo thumbnails (1:1), and a Featured Promo card (right) + bottom "View all products →" link.
 - **Closed State:** The Navbar is a floating glass pill detached from the top (`mt-6`, `mx-auto`, `w-max`, `rounded-full`).
 - **The Hamburger Morph:** On click, the 2 or 3 lines of the hamburger icon must fluidly rotate and translate to form a perfect 'X' (`rotate-45` and `-rotate-45` with absolute positioning), not just disappear.
 - **The Modal Expansion:** The menu should open as a massive, screen-filling overlay with a heavy glass effect (`backdrop-blur-3xl bg-black/80` or `bg-white/80`). 

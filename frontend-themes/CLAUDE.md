@@ -35,6 +35,8 @@ Trước khi viết bất kỳ dòng code nào, bắt buộc phải:
 ## DESIGN ANTI-PATTERNS (BANNED)
 > Những thứ này sẽ làm giao diện trông AI generic — TUYỆT ĐỐI KHÔNG DÙNG
 
+- ❌ Fake monogram / letter-box avatar trong dropdown (`[T]`, `[X]`, `[G]` - `.drop-code`). Trông gượng gạo, giả tạo và phi thực tế.
+- ❌ Dropdown rườm rà trên trang giới thiệu doanh nghiệp / dịch vụ / portfolio khi chỉ có 1-2 liên kết con (dùng Flat Clean Nav).
 - ❌ Inter font làm font chính cho landing premium
 - ❌ AI Purple / Blue glow gradient
 - ❌ Centered hero với dark mesh background
@@ -82,8 +84,43 @@ Mono: Geist Mono | JetBrains Mono | IBM Plex Mono
 - Max-width: `max-w-[1400px] mx-auto` hoặc `max-w-7xl`
 - Hero top padding: max `pt-24` (6rem)
 - Hero: tối đa 4 text elements (eyebrow + headline + subtext + CTA)
-- Nav: single line desktop, max 80px height
 - Bento: ĐÚNG số cell với nội dung, không cell trống
+
+---
+
+## NAVIGATION ARCHITECTURE (DUAL-MODE STRATEGY)
+> Tuân thủ nghiêm ngặt 2 phong cách điều hướng thực tế tùy theo loại trang, tuyệt đối không tạo dropdown giả lập chữ cái `[T]`, `[X]`, `[G]`:
+
+### CHẾ ĐỘ 1: Trang Giới thiệu Doanh nghiệp / Dịch vụ / Portfolio (FLAT CLEAN NAV - KHÔNG DÙNG DROPDOWN)
+- **Bản chất:** Các trang giới thiệu, tư vấn, dịch vụ thường chỉ có vài trang con. Không dùng dropdown để giấu link.
+- **Cấu trúc:** Thanh điều hướng phẳng 1 dòng duy nhất trên desktop (chiều cao 64–72px, max 80px).
+  ```text
+  [Logo Thương Hiệu] -------- [Trang chủ] [Về chúng tôi] [Dịch vụ / Giải pháp] [Dự án] [Tin tức] [Liên hệ] -------- [CTA: Nhận tư vấn / Báo giá]
+  ```
+- **Hành vi:**
+  - Mỗi liên kết là text link rõ ràng, click là chuyển trang đích hoặc cuộn mượt đến section tương ứng.
+  - Active state: gạch chân tinh tế hoặc nền pill siêu nhẹ (`bg-neutral-100` / `bg-white/10`).
+  - Mobile (< 1024px): Hamburger menu mở full-screen overlay với hiệu ứng stagger-fade cho các link lớn.
+
+### CHẾ ĐỘ 2: Cửa hàng / Bán hàng / Catalog đa dạng sản phẩm (REALISTIC MEGA-DROPDOWN WIDTH 80%)
+- **Bản chất:** Áp dụng khi có nhiều danh mục sản phẩm, biến thể hoặc bộ sưu tập (E-commerce, Tech Store, Thời trang, Thiết bị...).
+- **Độ rộng:** Container dropdown chiếm **80% độ rộng màn hình** (`width: min(85vw, 1200px)` hoặc `w-[80vw]`), căn giữa theo viewport hoặc neo trực tiếp dưới header.
+- **Bố cục bên trong (Layout 3-4 cột chuẩn thương mại điện tử thực tế):**
+  1. **Cột 1 - Phân loại / Danh mục con (Category Column, 20-25%):**
+     - Liệt kê các nhóm sản phẩm (VD: Máy ảnh Mirrorless, Ống kính góc rộng, Phụ kiện...).
+     - Link chữ rõ ràng kèm hover highlight tinh tế, KHÔNG dùng badge ô vuông.
+  2. **Cột 2 & 3 - Lưới Sản phẩm trực quan (Product Visual Grid, 50-55%):**
+     - Hiển thị 3–4 sản phẩm tiêu biểu trực tiếp trong dropdown.
+     - Mỗi sản phẩm gồm:
+       - **Ảnh thumbnail thực tế (1:1 hoặc 4:3)**: Ảnh sản phẩm rõ nét trên nền trung tính, có bo góc nhẹ.
+       - **Tên sản phẩm**: In đậm, chuẩn typography (VD: *Fujifilm X-T50*, *Sony A7C II*).
+       - **Giá hoặc nhãn phân khúc**: VD: *28.990.000₫* hoặc nhãn nhỏ `New` / `Best-seller`.
+  3. **Cột 4 - Featured Promo Card / Dòng chủ lực (20-25%):**
+     - 1 card ảnh banner nổi bật quảng bá dòng sản phẩm mới nhất hoặc chương trình mùa lễ.
+     - Kèm 1 CTA ngắn: *"Khám phá ngay →"*.
+  4. **Footer Strip (Dải đáy menu):**
+     - Thanh viền mảnh 1px ngăn cách ở đáy: *"Xem toàn bộ [N] sản phẩm trong bộ sưu tập →"*.
+- **Cấm kỵ:** Tuyệt đối KHÔNG dùng ô vuông chữ cái viết tắt (`.drop-code`) như `T`, `X`, `G`. Bắt buộc dùng hình ảnh sản phẩm thật hoặc icon SVG nét mảnh.
 
 ---
 
