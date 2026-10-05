@@ -105,6 +105,14 @@ Mono: Geist Mono | JetBrains Mono | IBM Plex Mono
 ## NAVIGATION ARCHITECTURE (DUAL-MODE STRATEGY)
 > Tuân thủ nghiêm ngặt 2 phong cách điều hướng thực tế tùy theo loại trang, tuyệt đối không tạo dropdown giả lập chữ cái `[T]`, `[X]`, `[G]`:
 
+### HEADER GEOMETRY (LUÂN PHIÊN SONG SONG GIỮA BO TRÒN VÀ KHÔNG BO TRÒN)
+- **Kiểu A - Header Bo Tròn (Floating Rounded Pill / Island Header):**
+  - *Đặc điểm:* Thanh navbar độc lập, nổi lơ lửng cách mép trên màn hình (`mt-4` đến `mt-6`, `mx-auto`, `w-max` hoặc `max-w-6xl`), bo góc viên thuốc mềm mại (`rounded-full` hoặc `rounded-2xl`), nền kính mờ (`backdrop-blur-md bg-white/80` hoặc `bg-neutral-900/80`), viền mỏng hairline (`ring-1 ring-black/5` hoặc `border border-white/10`).
+  - *Phù hợp nhất:* Ứng dụng công nghệ, AI, Startup hiện đại, Mobile-first, Sản phẩm sáng tạo, Portfolio cá nhân.
+- **Kiểu B - Header Không Bo Tròn (Full-width Edge-to-Edge Straight Header):**
+  - *Đặc điểm:* Thanh navbar phẳng chạy suốt toàn bộ chiều ngang màn hình (`w-full`, `rounded-none`, `top-0`, sticky hoặc fixed), góc cạnh vuông vắn sắc nét (`border-b border-neutral-200 dark:border-neutral-800`), nội dung bên trong được căn theo khung lưới chuẩn (`max-w-7xl mx-auto px-6` hoặc `1400px`).
+  - *Phù hợp nhất:* Công nghiệp, Cơ khí, Bán lẻ / E-commerce quy mô lớn, Doanh nghiệp truyền thống, Tập đoàn tài chính, Tạp chí thời trang cao cấp (Editorial Luxury), Kiến trúc & Xây dựng.
+
 ### CHẾ ĐỘ 1: Trang Giới thiệu Doanh nghiệp / Dịch vụ / Portfolio (FLAT CLEAN NAV - KHÔNG DÙNG DROPDOWN)
 - **Bản chất:** Các trang giới thiệu, tư vấn, dịch vụ thường chỉ có vài trang con. Không dùng dropdown để giấu link.
 - **Cấu trúc:** Thanh điều hướng phẳng 1 dòng duy nhất trên desktop (chiều cao 64–72px, max 80px).
