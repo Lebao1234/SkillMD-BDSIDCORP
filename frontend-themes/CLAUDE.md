@@ -248,9 +248,8 @@ Icons: Phosphor Icons CDN
 
 ## TOOLS AVAILABLE
 - `firecrawl` — web research, crawl reference sites
-- `generate_image` — tạo ảnh AI theo mô tả
+- Ảnh: hiện các site dùng ảnh Unsplash tải về `assets/img/` (không có `generate_image` cấu hình sẵn)
 - `playwright-mcp` — screenshot, browser testing
-- `github-mcp` — version control
 - `design-taste-frontend` skill — anti-slop design rules
 - `stitch-design-taste` skill — DESIGN.md generation
 
@@ -273,4 +272,6 @@ Icons: Phosphor Icons CDN
 │       └── [gen-ai-images]
 └── pages/             ← Sub-pages nếu cần
 ```
+
+> Site thực tế trong `website/` dùng `src/` + `tools/build.js` thay cho cấu trúc trên: xem `CLAUDE.md` ở thư mục gốc.
 
