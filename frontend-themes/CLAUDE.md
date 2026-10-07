@@ -7,8 +7,7 @@ Site tĩnh HTML/CSS/JS thuần, tiếng Việt, mục tiêu bán hàng + giới 
 dropdown, React/Next, `generate_image`...), làm theo file này. Skill viết cho React: chỉ lấy nguyên tắc thẩm mỹ,
 không lấy stack.
 
-Các `DESIGN.md`/`PLAN.md` trong `frontend-themes/giao-duc|dich-vu-chuyen-nghiep|cong-nghe-phan-mem/` là bản
-nháp cũ, chưa từng build và có chỗ trái quy chuẩn này: chỉ tham khảo, không làm theo.
+Các `DESIGN.md`/`PLAN.md` cũ đã được lưu trữ trong `frontend-themes/archive/`: chỉ dùng tham khảo lịch sử, không làm theo.
 
 ---
 
