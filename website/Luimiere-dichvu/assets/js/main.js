@@ -38,18 +38,6 @@
     $$("a", nav).forEach(function (a) { a.addEventListener("click", function () { setNav(false); }); });
   }
 
-  /* Menu thả "Sảnh tiệc" */
-  $$(".has-drop").forEach(function (li) {
-    var btn = $("[data-drop-toggle]", li), timer;
-    function set(open) { li.classList.toggle("is-open", open); btn.setAttribute("aria-expanded", String(open)); }
-    btn.addEventListener("click", function () { set(!li.classList.contains("is-open")); });
-    li.addEventListener("mouseenter", function () { if (desktop.matches) { clearTimeout(timer); set(true); } });
-    li.addEventListener("mouseleave", function () { if (desktop.matches) timer = setTimeout(function () { set(false); }, 160); });
-    li.addEventListener("focusout", function (e) { if (!li.contains(e.relatedTarget)) set(false); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && li.classList.contains("is-open")) { set(false); btn.focus(); } });
-    document.addEventListener("click", function (e) { if (!li.contains(e.target)) set(false); });
-  });
-
   /* Vệt sáng theo chuột (hero, khối CTA) */
   if (fine && !reduce) {
     $$("[data-glow]").forEach(function (el) {

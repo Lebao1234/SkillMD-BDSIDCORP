@@ -26,11 +26,11 @@ Chỉ cần Node.js, không cần `npm install`.
 | Bài viết tin tức | `src/data/posts.js` |
 | Các trang còn lại | `src/pages/*.html` |
 
-Dòng đầu mỗi file trong `src/pages` là thông tin trang dạng JSON: `title`, `description`, `nav` (mục menu được tô đậm), `crumbs` (breadcrumb), `"cta": false` để ẩn form đăng ký cuối trang.
+Dòng đầu mỗi file trong `src/pages` là thông tin trang dạng JSON: `title`, `description`, `nav` (mục menu được tô đậm), `crumbs` (breadcrumb), `"cta": false` để ẩn form đăng ký cuối trang. Khóa tùy chọn: `image` (ảnh og, mặc định `assets/img/hero-lop-giao-tiep.jpg`), `ogType` (mặc định `website`), `noindex: true` (thêm thẻ robots noindex), `preload` (đường dẫn ảnh cần preload).
 
-Token dùng được trong trang: `{{crumbs}}`, `{{schedule category="ielts" limit="3"}}`, `{{courses}}`, `{{posts limit="3"}}`, `{{post-lead}}`, `{{hotline}}`, `{{email}}`.
+Token dùng được trong trang: `{{crumbs}}`, `{{schedule category="ielts" limit="3"}}`, `{{courses}}`, `{{course-options}}`, `{{posts limit="3" skip="1" exclude="slug"}}`, `{{post-lead}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{year}}`.
 
-Build sẽ báo lỗi nếu nội dung chứa dấu gạch dài (– hoặc —). Hãy dùng dấu `-`.
+Build sẽ báo lỗi nếu nội dung chứa dấu gạch dài (en dash hoặc em dash). Hãy dùng dấu `-`.
 
 ## Danh sách trang
 

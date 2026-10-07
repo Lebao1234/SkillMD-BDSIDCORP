@@ -26,6 +26,25 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 
 Thêm mẫu áo mới: thêm 1 dòng vào `products.js`, đặt `isNew: true` để hiện trên giá treo "Mới treo lên tuần này", rồi build lại.
 
+Token dùng được trong trang: `{{crumbs}}`, `{{products col="..." new="1" exclude="..." limit="..." class="..."}}`, `{{rail}}`, `{{occasions}}`, `{{collection-chips}}`, `{{occasion-options}}`, `{{posts exclude="..." limit="..."}}`, `{{product-count}}`, `{{booking}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{zalo}}`, `{{address}}`, `{{hours}}`, `{{map-q}}`, `{{year}}`. Build dừng với lỗi nếu trang nào còn dấu gạch dài (en dash hoặc em dash), hãy dùng `-`.
+
+## Danh sách trang
+
+55 file `.html` ở thư mục gốc:
+
+| Nhóm | Trang |
+| --- | --- |
+| Trang chính | `index.html`, `bo-suu-tap.html`, `bang-gia.html`, `chon-size.html`, `dat-lich.html`, `gioi-thieu.html`, `lien-he.html`, `quy-dinh.html`, `bai-viet.html`, `404.html` |
+| Bộ sưu tập (7 trang sinh từ `collections.js`) | `ao-dai-cuoi.html`, `ao-dai-ba-sui.html`, `ao-dai-be-qua.html`, `ao-dai-di-tiec.html`, `viet-phuc.html`, `ao-dai-nam.html`, `phu-kien.html` |
+| Mẫu áo cưới (5) | `co-dau-do-hy-hoa.html`, `cap-do-tuong-chau.html`, `cap-kem-hao-nhien.html`, `co-dau-trang-bach-an.html`, `cap-do-dao-lien.html` |
+| Mẫu áo bà sui (3) | `sui-xanh-thanh-hac.html`, `sui-den-ngoc-lan.html`, `gam-ha-vy.html` |
+| Mẫu áo bê quả (2) | `be-qua-hong-truc-dao.html`, `be-qua-kem-nhuoc-van.html` |
+| Mẫu áo đi tiệc (12) | `suong-do-man-dao.html`, `truyen-thong-trang-ngoc.html`, `kem-truc-nguyet.html`, `suong-trang-bach-lien.html`, `xanh-lam-y.html`, `cach-tan-hong-mac-uyen.html`, `doi-ban-than-do-mint.html`, `suong-do-cuc-hoa.html`, `gam-hong-hoa-nhi.html`, `trang-non-la-sen.html`, `kem-hoa-thuy-moc.html`, `trang-tuyet-lien.html` |
+| Áo dài nam (5) | `nam-xam-phong-vu.html`, `nam-xanh-la-dac-ky.html`, `nam-xanh-lam-van-long.html`, `nam-do-dan-moc.html`, `nam-bac-minh-triet.html` |
+| Việt phục (5) | `nhat-binh-lam-dang.html`, `nhat-binh-do-phuong-cac.html`, `ao-tac-doi-lam-truc.html`, `ngu-than-nhom-hoi-an.html`, `ngu-than-vang-dang-hoa.html` |
+| Phụ kiện (2) | `quat-giay-cuc-vang.html`, `quat-lua-hoa-dao.html` |
+| Bài viết (4 trang sinh từ `posts.js`) | `thue-ao-dai-cuoi-can-biet.html`, `chon-ao-dai-ba-sui.html`, `chup-anh-ao-dai-pho-co.html`, `viet-phuc-khac-ao-dai.html` |
+
 ## Tính năng
 
 - **Túi thử đồ:** khách bấm "Thêm vào túi thử" ở mẫu áo, danh sách được lưu trong trình duyệt của khách và tự điền vào form đặt lịch thử áo.

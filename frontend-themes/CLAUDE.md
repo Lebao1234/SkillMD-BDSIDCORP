@@ -1,277 +1,118 @@
-# Multi-Theme Frontend Project — CLAUDE.md
+# Quy chuẩn giao diện cho mọi site trong website/
 
-## Project Overview
-Build nhiều giao diện HTML/CSS/JS cho 3 chủ đề doanh nghiệp:
-- **Giáo dục** (`giao-duc/`) — EdTech, trường học, khóa học, nền tảng học tập
-- **Dịch vụ chuyên nghiệp** (`dich-vu-chuyen-nghiep/`) — Tư vấn, luật, tài chính, y tế
-- **Công nghệ phần mềm** (`cong-nghe-phan-mem/`) — SaaS, agency, startup, developer tools
+Site tĩnh HTML/CSS/JS thuần, tiếng Việt, mục tiêu bán hàng + giới thiệu doanh nghiệp (không phải dashboard).
+Được nạp tự động qua `website/CLAUDE.md`. Cách build/check: xem `CLAUDE.md` gốc và README của từng site.
 
-## Mục tiêu giao diện
-- Bán hàng + giới thiệu doanh nghiệp (không phải dashboard)
-- UI/UX chuẩn enterprise — KHÔNG trông giống AI generic
-- Mỗi interface có phong cách thị giác riêng biệt
-- SEO-ready ngay từ đầu
-- Ảnh thực/gen AI — không dùng placeholder div giả
+**Thứ tự ưu tiên:** file này > skill trong `.agents/skills/`. Khi skill mâu thuẫn (font, hero, eyebrow,
+dropdown, React/Next, `generate_image`...), làm theo file này. Skill viết cho React: chỉ lấy nguyên tắc thẩm mỹ,
+không lấy stack.
+
+Các `DESIGN.md`/`PLAN.md` trong `frontend-themes/giao-duc|dich-vu-chuyen-nghiep|cong-nghe-phan-mem/` là bản
+nháp cũ, chưa từng build và có chỗ trái quy chuẩn này: chỉ tham khảo, không làm theo.
 
 ---
 
-## PLANNING HARNESS (superpowers-inspired)
-Trước khi viết bất kỳ dòng code nào, bắt buộc phải:
+## 1. Trước khi code
+1. Nghiên cứu 2-3 site tham khảo cùng ngành (firecrawl): màu, font, bố cục, giọng văn.
+2. Khai báo Design Read: "Reading this as: [loại trang] for [khách hàng], with [vibe] language, leaning toward [trường phái]."
+3. Đặt 3 dial (1-10): `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`.
+4. Chọn hero archetype, kiểu header, kiểu footer, chế độ nav (mục 4-5) và ghi lý do theo ngành.
+5. Khai báo palette + font, đối chiếu bảng mục 3 để KHÔNG trùng site đã có.
+6. Viết copy thật cho từng section trước, rồi mới dựng layout.
 
-1. **Đọc DESIGN.md** của theme đang build
-2. **Khai báo Design Read** theo format:
-   > "Reading this as: [page kind] for [audience], with [vibe] language, leaning toward [aesthetic family]."
-3. **Set 3 dials:**
-   - `DESIGN_VARIANCE` (1-10)
-   - `MOTION_INTENSITY` (1-10)
-   - `VISUAL_DENSITY` (1-10)
-4. **Liệt kê sections** sẽ có trong trang
-5. **Khai báo palette** (max 1 accent, base neutral)
-6. **Khai báo font** (KHÔNG dùng Inter, KHÔNG dùng Fraunces mặc định)
-7. **Viết copywriting outline** trước khi code
+## 2. Cấm (làm site trông như AI sinh ra)
+- Monogram/ô chữ cái giả trong dropdown (`T`, `X`, `G`, `.drop-code`): dùng ảnh thật, icon SVG nét mảnh, hoặc chỉ text.
+- Chấm màu nhỏ trang trí (trước eyebrow, "status dot" nhấp nháy).
+- Chữ tên thương hiệu khổng lồ làm trang trí ở đáy footer.
+- Eyebrow trên mọi section: tối đa khoảng 1 eyebrow / 3 section (hero được có 1).
+- Section head chia đôi (tiêu đề trái lớn + đoạn văn phải nhỏ): luôn xếp chồng eyebrow?, tiêu đề, mô tả, link.
+- Hero căn giữa trên nền mesh tối; gradient tím/xanh phát sáng kiểu AI; glassmorphism tràn lan.
+- 3 card tính năng bằng nhau xếp ngang; zigzag trái-phải quá 2 lần; card lồng card lồng card.
+- Div giả làm screenshot/ảnh sản phẩm.
+- Số liệu giả vờ chính xác (92%, 4.1x, 48k) khi không có dữ liệu thật; bộ đếm số chạy cho số bịa.
+- Font Inter làm font chính; Fraunces/Instrument Serif làm display mặc định.
+- `#000` thuần cho nền/chữ/bóng; bóng đổ phải pha màu nền.
+- Emoji trong UI. `height: 100vh` cho hero: dùng `min-height: 100dvh`.
+- Dấu – hoặc — trong nội dung (build sẽ lỗi): dùng `-`.
 
----
+## 3. Màu và font
+- 1 accent chính, độ bão hòa < 80%, trừ khi đó là màu nhận diện có sẵn của khách (khi đó giữ nguyên và ghi vào README).
+- Nền trung tính chọn 1 họ (lạnh hoặc ấm), không trộn.
+- Font BẮT BUỘC có bộ ký tự tiếng Việt (Google Fonts có subset `vietnamese`). Nhiều font Fontshare (Satoshi,
+  Cabinet Grotesk...) không có dấu tiếng Việt: kiểm tra trước khi dùng.
+- Mỗi site mới phải khác các site đã có. Đã dùng:
 
-## DESIGN ANTI-PATTERNS (BANNED)
-> Những thứ này sẽ làm giao diện trông AI generic — TUYỆT ĐỐI KHÔNG DÙNG
+| Site | Font | Accent |
+|---|---|---|
+| 3DRoom-dichvu | Plus Jakarta Sans, IBM Plex Mono | #036080 |
+| AttackK-congnghe | Space Grotesk, JetBrains Mono | #6073f2 |
+| BBE-giaoduc | Lexend, Noto Sans | #003359 + #de1135 |
+| BeatBeat-congnghe | Unbounded, Onest, JetBrains Mono | #ff3300 |
+| CongthongtinNeu | Roboto, Roboto Condensed | #0076c0 |
+| ISZ-giaoduc | Archivo, Plus Jakarta Sans, Noto Serif SC | #d2232a |
+| K-Lab's-dichvu | Archivo, JetBrains Mono | #f2523f |
+| Langkinh-congnghe | Geist, Geist Mono | #ffb020 |
+| Luimiere-dichvu | Cormorant Garamond, Montserrat | #bc955c |
+| Nhatanthoi-dichvu | Playfair Display, Be Vietnam Pro | #9e2a2b |
+| Phimdan-giaoduc | Bricolage Grotesque, Be Vietnam Pro | #f26b22 |
+| VN-Nikko-cokhi | Plus Jakarta Sans, Be Vietnam Pro | #d8262d |
 
-- ❌ Fake monogram / letter-box avatar trong dropdown (`[T]`, `[X]`, `[G]` - `.drop-code`). Trông gượng gạo, giả tạo và phi thực tế.
-- ❌ Dropdown rườm rà trên trang giới thiệu doanh nghiệp / dịch vụ / portfolio khi chỉ có 1-2 liên kết con (dùng Flat Clean Nav).
-- ❌ Inter font làm font chính cho landing premium
-- ❌ AI Purple / Blue glow gradient
-- ❌ Centered hero với dark mesh background
-- ❌ 3 equal feature cards ngang hàng
-- ❌ Generic glassmorphism mọi nơi
-- ❌ Eyebrow label trên MỌI section header
-- ❌ Alternating left-right zigzag quá 2 lần
-- ❌ Div-based fake screenshots / placeholder shapes
-- ❌ "Elevate", "Seamless", "Unleash", "Next-Gen" trong copy
-- ❌ Pure black `#000000`
-- ❌ Emoji trong UI
-- ❌ Fraunces / Instrument_Serif làm default display font
-- ❌ Fake-precise numbers (92%, 4.1×, 48k không có data thật)
-- ❌ Split-header pattern (big left headline + small right paragraph)
-- ❌ h-screen (dùng min-h-[100dvh])
+  Đã bão hòa: accent đỏ (5 site), Plus Jakarta Sans và Be Vietnam Pro (3 site mỗi font). Site mới nên tránh.
+  Cập nhật bảng này khi thêm site.
+- Chữ: tiêu đề section ~`clamp(2.25rem, 5vw, 3.75rem)`, `letter-spacing` âm nhẹ, `line-height` ~1;
+  thân bài `max-width: 65ch`, `line-height` 1.6. Tiêu đề hero tối đa 2 dòng trên desktop.
 
----
+## 4. Hero: luân phiên, không mặc định 2 cột
 
-## TYPOGRAPHY RULES
-```
-Display: Geist Display | Satoshi | Cabinet Grotesk | Outfit | PP Neue Montreal
-Body: Geist | Satoshi | DM Sans | Plus Jakarta Sans
-Mono: Geist Mono | JetBrains Mono | IBM Plex Mono
-```
-- Heading: `text-4xl md:text-6xl tracking-tighter leading-none`
-- Body: `text-base leading-relaxed max-w-[65ch] text-[neutral-600]`
-- Hero headline: max 2 dòng ở desktop, max 6 chữ thì dùng `text-7xl`
+| Archetype | Hợp nhất với | Đặc điểm |
+|---|---|---|
+| 1. Carousel/slider tràn viền | Thời trang, cho thuê đồ, studio ảnh, BĐS, resort, showroom, bán lẻ | 2-4 slide ảnh 16:9/21:9, cross-fade, chữ đè ảnh có vignette mềm, điều hướng bằng progress bar/mũi tên mảnh (không chấm tròn to) |
+| 2. Centered cinematic | Công nghệ, SaaS, EdTech, sự kiện | Tiêu đề căn giữa tối đa 2 dòng, ảnh/video thật phủ tối dần (không mesh) |
+| 3. Bento | Phần mềm, startup, app, agency số | Ô chính chứa tiêu đề + CTA, 2-3 ô phụ có nội dung thật, không ô trống |
+| 4. Editorial manifesto | Tư vấn, luật, kiến trúc, tài chính | Tiêu đề rất lớn, nhiều khoảng trắng |
+| 5. Split bất đối xứng | Dịch vụ kỹ thuật, cơ khí, y tế | Text + 1 ảnh minh họa duy nhất |
 
----
+Hero tối đa 4 phần tử chữ (eyebrow, tiêu đề, mô tả, CTA), padding trên tối đa 6rem.
+Lưới dùng CSS Grid, khung `max-width: 1400px` hoặc 1280px.
 
-## COLOR RULES
-- Max 1 accent color, saturation < 80%
-- Neutral base: Zinc / Slate / Stone (KHÔNG mix warm/cool gray)
-- Accent rotation cho từng theme — KHÔNG trùng nhau:
-  - **Giáo dục:** Deep Cobalt `#1B4FD8` trên Slate base
-  - **Dịch vụ chuyên nghiệp:** Forest Green `#166534` trên Stone base
-  - **Công nghệ phần mềm:** Electric Indigo `#4F46E5` trên Zinc base (với dark-mode default)
-- Shadow phải được tint theo màu background — KHÔNG pure black shadow
+## 5. Header, footer, điều hướng
+**Header** (chọn theo ngành, cả hai đều hợp lệ):
+- A. Bo tròn nổi: thanh tách khỏi mép trên 1-1.5rem, `border-radius: 999px` hoặc 1rem, nền mờ + viền hairline.
+  Hợp: công nghệ, AI, startup, sản phẩm sáng tạo, portfolio.
+- B. Thẳng tràn viền: `width: 100%`, không bo, sticky, `border-bottom: 1px`, nội dung căn theo khung lưới.
+  Hợp: công nghiệp, cơ khí, bán lẻ lớn, doanh nghiệp truyền thống, tài chính, thời trang editorial, kiến trúc.
 
----
+**Footer:**
+- A. Card bo tròn lọt trong trang (lề 1-2rem, `border-radius` 1.5-2.5rem), có khối CTA trước các cột link.
+  Hợp: SaaS, startup, app, thời trang/lifestyle, studio sáng tạo.
+- B. Thẳng tràn viền: chạm đáy, `border-top: 1px`, lưới 3-4 cột (pháp nhân/địa chỉ, danh mục, hỗ trợ & chính sách, bản quyền).
+  Hợp: sản xuất, cơ khí, tài chính, ngân hàng, y tế, siêu thị/e-commerce lớn, giáo dục/viện nghiên cứu.
 
-## LAYOUT & HERO DIVERSIFICATION (LUÂN PHIÊN BỐ CỤC HERO)
-- **KHÔNG lặp lại kiểu 2 cột (Left text / Right collage) cho mọi website.** Bắt buộc luân phiên áp dụng 5 Archetypes Hero phù hợp với từng ngành:
-  1. **Archetype 1 - Full-width Carousel / Image Slider Hero:**
-     - *Phù hợp nhất:* Thời trang, cho thuê đồ (như áo dài, váy cưới), studio nhiếp ảnh, bất động sản, resort/khách sạn, showroom ô tô/xe máy, e-commerce bán lẻ.
-     - *Đặc điểm:* Tràn viền (Full-width), 2–4 slide chuyển động mượt mà (smooth cross-fade hoặc drag), ảnh lớn tỉ lệ 16:9 hoặc 21:9, typography đè lên ảnh kèm lớp phủ gradient vignette mềm, thanh điều hướng dạng progress bar hoặc mũi tên tối giản (KHÔNG dùng chấm tròn to thô).
-  2. **Archetype 2 - Centered Immersive / Cinematic Hero (Đè nền điện ảnh):**
-     - *Phù hợp nhất:* Công nghệ, SaaS, giải pháp giáo dục EdTech, sự kiện, phim ảnh.
-     - *Đặc điểm:* Tiêu đề căn giữa uy lực (max 2 dòng), subtext cô đọng, nút CTA pill nổi bật, nền là ảnh hoặc video chất lượng cao với lớp phủ tối dần (cinematic overlay).
-  3. **Archetype 3 - Bento Grid Hero (Bố cục Bento đa chức năng mở đầu):**
-     - *Phù hợp nhất:* Công nghệ phần mềm, startup, app tiện ích, agency số.
-     - *Đặc điểm:* Khối chính chứa tiêu đề + CTA, bao quanh bởi 2-3 ô bento phụ hiển thị tính năng độc đáo, video demo nhỏ, hoặc con số ấn tượng.
-  4. **Archetype 4 - Editorial Manifesto / Minimalist Hero:**
-     - *Phù hợp nhất:* Doanh nghiệp tư vấn cấp cao, luật, kiến trúc, tài chính.
-     - *Đặc điểm:* Tiêu đề cực lớn mang tính tuyên ngôn (Manifesto), typography sắc sảo, bố cục thoáng đãng giàu khoảng trắng.
-  5. **Archetype 5 - Asymmetric Split Hero (2 cột bất đối xứng):**
-     - *Phù hợp nhất:* Giới thiệu dịch vụ kỹ thuật, cơ khí, y tế khi cần đặt text song song với 1 hình ảnh minh họa duy nhất.
-- Grid > Flexbox math (KHÔNG `calc(33% - 1rem)`)
-- Max-width: `max-w-[1400px] mx-auto` hoặc `max-w-7xl`
-- Hero top padding: max `pt-24` (6rem)
-- Hero: tối đa 4 text elements (eyebrow + headline + subtext + CTA)
-- Bento: ĐÚNG số cell với nội dung, không cell trống
+**Chế độ nav 1: site giới thiệu/dịch vụ/portfolio = nav phẳng, không dropdown.**
+1 dòng, cao 64-80px: `[Logo] --- [Trang chủ] [Về chúng tôi] [Dịch vụ] [Dự án] [Tin tức] [Liên hệ] --- [CTA]`.
+Active: gạch chân mảnh hoặc nền pill rất nhạt. Dưới 1024px: hamburger mở overlay toàn màn hình.
 
----
+**Chế độ nav 2: cửa hàng/catalog nhiều danh mục = mega-dropdown rộng ~80% (`width: min(85vw, 1200px)`).**
+- Cột danh mục con (20-25%): link chữ, hover tinh tế.
+- Lưới 3-4 sản phẩm (50-55%): ảnh thật 1:1 hoặc 4:3, tên, giá hoặc nhãn (`Mới`, `Bán chạy`).
+- Card khuyến mãi (20-25%): ảnh banner + 1 CTA ngắn cụ thể (vd "Xem bộ sưu tập Tết").
+- Dải đáy: "Xem toàn bộ [N] sản phẩm".
 
-## NAVIGATION ARCHITECTURE (DUAL-MODE STRATEGY)
-> Tuân thủ nghiêm ngặt 2 phong cách điều hướng thực tế tùy theo loại trang, tuyệt đối không tạo dropdown giả lập chữ cái `[T]`, `[X]`, `[G]`:
+## 6. Ảnh
+- Ảnh thật tải về `assets/img/` (Unsplash, ghi giấy phép trong README) hoặc ảnh khách cung cấp.
+  Repo này không có công cụ `generate_image`.
+- Mọi `<img>` có `alt` (rỗng nếu chỉ trang trí và chữ bên cạnh đã nói đủ), `width`/`height`, `loading="lazy"` ngoài màn hình đầu.
 
-### HEADER GEOMETRY (LUÂN PHIÊN SONG SONG GIỮA BO TRÒN VÀ KHÔNG BO TRÒN)
-- **Kiểu A - Header Bo Tròn (Floating Rounded Pill / Island Header):**
-  - *Đặc điểm:* Thanh navbar độc lập, nổi lơ lửng cách mép trên màn hình (`mt-4` đến `mt-6`, `mx-auto`, `w-max` hoặc `max-w-6xl`), bo góc viên thuốc mềm mại (`rounded-full` hoặc `rounded-2xl`), nền kính mờ (`backdrop-blur-md bg-white/80` hoặc `bg-neutral-900/80`), viền mỏng hairline (`ring-1 ring-black/5` hoặc `border border-white/10`).
-  - *Phù hợp nhất:* Ứng dụng công nghệ, AI, Startup hiện đại, Mobile-first, Sản phẩm sáng tạo, Portfolio cá nhân.
-- **Kiểu B - Header Không Bo Tròn (Full-width Edge-to-Edge Straight Header):**
-  - *Đặc điểm:* Thanh navbar phẳng chạy suốt toàn bộ chiều ngang màn hình (`w-full`, `rounded-none`, `top-0`, sticky hoặc fixed), góc cạnh vuông vắn sắc nét (`border-b border-neutral-200 dark:border-neutral-800`), nội dung bên trong được căn theo khung lưới chuẩn (`max-w-7xl mx-auto px-6` hoặc `1400px`).
-  - *Phù hợp nhất:* Công nghiệp, Cơ khí, Bán lẻ / E-commerce quy mô lớn, Doanh nghiệp truyền thống, Tập đoàn tài chính, Tạp chí thời trang cao cấp (Editorial Luxury), Kiến trúc & Xây dựng.
+## 7. Copy
+- Tiêu đề tối đa 8 chữ, mô tả tối đa 20 chữ, CTA tối đa 3 chữ; mỗi ý định chỉ 1 CTA trên toàn trang.
+- Cấm sáo rỗng: "Khám phá ngay", "Giải pháp toàn diện", "Đồng hành cùng bạn", "Nâng tầm", "Đột phá".
+  Viết cụ thể: con số thật, tên sản phẩm, địa điểm, thời gian.
 
-### FOOTER GEOMETRY (LUÂN PHIÊN SONG SONG GIỮA BO TRÒN VÀ KHÔNG BO TRÒN)
-- **Kiểu A - Footer Bo Tròn (Floating / Inset Rounded Card Footer):**
-  - *Đặc điểm:* Footer đóng vai trò như một "chiếc card lớn độc lập" đặt lọt bên trong trang (`mx-4 md:mx-8 mb-6 md:mb-8`, có khoảng hở margin ở đáy), các góc trên hoặc cả 4 góc được bo cong lớn (`rounded-3xl` hoặc `rounded-[2.5rem]`), nền tương phản sang trọng (`bg-neutral-900 text-white` hoặc nền sáng ấm `bg-[#F7F6F2]`), tích hợp khối CTA lớn bo tròn trước khi chia các cột liên kết.
-  - *Phù hợp nhất:* SaaS, Startup công nghệ, Consumer Apps, Thời trang / Lifestyle trẻ trung, Studio sáng tạo, Portfolio cá nhân.
-- **Kiểu B - Footer Không Bo Tròn (Full-width Edge-to-Edge Straight Footer):**
-  - *Đặc điểm:* Trải dài 100% bề ngang màn hình (`w-full`, `rounded-none`, chạm sát mép đáy màn hình `m-0`), phân định với thân trang bằng đường kẻ phân cách sắc nét 1px (`border-t border-neutral-200 dark:border-neutral-800`), layout chia cột nghiêm ngặt (Swiss Grid chuẩn 3-4 cột: Thông tin pháp nhân/địa chỉ, Danh mục liên kết, Hỗ trợ & Chính sách, Bản quyền toàn phần).
-  - *Phù hợp nhất:* Doanh nghiệp sản xuất, Cơ khí công nghiệp, Tập đoàn tài chính, Ngân hàng, Bệnh viện / Y tế, Đại siêu thị / E-commerce quy mô lớn, Cổng thông tin giáo dục / Viện nghiên cứu.
-
-### CHẾ ĐỘ 1: Trang Giới thiệu Doanh nghiệp / Dịch vụ / Portfolio (FLAT CLEAN NAV - KHÔNG DÙNG DROPDOWN)
-- **Bản chất:** Các trang giới thiệu, tư vấn, dịch vụ thường chỉ có vài trang con. Không dùng dropdown để giấu link.
-- **Cấu trúc:** Thanh điều hướng phẳng 1 dòng duy nhất trên desktop (chiều cao 64–72px, max 80px).
-  ```text
-  [Logo Thương Hiệu] -------- [Trang chủ] [Về chúng tôi] [Dịch vụ / Giải pháp] [Dự án] [Tin tức] [Liên hệ] -------- [CTA: Nhận tư vấn / Báo giá]
-  ```
-- **Hành vi:**
-  - Mỗi liên kết là text link rõ ràng, click là chuyển trang đích hoặc cuộn mượt đến section tương ứng.
-  - Active state: gạch chân tinh tế hoặc nền pill siêu nhẹ (`bg-neutral-100` / `bg-white/10`).
-  - Mobile (< 1024px): Hamburger menu mở full-screen overlay với hiệu ứng stagger-fade cho các link lớn.
-
-### CHẾ ĐỘ 2: Cửa hàng / Bán hàng / Catalog đa dạng sản phẩm (REALISTIC MEGA-DROPDOWN WIDTH 80%)
-- **Bản chất:** Áp dụng khi có nhiều danh mục sản phẩm, biến thể hoặc bộ sưu tập (E-commerce, Tech Store, Thời trang, Thiết bị...).
-- **Độ rộng:** Container dropdown chiếm **80% độ rộng màn hình** (`width: min(85vw, 1200px)` hoặc `w-[80vw]`), căn giữa theo viewport hoặc neo trực tiếp dưới header.
-- **Bố cục bên trong (Layout 3-4 cột chuẩn thương mại điện tử thực tế):**
-  1. **Cột 1 - Phân loại / Danh mục con (Category Column, 20-25%):**
-     - Liệt kê các nhóm sản phẩm (VD: Máy ảnh Mirrorless, Ống kính góc rộng, Phụ kiện...).
-     - Link chữ rõ ràng kèm hover highlight tinh tế, KHÔNG dùng badge ô vuông.
-  2. **Cột 2 & 3 - Lưới Sản phẩm trực quan (Product Visual Grid, 50-55%):**
-     - Hiển thị 3–4 sản phẩm tiêu biểu trực tiếp trong dropdown.
-     - Mỗi sản phẩm gồm:
-       - **Ảnh thumbnail thực tế (1:1 hoặc 4:3)**: Ảnh sản phẩm rõ nét trên nền trung tính, có bo góc nhẹ.
-       - **Tên sản phẩm**: In đậm, chuẩn typography (VD: *Fujifilm X-T50*, *Sony A7C II*).
-       - **Giá hoặc nhãn phân khúc**: VD: *28.990.000₫* hoặc nhãn nhỏ `New` / `Best-seller`.
-  3. **Cột 4 - Featured Promo Card / Dòng chủ lực (20-25%):**
-     - 1 card ảnh banner nổi bật quảng bá dòng sản phẩm mới nhất hoặc chương trình mùa lễ.
-     - Kèm 1 CTA ngắn: *"Khám phá ngay →"*.
-  4. **Footer Strip (Dải đáy menu):**
-     - Thanh viền mảnh 1px ngăn cách ở đáy: *"Xem toàn bộ [N] sản phẩm trong bộ sưu tập →"*.
-- **Cấm kỵ:** Tuyệt đối KHÔNG dùng ô vuông chữ cái viết tắt (`.drop-code`) như `T`, `X`, `G`. Bắt buộc dùng hình ảnh sản phẩm thật hoặc icon SVG nét mảnh.
-
----
-
-## IMAGE STRATEGY
-**Priority order:**
-1. `generate_image` tool — tạo ảnh AI theo brief của section
-2. `firecrawl scrape` — lấy ảnh từ website tham khảo
-3. `https://picsum.photos/seed/{descriptive-seed}/{w}/{h}` — placeholder có nghĩa
-4. KHÔNG bao giờ dùng div-box làm "fake product screenshot"
-
-**Workflow sinh ảnh:**
-```
-firecrawl search "[ngành] website design reference" → 
-scrape top 3 URLs → 
-extract visual style info → 
-generate_image với brief từ data crawled
-```
-
----
-
-## COPYWRITING RULES
-- Headline: max 8 chữ, action-oriented
-- Subtext: max 20 chữ, max 4 dòng, rõ value prop
-- CTA: max 3 chữ, một CTA per intent trên toàn trang
-- KHÔNG: "Khám phá ngay", "Giải pháp toàn diện", "Đồng hành cùng bạn" (generic AI copy)
-- MỖI section: viết copy real trước, rồi mới code layout
-
----
-
-## SEO CHECKLIST (mandatory trước khi declare done)
-```html
-<!-- Mỗi trang phải có: -->
-<title>[Từ khóa chính] | [Tên thương hiệu]</title>
-<meta name="description" content="[150-160 ký tự, chứa từ khóa]">
-<meta property="og:title" content="...">
-<meta property="og:description" content="...">
-<meta property="og:image" content="...">
-<meta property="og:url" content="...">
-<link rel="canonical" href="...">
-<!-- Semantic HTML: h1 (1 cái), h2, h3, alt text cho ảnh -->
-<!-- Schema.org: Organization / LocalBusiness / Course tùy loại -->
-```
-
----
-
-## WORKFLOW PER INTERFACE
-
-```
-STEP 1: Research
-  → firecrawl search "[niche] landing page [country/region]"
-  → scrape 2-3 trang tham khảo tốt nhất
-  → extract: màu, font, layout pattern, copy tone
-
-STEP 2: Design System
-  → Đọc DESIGN.md của theme
-  → Khai báo Design Read
-  → Set dials VARIANCE/MOTION/DENSITY
-  → Confirm palette + font stack
-
-STEP 3: Copywriting
-  → Viết outline: headline, subtext, section headers, CTAs
-  → Tự audit: loại bỏ AI clichés, giữ lại specific & concrete
-
-STEP 4: Generate Images
-  → generate_image cho: hero visual, section background, product/service shots
-  → Aspect ratio phù hợp từng section
-
-STEP 5: Build HTML/CSS/JS
-  → Semantic HTML first
-  → CSS custom properties cho design tokens
-  → JS chỉ khi cần animation/interaction thực sự
-
-STEP 6: SEO Audit
-  → Kiểm tra SEO checklist ở trên
-  → Playwright screenshot desktop + mobile
-
-STEP 7: Polish
-  → Kiểm tra contrast ratio (WCAG AA)
-  → Test mobile collapse
-  → Kiểm tra CTA không wrap
-```
-
----
-
-## TECH STACK (thuần HTML/CSS/JS)
-```
-HTML: Semantic HTML5, KHÔNG framework
-CSS:  Custom Properties (tokens), Grid + Flexbox
-JS:   Vanilla JS, GSAP (nếu cần scroll animation)
-Fonts: Google Fonts self-hosted hoặc CDN với display=swap
-Icons: Phosphor Icons CDN
-```
-
----
-
-## TOOLS AVAILABLE
-- `firecrawl` — web research, crawl reference sites
-- Ảnh: hiện các site dùng ảnh Unsplash tải về `assets/img/` (không có `generate_image` cấu hình sẵn)
-- `playwright-mcp` — screenshot, browser testing
-- `design-taste-frontend` skill — anti-slop design rules
-- `stitch-design-taste` skill — DESIGN.md generation
-
----
-
-## FILE STRUCTURE PER THEME
-```
-[theme-name]/
-├── DESIGN.md          ← Design system của theme này
-├── PLAN.md            ← Kế hoạch build (persistent across sessions)
-├── index.html         ← Landing page chính
-├── assets/
-│   ├── css/
-│   │   ├── tokens.css       ← CSS custom properties
-│   │   ├── base.css         ← Reset + typography
-│   │   └── components.css   ← UI components
-│   ├── js/
-│   │   └── main.js
-│   └── images/
-│       └── [gen-ai-images]
-└── pages/             ← Sub-pages nếu cần
-```
-
-> Site thực tế trong `website/` dùng `src/` + `tools/build.js` thay cho cấu trúc trên: xem `CLAUDE.md` ở thư mục gốc.
-
+## 8. Xong khi
+- [ ] Mỗi trang: `<title>[Từ khóa] | [Thương hiệu]</title>`, meta description 150-160 ký tự, canonical,
+      og:title/description/image/url, đúng 1 `h1`, heading không nhảy cấp, Schema.org phù hợp
+      (Organization/LocalBusiness/Course/Product).
+- [ ] `node tools/build.js` và `node tools/check.js` báo OK.
+- [ ] Tương phản WCAG AA, focus nhìn thấy được, form có label, có landmark (`header`, `nav`, `main`, `footer`).
+- [ ] Chụp màn hình desktop + mobile (playwright): menu mobile hoạt động, CTA không xuống dòng, không cuộn ngang.
+- [ ] Rà lại mục 2 (danh sách cấm).

@@ -1,6 +1,6 @@
 # Website K-Lab's Sneaker Care
 
-Website dịch vụ vệ sinh, phục hồi, sửa chữa giày và spa đồ hiệu. HTML, CSS, JS thuần. Cấu trúc tham khảo morino.vn. Giao diện đã được thiết kế lại theo taste skill: nền trắng toàn trang (section phụ xám rất nhạt #f5f5f4), tiêu đề Archivo bản rộng, giá và nhãn JetBrains Mono, một màu nhấn đỏ #f2523f (chữ đỏ trên nền trắng dùng #d0392a cho đủ tương phản), khung lồng hai lớp, menu nổi dạng viên thuốc. Font khác token gốc (Roboto) vì skill cấm Roboto cho giao diện cao cấp.
+Website dịch vụ vệ sinh, phục hồi, sửa chữa giày và spa đồ hiệu. HTML, CSS, JS thuần. Cấu trúc tham khảo morino.vn. Giao diện đã được thiết kế lại theo taste skill: nền trắng toàn trang (section phụ xám rất nhạt #f5f5f4), Archivo cho toàn trang (biến `--font`, tiêu đề dùng bản rộng), giá và nhãn JetBrains Mono, một màu nhấn đỏ #f2523f (chữ đỏ trên nền trắng dùng #d0392a cho đủ tương phản), khung lồng hai lớp, menu nổi dạng viên thuốc. Font khác token gốc (Roboto) vì skill cấm Roboto cho giao diện cao cấp.
 
 ## Xem website
 
@@ -27,6 +27,8 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 | Các trang còn lại | `src/pages/*.html` |
 
 Nút có `data-open-booking` sẽ mở popup đặt lịch. Thêm `data-service="Tên dịch vụ"`, `data-branch="Nhận trả giày tại nhà"` hoặc `data-need="..."` để điền sẵn. Chọn "Nhận trả giày tại nhà" thì form tự hiện ô địa chỉ bắt buộc.
+
+Token dùng được trong trang: `{{crumbs}}`, `{{services group="..." limit="..."}}`, `{{service-index}}`, `{{service-options}}`, `{{branches}}`, `{{branch-options}}`, `{{branch-count}}`, `{{topbar-branches}}`, `{{footer-branches}}`, `{{products limit="..."}}`, `{{price-groups}}`, `{{posts exclude="..." limit="..."}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{zalo}}`, `{{year}}`. Build dừng với lỗi nếu trang nào còn dấu gạch dài (en dash hoặc em dash), hãy dùng `-`.
 
 ## Danh sách trang
 

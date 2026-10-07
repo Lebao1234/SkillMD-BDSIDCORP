@@ -8,7 +8,7 @@ Kho lưu trữ này cung cấp hệ thống các kỹ năng (**Skills**) chuyên
 
 ## 📑 Danh mục Skills & Hướng dẫn sử dụng
 
-Dưới đây là danh sách chi tiết các skill được tích hợp trong thư mục [`.agents/skills/`](file:///e:/ClaudeMD/.agents/skills):
+Dưới đây là danh sách chi tiết các skill được tích hợp trong thư mục [`.agents/skills/`](.agents/skills):
 
 | STT | Tên Skill | Phân loại | Mục đích & Trọng tâm sử dụng |
 |:---:|:---|:---:|:---|
@@ -70,18 +70,20 @@ SkillMD-BDSIDCORP/
 │       ├── minimalist-ui/
 │       ├── redesign-existing-projects/
 │       └── ...
-├── .claude/                    # Tích hợp & symlink cho Claude Code
-├── .continue/                  # Cấu hình cho Continue.dev (VS Code/JetBrains)
-├── .codestudio/                # Cấu hình cho CodeStudio / Antigravity
-├── frontend-themes/            # Bộ theme giao diện mẫu & tài liệu DESIGN.md mẫu
-│   └── dich-vu-chuyen-nghiep/  # Mẫu giao diện dịch vụ chuyên nghiệp chuẩn mực
-├── website/                    # Các dự án mẫu hoàn chỉnh áp dụng các skill:
-│   ├── VN-Nikko-cokhi/         # Website công nghiệp cơ khí (Brutalist / Professional)
-│   ├── AttackK-congnghe/       # Website công nghệ / giải pháp
-│   ├── Nhatanthoi-dichvu/      # Website dịch vụ & tiện ích
-│   ├── CongthongtinNeu/        # Cổng thông tin đào tạo / giáo dục
-│   └── ...
-├── skills-lock.json            # Quản lý phiên bản các skill
+├── .claude/ .codeartsdoer/ .codestudio/ .continue/ .forge/ .mcpjam/
+│                               # skills/ mirror cho từng công cụ AI (symlink tới .agents/skills
+│                               # trên máy gốc; git lưu thành bản sao, sửa skill phải khớp cả 7)
+├── frontend-themes/
+│   ├── CLAUDE.md               # Quy chuẩn giao diện cho mọi site (ưu tiên hơn skill)
+│   └── giao-duc/ dich-vu-chuyen-nghiep/ cong-nghe-phan-mem/   # DESIGN/PLAN nháp cũ, chỉ tham khảo
+├── website/                    # 12 site hoàn chỉnh, xem website/README.md
+│   ├── CLAUDE.md               # Nạp frontend-themes/CLAUDE.md khi làm việc trong website/
+│   ├── 3DRoom-dichvu/  K-Lab's-dichvu/  Luimiere-dichvu/  Nhatanthoi-dichvu/
+│   ├── AttackK-congnghe/  BeatBeat-congnghe/  Langkinh-congnghe/
+│   ├── BBE-giaoduc/  ISZ-giaoduc/  Phimdan-giaoduc/  CongthongtinNeu/
+│   └── VN-Nikko-cokhi/
+├── CLAUDE.md                   # Ghi chú cho Claude Code ở cấp repo
+├── skills-lock.json            # Nguồn upstream + hash của từng skill
 └── README.md                   # Tài liệu hướng dẫn này
 ```
 
@@ -104,6 +106,13 @@ description: Teaches the AI to design like a high-end agency...
 ---
 ```
 AI Assistant sẽ tự động phát hiện và kích hoạt kỹ năng tương ứng khi gặp ngữ cảnh công việc liên quan.
+
+Ngoại lệ: 7 skill có `disable-model-invocation: true` vì không hợp với dự án HTML thuần, không có công cụ sinh ảnh
+(`image-to-code`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `brandkit`, `design-taste-frontend-v1`,
+`gpt-taste`, `stitch-design-taste`). Chúng chỉ chạy khi gọi rõ tên, ví dụ `/gpt-taste`.
+
+`design-taste-frontend` và `high-end-visual-design` đã được sửa so với bản gốc Leonxlnx/taste-skill (hero archetype,
+header/footer, điều hướng 2 chế độ, cấm monogram). Đồng bộ lại từ upstream sẽ mất các chỉnh sửa này.
 
 ---
 

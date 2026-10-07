@@ -126,6 +126,7 @@ tools/
   build-data.js      normalizes the raw catalog into the dataset
   build-content.js   builds the editorial and review datasets
   smoke-test.js      headless test suite
+  (plus the Epod deploy and inspection scripts, see below)
 ```
 
 Header and footer are injected by `ui.js` so thirteen pages do not carry
@@ -142,15 +143,20 @@ npm install jsdom
 node tools/smoke-test.js
 ```
 
-Fifty-seven checks run each page in jsdom, execute its scripts and exercise the
-real interactions: adding to cart, editing quantities, applying a valid and an
+There is no `package.json`, so jsdom is the one thing to install before the
+first run: `npm install jsdom` (or `npm install --no-save jsdom`) inside this
+folder puts it in `node_modules/`, which is all the harness needs.
+
+Fifty-seven checks in total. Eighteen interaction checks run pages in jsdom,
+execute their scripts and exercise the real interactions: adding to cart, editing quantities, applying a valid and an
 invalid coupon, filtering and clearing filters, loading more results, switching
 variants, toggling bundle items, advancing the checkout with empty and with
 filled fields, hitting the comparison cap, moving the hero between slides,
 opening an accordion, filtering downloads and revealing a password.
 
-Every page is then loaded twice more, once seeded to Vietnamese and once to
-English, and checked for three things: that no untranslated literal survives,
+A shared-chrome pass then loads all thirteen pages once more (thirteen checks,
+for 31 so far). Every page is then loaded twice more, once seeded to Vietnamese
+and once to English (26 language checks), and checked for three things: that no untranslated literal survives,
 that no dictionary key leaks through as raw text, and that neither language
 leaves the other one visible in its rendering.
 
@@ -209,3 +215,39 @@ in your own browser. Every read and write is wrapped in `try/catch`, so a
 private window or blocked site data degrades to in-memory state for the session
 rather than breaking the page. The account forms validate input formats and
 store nothing.
+
+---
+
+## Epod deploy and inspection scripts
+
+Besides the three scripts above, `tools/` holds 39 one-off Node scripts written
+while porting the storefront onto the live Epod shop
+(`hadal-peripherals.epodsystem.com`). The static site does not need any of
+them. Grouped by what they do:
+
+- **MCP client.** `mcp.js` is a minimal MCP-over-HTTP client for
+  `mcp.epodsystem.com`. It reads the bearer token from `../.mcp.json` (this
+  folder's `.mcp.json`) and every script that calls the shop goes through it.
+- **Write to the live shop.** `deploy-*.js`, `build-all-sections.js`,
+  `build-hero.js`, `build-press.js`, `place-all-sections.js`,
+  `fix-index-order.js`, `fix-x3-image.js`, `delete-old-image.js` and
+  `test-*.js` build sections, upsert theme files (`upsert_theme_file`), change
+  products through GraphQL and clear the storefront cache. They change the live
+  theme, so run them only on purpose.
+- **Read the shop through MCP.** `inspect-rest.js`, `inspect-specific.js`,
+  `inspect-theme.js`, `introspect-*.js` and `list-all-prods.js` query theme files, products and the
+  GraphQL schema without writing.
+- **Fetch the public storefront.** `verify-*.js`, `final-audit.js`,
+  `inspect-live-hf.js`, `check-x3-live.js` and `find-x3-url.js` request live pages over HTTPS and
+  check them.
+- **Offline analysis.** `analyze-live.js` and `inspect-card.js` read the saved
+  snapshot `tools/live-home.html`; `audit-surfaces.js` scans interactive
+  surfaces in jsdom in both languages.
+
+The `sections_*.liquid` and `assets_theme-skin.css` files in `tools/` are the
+theme sources those scripts push.
+
+**`.mcp.json` holds a live access token.** It is gitignored (`**/.mcp.json` in
+the repository `.gitignore`) and must never be committed, pasted into an issue
+or copied into another file. If it leaks, revoke the token in Epod and issue a
+new one.

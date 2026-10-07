@@ -30,6 +30,21 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 | Menu, footer, giỏ hàng, ô tìm kiếm | `src/partials/*.html` |
 | Các trang còn lại | `src/pages/*.html` |
 
+Token dùng được trong trang: `{{crumbs}}`, `{{products kind="..." cat="..." sale="1" slugs="..." exclude="..."}}`, `{{count kind="..."}}`, `{{cat-tiles kind="..."}}`, `{{filter-bar kind="..."}}`, `{{battery-chart kind="..."}}`, `{{sound-lab}}`, `{{finder}}`, `{{wave n="48" class="..."}}`, `{{posts exclude="..." limit="..."}}`, `{{faq items="..."}}`, `{{stores}}`, `{{product-options}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{hours}}`, `{{zalo}}`, `{{facebook}}`, `{{instagram}}`, `{{youtube}}`, `{{tiktok}}`, `{{legal}}`. Build dừng với lỗi nếu trang nào còn dấu gạch dài (en dash hoặc em dash), hãy dùng `-`.
+
+## Danh sách trang
+
+42 file `.html` ở thư mục gốc:
+
+| Nhóm | Trang |
+| --- | --- |
+| Trang chính | `index.html`, `tai-nghe.html`, `loa.html`, `khuyen-mai.html`, `phong-nghe-thu.html`, `tim-san-pham.html`, `so-sanh.html` |
+| Mua hàng, hỗ trợ | `gio-hang.html`, `cua-hang.html`, `ho-tro.html`, `chinh-sach.html`, `404.html` |
+| Tin tức | `bai-viet.html` |
+| Tai nghe (14 trang sinh từ `src/data/products.js`) | `aura-max.html`, `aura-2.html`, `studio-m1.html`, `kids-pop.html`, `pulse-pro.html`, `pulse-mini.html`, `pulse-air.html`, `pulse-flow.html`, `run-open.html`, `run-neck.html`, `run-pro.html`, `clash-g7.html`, `clash-g3.html`, `clash-buds.html` |
+| Loa (11 trang sinh từ `src/data/products.js`) | `drop-3.html`, `drop-5.html`, `clip-go.html`, `boom-xl.html`, `party-300.html`, `party-go.html`, `party-100.html`, `stage-9.html`, `stage-3.html`, `stage-2.html`, `home-one.html` |
+| Bài viết (4 trang sinh từ `src/data/posts.js`) | `chong-on-chu-dong-la-gi.html`, `chong-nuoc-ip67-la-gi.html`, `codec-bluetooth-ldac-aac.html`, `chon-loa-thanh-cho-phong-khach.html` |
+
 ## Tính năng
 
 - **Phòng nghe thử** (`phong-nghe-thu.html`):

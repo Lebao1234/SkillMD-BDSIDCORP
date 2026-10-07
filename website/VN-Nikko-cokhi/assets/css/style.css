@@ -165,10 +165,8 @@ a.tb-item:hover { color: #fff; }
 .section-head { max-width: 760px; margin-bottom: clamp(36px, 5vw, 64px); }
 .section-head h2, .split h2, .tool-split h2, .letter-text h2, .values-title { font-size: clamp(30px, 3.4vw, 46px); letter-spacing: -.03em; }
 .section-head > p.muted { margin-top: 16px; }
-.section-head-split, .section-head-row { max-width: none; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 20px 64px; align-items: end; }
-.section-head-split .eyebrow, .section-head-row .eyebrow { margin-bottom: 18px; }
-.section-head-split > p, .section-head-row > p { margin: 0; max-width: 46ch; }
-.section-head-split > .text-link, .section-head-row > .text-link, .section-head-split > .rail-ctrl { justify-self: end; }
+.section-head-split, .section-head-row { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.section-head-split > p, .section-head-row > p, .section-head-split > p.muted, .section-head-row > p.muted { margin: 0; max-width: 62ch; }
 .section-head-center { margin-left: auto; margin-right: auto; text-align: center; }
 .split { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 36px 80px; align-items: start; }
 .split > div:first-child { position: sticky; top: 120px; }
@@ -646,15 +644,15 @@ a.tb-item:hover { color: #fff; }
 .cta-call { display: inline-flex; gap: 12px; align-items: center; color: #fff; font-family: var(--display); font-weight: 600; font-size: 22px; text-decoration: none; font-variant-numeric: tabular-nums; }
 .cta-call span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, .1); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18); font-size: 18px; }
 .cta-call:hover { color: #fff; }
-.site-footer { background: var(--ink); color: rgba(255, 255, 255, .62); padding: 72px 0 28px; border-radius: 36px 36px 0 0; }
-.footer-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px 80px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+.site-footer { background: var(--ink); color: rgba(255, 255, 255, .62); padding: 72px 0 28px; border-radius: 0; border-top: 1px solid var(--ink); }
+.footer-top { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 3fr); gap: 40px 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, .12); }
 .footer-name { margin: 24px 0 16px; font-family: var(--display); font-size: 17px; font-weight: 600; color: #fff; letter-spacing: .01em; }
 .footer-legal-info { margin: 0; display: grid; gap: 10px; }
 .footer-legal-info div { display: grid; grid-template-columns: 100px 1fr; gap: 12px; font-size: 14px; }
 .footer-legal-info dt { color: rgba(255, 255, 255, .45); }
 .footer-legal-info dd { margin: 0; color: rgba(255, 255, 255, .88); }
 .footer-legal-info a { color: #fff; }
-.footer-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.footer-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 32px; }
 .footer-h { font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, .45); margin-bottom: 16px; }
 .footer-cols ul { list-style: none; display: grid; gap: 10px; }
 .footer-cols a { color: rgba(255, 255, 255, .85); text-decoration: none; font-size: 14.5px; transition: color .25s; }
@@ -690,8 +688,6 @@ body.nav-open .float-actions { display: none; }
 }
 @media (max-width: 1024px) {
   .hero, .about-top, .split, .tool-split, .proc, .rfq-wrap, .contact, .letter, .cta-core, .footer-top, .caps-split { grid-template-columns: 1fr; }
-  .section-head-split, .section-head-row { grid-template-columns: 1fr; }
-  .section-head-split > .text-link, .section-head-row > .text-link, .section-head-split > .rail-ctrl { justify-self: start; }
   .split > div:first-child, .letter-media, .rfq-side { position: static; }
   .proc-media { position: relative; top: 0; }
   .letter-media { aspect-ratio: 16 / 10; }
@@ -768,7 +764,6 @@ body.nav-open .float-actions { display: none; }
   .g-a, .g-c { grid-row: auto; grid-column: auto; }
   .cta-shell { border-radius: 30px; }
   .cta-core { border-radius: 25px; }
-  .site-footer { border-radius: 28px 28px 0 0; }
   .footer-cols { grid-template-columns: 1fr 1fr; }
   .footer-legal-info div { grid-template-columns: 1fr; gap: 0; }
   .float-btn { width: 46px; height: 46px; }

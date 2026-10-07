@@ -1,7 +1,11 @@
 # SkillMD-BDSIDCORP
 
-Skill library + static marketing sites (Vietnamese). Design rules: see `frontend-themes/CLAUDE.md`
-(applies to every site in `website/`, not only `frontend-themes/`).
+Skill library + static marketing sites (Vietnamese). Design rules live in `frontend-themes/CLAUDE.md` and are
+auto-loaded for every site via `website/CLAUDE.md` (`@import`). They take precedence over the skills.
+
+7 skills have `disable-model-invocation: true` because they don't fit this vanilla-HTML, no-image-tool project
+(image-to-code, imagegen-frontend-web/-mobile, brandkit, design-taste-frontend-v1, gpt-taste,
+stitch-design-taste). Call them explicitly with `/name` if needed.
 
 ## Layout
 - `.agents/skills/` is the source of truth. `.claude`, `.codeartsdoer`, `.codestudio`, `.continue`, `.forge`,
@@ -20,7 +24,9 @@ Skill library + static marketing sites (Vietnamese). Design rules: see `frontend
 - First line of each `src/pages/*.html` is `<!--meta {JSON}-->` (title, description, nav, crumbs, cta, ...).
 - Build fails on – or — (use `-`), and it fails mid-write: pages before the error are already rewritten and
   sitemap.xml is not, so fix and rebuild immediately.
-- AttackK-congnghe and CongthongtinNeu have no build step: edit the HTML directly.
+- Exceptions: CongthongtinNeu builds with `tools/build-data.js` + `tools/build-pages.js` (index.html, admin.html hand-written);
+  AttackK-congnghe has no build step (edit HTML; `tools/deploy-*` push to ePod using `.mcp.json`). Both test
+  with `node tools/smoke-test.js` (needs jsdom).
   EnSchool-giaoduc and Phusong-congnghe are empty placeholders.
 
 ## Global UI bans (in addition to frontend-themes/CLAUDE.md)

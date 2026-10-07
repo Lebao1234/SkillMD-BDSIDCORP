@@ -229,7 +229,6 @@ function tokens(html, ctx) {
       case "hall-grid": return `<div class="hall-grid" data-hall-grid>${halls.map(hallCard).join("\n")}</div>`;
       case "hall-options": return hallOptions();
       case "hall-options-est": return halls.map((h) => `<option value="${esc(h.name)}" data-min="${h.tables[0]}" data-max="${h.tables[1]}"${h.key === "soleil" ? " selected" : ""}>Sảnh ${esc(h.name)} (${h.tables[0]} - ${h.tables[1]} bàn)</option>`).join("");
-      case "hall-drop": return halls.map((h) => `<a href="${h.slug}.html"><img src="assets/img/${h.image}" width="1600" height="1067" alt="" loading="lazy"><span><strong>Sảnh ${esc(h.name)}</strong><small>${h.tables[0]} - ${h.tables[1]} bàn · ${esc(h.tag)}</small></span></a>`).join("");
       case "hall-compare": return `<div class="table-wrap"><table class="cmp-table">
             <caption class="sr-only">So sánh 4 sảnh tiệc</caption>
             <thead><tr><th scope="col">Sảnh</th><th scope="col">Bàn tiệc cưới</th><th scope="col">Khách</th><th scope="col">Diện tích</th><th scope="col">Trần</th><th scope="col">Vị trí</th><th scope="col">Hợp nhất với</th></tr></thead>

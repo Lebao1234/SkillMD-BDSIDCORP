@@ -5,7 +5,7 @@
  *   node tools/build.js
  *
  * - src/pages/*.html     : nội dung từng trang, dòng đầu là <!--meta {...JSON...}-->
- * - src/partials/*.html  : header, footer, ngăn giỏ hàng
+ * - src/partials/*.html  : header, footer (ngăn giỏ hàng nằm trong footer)
  * - src/data/*.js        : sản phẩm, câu chuyện, thông tin chung
  * - src/templates/*.js   : trang sản phẩm, trang câu chuyện
  * Kết quả ghi ra thư mục gốc dự án, kèm sitemap.xml.

@@ -19,8 +19,25 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 | 8 máy ảnh, 8 ống kính (giá, màu, gói kèm ống kính, thông số, điểm nổi bật) | `src/data/products.js`, bố cục `src/templates/product.js` |
 | Câu chuyện nhiếp ảnh gia | `src/data/stories.js`, bố cục `src/templates/story.js` |
 | 8 công thức màu | mảng `RECIPES` trong `assets/js/main.js` (bộ lọc CSS) |
-| Menu, footer, ngăn giỏ hàng | `src/partials/*.html` |
+| Menu và dropdown máy ảnh | `src/partials/header.html` |
+| Footer và ngăn giỏ hàng (ngăn giỏ nằm trong footer, không có partial riêng) | `src/partials/footer.html` |
 | Các trang còn lại | `src/pages/*.html` |
+
+**Tokens** dùng trong trang và partial (xử lý trong `tools/build.js`): `{{crumbs}}`, `{{products kind series new exclude limit class}}`, `{{count kind}}`, `{{stories exclude limit}}`, `{{showrooms}}`, `{{product-json}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{zalo}}`, `{{year}}`. Ví dụ: `{{products kind="camera" limit="4"}}`.
+
+## Danh sách trang
+
+| Nhóm | Trang (file ở thư mục gốc) |
+| --- | --- |
+| Trang chủ | `index.html` |
+| Máy ảnh (8) | `may-anh.html`, `lk-tinh-100.html`, `lk-x-pro-4.html`, `lk-x-t6.html`, `lk-x-s30.html`, `lk-x-m6.html`, `lk-x-h3.html`, `lk-x-e6.html`, `lk-g100.html` |
+| Ống kính (8) | `ong-kinh.html`, `lx-23mm-f14.html`, `lx-33mm-f14.html`, `lx-56mm-f12.html`, `lx-16-55mm-f28.html`, `lx-70-300mm.html`, `lx-8mm-f35.html`, `lx-90mm-f2.html`, `lg-55mm-f17.html` |
+| Công thức màu, so sánh | `gia-lap-mau.html`, `so-sanh.html` |
+| Câu chuyện | `cau-chuyen.html`, `ha-noi-mot-ngay-mua.html`, `ruong-bac-thang-mua-vang.html`, `sai-gon-dem-khong-ngu.html` |
+| Mua hàng, hỗ trợ | `gio-hang.html`, `cua-hang.html`, `ho-tro.html`, `chinh-sach.html` |
+| Lỗi | `404.html` |
+
+Trang sản phẩm sinh từ `src/data/products.js`, trang câu chuyện sinh từ `src/data/stories.js`, các trang còn lại từ `src/pages/`.
 
 ## Tính năng
 

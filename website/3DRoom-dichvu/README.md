@@ -25,6 +25,8 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 | Bài viết | `src/data/posts.js` |
 | Các trang còn lại | `src/pages/*.html` |
 
+Token dùng được trong trang: `{{crumbs}}`, `{{services group="..." exclude="..." limit="..." class="..."}}`, `{{service-options}}`, `{{materials tech="..."}}`, `{{materials-json}}`, `{{projects limit="..."}}`, `{{posts exclude="..." limit="..."}}`, `{{offices}}`, `{{footer-offices}}`, `{{quote-form}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{zalo}}`, `{{year}}`. Build dừng với lỗi nếu trang nào còn dấu gạch dài (en dash hoặc em dash), hãy dùng `-`.
+
 ## Danh sách trang
 
 | 3dcubix.vn | 3DRoom |

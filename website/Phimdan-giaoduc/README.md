@@ -27,6 +27,8 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 
 Mọi nút có thuộc tính `data-open-register` sẽ mở popup đăng ký. Thêm `data-branch="Tên chi nhánh"` hoặc `data-need="..."` để điền sẵn vào form.
 
+Token dùng được trong trang: `{{crumbs}}`, `{{branches limit="..." layout="scroll" id="..."}}`, `{{branch-list}}`, `{{program-panels}}`, `{{branch-count}}`, `{{branch-options}}`, `{{posts exclude="..." limit="..."}}`, `{{programs class="..."}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{email}}`, `{{zalo}}`, `{{year}}`. Build dừng với lỗi nếu trang nào còn dấu gạch dài (en dash hoặc em dash), hãy dùng `-`.
+
 ## Danh sách trang
 
 | Trang onepiano.vn | Trang Phím Đàn |
@@ -44,7 +46,6 @@ Mọi nút có thuộc tính `data-open-register` sẽ mở popup đăng ký. Th
 ## Trước khi đưa lên mạng
 
 - Cảm nhận học viên trên trang chủ (chú Bình, chị Ngọc Anh, Minh Khoa) và lịch lớp mẫu trong ô ứng dụng là dữ liệu mẫu, thay bằng nội dung thật.
-
 - Thay dữ liệu mẫu: địa chỉ chi nhánh, học phí, số liệu, cột mốc, mã số doanh nghiệp, hotline.
 - Form đang mô phỏng gửi thành công. Gắn API bằng `data-endpoint="https://..."` trên thẻ `<form>` trong `src/partials/modal.html` và `src/pages/index.html`.
 - Link Zalo, mạng xã hội và nút tải ứng dụng đang là liên kết mẫu.

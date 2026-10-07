@@ -37,7 +37,6 @@ module.exports = function ({ h, i, others, menus, dots, hallStat, money, esc }) 
     <section class="section plan-section" aria-labelledby="plan-title">
       <div class="container plan-grid">
         <div class="plan-copy reveal">
-          <p class="eyebrow">Sơ đồ bàn</p>
           <h2 id="plan-title">Từ <em>${min} đến ${max} bàn</em></h2>
           <p>Mỗi chấm là một bàn tròn 10 khách. Chấm sáng là số bàn tối thiểu cho tiệc tối thứ Bảy và Chủ nhật. Ngày thường và tiệc trưa, sảnh ${esc(h.name)} nhận từ ${Math.max(4, Math.round(min * 0.6))} bàn.</p>
           <dl class="plan-legend"><div><dt><i class="lg lg-min"></i>Tối thiểu cuối tuần</dt><dd>${min} bàn · ${min * 10} khách</dd></div><div><dt><i class="lg"></i>Tối đa</dt><dd>${max} bàn · ${max * 10} khách</dd></div></dl>

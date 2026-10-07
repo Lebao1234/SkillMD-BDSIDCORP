@@ -130,7 +130,9 @@ assets/
     layout.css       dải demo, đầu trang, điều hướng, tìm kiếm, chân trang
     pages.css        bề mặt của từng trang
     home.css         bố cục trang chủ theo khuôn của trang gốc
+    lists.css        thẻ sự kiện, danh sách việc làm, câu chuyện nổi bật
     admin.css        riêng cho CMS
+    polish.css       lớp tinh chỉnh nạp sau cùng: nhịp dọc, phản hồi khi trỏ, chi tiết nhỏ
   js/
     brand.js         tên, liên hệ, sơ đồ điều hướng
     store.js         localStorage: chủ đề, phiên, đăng ký, lớp đè CMS, sao lưu
@@ -174,7 +176,7 @@ npm install
 node tools/smoke-test.js
 ```
 
-376 phép thử chạy mười bảy trang trong jsdom, thực thi script thật của chúng, rồi thao
+378 phép thử chạy mười bảy trang trong jsdom, thực thi script thật của chúng, rồi thao
 tác đúng như người dùng thao tác: bấm bộ lọc, gõ tìm kiếm, sang trang, mở đèn chiếu ảnh,
 đăng ký sự kiện, gửi nội dung đóng góp, đăng nhập CMS với hai vai trò, sửa một bài, duyệt
 một nội dung gửi lên, xóa một bản ghi, và kiểm bản sao lưu có ghi lại đúng thay đổi đó.
@@ -201,14 +203,14 @@ kiểm thử chứ không né trong mã đã xuất bản, vì mọi trình duy�
 
 ```bash
 node tools/build-data.js     # sinh assets/data/*.json và *.js
-node tools/build-pages.js    # sinh 14 trang trong và sitemap.xml
+node tools/build-pages.js    # sinh 15 trang trong và sitemap.xml
 ```
 
 `build-data.js` dùng một bộ sinh số giả ngẫu nhiên có hạt giống cố định, nên chạy lại
 luôn ra đúng bộ dữ liệu cũ. Nhờ vậy ảnh, liên kết và số liệu không nhảy giữa hai lần
 dựng. Muốn một bộ dữ liệu khác thì đổi hạt giống ở dòng `rng(20260917)`.
 
-Muốn đổi tên, liên hệ hoặc menu thì sửa `assets/js/brand.js`. Mười sáu trang tự theo.
+Muốn đổi tên, liên hệ hoặc menu thì sửa `assets/js/brand.js`. Mười bảy trang tự theo.
 
 ---
 

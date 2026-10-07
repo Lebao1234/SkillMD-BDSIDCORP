@@ -5,6 +5,8 @@ Website nhà hàng tiệc cưới bằng HTML, CSS, JS thuần. Cấu trúc tran
 - Một màu nhấn vàng `#bc955c` giữ theo design system gốc.
 - Tiêu đề dùng Cormorant Garamond, nội dung dùng Montserrat (font gốc). Cả hai có đủ dấu tiếng Việt.
 - Khung ảnh lồng hai lớp, menu nổi dạng viên thuốc, icon Phosphor Light.
+- Menu phẳng một hàng, không có menu thả: Sảnh tiệc, Thực đơn, Tiệc cưới, Hội nghị, Thư viện, Ưu đãi, Cẩm nang và một nút "Đặt lịch xem sảnh". Trang từng sảnh mở từ trang `sanh-tiec.html` và cột "Sảnh tiệc" ở footer. Về Luimiere, Hỏi đáp, Liên hệ nằm ở footer (menu điện thoại có thêm Về Luimiere và Liên hệ).
+- Nhãn nhỏ phía trên tiêu đề (eyebrow) chỉ dùng khi mang thông tin thật (khu vực, ngày cập nhật, hạn ưu đãi, số ảnh), không đặt ở mọi khối. Đầu mỗi khối xếp dọc: tiêu đề, đoạn mô tả, link.
 
 Motif "ánh sáng" (Lumière):
 - Vệt sáng đi theo chuột ở hero và khối CTA cuối trang.
@@ -24,7 +26,7 @@ node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id tr
 
 | Muốn sửa | Sửa ở đâu |
 | --- | --- |
-| Menu, logo | `src/partials/header.html` |
+| Menu (phẳng, không menu thả), logo | `src/partials/header.html` |
 | Footer, nút gọi/Zalo nổi | `src/partials/footer.html` |
 | Khối "Đến xem sảnh" trước footer | `src/partials/cta.html` |
 | Popup đặt lịch | `src/partials/modal.html`. Các ô của form nằm ở hàm `bookForm` trong `tools/build.js` |

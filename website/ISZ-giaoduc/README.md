@@ -47,6 +47,8 @@ Mọi nút có `data-open-reg` đều mở popup đăng ký. Có thể thêm cá
 
 Trang lịch khai giảng nhận tham số `?ct=hsk` (chương trình) và `?cs=ben-thanh` (cơ sở).
 
+Token dùng được trong trang (`src/pages/*.html` và partials): `{{crumbs}}`, `{{hanzi-pad}}`, `{{tzg char="..." class="..." animate="1"}}`, `{{tone-lab}}`, `{{program-index}}`, `{{program-grid}}`, `{{program-drop}}`, `{{program-options}}`, `{{program-select}}`, `{{branch-options}}`, `{{branch-select}}`, `{{hsk-stairs}}`, `{{session-tabs}}`, `{{classes program="..." limit="..."}}`, `{{class-count}}`, `{{teachers keys="..." id="..."}}`, `{{teacher-grid}}`, `{{reviews home="1"}}`, `{{branches}}`, `{{branch-lines}}`, `{{branch-count}}`, `{{posts exclude="slug" limit="..." class="..."}}`, `{{reg-form id="..." endpoint="..."}}`, `{{decks}}`, `{{radicals}}`, `{{quiz}}`, `{{quiz-count}}`, `{{hotline}}`, `{{hotline-tel}}`, `{{mobile}}`, `{{mobile-tel}}`, `{{email}}`, `{{hours}}`, `{{zalo}}`, `{{facebook}}`, `{{youtube}}`, `{{tiktok}}`, `{{legal}}`. Token không có trong danh sách được giữ nguyên trong HTML. Build dừng với lỗi nếu trang nào còn dấu gạch dài (en dash hoặc em dash), hãy dùng `-`.
+
 ## Danh sách trang
 
 | Trang shz.edu.vn | Trang ISZ |
@@ -73,4 +75,4 @@ Trang lịch khai giảng nhận tham số `?ct=hsk` (chương trình) và `?cs=
 - Lịch thi HSK, yêu cầu học bổng và chi phí du học trong bài viết là thông tin tham khảo, cần kiểm tra lại với nguồn chính thức trước khi đăng.
 - Form đang mô phỏng gửi thành công. Gắn API bằng `endpoint`: truyền `endpoint="https://..."` cho `{{reg-form}}` trong `src/partials/modal.html`.
 - Link Zalo, Facebook, YouTube, TikTok đang là liên kết mẫu.
-- Ảnh lấy từ Unsplash (Unsplash License), đã tải về `assets/img/` (42 ảnh, khoảng 9,3 MB). Nên thay bằng ảnh thật của lớp học, cơ sở và giáo viên.
+- Ảnh lấy từ Unsplash (Unsplash License), đã tải về `assets/img/` (42 ảnh jpg, khoảng 9,5 MB; thư mục có 43 tệp vì thêm `favicon.svg`). Nên thay bằng ảnh thật của lớp học, cơ sở và giáo viên.

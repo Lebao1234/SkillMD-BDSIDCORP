@@ -1,13 +1,13 @@
 # Website Công ty TNHH Cơ khí VN - NIKKO (bản demo)
 
-Website giới thiệu doanh nghiệp cơ khí bằng HTML, CSS, JS thuần. Giao diện theo design system trong `.claude/skills/design-system` (mẫu cokhimori.com.vn: nhấn đỏ #de252c, bo góc 6px) kết hợp taste skill, theo phong cách website giới thiệu công ty:
+Website giới thiệu doanh nghiệp cơ khí bằng HTML, CSS, JS thuần. Giao diện theo design system trong `.claude/skills/design-system` (mẫu cokhimori.com.vn; màu nhấn đỏ `--red: #d8262d` trong `assets/css/style.css`; nút, chip, menu bo tròn dạng viên 999px, khung ngoài 30px, lõi trong 24px, ô nhập 14px) kết hợp taste skill, theo phong cách website giới thiệu công ty:
 - Doanh nghiệp: xưởng gia công inox, sắt theo đơn đặt hàng và hàng mẫu cho 6 mảng: gia dụng, dân dụng, nội thất, hàng 5S, hàng khu công nghiệp, chi tiết theo đơn. 4 ngành nghề đăng ký vẫn có trang riêng ở mục Lĩnh vực.
 - Giao diện kiểu 2 (khách đã chọn): header thanh ngang toàn khổ có hotline; banner chia đôi, chữ bên trái, ảnh tràn mép phải kèm thẻ 6 mảng sản phẩm.
 - Chữ Plus Jakarta Sans cho tiêu đề, Be Vietnam Pro cho nội dung (đều có tiếng Việt); tiêu đề cỡ vừa, nhãn viết thường, đường kẻ nhạt để giao diện nhẹ, không thô.
 - Nền trắng xám lạnh, chữ than chì, một màu đỏ nhấn duy nhất.
 - Trang chủ: banner chia đôi; giới thiệu ngắn; bento 6 mảng sản phẩm; hai vật liệu inox và sắt; năng lực gia công; dải tầm nhìn; con số; quy trình 7 bước; dải sản phẩm cuộn ngang; tin tức.
 
-**Tên công ty viết "VN - NIKKO" (gạch ngắn có khoảng trắng)** thay cho gạch dài "VN – NIKKO", vì quy ước của các website này không dùng gạch dài. Cần viết đúng như giấy đăng ký kinh doanh thì sửa trong `src/data/site.js` và bỏ kiểm tra gạch dài trong `tools/build.js`.
+**Tên công ty viết "VN - NIKKO" (gạch ngắn có khoảng trắng)** thay cho cách viết có gạch dài, vì quy ước của các website này không dùng gạch dài. Cần viết đúng như giấy đăng ký kinh doanh thì sửa trong `src/data/site.js` và bỏ kiểm tra gạch dài trong `tools/build.js`.
 
 ## Xem website
 
@@ -16,9 +16,14 @@ Mở `index.html` bằng trình duyệt. Các file `.html` ở thư mục gốc 
 ## Sửa nội dung rồi build lại
 
 ```bash
-node tools/build.js   # sinh lại toàn bộ trang + sitemap.xml
-node tools/check.js   # kiểm tra link hỏng, anchor, ảnh thiếu alt, id trùng
+node tools/build.js --extract   # sinh lại trang 4 ngôn ngữ + sitemap.xml, cập nhật src/i18n/source.json
+node tools/i18n-check.js en     # kiểm tra bản dịch (chạy cả ja, ko)
+node tools/check.js             # kiểm tra link hỏng, anchor, ảnh thiếu alt, id trùng ở mọi ngôn ngữ
 ```
+
+- `tools/build.js` ghép trang, rồi gọi `tools/i18n.js` để tách chuỗi (khi có `--extract`) và thay bản dịch cho `en/`, `ja/`, `ko/`. Bỏ `--extract` nếu chỉ build lại mà không đổi chữ tiếng Việt.
+- `tools/i18n-check.js <mã>` báo chuỗi thiếu, chuỗi thừa (đã bỏ khỏi trang nhưng còn trong file dịch), ký hiệu thẻ không khớp, dấu gạch dài, chữ tiếng Việt còn sót. Chuỗi thừa thì xóa khỏi `src/i18n/<mã>.json`.
+- Build dừng lại nếu trang có dấu gạch dài (gạch en, gạch em); dùng dấu gạch ngắn "-".
 
 | Muốn sửa | Sửa ở đâu |
 | --- | --- |
