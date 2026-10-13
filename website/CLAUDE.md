@@ -1,1 +1,0 @@
-@../frontend-themes/CLAUDE.md
